@@ -11,30 +11,52 @@ export class Person {
   mode: "idle" | "wave" | "work" | "seated" = "idle";
   private mixer?: T.AnimationMixer;
   private rig?: T.Object3D;
+  private modelRoot?: T.Group;
+  private female?: boolean;
   private restPose = new Map<T.Bone, T.Quaternion>();
   constructor(
     x: number,
     z: number,
     female = false,
-    shirt = "#393b3e",
-    assets?: WorldAssets,
+    private shirt = "#393b3e",
+    private assets?: WorldAssets,
   ) {
     this.group.position.set(x, 0.08, z);
     this.target.copy(this.group.position);
-    if (assets) {
-      const actor = assets.person(female, shirt);
+    this.setAppearance(female);
+  }
+  /** Swap only the visual rig. Navigation, identity and the current route are preserved. */
+  setAppearance(female: boolean) {
+    if(this.female === female) return;
+    this.female = female;
+    this.releaseModel();
+    if (this.assets) {
+      const actor = this.assets.person(female, this.shirt);
+      this.modelRoot = actor.root;
       this.group.add(actor.root);
       this.mixer = actor.mixer;
       this.rig = actor.rig;
-      actor.rig.traverse((o) => {
-        if (o instanceof T.Bone) this.restPose.set(o, o.quaternion.clone());
-      });
+      actor.rig.traverse(o => { if(o instanceof T.Bone) this.restPose.set(o,o.quaternion.clone()); });
       const hand = actor.rig.getObjectByName("hand_r");
-      if (hand) {
-        hand.add(this.rightArm);
-        this.rightArm.scale.setScalar(0.7);
-      }
+      if(hand) {hand.add(this.rightArm);this.rightArm.scale.setScalar(0.7);}
     }
+  }
+  private releaseModel() {
+    this.rightArm.removeFromParent();
+    this.mixer?.stopAllAction();
+    if(this.rig) this.mixer?.uncacheRoot(this.rig);
+    // Person factories own material clones. Mesh buffers and textures belong to WorldAssets.
+    const owned = new Set<T.Material>();
+    this.modelRoot?.traverse(o => {
+      if(o instanceof T.Mesh) {
+        (Array.isArray(o.material)?o.material:[o.material]).filter(m=>m.userData.actorOwned).forEach(m=>owned.add(m));
+        if(o.geometry.userData.actorOwned)o.geometry.dispose();
+        if(o instanceof T.SkinnedMesh)o.skeleton.dispose();
+      }
+    });
+    owned.forEach(m=>m.dispose());
+    this.modelRoot?.removeFromParent();
+    this.modelRoot=undefined;this.rig=undefined;this.mixer=undefined;this.restPose.clear();
   }
   goTo(points: T.Vector3[]) {
     this.waypoints = points.map((p) => p.clone());
@@ -87,8 +109,7 @@ export class Person {
       0.08 + (walking ? Math.abs(Math.sin(t * 7)) * 0.018 : 0);
   }
   dispose() {
-    this.mixer?.stopAllAction();
-    if (this.rig) this.mixer?.uncacheRoot(this.rig);
+    this.releaseModel();
   }
 }
 

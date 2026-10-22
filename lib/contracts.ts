@@ -1,5 +1,6 @@
+import type { VehicleKind } from "./appearance";
 import type { OrderStatus, ServiceDefinition } from './domain';
-export interface VehicleInput { kind:'Sedán'|'SUV'|'Pickup'|'Compacto'; color:'Plata'|'Rojo'|'Azul'|'Negro'|'Blanco'; plate:string; }
+export interface VehicleInput { kind:VehicleKind; color:'Plata'|'Rojo'|'Azul'|'Negro'|'Blanco'; plate:string; }
 export interface CreateOrderInput { vehicle:VehicleInput; services:string[]; }
 export interface Quotation { items:ServiceDefinition[]; total:number; tasks:string[]; }
 export interface PersistOrderInput { vehicle:VehicleInput; quote:Quotation; }

@@ -32,8 +32,10 @@ for (const [source, destination] of [
     .replace(/(["'])\.\/interactions\1/g, '"./interactions.js"')
     .replace(/(["'])\.\.\/domain\1/g, '"./domain.js"');
   code = code.replace(/(["'])\.\/material-kit\1/g, '"./material-kit.js"');
+  code=code.replace(/(["'])\.\.\/appearance\1/g, '"./appearance.js"');
   fs.writeFileSync(new URL(destination + ".js", dir), code);
 }
+fs.writeFileSync(new URL("appearance.js", dir), ts.transpileModule(fs.readFileSync(new URL("../lib/appearance.ts",import.meta.url),"utf8"),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText);
 try {
   const { InteractionRegistry, actionAtUV } = await import(
     new URL("interactions.js", dir)
@@ -343,6 +345,26 @@ try {
       ),
     );
   };
+  test("La entrada permite cruzar la puerta y el mapa completo cabe sin recortar zonas",()=>{
+    ui.setView({...view,panel:null,intro:true});scene.updateMatrixWorld(true);
+    const entry=surfaces().find(s=>s.visible&&s.regions.some(r=>r.id==="enter"));
+    assert.equal(cast(registry,scene,actionPoint(entry,"enter"),shotFor("entrance",false).eye),"enter");
+    for(const mobile of [false,true]){
+      const shot=shotFor("overview",mobile),camera=new T.PerspectiveCamera(shot.fov,mobile?9/16:16/9,0.1,220);
+      camera.position.copy(shot.eye);camera.lookAt(shot.target);camera.updateMatrixWorld(true);
+      for(const x of [-21,21])for(const z of [-13,25]){
+        const p=new T.Vector3(x,0,z).project(camera);
+        assert.ok(Math.abs(p.x)<0.98&&Math.abs(p.y)<0.98,`map clipped ${mobile} ${x} ${z}`);
+      }
+    }
+  });
+  test("Los expositores no ocupan la entrada ni el mapa general",()=>{
+    ui.setView({...view,panel:null,intro:false});
+    assert.ok(environment.serviceObjects.every(d=>!d.object.visible));
+    assert.ok(environment.roofs.length>=7);
+    assert.equal(environment.bayTargets.length,5);
+    assert.equal(environment.doors.length,2);
+  });
   test("Las tres opciones del mostrador se pueden tocar en el local completo", () => {
     ui.setView({ ...view, panel: "reception" });
     scene.updateMatrixWorld(true);

@@ -1,7 +1,7 @@
 import { Vector3 } from "three";
 export type Destination =
   "overview" | "reception" | "services" | "vehicle" | "lounge" | "exit";
-export type SpatialIntent = Destination | "clipboard" | "tablet";
+export type SpatialIntent = Destination | "clipboard" | "tablet" | "entrance";
 const v = (x: number, y: number, z: number) => new Vector3(x, y, z);
 /** Fixed cinematic compositions; visitors choose an intention, never camera axes. */
 export function shotFor(
@@ -10,10 +10,12 @@ export function shotFor(
   car = new Vector3(-2.5, 0.1, 17),
 ) {
   const shots = {
+    entrance: {
+      eye:v(0,2.8,mobile?32:30),target:v(0,1.9,15),avatar:v(0,0.08,25.5),
+    },
     overview: {
-      eye: v(-2, 2.65, mobile ? 28 : 25),
-      target: v(2, 1.55, 3),
-      avatar: v(0, 0.08, 18),
+      eye: mobile ? v(24,94,117) : v(38,43,54),
+      target:v(0,0.8,5),avatar:v(0,0.08,18),
     },
     reception: {
       eye: v(11.2, 1.85, mobile ? 17.6 : 14),
@@ -53,7 +55,7 @@ export function shotFor(
   };
   return {
     ...shots[intent],
-    fov: mobile
+    fov: intent === "overview" ? (mobile ? 50 : 43) : mobile
       ? intent === "clipboard"
         ? 50
         : intent === "tablet"
