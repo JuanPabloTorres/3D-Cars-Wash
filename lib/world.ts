@@ -312,6 +312,7 @@ export class CarWashWorld {
     if(id.startsWith("activity:")){
       const key=id.slice(9),actor=this.fleet.inspect(key);if(!actor)return;
       this.callbacks.onSelect("world-focus");
+      this.destination="overview";this.entryTransition=false;this.interface.setMapMode(false);
       this.activityFocus=key;this.followOffset=null;this.viewingMap=false;
       this.goalFov=this.mobile?58:48;
       this.environment.roofs.forEach(roof=>{roof.visible=false;});
