@@ -127,7 +127,7 @@ export class CarWashWorld {
             this.scene.add(water.group);
             this.ambient.push({ car, worker, water, bay: i + 1, phase: 'wash', next: 8 + i * 9 });
         }
-        this.customer = new Car(-9, 17, '#bdc5c9');
+        this.customer = new Car(-2.5, 17, '#bdc5c9');
         this.customer.group.rotation.y = Math.PI * .18;
         this.scene.add(this.customer.group);
         this.customerWorker = new Person(7.6, -4.8);
@@ -156,7 +156,7 @@ export class CarWashWorld {
         this.pinLayer.className = 'world-pins';
         host.appendChild(this.pinLayer);
         this.addPin('reception', 'Recepción', 'Habla con tu anfitriona', v(11.1, 3.2, 10.4));
-        this.addPin('vehicle', 'Tu vehículo', 'Prepara tu visita', v(-9, 3, 17));
+        this.addPin('vehicle', 'Tu vehículo', 'Prepara tu visita', v(-2.5, 3, 17));
         this.addPin('lounge', 'Zona lounge', 'Espera con tranquilidad', v(-12, 3.7, 12));
         for (const service of this.environment.serviceObjects)
             this.addPin('service:' + service.id, service.id === 'complete' ? 'Lavado completo' : service.id === 'lights' ? 'Focos' : 'Interior', 'Selecciona el objeto', service.object.position.clone().add(v(0, 2.8, 0)));
@@ -188,7 +188,7 @@ export class CarWashWorld {
         p: T.Vector3;
         t: T.Vector3;
         a: T.Vector3;
-    }> = { overview: { p: v(-1, 5.5, 25), t: v(1, 2, -3), a: v(0, .08, 18) }, reception: { p: v(6.5, 3.1, 16), t: v(11.15, 2.1, 10), a: v(8, .08, 13.3) }, services: { p: v(-1.5, 3.8, 11.5), t: v(.4, 1.45, 5.3), a: v(-4.6, .08, 9.3) }, vehicle: { p: v(-2, 3.7, 24), t: v(-9, 1.2, 17), a: v(-5.5, .08, 17) }, lounge: { p: v(-14.8, 2.4, 16), t: v(-2, 1.6, -4), a: v(-10, .08, 13.8) }, exit: { p: v(10, 3.4, 18), t: v(16, 1.5, 11), a: v(10, .08, 16) } }; const view = views[destination]; if (destination === 'vehicle') {
+    }> = { overview: { p: v(-1, 5.5, 25), t: v(1, 2, -3), a: v(0, .08, 18) }, reception: { p: v(6.5, 3.1, 16), t: v(11.15, 2.1, 10), a: v(8, .08, 13.3) }, services: { p: v(3.3, 3.8, 24), t: v(5.6, 1.45, 17), a: v(4.8, .08, 20) }, vehicle: { p: v(-2, 3.7, 24), t: v(-9, 1.2, 17), a: v(-5.5, .08, 17) }, lounge: { p: v(-14.8, 2.4, 16), t: v(-2, 1.6, -4), a: v(-10, .08, 13.8) }, exit: { p: v(10, 3.4, 18), t: v(16, 1.5, 11), a: v(10, .08, 16) } }; const view = views[destination]; if (destination === 'vehicle') {
         const car = this.customer.group.position;
         this.followOffset = v(6.7, 3.7, 8.5);
         view.p = car.clone().add(this.followOffset);
@@ -197,10 +197,10 @@ export class CarWashWorld {
     } if (this.mobile) {
         view.p.y += 1;
         view.p.z += 3;
-    } this.goalPos.copy(view.p); this.goalTarget.copy(view.t); this.avatar.target.copy(view.a); if (this.reducedMotion) {
+    } this.goalPos.copy(view.p); this.goalTarget.copy(view.t); const start=this.avatar.group.position;const path=destination==='vehicle'&&this.orderStatus==='working'?[v(-4.5,.08,20),v(-4.5,.08,2),view.a]:[v(start.x,.08,20),v(view.a.x,.08,20),view.a];this.avatar.goTo(path); if (this.reducedMotion) {
         this.camera.position.copy(this.goalPos);
         this.currentTarget.copy(this.goalTarget);
-        this.avatar.group.position.copy(this.avatar.target);
+        this.avatar.waypoints=[];this.avatar.target.copy(view.a);this.avatar.group.position.copy(view.a);
         this.animating = false;
     } }
     setSelected(ids: string[]) { this.selected = ids; for (const pin of this.pins) {
@@ -212,7 +212,7 @@ export class CarWashWorld {
         pin.el.querySelector('small')!.textContent = selected ? 'Agregado a tu visita' : 'Selecciona el objeto';
     } }
     resetVisit() { if (!this.orderStatus)
-        return; this.orderStatus = ''; this.orderBay = null; this.customer.route = []; this.customer.group.position.set(-9, .1, 17); this.customerWater.active = false; this.customerWorker.group.visible = false; this.updateVehiclePin(); }
+        return; this.orderStatus = ''; this.orderBay = null; this.customer.route = []; this.customer.group.position.set(-2.5, .1, 17); this.customerWater.active = false; this.customerWorker.group.visible = false; this.updateVehiclePin(); }
     setVehicleColor(color: string) { const colors: Record<string, string> = { Plata: '#bdc5c9', Rojo: '#b92b25', Azul: '#256faa', Negro: '#232b35', Blanco: '#f2eee3' }; this.customer.paint.color.set(colors[color] ?? colors.Plata); }
     setVehicleKind(kind: string) { this.customer.setKind(kind); }
     setVisitDetails(plate: string, tasks: {
@@ -222,7 +222,7 @@ export class CarWashWorld {
     private updateVehiclePin() { const pin = this.pins.find(p => p.id === 'vehicle'); if (!pin)
         return; pin.el.querySelector('.pin-name')!.textContent = this.plate; pin.el.querySelector('small')!.textContent = this.orderStatus === 'working' ? this.taskName + ' · Cubículo ' + (this.orderBay ?? 4) : STATUS_LABEL[this.orderStatus as OrderStatus] ?? 'Prepara tu visita'; pin.el.classList.toggle('vehicle-working', this.orderStatus === 'working'); }
     setOrderStatus(status: string, bay?: number | null) { const key = status + ':' + bay; if (key === this.orderStatus + ':' + this.orderBay)
-        return; this.orderStatus = status; this.orderBay = bay ?? null; const p = this.customer.group.position; const x = bayPosition(bay); const route: Record<string, T.Vector3[]> = { requested: [v(-9, .1, 17)], waiting: [v(-9, .1, 9)], working: [v(p.x, .1, 2), v(x, .1, 2), v(x, .1, -6)], ready: [v(p.x, .1, 2), v(17, .1, 2), v(17, .1, 10)], delivered: [v(18, .1, 12), v(18, .1, 27)], cancelled: [v(-9, .1, 17)] }; this.customer.route = route[status] ?? []; this.customer.routeIndex = 0; if (this.reducedMotion && this.customer.route.length) {
+        return; this.orderStatus = status; this.orderBay = bay ?? null; const p = this.customer.group.position; const x = bayPosition(bay); const route: Record<string, T.Vector3[]> = { requested: [v(-2.5, .1, 17)], waiting: [v(-2.5, .1, 9)], working: [v(p.x, .1, 2), v(x, .1, 2), v(x, .1, -6)], ready: [v(p.x, .1, 2), v(17, .1, 2), v(17, .1, 10)], delivered: [v(18, .1, 12), v(18, .1, 27)], cancelled: [v(-2.5, .1, 17)] }; this.customer.route = route[status] ?? []; this.customer.routeIndex = 0; if (this.reducedMotion && this.customer.route.length) {
         this.customer.group.position.copy(this.customer.route.at(-1)!);
         this.customer.route = [];
     } this.customerWorker.group.position.x = x + 1.6; this.customerWorker.target.copy(this.customerWorker.group.position); this.customerWater.group.position.x = x; this.updateVehiclePin(); if (this.destination === 'vehicle')

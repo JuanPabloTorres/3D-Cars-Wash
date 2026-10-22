@@ -1,10 +1,10 @@
-# Febles virtual · V1
+# Febles virtual · v0.2
 
 Estado: primera implementación funcional; importes ilustrativos; no certificada para operación comercial. El mundo es una interpretación del local, no un levantamiento arquitectónico. La inspección visual en navegador quedó bloqueada por la política del navegador de pruebas.
 
 ## Decisiones
 
-- Three.js y GLB para una escena realmente tridimensional. Cámara orbital, destinos de cámara, personaje navegable por toque, vehículos circulantes y zonas interactivas. La experiencia ocupa la pantalla; los formularios se presentan solo en el punto de interacción.
+- Three.js y GLB para una escena realmente tridimensional. Cámara dirigida por selecciones, personajes con rutas automáticas, vehículos circulantes y zonas interactivas. La experiencia ocupa la pantalla; los formularios se presentan solo en el punto de interacción.
 - React/TypeScript para interacciones y accesibilidad. El motor se carga dinámicamente en el cliente; no se ejecuta WebGL en el servidor.
 - Backend TypeScript sobre Workers, API HTTP con validación Zod y base SQL D1 mediante el alojamiento. Esta plataforma no ejecuta ASP.NET Core; elegirla permite entregar una URL funcional en este entorno. Los contratos de repositorio permiten una implementación posterior en .NET sin acoplar el motor 3D a esa elección.
 - Monolito modular: dominio → servicio de aplicación → contrato de repositorio → adaptador SQL. Los controladores HTTP autentican, autorizan y validan antes de invocar el servicio.
@@ -21,7 +21,7 @@ Estado: primera implementación funcional; importes ilustrativos; no certificada
 | Mundo | `lib/world.ts` | Escena, ciclo de vida, recursos, personajes, cámaras, modelos y animación |
 | Experiencia | `app/experience.tsx`, `app/febles.css` | Recorrido, cotización, órdenes, demostración y operación administrativa |
 
-La herencia de `WorldEntity` agrupa entidades con ciclo de actualización; Character y Vehicle tienen comportamiento distinto. `ServicePlanFactory` selecciona planes tipados por clase de servicio. Los datos del catálogo continúan configurables sin exponer código arbitrario. No se usa reflexión para conceder permisos.
+Las entidades `Person`, `Car` y `WaterEffect` mantienen ciclos de actualización y estados visuales separados; el director compone sus comportamientos sin acoplarlos al repositorio. `ServicePlanFactory` selecciona planes tipados por clase de servicio. Los datos del catálogo continúan configurables sin exponer código arbitrario. No se usa reflexión para conceder permisos.
 
 ## Datos y consistencia
 

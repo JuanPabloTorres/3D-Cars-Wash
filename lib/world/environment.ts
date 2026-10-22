@@ -206,10 +206,10 @@ export function buildEnvironment(scene: T.Scene, mobile: boolean): Environment {
     for (let z = 0; z < 20; z += 2)
         box(fixed, .1, .02, .9, m.gold, 18, .06, z);
     // Physical detailing displays, each is a raycast target.
-    const configs = [{ x: -3.6, id: 'complete', label: 'LAVADO COMPLETO' }, { x: 0, id: 'lights', label: 'FOCOS' }, { x: 3.6, id: 'interior', label: 'INTERIOR' }];
+    const configs = [{ x: 2, id: 'complete', label: 'LAVADO COMPLETO' }, { x: 5.6, id: 'lights', label: 'FOCOS' }, { x: 9.2, id: 'interior', label: 'INTERIOR' }];
     for (const cfg of configs) {
         const display = new T.Group();
-        display.position.set(cfg.x, 0, 5.3);
+        display.position.set(cfg.x, 0, 17);
         box(display, 2.8, .95, 2.1, m.wood, 0, .55, 0, .08);
         box(display, 2.9, .12, 2.2, m.woodLight, 0, 1.08, 0, .05);
         box(display, 2.5, .62, .06, m.steel, 0, .65, 1.06, .035);

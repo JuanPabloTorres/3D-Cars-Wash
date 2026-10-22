@@ -7,6 +7,8 @@ export class Person {
     rightArm = new T.Group();
     legs: T.Group[] = [];
     target = new T.Vector3();
+    waypoints: T.Vector3[] = [];
+    goTo(points:T.Vector3[]){this.waypoints=points.map(p=>p.clone());const first=this.waypoints.shift();if(first)this.target.copy(first);}
     mode: 'idle' | 'wave' | 'work' | 'seated' = 'idle';
     constructor(x: number, z: number, female = false, shirt = '#26282b', skin = '#bd8059') {
         this.group.position.set(x, .08, z);
@@ -70,6 +72,7 @@ export class Person {
     update(t: number, dt: number) {
         const delta = this.target.clone().sub(this.group.position);
         delta.y = 0;
+        if(delta.length()<.07&&this.waypoints.length)this.target.copy(this.waypoints.shift()!);
         const walking = delta.length() > .06;
         if (walking) {
             const distance = delta.length();
