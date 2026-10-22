@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import ts from 'typescript';
+const source=fs.readFileSync(new URL('../lib/domain.ts',import.meta.url),'utf8');
+const code=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText;
+const d=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+let checks=0;function test(name,fn){fn();checks++;console.log('PASS',name);}
+test('El servidor calcula el total exacto en centavos',()=>assert.equal(d.quote(['complete','lights']).total,4500));
+test('No permite servicios repetidos',()=>assert.throws(()=>d.quote(['lights','lights']),d.DomainError));
+test('No acepta IDs desconocidos',()=>assert.throws(()=>d.quote(['nonexistent']),d.DomainError));
+test('No duplica el lavado exterior incluido en completo',()=>assert.throws(()=>d.quote(['complete','exterior']),d.DomainError));
+test('Exige al menos un servicio',()=>assert.throws(()=>d.quote([]),d.DomainError));
+test('La creación del plan no altera el catálogo',()=>{const before=JSON.stringify(d.CATALOG);d.quote(['complete','polish']);assert.equal(JSON.stringify(d.CATALOG),before);});
+test('No empieza antes de confirmar llegada',()=>assert.throws(()=>d.nextStatus('requested','start'),d.DomainError));
+test('No termina si faltan tareas',()=>assert.throws(()=>d.nextStatus('working','ready',false),d.DomainError));
+test('No entrega sin cobro registrado',()=>assert.throws(()=>d.nextStatus('ready','deliver',true,false),d.DomainError));
+test('El recorrido válido llega a entrega',()=>{let s='requested';for(const action of ['arrive','start','ready','deliver'])s=d.nextStatus(s,action,true,true);assert.equal(s,'delivered');});
+test('Una orden entregada no vuelve a iniciar',()=>assert.throws(()=>d.nextStatus('delivered','start'),d.DomainError));
+test('Cancelación de una solicitud es explícita',()=>assert.equal(d.nextStatus('requested','cancel'),'cancelled'));
+test('Factory produce estrategias tipadas',()=>{assert.ok(d.ServicePlanFactory.create('wash') instanceof d.WashPlan);assert.ok(d.ServicePlanFactory.create('detail') instanceof d.DetailPlan);});
+console.log(`${checks} reglas de dominio verificadas.`);
