@@ -1,0 +1,1 @@
+# Febles Car Wash · Tienda virtual\n\nProyecto de experiencia inmersiva con React, TypeScript, Three.js y API por capas. Importación del código completo en curso.\n
