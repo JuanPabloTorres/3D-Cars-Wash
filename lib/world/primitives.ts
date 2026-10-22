@@ -47,6 +47,23 @@ export function box(
     new RoundedBoxGeometry(w, h, d, 3, Math.min(r, w / 3, h / 3, d / 3)),
     material,
   );
+  if (material.userData.worldScale) {
+    const position = mesh.geometry.getAttribute("position"),
+      normal = mesh.geometry.getAttribute("normal"),
+      uv = mesh.geometry.getAttribute("uv");
+    for (let i = 0; i < position.count; i++) {
+      const nx = Math.abs(normal.getX(i)),
+        ny = Math.abs(normal.getY(i)),
+        nz = Math.abs(normal.getZ(i));
+      const u = nx > ny && nx > nz ? position.getZ(i) : position.getX(i);
+      const vv = ny > nx && ny > nz ? position.getZ(i) : position.getY(i);
+      uv.setXY(
+        i,
+        u * material.userData.worldScale,
+        vv * material.userData.worldScale,
+      );
+    }
+  }
   mesh.position.set(x, y, z);
   mesh.castShadow = mesh.receiveShadow = true;
   parent.add(mesh);

@@ -1,27 +1,12 @@
 import fs from "node:fs";
 import ts from "typescript";
 import assert from "node:assert/strict";
+import { installDocument } from "./dom-fixture.mjs";
 // Geometry construction uses Canvas only for signs; no renderer or browser needed.
-globalThis.document = {
-  createElement: () => ({
-    width: 1024,
-    height: 512,
-    getContext: () => ({
-      fillStyle: "",
-      font: "",
-      textAlign: "",
-      textBaseline: "",
-      lineWidth: 0,
-      strokeStyle: "",
-      fillRect() {},
-      fillText() {},
-      strokeRect() {},
-    }),
-  }),
-};
+installDocument();
 const output = new URL("../.world-test/", import.meta.url);
 fs.mkdirSync(output, { recursive: true });
-for (const name of ["primitives", "entities", "environment"]) {
+for (const name of ["primitives", "entities", "environment", "material-kit"]) {
   const file = new URL("../lib/world/" + name + ".ts", import.meta.url);
   let code = ts.transpileModule(fs.readFileSync(file, "utf8"), {
     compilerOptions: {
@@ -29,7 +14,12 @@ for (const name of ["primitives", "entities", "environment"]) {
       module: ts.ModuleKind.ES2022,
     },
   }).outputText;
-  code = code.replaceAll("'./primitives'", "'./primitives.js'").replaceAll('"./primitives"', '"./primitives.js"');
+  code = code
+    .replaceAll("'./primitives'", "'./primitives.js'")
+    .replaceAll('"./primitives"', '"./primitives.js"');
+  code = code
+    .replaceAll('"./material-kit"', '"./material-kit.js"')
+    .replaceAll("'./material-kit'", "'./material-kit.js'");
   fs.writeFileSync(new URL(name + ".js", output), code);
 }
 try {

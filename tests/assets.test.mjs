@@ -32,7 +32,8 @@ for (const name of ["assets", "entities", "primitives"]) {
         },
       },
     )
-    .outputText.replaceAll("'./primitives'", "'./primitives.js'").replaceAll('"./primitives"', '"./primitives.js"');
+    .outputText.replaceAll("'./primitives'", "'./primitives.js'")
+    .replaceAll('"./primitives"', '"./primitives.js"');
   fs.writeFileSync(new URL(name + ".js", output), code);
 }
 try {
@@ -143,6 +144,14 @@ try {
     assert.ok(Math.abs(size(assets.palm(7)).y - 7) < 0.01);
     assert.ok(bytesTotal < 7_000_000);
     console.log("Modelos GLB:", (bytesTotal / 1e6).toFixed(2) + " MB");
+  });
+  test("Los servicios usan el asiento y el foco extraídos del SUV detallado", () => {
+    const seat = assets.servicePart("interior"),
+      light = assets.servicePart("lights");
+    assert.ok(seat.children[0].children.length >= 3);
+    assert.ok(light.children[0].children.length >= 3);
+    assert.ok(Math.abs(size(seat).y - 1.32) < 0.01);
+    assert.ok(Math.abs(size(light).y - 0.65) < 0.01);
   });
   assets.dispose();
   console.log(checks + " pruebas de modelos reales verificadas.");

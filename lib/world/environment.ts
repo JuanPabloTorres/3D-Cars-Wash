@@ -1,5 +1,6 @@
 import * as T from "three";
 import type { WorldAssets } from "./assets";
+import { prepareArchitecturalMaterials } from "./material-kit";
 import { Reflector } from "three/addons/objects/Reflector.js";
 import {
   box,
@@ -177,6 +178,7 @@ export function buildEnvironment(
   mobile: boolean,
   assets?: WorldAssets,
 ): Environment {
+  prepareArchitecturalMaterials();
   const gates: T.Group[] = [];
   const root = new T.Group(),
     palms: T.Group[] = [],
@@ -216,19 +218,42 @@ export function buildEnvironment(
   box(fixed, 100, 0.1, 9, mat("#525e64"), 0, -0.02, 29);
   for (let i = -10; i < 11; i++)
     box(fixed, 3, 0.01, 0.15, m.cream, i * 6, 0.05, 29);
-  // Backdrop is geometry: rolling mountains, town buildings and twin towers.
-  for (let i = 0; i < 8; i++)
-    sphere(
-      fixed,
-      16,
-      mat(i % 2 ? "#53746c" : "#668274"),
-      -85 + i * 23,
-      2,
-      -66,
-      1.4,
-      0.65 + (i % 3) * 0.18,
-      0.65,
+  // Continuous terrain replaces the toy-like overlapping spherical hills.
+  const terrainGeometry = new T.PlaneGeometry(220, 90, 100, 50);
+  terrainGeometry.rotateX(-Math.PI / 2);
+  const terrainPosition = terrainGeometry.getAttribute("position");
+  const colors: number[] = [];
+  for (let i = 0; i < terrainPosition.count; i++) {
+    const x = terrainPosition.getX(i),
+      z = terrainPosition.getZ(i),
+      depth = (z + 45) / 90;
+    const ridge =
+      Math.sin(x * 0.035 + 1.7) * 5 +
+      Math.sin(x * 0.083 - 0.4) * 3.5 +
+      Math.cos(x * 0.14) * 1.8 +
+      11;
+    const rise =
+      Math.sin(Math.PI * (0.15 + depth * 0.8)) * Math.max(0, 1 - depth) * ridge;
+    const detail = Math.sin(x * 0.25 + z * 0.2) * Math.cos(z * 0.22) * 0.7;
+    terrainPosition.setY(i, Math.max(0, rise + detail));
+    const tint = new T.Color().lerpColors(
+      new T.Color("#416249"),
+      new T.Color("#8c9585"),
+      Math.min(1, rise / 19),
     );
+    colors.push(tint.r, tint.g, tint.b);
+  }
+  terrainGeometry.setAttribute(
+    "color",
+    new T.Float32BufferAttribute(colors, 3),
+  );
+  terrainGeometry.computeVertexNormals();
+  const terrain = new T.Mesh(
+    terrainGeometry,
+    new T.MeshStandardMaterial({ vertexColors: true, roughness: 1 }),
+  );
+  terrain.position.set(0, -0.2, -80);
+  fixed.add(terrain);
   for (let i = 0; i < 10; i++) {
     const x = -38 + i * 8;
     box(
@@ -254,23 +279,6 @@ export function buildEnvironment(
     for (let y = 5; y < 11; y += 2)
       box(fixed, 0.5, 0.9, 0.02, m.black, x, y, -40.23, 0.05);
   }
-  const cloudmat = mat("#f4f6f4", 1);
-  for (let i = 0; i < 8; i++) {
-    const x = -65 + i * 22;
-    for (let j = 0; j < 4; j++)
-      sphere(
-        clouds,
-        3 + (j % 2),
-        cloudmat,
-        x + j * 2,
-        26 + (i % 3) * 2,
-        -55 + (i % 2) * 14,
-        1.8,
-        0.6,
-        1,
-      );
-  }
-  batch(clouds);
   scene.add(clouds);
   // Landscape frames pedestrian entrance and lounge.
   for (const side of [-1, 1]) {
@@ -279,6 +287,16 @@ export function buildEnvironment(
       palm(root, palms, side * 20, z, 6.5 + Math.cos(z) * 0.7, assets);
       plant(fixed, side * 19, z, 1.2);
     }
+  }
+  for (const [x, z] of [
+    [-17, 7],
+    [16.9, 6],
+    [-8.5, 17],
+    [14.9, 14],
+  ] as const) {
+    palm(root, palms, x, z, 5.4, assets);
+    plant(fixed, x + 0.7, z, 0.9);
+    plant(fixed, x - 0.8, z + 0.3, 1.15);
   }
   planter(fixed, -18, -14, 5, 2);
   planter(fixed, 18, -14, 5, 2);
@@ -289,25 +307,25 @@ export function buildEnvironment(
   planter(fixed, -12, 7.4, 9, 1);
   planter(fixed, 16, 9, 1, 8);
   // Five working wash bays. Roof, steel, hoses, carts, drain channels.
-  box(fixed, 31.6, 4.6, 0.3, m.stone, 0, 2.3, -11, 0.03);
+  box(fixed, 31.6, 3.8, 0.3, m.stone, 0, 1.9, -11, 0.03);
   box(fixed, 31.6, 1.3, 0.15, m.red, 0, 0.7, -10.8, 0.01);
   for (let i = 0; i < 5; i++) {
     const x = (i - 2) * 6;
-    roof(fixed, x, -6.4, 6, 9.4, 5.3);
-    box(fixed, 5.9, 0.83, 0.3, m.steel, x, 4.9, -1.7, 0.03);
+    roof(fixed, x, -6.4, 6, 9.4, 3.8);
+    box(fixed, 5.9, 0.83, 0.3, m.steel, x, 3.45, -1.7, 0.03);
     sign(
       fixed,
       String(i + 1),
       1,
       0.65,
       x,
-      4.9,
+      3.45,
       -1.53,
       "#fff9eb",
       "#282c30",
       360,
     );
-    box(fixed, 4.6, 0.05, 0.12, m.light, x, 4.65, -5.8, 0.01);
+    box(fixed, 4.6, 0.05, 0.12, m.light, x, 3.25, -5.8, 0.01);
     for (const xx of [-2.7, 2.7]) {
       box(fixed, 0.1, 0.02, 8.5, m.gold, x + xx, 0.07, -6, 0.01);
       box(fixed, 0.12, 0.3, 0.12, m.gold, x + xx, 0.2, -1.2, 0.02);
@@ -360,15 +378,15 @@ export function buildEnvironment(
     fixed.add(cart);
   }
   // Main sign echoes the illustrated brand without baking the scene into an image.
-  brand(fixed, -12, 6.05, -4.5, 5.8);
+  brand(fixed, -12, 4.9, -4.5, 5.8);
   // Open reception: staff and other bays remain visible through the structure.
   roof(fixed, 11.2, 10, 7, 6, 3.5);
   box(fixed, 6, 0.2, 5.7, m.cream, 11.2, 0.1, 10, 0.05);
-  box(fixed, 5.9, 0.9, 1.3, m.stone, 11.2, 0.57, 11.3, 0.09);
+  box(fixed, 5.9, 0.8, 1.3, m.stone, 11.2, 0.5, 11.3, 0.09);
   for (let i = 0; i < 30; i++)
-    box(fixed, 0.085, 0.84, 0.05, m.woodLight, 8.4 + i * 0.19, 0.58, 12, 0.015);
-  box(fixed, 6.1, 0.12, 1.55, m.wood, 11.2, 1.08, 11.3, 0.06);
-  box(fixed, 5.8, 0.035, 0.035, m.light, 11.2, 0.99, 12.01, 0.008);
+    box(fixed, 0.085, 0.76, 0.05, m.woodLight, 8.4 + i * 0.19, 0.49, 12, 0.015);
+  box(fixed, 6.1, 0.12, 1.55, m.wood, 11.2, 0.94, 11.3, 0.06);
+  box(fixed, 5.8, 0.035, 0.035, m.light, 11.2, 0.85, 12.01, 0.008);
   sign(
     fixed,
     "RECEPCIÓN",
@@ -387,21 +405,6 @@ export function buildEnvironment(
   lantern(fixed, 9.1, 2.9, 10.8);
   lantern(fixed, 13.4, 2.9, 10.8);
   planter(fixed, 14, 11.25, 0.5, 0.5);
-  // Interactive countertop miniatures.
-  const compass = cylinder(fixed, 0.23, 0.06, m.gold, 9.4, 1.2, 11.3);
-  compass.rotation.x = Math.PI * 0.35;
-  sign(
-    fixed,
-    "EXPLORAR",
-    1.1,
-    0.19,
-    9.4,
-    1.21,
-    11.95,
-    "#302c25",
-    "#ba8757",
-    160,
-  );
   // Lounge furniture with cushions, lamps, coffee and waiting visitors.
   roof(fixed, -12, 12, 8, 7, 3.5);
   const lounge = new T.Group();
@@ -457,65 +460,121 @@ export function buildEnvironment(
   ];
   for (const cfg of configs) {
     const display = new T.Group();
-    display.position.set(
-      cfg.x,
-      0,
-      ["exterior", "polish", "engine"].includes(cfg.id) ? 13.8 : 17,
-    );
+    display.position.set(cfg.x, 0, 17);
     box(display, 2.8, 0.95, 2.1, m.wood, 0, 0.55, 0, 0.08);
     box(display, 2.9, 0.12, 2.2, m.woodLight, 0, 1.08, 0, 0.05);
     box(display, 2.5, 0.62, 0.06, m.steel, 0, 0.65, 1.06, 0.035);
-    sign(
-      display,
-      cfg.label,
-      2.3,
-      0.38,
-      0,
-      0.68,
-      1.1,
-      "#fff5df",
-      "#282c30",
-      cfg.id === "complete" ? 66 : 125,
-    );
-    if (cfg.id === "complete" || cfg.id === "exterior") {
-      box(display, 2, 0.18, 1.5, mat("#aabcc5", 0.2, 0.5), 0, 1.38, 0, 0.17);
-      box(display, 0.57, 0.2, 0.38, m.gold, 0.4, 1.6, 0.2, 0.05);
-      for (let i = 0; i < 15; i++)
+    if (assets && (cfg.id === "lights" || cfg.id === "interior")) {
+      const part = assets.servicePart(cfg.id);
+      part.position.y = 1.14;
+      display.add(part);
+      if (cfg.id === "interior")
+        tube(
+          display,
+          [v(0.65, 1.16, 0.7), v(1.1, 1.4, 0.4), v(0.8, 2, 0.1)],
+          0.045,
+          m.black,
+        );
+    } else if (cfg.id === "complete" || cfg.id === "exterior") {
+      const vertices: number[] = [],
+        indices: number[] = [];
+      const cols = 22,
+        rows = 18;
+      for (let y = 0; y <= rows; y++)
+        for (let x = 0; x <= cols; x++) {
+          const u = x / cols,
+            vv = y / rows;
+          vertices.push(
+            (u - 0.5) * 2.22,
+            1.25 + Math.sin(u * Math.PI) * 0.18 + vv * 0.14,
+            (vv - 0.5) * 1.6,
+          );
+          if (x < cols && y < rows) {
+            const i = y * (cols + 1) + x;
+            indices.push(
+              i,
+              i + cols + 1,
+              i + 1,
+              i + 1,
+              i + cols + 1,
+              i + cols + 2,
+            );
+          }
+        }
+      const geometry = new T.BufferGeometry();
+      geometry.setAttribute(
+        "position",
+        new T.Float32BufferAttribute(vertices, 3),
+      );
+      geometry.setIndex(indices);
+      geometry.computeVertexNormals();
+      const hood = new T.Mesh(
+        geometry,
+        new T.MeshPhysicalMaterial({
+          color: "#bdc5cd",
+          metalness: 0.7,
+          roughness: 0.22,
+          clearcoat: 1,
+          side: T.DoubleSide,
+        }),
+      );
+      hood.castShadow = hood.receiveShadow = true;
+      display.add(hood);
+      box(display, 0.55, 0.14, 0.36, m.gold, 0.4, 1.57, 0.15, 0.025);
+      for (let i = 0; i < 48; i++) {
+        const u = (Math.sin(i * 3.131) + 1) / 2,
+          vv = (Math.cos(i * 2.77) + 1) / 2;
         sphere(
           display,
-          0.08,
+          0.025 + (i % 3) * 0.005,
           m.white,
-          Math.sin(i * 3) * 0.7,
-          1.52 + (i % 2) * 0.04,
-          Math.cos(i * 3) * 0.5,
+          (u - 0.5) * 2.12,
+          1.28 + Math.sin(u * Math.PI) * 0.18 + vv * 0.14,
+          (vv - 0.5) * 1.5,
         );
-    } else if (cfg.id === "lights" || cfg.id === "engine") {
-      box(display, 1.7, 0.6, 0.65, m.steel, 0, 1.48, 0, 0.14);
-      for (const x of [-0.43, 0.43]) {
-        const light = cylinder(display, 0.24, 0.06, m.light, x, 1.51, 0.35);
-        light.rotation.x = Math.PI / 2;
       }
-    } else if (cfg.id === "polish") {
-      cylinder(display, 0.42, 0.13, m.black, 0, 1.3, 0);
-      box(display, 0.6, 0.42, 0.8, m.red, 0, 1.55, 0, 0.08);
+    } else if (cfg.id === "engine") {
+      box(display, 1.45, 0.6, 0.85, m.steel, 0, 1.48, 0, 0.035);
+      box(display, 1.5, 0.12, 0.9, m.black, 0, 1.83, 0, 0.025);
+      for (let i = 0; i < 4; i++) {
+        const x = -0.48 + i * 0.32;
+        tube(
+          display,
+          [v(x, 1.75, 0.42), v(x, 1.65, 0.75), v(x, 1.35, 0.75)],
+          0.055,
+          m.steel,
+        );
+        box(display, 0.04, 0.05, 0.8, m.steel, x, 1.92, 0, 0.01);
+      }
+      cylinder(display, 0.13, 0.12, m.gold, 0.5, 1.96, 0);
       tube(
         display,
-        [v(-0.4, 1.55, 0), v(-0.5, 1.9, 0), v(0.5, 1.9, 0), v(0.4, 1.55, 0)],
-        0.055,
+        [v(-0.6, 1.7, -0.4), v(-0.9, 1.8, -0.3), v(-0.85, 1.2, 0.4)],
+        0.06,
+        m.black,
+      );
+    } else if (cfg.id === "polish") {
+      cylinder(display, 0.4, 0.1, m.black, 0, 1.26, 0);
+      cylinder(display, 0.38, 0.07, m.gold, 0, 1.18, 0);
+      box(display, 0.5, 0.3, 0.9, m.red, 0, 1.48, 0, 0.08);
+      tube(
+        display,
+        [
+          v(-0.36, 1.5, 0),
+          v(-0.46, 1.83, 0),
+          v(0.46, 1.83, 0),
+          v(0.36, 1.5, 0),
+        ],
+        0.045,
         m.steel,
       );
     } else {
-      box(display, 1.1, 0.3, 1.15, m.black, 0, 1.42, 0, 0.12);
-      box(display, 1.1, 1.1, 0.25, m.black, 0, 1.9, -0.45, 0.15);
-      box(display, 0.55, 0.38, 0.23, m.black, 0, 2.57, -0.44, 0.1);
-      tube(
-        display,
-        [v(0.6, 1.25, 0.6), v(1, 1.6, 0.3), v(0.5, 2.2, 0.1)],
-        0.055,
-        m.steel,
-      );
+      box(display, 1.1, 0.3, 1.15, m.black, 0, 1.42, 0, 0.08);
+      box(display, 1.1, 1.1, 0.25, m.black, 0, 1.9, -0.45, 0.08);
+      box(display, 0.55, 0.38, 0.23, m.black, 0, 2.57, -0.44, 0.08);
     }
-    batch(display);
+    if (!(assets && (cfg.id === "lights" || cfg.id === "interior")))
+      batch(display);
     root.add(display);
     serviceObjects.push({ id: cfg.id, object: display });
   }

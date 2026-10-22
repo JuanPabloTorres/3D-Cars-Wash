@@ -1,27 +1,19 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 import {
   ArrowRight,
   ArrowLeft,
   X,
   RotateCcw,
-  Plus,
   Check,
   CarFront,
-  Sparkles,
-  Armchair,
   ShieldCheck,
   Clock,
   ChevronRight,
   LogIn,
-  Settings2,
-  ReceiptText,
-  Headphones,
   LoaderCircle,
-  CircleHelp,
-  CheckCircle2,
   ClipboardList,
-  Download,
 } from "lucide-react";
 import {
   CATALOG,
@@ -40,6 +32,7 @@ type Panel =
   | "order"
   | "login"
   | "admin"
+  | "saved"
   | "guarantee"
   | null;
 type Session = {
@@ -47,26 +40,11 @@ type Session = {
   email: string;
   isAdmin: boolean;
 } | null;
-const STAGES = ["requested", "waiting", "working", "ready", "delivered"];
-const GUIDANCE: Record<string, string> = {
-  requested:
-    "Tu solicitud está preparada. El personal confirma tu llegada al local.",
-  waiting:
-    "Tu vehículo espera asignación. Puedes salir de la web y regresar después.",
-  working:
-    "El carro y los empleados representan el estado confirmado por el personal.",
-  ready:
-    "El trabajo está completo. Revisa el cobro con recepción antes de recoger.",
-  delivered:
-    "Gracias por tu visita. Tu comprobante queda disponible en esta orden.",
-  cancelled: "Esta orden se canceló.",
-};
 export default function Experience() {
   const host = useRef<HTMLDivElement>(null),
     world = useRef<CarWashWorld | null>(null),
     idempotency = useRef(cryptoKey());
   const [ready, setReady] = useState(false),
-    [mapMode] = useState(true),
     [sceneOverride, setSceneOverride] = useState<VisitScene | null>(null),
     [syncState, setSyncState] = useState(""),
     [worldError, setWorldError] = useState(""),
@@ -75,7 +53,6 @@ export default function Experience() {
     [session, setSession] = useState<Session>(null),
     [catalog, setCatalog] = useState(CATALOG),
     [selected, setSelected] = useState<string[]>([]),
-    [serviceIndex, setServiceIndex] = useState(1),
     [vehicle, setVehicle] = useState({
       kind: "SUV",
       color: "Plata",
@@ -91,6 +68,7 @@ export default function Experience() {
     [adminOrder, setAdminOrder] = useState<any>(null),
     [bay, setBay] = useState(4),
     [method, setMethod] = useState("cash");
+  const [tabletHost, setTabletHost] = useState<HTMLElement | null>(null);
   const selectRef = useRef<(id: string) => void>(() => {});
   const note = useCallback((msg: string) => {
     setToast(msg);
@@ -105,19 +83,70 @@ export default function Experience() {
   }, []);
   selectRef.current = (id: string) => {
     if (id.startsWith("service:")) {
-      const serviceId = id.slice(8);
-      const index = CATALOG.findIndex((s) => s.id === serviceId);
-      if (index >= 0) setServiceIndex(index);
+      toggleService(id.slice(8));
       open("services", "services");
+      return;
     }
-    if (id === "reception") open("reception", "reception");
-    if (id === "services") open("services", "services");
-    if (id === "vehicle") open(order ? "order" : "vehicle", "vehicle");
-    if (id === "lounge") {
-      world.current?.navigate("lounge");
-      setPanel(null);
-      setIntro(false);
-      note("Relájate en el lounge o selecciona tu carro para ver su cuidado.");
+    if (id.startsWith("saved:")) {
+      selectOrder(id.slice(6));
+      return;
+    }
+    switch (id) {
+      case "reception":
+        open("reception", "reception");
+        break;
+      case "services":
+        open("services", "services");
+        break;
+      case "vehicle":
+        open(order ? "order" : "vehicle", "vehicle");
+        break;
+      case "lounge":
+        go("lounge");
+        break;
+      case "overview":
+        go("overview");
+        break;
+      case "review":
+        open(
+          vehicle.plate ? "quote" : "vehicle",
+          vehicle.plate ? "reception" : "vehicle",
+        );
+        break;
+      case "change-services":
+        open("services", "services");
+        break;
+      case "save-order":
+        saveOrder();
+        break;
+      case "demo":
+        startDemo();
+        break;
+      case "demo-next":
+        demoNext();
+        break;
+      case "receipt":
+        receipt();
+        break;
+      case "guarantee":
+        open("guarantee", "reception");
+        break;
+      case "order-details":
+        open(order ? "order" : "reception", order ? "vehicle" : "reception");
+        break;
+      case "call-business":
+        location.href = "tel:7874366309";
+        break;
+      case "admin":
+        showAdmin();
+        break;
+      case "my-orders":
+        if (demo && order) open("order", "vehicle");
+        else if (session) {
+          loadOrders();
+          open("saved", "reception");
+        } else open("login");
+        break;
     }
   };
   useEffect(() => {
@@ -141,6 +170,7 @@ export default function Experience() {
         }
         instance = loaded;
         world.current = loaded;
+        setTabletHost(loaded.getTabletHost());
       })
       .catch((e) => {
         console.error("Febles 3D initialization", e);
@@ -202,7 +232,6 @@ export default function Experience() {
         JSON.stringify({ vehicle, selected }),
       );
     } catch {}
-    world.current?.setSelected(selected);
   }, [vehicle, selected]);
   const loadOrders = useCallback(async () => {
     if (!session) return;
@@ -241,7 +270,6 @@ export default function Experience() {
       world.current?.setVehicleKind(vehicle.kind);
       world.current?.setVisitDetails(vehicle.plate, []);
     }
-    world.current?.setSelected(selected);
   }, [order, ready, vehicle.color, vehicle.kind, vehicle.plate, selected]);
   useEffect(() => {
     if (!order || demo) return;
@@ -263,13 +291,6 @@ export default function Experience() {
     }, 15000);
     return () => window.clearInterval(tick);
   }, [order?.id, demo]);
-  useEffect(() => {
-    if (ready && panel === "services")
-      world.current?.focusService(catalog[serviceIndex].id);
-  }, [ready, panel, serviceIndex, catalog]);
-  useEffect(() => {
-    if (ready) world.current?.setInteraction(!!panel);
-  }, [ready, panel]);
   const toggleService = (id: string) => {
     idempotency.current = cryptoKey();
     setSelected((prev) =>
@@ -288,6 +309,58 @@ export default function Experience() {
   const q = selected.length
     ? quote(selected)
     : { items: [], total: 0, tasks: [] };
+  useEffect(() => {
+    if (!ready) return;
+    world.current?.setExperienceView({
+      panel,
+      intro,
+      selected,
+      vehicle:
+        order && !["quote", "vehicle", "services"].includes(panel ?? "")
+          ? { kind: order.kind, color: order.color, plate: order.plate }
+          : vehicle,
+      total:
+        order && !["quote", "vehicle", "services"].includes(panel ?? "")
+          ? order.total
+          : q.total,
+      items:
+        order && !["quote", "vehicle", "services"].includes(panel ?? "")
+          ? order.items
+          : q.items,
+      tasks: order?.tasks ?? [],
+      orderId: order?.id,
+      status: order?.status,
+      bay: order?.bay,
+      paid: order?.payment_status === "paid",
+      demo,
+      busy,
+      catalog,
+      session: !!session,
+      admin: !!session?.isAdmin,
+      saved: myOrders,
+      activeOrder: order
+        ? { plate: order.plate, tasks: order.tasks }
+        : undefined,
+    });
+  }, [
+    ready,
+    panel,
+    intro,
+    selected,
+    vehicle,
+    order,
+    demo,
+    busy,
+    session,
+    myOrders,
+    catalog,
+  ]);
+  useEffect(() => {
+    if (ready && order && intro) {
+      setIntro(false);
+      world.current?.navigate("vehicle");
+    }
+  }, [ready, order, intro]);
   const startDemo = () => {
     if (!selected.length) {
       setSelected(["complete", "lights"]);
@@ -486,33 +559,24 @@ export default function Experience() {
     return () => window.removeEventListener("keydown", handle);
   }, [panel]);
   const scene = sceneOverride ?? sceneForVisit(panel, order?.status, !intro);
-  const currentService = catalog[serviceIndex];
   return (
-    <main
-      className={
-        "experience " +
-        (mapMode ? "map-mode" : "store-mode") +
-        (panel ? " has-panel" : "")
-      }
-      data-scene={scene}
-    >
+    <main className="experience spatial-store" data-scene={scene}>
       <div className="world-host" ref={host} />
-      <div className="world-vignette" />
-      {mapMode && !ready && !worldError && (
+      {!ready && !worldError && (
         <div className="loading-world">
           <div className="logo-mark">
             f<span>c</span>
           </div>
           <h1>Estamos preparando tu visita.</h1>
-          <p>Recepción, empleados y carros. Todo cobra vida.</p>
+          <p>Un local vivo. Tu carro, tu recorrido.</p>
           <span className="loading-track" />
           <small>CARGANDO EL LOCAL 3D</small>
         </div>
       )}
-      {mapMode && worldError && (
+      {worldError && (
         <div className="loading-world">
           <CarFront size={45} />
-          <h1>Necesitamos volver a encender el motor.</h1>
+          <h1>No pudimos abrir el local 3D.</h1>
           <p>{worldError}</p>
           <button className="primary" onClick={() => location.reload()}>
             Intentar de nuevo
@@ -521,20 +585,20 @@ export default function Experience() {
       )}
       {ready && (
         <>
-          {!intro && (
-            <button
-              className="return-to-world"
-              onClick={() => go("overview")}
-              aria-label="Volver a la entrada"
-            >
-              <ArrowLeft size={18} />
-            </button>
-          )}
+          <button
+            className="return-to-world"
+            onClick={() => {
+              if (panel) close();
+              go("overview");
+            }}
+            aria-label="Volver a la entrada"
+          >
+            <ArrowLeft size={18} />
+          </button>
           <button
             className="account-orb"
-            onClick={() => open(session ? "reception" : "login")}
-            aria-label={session ? "Mi cuenta y visitas" : "Entrar a mi cuenta"}
-            title={session ? session.name : "Mi cuenta"}
+            onClick={() => open(session ? "reception" : "login", "reception")}
+            aria-label="Mi cuenta"
           >
             {session ? (
               session.name.charAt(0).toUpperCase()
@@ -542,142 +606,26 @@ export default function Experience() {
               <LogIn size={18} />
             )}
           </button>
-          {intro && !panel && !order && (
-            <div className="arrival-caption">
-              <p>Bienvenido a Febles.</p>
-              <button onClick={() => open("reception", "reception")}>
-                Tu anfitriona te espera en recepción <ArrowRight size={17} />
-              </button>
-              <small>Selecciona una persona, un objeto o tu carro.</small>
-            </div>
-          )}
-          {!intro && !panel && !order && (
-            <button
-              className="scene-return"
-              onClick={() => open("reception", "reception")}
-            >
-              ¿Te ayudamos en recepción? <ArrowRight size={15} />
-            </button>
-          )}
-          {order && !panel && (
-            <div className="visit-caption" aria-live="polite">
-              <button
-                className="vehicle-caption"
-                onClick={() => open("order", "vehicle")}
-              >
-                <span className="caption-indicator" />
-                <span>
-                  <small>
-                    {demo ? "RECORRIDO DE EJEMPLO" : "TU VEHÍCULO"} ·{" "}
-                    {order.plate}
-                  </small>
-                  <strong>
-                    {STATUS_LABEL[order.status as OrderStatus]}
-                    {order.bay && order.status === "working"
-                      ? " · Cubículo " + String(order.bay).padStart(2, "0")
-                      : ""}
-                  </strong>
-                </span>
-                <ArrowRight size={17} />
-              </button>
-              {demo && order.status !== "delivered" && (
-                <button className="demo-step" onClick={demoNext}>
-                  Siguiente paso del ejemplo <ArrowRight size={15} />
-                </button>
-              )}
-              {syncState && (
-                <p className="sync-warning" role="status">
-                  {syncState}
-                </p>
-              )}
-            </div>
-          )}
         </>
       )}
-      {panel && (
-        <div
-          className={
-            "panel-position panel-" +
-            panel +
-            " " +
-            (panel === "admin" ? "admin-position" : "")
-          }
-        >
+      {tabletHost &&
+        panel === "vehicle" &&
+        createPortal(
           <section
-            className={
-              "interaction-panel " + (panel === "admin" ? "admin-panel" : "")
-            }
-            role="dialog"
-            aria-label={
-              panel === "admin" ? "Administración" : "Interacción en el local"
-            }
+            className="tablet-screen"
+            aria-label="Tableta de tu vehículo"
           >
-            <button className="close-panel" onClick={close} aria-label="Cerrar">
-              <X size={18} />
-            </button>
-            {panel === "reception" && (
-              <>
-                <div className="overline">RECEPCIÓN · TU ANFITRIONA</div>
-                <h2>¡Hola! ¿Qué hacemos por tu carro?</h2>
-                <div className="reception-options">
-                  <button
-                    onClick={() => open(order ? "order" : "vehicle", "vehicle")}
-                  >
-                    <CarFront size={19} />
-                    <span>{order ? "Ver mi carro" : "Preparar mi visita"}</span>
-                    <ArrowRight size={15} />
-                  </button>
-                  <button onClick={() => open("services", "services")}>
-                    <Sparkles size={19} />
-                    <span>Conocer los servicios</span>
-                    <ArrowRight size={15} />
-                  </button>
-                  <button onClick={() => go("lounge")}>
-                    <Armchair size={19} />
-                    <span>Pasar al lounge</span>
-                    <ArrowRight size={15} />
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (session) loadOrders();
-                      else open("login");
-                    }}
-                  >
-                    <ReceiptText size={19} />
-                    <span>Mis visitas guardadas</span>
-                    <ArrowRight size={15} />
-                  </button>
-                </div>
-                {myOrders.length > 0 && (
-                  <div className="saved-orders">
-                    {myOrders.slice(0, 3).map((o) => (
-                      <button key={o.id} onClick={() => selectOrder(o.id)}>
-                        {o.plate} · {STATUS_LABEL[o.status as OrderStatus]}
-                        <ChevronRight size={14} />
-                      </button>
-                    ))}
-                  </div>
-                )}
-                <div className="conversation-links">
-                  <button className="subtle-link" onClick={startDemo}>
-                    Vivir el recorrido de ejemplo <ArrowRight size={13} />
-                  </button>
-                  {session?.isAdmin && (
-                    <button className="subtle-link" onClick={showAdmin}>
-                      <Settings2 size={14} />
-                      Administrar local
-                    </button>
-                  )}
-                </div>
-              </>
-            )}
+            <button
+              className="tablet-close"
+              onClick={() => open("reception", "reception")}
+              aria-label="Volver a recepción"
+            >
+              <X />
+            </button>{" "}
             {panel === "vehicle" && (
               <>
                 <div className="overline">01 / TU VISITA</div>
                 <h2>Este es tu carro.</h2>
-                <p className="panel-copy">
-                  Elige el color y el modelo que representarán tu vehículo.
-                </p>
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
@@ -752,10 +700,7 @@ export default function Experience() {
                   </label>
                   <div className="mini-note">
                     <Clock size={16} />
-                    <span>
-                      Esto prepara tu solicitud. La llegada física se confirma
-                      en recepción.
-                    </span>
+                    <span>La llegada se confirma en el local.</span>
                   </div>
                   <button className="primary full" type="submit">
                     Vamos a los servicios <ArrowRight size={16} />
@@ -763,150 +708,27 @@ export default function Experience() {
                 </form>
               </>
             )}
-            {panel === "services" && (
-              <>
-                <div className="overline">EL TALLER DE SERVICIOS</div>
-                <div className="service-carousel">
-                  <div className="carousel-controls">
-                    <button
-                      aria-label="Servicio anterior"
-                      onClick={() =>
-                        setServiceIndex(
-                          (serviceIndex + catalog.length - 1) % catalog.length,
-                        )
-                      }
-                    >
-                      <ArrowLeft size={16} />
-                    </button>
-                    <span>
-                      0{serviceIndex + 1} <i>/ 0{catalog.length}</i>
-                    </span>
-                    <button
-                      aria-label="Servicio siguiente"
-                      onClick={() =>
-                        setServiceIndex((serviceIndex + 1) % catalog.length)
-                      }
-                    >
-                      <ArrowRight size={16} />
-                    </button>
-                  </div>
-                  <h2>{currentService.name}</h2>
-                  <p>{currentService.description}</p>
-                  <div className="service-price">
-                    <strong>{money(currentService.price)}</strong>
-                    <span>
-                      <Clock size={12} /> ~{currentService.minutes} min
-                    </span>
-                  </div>
-                  <button
-                    className={
-                      "add-service " +
-                      (selected.includes(currentService.id) ? "selected" : "")
-                    }
-                    onClick={() => toggleService(currentService.id)}
-                  >
-                    {selected.includes(currentService.id) ? (
-                      <>
-                        <Check size={17} />
-                        Seleccionado · quitar
-                      </>
-                    ) : (
-                      <>
-                        <Plus size={17} />
-                        Agregar a mi visita
-                      </>
-                    )}
-                  </button>
-                </div>
-                <div className="service-dots">
-                  {catalog.map((s, i) => (
-                    <button
-                      key={s.id}
-                      aria-label={"Ver " + s.name}
-                      className={
-                        (i === serviceIndex ? "current " : "") +
-                        (selected.includes(s.id) ? "picked" : "")
-                      }
-                      onClick={() => setServiceIndex(i)}
-                    />
-                  ))}
-                </div>
-                <div className="selection-summary">
-                  <span>
-                    {selected.length} servicio{selected.length !== 1 ? "s" : ""}{" "}
-                    <b>{money(q.total)}</b>
-                  </span>
-                  <button
-                    disabled={!selected.length}
-                    className="primary"
-                    onClick={() => {
-                      if (!vehicle.plate) open("vehicle", "vehicle");
-                      else open("quote", "reception");
-                    }}
-                  >
-                    Revisar <ArrowRight size={15} />
-                  </button>
-                </div>
-                <p className="pricing-note">
-                  Precios y tiempos de ejemplo. No son tarifas oficiales.
-                </p>
-              </>
-            )}
-            {panel === "quote" && (
-              <>
-                <div className="overline">03 / ANTES DE EMPEZAR</div>
-                <h2>Tu visita, lista.</h2>
-                <div className="paper-receipt">
-                  <div className="receipt-brand">
-                    FEBLES <small>CAR WASH</small>
-                  </div>
-                  <div className="receipt-vehicle">
-                    <CarFront size={16} />
-                    {vehicle.kind} · {vehicle.color} · {vehicle.plate}
-                  </div>
-                  {q.items.map((s) => (
-                    <div className="receipt-line" key={s.id}>
-                      <span>{s.name}</span>
-                      <b>{money(s.price)}</b>
-                    </div>
-                  ))}
-                  <div className="receipt-total">
-                    <span>Total ilustrativo</span>
-                    <strong>{money(q.total)}</strong>
-                  </div>
-                  <small>
-                    Sin cobro en línea · Configuración fiscal pendiente
-                  </small>
-                </div>
-                <p className="panel-copy small-copy">
-                  Guardar crea una solicitud. Recepción confirma tu llegada y la
-                  aceptación operativa del servicio.
-                </p>
-                <button
-                  className="primary full"
-                  onClick={saveOrder}
-                  disabled={busy || !selected.length}
-                >
-                  {busy ? (
-                    <LoaderCircle className="spin" size={17} />
-                  ) : (
-                    <Check size={17} />
-                  )}{" "}
-                  {session
-                    ? "Guardar solicitud"
-                    : "Entrar y guardar mi solicitud"}
-                </button>
-                <button
-                  className="secondary full"
-                  onClick={() => open("services", "services")}
-                >
-                  Cambiar servicios
-                </button>
-                <button className="subtle-link" onClick={startDemo}>
-                  Ver el recorrido como demostración <ArrowRight size={13} />
-                </button>
-              </>
-            )}
+          </section>,
+          tabletHost,
+        )}
+      {(panel === "login" || panel === "admin") && (
+        <div
+          className={
+            "panel-position panel-" +
+            panel +
+            (panel === "admin" ? " admin-position" : "")
+          }
+        >
+          <section
+            className={
+              "interaction-panel " + (panel === "admin" ? "admin-panel" : "")
+            }
+            role="dialog"
+            aria-label={panel === "admin" ? "Administración" : "Entrar"}
+          >
+            <button className="close-panel" onClick={close} aria-label="Cerrar">
+              <X size={18} />
+            </button>{" "}
             {panel === "login" && (
               <>
                 <div className="login-emblem">
@@ -945,161 +767,6 @@ export default function Experience() {
                   }}
                 >
                   Seguir explorando
-                </button>
-              </>
-            )}
-            {panel === "order" && order && (
-              <>
-                <div className="overline">
-                  {demo ? "RECORRIDO DE DEMOSTRACIÓN" : "TU SOLICITUD GUARDADA"}
-                </div>
-                <div className={"order-status status-" + order.status}>
-                  <span />
-                  {STATUS_LABEL[order.status as OrderStatus]}
-                </div>
-                <h2>
-                  {order.status === "delivered"
-                    ? "Gracias por confiar."
-                    : "El cuidado de tu carro."}
-                </h2>
-                <div className="order-identity">
-                  <CarFront size={18} />
-                  <span>
-                    {order.kind} · {order.plate}
-                  </span>
-                  <small>#{order.id.slice(0, 8).toUpperCase()}</small>
-                </div>
-                <div className="journey-stages">
-                  {STAGES.map((s, i) => (
-                    <span
-                      key={s}
-                      className={
-                        STAGES.indexOf(order.status) >= i ? "done" : ""
-                      }
-                      title={STATUS_LABEL[s as OrderStatus]}
-                    >
-                      {STAGES.indexOf(order.status) > i ? (
-                        <Check size={12} />
-                      ) : (
-                        i + 1
-                      )}
-                    </span>
-                  ))}
-                </div>
-                <p className="panel-copy small-copy">
-                  {GUIDANCE[order.status]}
-                </p>
-                <div className="task-list">
-                  {order.tasks.map((task: any, i: number) => (
-                    <div key={task.id}>
-                      <span
-                        className={
-                          task.status === "done" ? "task-done" : "task-dot"
-                        }
-                      >
-                        {task.status === "done" ? <Check size={11} /> : i + 1}
-                      </span>
-                      <span>{task.name}</span>
-                      <small>
-                        {task.status === "done"
-                          ? "Listo"
-                          : order.status === "working" &&
-                              order.tasks.find((t: any) => t.status !== "done")
-                                ?.id === task.id
-                            ? "En curso"
-                            : "Pendiente"}
-                      </small>
-                    </div>
-                  ))}
-                </div>
-                <div className="order-amount">
-                  <span>
-                    Total ilustrativo <b>{money(order.total)}</b>
-                  </span>
-                  <small
-                    className={order.payment_status === "paid" ? "paid" : ""}
-                  >
-                    {order.payment_status === "paid"
-                      ? "Cobro registrado"
-                      : "Pago pendiente"}
-                  </small>
-                </div>
-                {demo && order.status !== "delivered" && (
-                  <button className="primary full" onClick={demoNext}>
-                    {order.status === "requested"
-                      ? "Simular llegada"
-                      : order.status === "waiting"
-                        ? "Simular asignación"
-                        : order.status === "working"
-                          ? order.tasks.some((t: any) => t.status !== "done")
-                            ? "Completar siguiente tarea"
-                            : "Finalizar trabajo"
-                          : order.payment_status !== "paid"
-                            ? "Simular cobro"
-                            : "Simular entrega"}
-                    <ArrowRight size={16} />
-                  </button>
-                )}
-                {demo && (
-                  <p className="pricing-note">
-                    Demostración local. No guarda una venta ni mueve dinero.
-                  </p>
-                )}
-                <div className="order-actions">
-                  <button className="secondary" onClick={receipt}>
-                    <Download size={15} />
-                    Comprobante
-                  </button>
-                  <button
-                    className="secondary"
-                    onClick={() => open("guarantee")}
-                  >
-                    <ShieldCheck size={15} />
-                    Garantía
-                  </button>
-                </div>
-                {demo && order.status === "delivered" && (
-                  <button
-                    className="subtle-link"
-                    onClick={() => {
-                      setOrder(null);
-                      setDemo(false);
-                      go("overview");
-                      setIntro(true);
-                    }}
-                  >
-                    Volver a la entrada <ArrowRight size={13} />
-                  </button>
-                )}
-              </>
-            )}
-            {panel === "guarantee" && (
-              <>
-                <div className="login-emblem">
-                  <ShieldCheck size={36} />
-                </div>
-                <div className="overline">UN POCO MÁS DE TRANQUILIDAD</div>
-                <h2>¿Llegó la lluvia?</h2>
-                <p className="panel-copy">
-                  Febles anuncia una garantía de lluvia de 24 horas.
-                </p>
-                <div className="mini-note">
-                  <CircleHelp size={18} />
-                  <span>
-                    El inicio del plazo, los servicios cubiertos y los usos
-                    permitidos deben confirmarse con el negocio. Esta versión no
-                    autoriza reclamaciones automáticamente.
-                  </span>
-                </div>
-                <a href="tel:7874366309" className="primary full">
-                  <Headphones size={17} />
-                  Consultar con Febles
-                </a>
-                <button
-                  className="secondary full"
-                  onClick={() => open(order ? "order" : "reception")}
-                >
-                  Volver a mi visita
                 </button>
               </>
             )}
@@ -1323,18 +990,24 @@ export default function Experience() {
             )}
             {busy && panel === "admin" && (
               <p className="busy-note">
-                <LoaderCircle size={14} className="spin" />
+                <LoaderCircle className="spin" size={14} />
                 Actualizando…
               </p>
             )}
           </section>
         </div>
       )}
-      {toast && (
-        <div className="world-toast" role="status">
-          <CheckCircle2 size={17} />
-          {toast}
-          <button onClick={() => setToast("")} aria-label="Cerrar aviso">
+      {(error || toast || syncState) && (
+        <div className="world-toast" role={error ? "alert" : "status"}>
+          <span>{error || toast || syncState}</span>
+          <button
+            onClick={() => {
+              setError("");
+              setToast("");
+              setSyncState("");
+            }}
+            aria-label="Cerrar aviso"
+          >
             <X size={14} />
           </button>
         </div>
@@ -1342,6 +1015,7 @@ export default function Experience() {
     </main>
   );
 }
+
 function cryptoKey() {
   return typeof crypto !== "undefined" && crypto.randomUUID
     ? crypto.randomUUID()

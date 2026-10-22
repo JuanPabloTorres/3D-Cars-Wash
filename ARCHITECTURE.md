@@ -1,4 +1,4 @@
-# Febles virtual · v0.3
+# Febles virtual · v0.4
 
 Estado: primera implementación funcional; importes ilustrativos; no certificada para operación comercial. El mundo es una interpretación del local, no un levantamiento arquitectónico. La inspección visual en navegador quedó bloqueada por la política del navegador de pruebas.
 
@@ -82,3 +82,11 @@ La interfaz elimina el dock, el branding flotante y el HUD grande. Los marcadore
 El tráfico ambiental ya iniciado termina su maniobra antes de mover el carro del cliente. Una nueva maniobra ambiental no empieza mientras el cliente tiene una ruta pendiente. Esta coordinación visual no cambia estados SQL. La lógica operativa y sus restricciones no dependen de que termine una animación.
 
 Límites: Pickup usa provisionalmente la carrocería SUV y Compacto un sedán reducido; la interfaz lo declara para Pickup. Las puertas del nuevo modelo no están articuladas. Los gestos y marcha son adaptaciones sobre el rig, no captura de movimiento. Verificación visual, accesibilidad de todo el recorrido y rendimiento Android/iOS siguen pendientes; no se afirma una réplica exacta de las referencias.
+
+## Evolución v0.4 · interfaz espacial
+
+El director delega la composición en `SpatialInterface`. `WorldSurface` fabrica superficies 3D con regiones de acción y controles semánticos de teclado; `InteractionRegistry` resuelve intención por raycast y coordenadas UV, sin activar objetos ocultos u ocluidos. La selección de un objeto despacha un identificador de acción a React; nunca ejecuta código del catálogo ni concede permisos. `shotFor` ofrece encuadres declarativos y comprobables para escritorio y móvil, sin navegación libre por ejes.
+
+Los formularios del vehículo se montan con un portal React sobre un `CSS3DObject`; WebGL y CSS3D comparten cámara y transformación. Su presentación se limita a la fase de la tableta. Los documentos de cotización y orden se dibujan sobre geometría del mostrador. La vista de estado lleva una copia explícita de las tareas y el identificador de la orden para que explorar otro servicio no cambie los datos que se muestran junto al carro.
+
+El asiento y el foco del expositor se extraen de las piezas del GLB ya cargado. Madera, piedra y terreno usan recursos originales; el cielo utiliza el objeto Sky de Three.js. Continúan compartiéndose geometrías/texturas inmutables. `tests/spatial.test.mjs` valida regiones, oclusión, visibilidad, acceso al mostrador completo y proyección móvil; `AUDIT-V0.4.md` especifica el límite de esa evidencia frente a la revisión artística pendiente.

@@ -101,7 +101,63 @@ export class WorldAssets {
     const scale = (female ? 1.73 : 1.82) / height;
     rig.scale.multiplyScalar(scale);
     rig.position.y -= bounds.min.y * scale;
+    if (["#454248", "#37383b"].includes(shirt)) {
+      const material = new T.MeshStandardMaterial({
+        color: "#c7312c",
+        roughness: 0.9,
+        side: T.DoubleSide,
+      });
+      for (const side of [-1, 1]) {
+        const shape = new T.Shape();
+        shape.moveTo(0, 0);
+        shape.lineTo(side * 0.09, -0.035);
+        shape.lineTo(side * 0.045, -0.115);
+        shape.lineTo(0, -0.06);
+        shape.closePath();
+        const collar = new T.Mesh(new T.ShapeGeometry(shape), material);
+        collar.position.set(side * 0.024, female ? 1.46 : 1.55, 0.115);
+        root.add(collar);
+      }
+    }
     return { root, rig, mixer };
+  }
+  servicePart(id: "lights" | "interior") {
+    const source = this.models.get("suv")!.scene;
+    source.updateMatrixWorld(true);
+    const root = new T.Group(),
+      part = new T.Group();
+    root.add(part);
+    source.traverse((o) => {
+      if (!(o instanceof T.Mesh)) return;
+      const center = new T.Box3().setFromObject(o).getCenter(new T.Vector3());
+      const keep =
+        id === "lights"
+          ? /headlamp|projector/i.test(o.name) && center.z > 0
+          : /contoured.seat|adjustable.headrest/i.test(o.name) &&
+            center.x < 0.5 &&
+            center.z > 0;
+      if (!keep) return;
+      const mesh = new T.Mesh(
+        o.geometry.clone().applyMatrix4(o.matrixWorld),
+        o.material,
+      );
+      mesh.castShadow = mesh.receiveShadow = true;
+      part.add(mesh);
+    });
+    if (!part.children.length)
+      throw new Error("El recurso no contiene el componente " + id);
+    part.rotation.y = Math.PI / 2;
+    const bounds = new T.Box3().setFromObject(part),
+      size = bounds.getSize(new T.Vector3()),
+      center = bounds.getCenter(new T.Vector3());
+    const scale = (id === "lights" ? 0.65 : 1.32) / size.y;
+    part.scale.setScalar(scale);
+    part.position.set(
+      -center.x * scale,
+      -bounds.min.y * scale,
+      -center.z * scale,
+    );
+    return root;
   }
   sofa() {
     const root = new T.Group(),

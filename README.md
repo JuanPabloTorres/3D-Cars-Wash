@@ -1,6 +1,6 @@
 # Febles · Car wash virtual
 
-Versión 0.3 de una tienda 3D animada con cámara dirigida por intenciones. Three.js, React/TypeScript, API por capas y SQL D1.
+Versión 0.4 de una tienda 3D animada con cámara dirigida por intenciones. Three.js, React/TypeScript, API por capas y SQL D1.
 
 ## Recorrido
 
@@ -20,8 +20,14 @@ Consulta `ARCHITECTURE.md` para contratos, decisiones, seguridad, fuentes y sigu
 
 ## Experiencia y verificación
 
-`AUDIT-V0.3.md` documenta el cambio de dirección artística y la aceptación pendiente. La escena usa modelos GLB detallados de vehículos, humanos con animación esquelética, sofás y palmeras. No se utilizan imágenes de fondo para simular el mundo. Las referencias conceptuales orientan el encuadre y los materiales; la equivalencia visual todavía requiere revisión humana sobre WebGL.
+`AUDIT-V0.4.md` documenta el cambio de dirección artística y la aceptación pendiente. La escena usa modelos GLB detallados de vehículos, humanos con animación esquelética, sofás y palmeras. No se utilizan imágenes de fondo para simular el mundo. Las referencias conceptuales orientan el encuadre y los materiales; la equivalencia visual todavía requiere revisión humana sobre WebGL.
 
 Los seis modelos de ejecución suman 5,91 MB. Meshopt comprime la geometría y WebP reduce las texturas. Los vehículos conservan cuatro ruedas animadas y pintura independiente; el mundo agrupa su geometría por material. Fuentes y licencias: `public/models/studio/NOTICE.md`.
 
 `pnpm test` verifica dominio, SQL, rutas, decodificación de los GLB reales, escala, esqueletos independientes, animación sin deriva y presupuesto de recursos. El navegador de pruebas tiene WebGL deshabilitado; estas comprobaciones no sustituyen la aceptación visual ni la medición en móviles reales.
+
+## Interfaz dentro del local
+
+Recepción se maneja con una brújula, un carro en miniatura y un documento sobre el mostrador. Los servicios se eligen en sus expositores. Cotización, orden y garantía usan tablillas 3D; los datos del carro se editan en una tableta CSS3D. No hay paneles de cliente superpuestos al mundo. Los encuadres están centralizados en `lib/world/shots.ts` y la selección respeta obstáculos y objetos ocultos.
+
+Las ocho referencias se revisaron directamente. Se documentan las diferencias artísticas y la aceptación visual pendiente en la auditoría; no se afirma una réplica exacta ni se utilizan las ilustraciones como fondos.

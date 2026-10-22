@@ -1,24 +1,20 @@
 import * as T from "three";
+import { Sky } from "three/addons/objects/Sky.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { WorldAssets } from "./world/assets";
+import { SpatialInterface, type SpatialView } from "./world/spatial-interface";
+import { InteractionRegistry } from "./world/interactions";
 import { Car, Person, WaterEffect } from "./world/entities";
 import { buildEnvironment, type Environment } from "./world/environment";
 import { v, box, cylinder, materials as m } from "./world/primitives";
 import { bayPosition } from "./visit-view";
 import { CATALOG, STATUS_LABEL, type OrderStatus } from "./domain";
-export type Destination =
-  "overview" | "reception" | "services" | "vehicle" | "lounge" | "exit";
+import { shotFor, type Destination } from "./world/shots";
+export type { Destination } from "./world/shots";
 export type WorldCallbacks = {
   onReady: () => void;
   onSelect: (id: string) => void;
   onError: (message: string) => void;
-};
-type Pin = {
-  id: string;
-  name: string;
-  sub: string;
-  position: T.Vector3;
-  el: HTMLButtonElement;
 };
 type Ambient = {
   car: Car;
@@ -49,25 +45,21 @@ export class CarWashWorld {
   ambient: Ambient[] = [];
   customerWorker: Person;
   customerWater: WaterEffect;
-  pinLayer: HTMLDivElement;
-  pins: Pin[] = [];
-  ring: T.Mesh;
+  interactions = new InteractionRegistry();
+  interface: SpatialInterface;
+  private lastPanel: string | null = null;
   resizeObserver: ResizeObserver;
   ray = new T.Raycaster();
   pointer = new T.Vector2();
   destination: Destination = "overview";
-  selected: string[] = [];
   orderStatus = "";
   orderBay: number | null = null;
   taskName = "";
   plate = "Tu vehículo";
-  currentTarget = v(1, 1.7, -1);
-  goalTarget = v(1, 1.7, -1);
-  goalPos = v(-6, 4, 24);
-  animating = true;
-  interactionOpen = false;
-  lastFrame = 0;
-  frameAverage = 16;
+  currentTarget = v(2, 1.55, 3);
+  goalTarget = v(2, 1.55, 3);
+  goalPos = v(-2, 2.65, 25);
+  goalFov = this.mobile ? 61 : 48;
   qualityFrames = 0;
   trafficOwner: Ambient | null = null;
   followOffset: T.Vector3 | null = null;
@@ -115,6 +107,15 @@ export class CarWashWorld {
     host.appendChild(this.canvas);
     this.scene.background = new T.Color("#bdd9e4");
     this.scene.fog = new T.Fog("#cedfe1", 65, 160);
+    const sky = new Sky();
+    sky.scale.setScalar(10000);
+    sky.userData.ignorePicking = true;
+    sky.material.uniforms.turbidity.value = 6;
+    sky.material.uniforms.rayleigh.value = 1.5;
+    sky.material.uniforms.mieCoefficient.value = 0.007;
+    sky.material.uniforms.mieDirectionalG.value = 0.8;
+    sky.material.uniforms.sunPosition.value.set(-22, 35, 18);
+    this.scene.add(sky);
     this.camera = new T.PerspectiveCamera(this.mobile ? 61 : 48, 1, 0.1, 220);
     this.camera.position.copy(this.goalPos);
     this.scene.add(new T.HemisphereLight("#fff3e0", "#7a8792", 1.7));
@@ -143,7 +144,7 @@ export class CarWashWorld {
     this.environment = buildEnvironment(this.scene, this.mobile, assets);
     this.avatar = new Person(0, 18, false, "#e5e4df", assets);
     this.avatar.group.rotation.y = Math.PI;
-    this.avatar.group.visible = false; // first-person visit: no avatar blocks the customer's car.
+    this.avatar.group.visible = true;
     this.persons.push(this.avatar);
     this.scene.add(this.avatar.group);
     this.receptionist = new Person(11.1, 10, true, "#454248", assets);
@@ -203,43 +204,47 @@ export class CarWashWorld {
     visitor2.group.rotation.y = Math.PI * 0.6;
     this.scene.add(visitor2.group);
     this.persons.push(visitor2);
-    const ringMat = new T.MeshBasicMaterial({
-      color: "#e8c47c",
-      transparent: true,
-      opacity: 0.85,
-      side: T.DoubleSide,
-    });
-    this.ring = new T.Mesh(new T.RingGeometry(1.5, 1.55, 64), ringMat);
-    this.ring.rotation.x = -Math.PI / 2;
-    this.scene.add(this.ring);
-    this.pinLayer = document.createElement("div");
-    this.pinLayer.className = "world-pins";
-    host.appendChild(this.pinLayer);
-    this.addPin(
-      "reception",
-      "Recepción",
-      "Habla con tu anfitriona",
-      v(11.1, 2.1, 10.4),
+    this.interface = new SpatialInterface(
+      this.scene,
+      host,
+      this.interactions,
+      (id) => this.activate(id),
+      assets,
+      this.environment.serviceObjects,
+      this.mobile,
     );
-    this.addPin("vehicle", "Tu vehículo", "Prepara tu visita", v(-2.5, 3, 17));
-    this.addPin(
+    this.interactions.register(this.customer.group, "vehicle", "Tu vehículo");
+    this.interactions.register(
+      this.receptionist.group,
+      "reception",
+      "Tu anfitriona",
+    );
+    this.interactions.register(
+      this.environment.lounge,
       "lounge",
       "Zona lounge",
-      "Espera con tranquilidad",
-      v(-12, 2, 12),
     );
     for (const service of this.environment.serviceObjects)
-      this.addPin(
+      this.interactions.register(
+        service.object,
         "service:" + service.id,
-        CATALOG.find((s) => s.id === service.id)?.name ?? service.id,
-        "Selecciona el objeto",
-        service.object.position.clone().add(v(0, 2.8, 0)),
+        "Elegir " + service.id,
       );
     this.canvas.addEventListener("pointerdown", this.down);
     this.canvas.addEventListener("pointerup", this.up);
+    this.canvas.addEventListener("pointermove", this.hover);
     this.canvas.addEventListener("webglcontextlost", this.contextLost);
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(host);
+    const entryShot = shotFor(
+      "overview",
+      this.mobile,
+      this.customer.group.position,
+    );
+    this.goalPos.copy(entryShot.eye);
+    this.goalTarget.copy(entryShot.target);
+    this.currentTarget.copy(entryShot.target);
+    this.camera.position.copy(entryShot.eye);
     this.resize();
     this.camera.lookAt(this.currentTarget);
     this.animate();
@@ -269,104 +274,43 @@ export class CarWashWorld {
       (-(e.clientY - bounds.top) / bounds.height) * 2 + 1,
     );
     this.ray.setFromCamera(this.pointer, this.camera);
-    const targets = [
-      { id: "vehicle", object: this.customer.group },
-      { id: "reception", object: this.receptionist.group },
-      { id: "lounge", object: this.environment.lounge },
-      ...this.environment.serviceObjects.map((s) => ({
-        id: "service:" + s.id,
-        object: s.object,
-      })),
-    ];
-    const hits = targets
-      .flatMap((target) =>
-        this.ray
-          .intersectObject(target.object, true)
-          .slice(0, 1)
-          .map((hit) => ({ id: target.id, distance: hit.distance })),
-      )
-      .sort((a, b) => a.distance - b.distance);
-    if (hits[0]) this.activate(hits[0].id);
+    const selected = this.interactions.pick(this.ray, this.scene);
+    if (selected) this.activate(selected);
+  };
+  private hoverTime = 0;
+  private hover = (event: PointerEvent) => {
+    if (performance.now() - this.hoverTime < 80) return;
+    this.hoverTime = performance.now();
+    const bounds = this.canvas.getBoundingClientRect();
+    this.pointer.set(
+      ((event.clientX - bounds.left) / bounds.width) * 2 - 1,
+      (-(event.clientY - bounds.top) / bounds.height) * 2 + 1,
+    );
+    this.ray.setFromCamera(this.pointer, this.camera);
+    this.canvas.style.cursor = this.interactions.pick(this.ray, this.scene)
+      ? "pointer"
+      : "default";
   };
   private activate(id: string) {
-    if (id.startsWith("task:")) {
-      this.callbacks.onSelect("vehicle");
+    if (id === "service-page") {
+      this.interface.toggleServicePage();
       return;
     }
-    if (id.startsWith("service:")) {
-      this.callbacks.onSelect(id);
-      return;
-    }
-    this.navigate(id as Destination);
     this.callbacks.onSelect(id);
-  }
-  private addPin(id: string, name: string, sub: string, position: T.Vector3) {
-    const el = document.createElement("button");
-    el.className = "world-pin " + (id === "reception" ? "red" : "");
-    el.setAttribute("aria-label", name);
-    const icon = document.createElement("span");
-    icon.className = "pin-dot";
-    icon.textContent =
-      id === "reception"
-        ? "✦"
-        : id === "vehicle"
-          ? "↗"
-          : id === "lounge"
-            ? "☕"
-            : "+";
-    const title = document.createElement("span");
-    title.className = "pin-name";
-    title.textContent = name;
-    const description = document.createElement("small");
-    description.textContent = sub;
-    [icon, title, description].forEach((child) => el.appendChild(child));
-    el.onclick = () => this.activate(id);
-    this.pinLayer.appendChild(el);
-    this.pins.push({ id, name, sub, position, el });
   }
   navigate(destination: Destination) {
     this.destination = destination;
-    this.animating = true;
+    this.goalFov = this.mobile ? 61 : 48;
     this.followOffset = null;
-    const views: Record<
-      Destination,
-      {
-        p: T.Vector3;
-        t: T.Vector3;
-        a: T.Vector3;
-      }
-    > = {
-      overview: { p: v(-6, 4, 24), t: v(1, 1.7, -1), a: v(0, 0.08, 18) },
-      reception: {
-        p: v(8.9, 2.15, 16.6),
-        t: v(11.15, 1.5, 10.6),
-        a: v(8, 0.08, 13.3),
-      },
-      services: {
-        p: v(3.3, 2.7, 23),
-        t: v(5.6, 1.35, 17),
-        a: v(4.8, 0.08, 20),
-      },
-      vehicle: { p: v(-2, 3.7, 24), t: v(-9, 1.2, 17), a: v(-5.5, 0.08, 17) },
-      lounge: {
-        p: v(-14.8, 2.4, 16),
-        t: v(-2, 1.6, -4),
-        a: v(-10, 0.08, 13.8),
-      },
-      exit: { p: v(10, 3.4, 18), t: v(16, 1.5, 11), a: v(10, 0.08, 16) },
-    };
-    const view = views[destination];
-    if (destination === "vehicle") {
-      const car = this.customer.group.position;
-      this.followOffset = v(4.8, 2.6, 6.2);
-      view.p = car.clone().add(this.followOffset);
-      view.t = car.clone().add(v(0, 1.2, 0));
-      view.a = v(Math.min(15, car.x + 3.5), 0.08, Math.max(2, car.z + 4));
-    }
-    if (this.mobile) {
-      view.p.y += 1;
-      view.p.z += 3;
-    }
+    const shot = shotFor(
+      destination,
+      this.mobile,
+      this.customer.group.position,
+    );
+    const view = { p: shot.eye, t: shot.target, a: shot.avatar };
+    this.goalFov = shot.fov;
+    if (destination === "vehicle")
+      this.followOffset = shot.eye.clone().sub(this.customer.group.position);
     this.goalPos.copy(view.p);
     this.goalTarget.copy(view.t);
     const start = this.avatar.group.position;
@@ -381,33 +325,50 @@ export class CarWashWorld {
       this.avatar.waypoints = [];
       this.avatar.target.copy(view.a);
       this.avatar.group.position.copy(view.a);
-      this.animating = false;
     }
   }
-  focusService(id: string) {
-    this.destination = "services";
-    this.followOffset = null;
-    const display = this.environment.serviceObjects.find((s) => s.id === id);
-    if (!display) return;
-    this.goalTarget.copy(display.object.position).add(v(0, 1.45, 0));
-    this.goalPos
-      .copy(display.object.position)
-      .add(v(-2.3, 2.7, this.mobile ? 7.7 : 6.3));
-  }
-  setInteraction(open: boolean) {
-    this.interactionOpen = open;
-  }
-  setSelected(ids: string[]) {
-    this.selected = ids;
-    for (const pin of this.pins) {
-      if (!pin.id.startsWith("service:")) continue;
-      const selected = ids.includes(pin.id.slice(8));
-      pin.el.classList.toggle("selected-service", selected);
-      pin.el.querySelector(".pin-dot")!.textContent = selected ? "✓" : "+";
-      pin.el.querySelector("small")!.textContent = selected
-        ? "Agregado a tu visita"
-        : "Selecciona el objeto";
+  setExperienceView(view: SpatialView) {
+    this.interface.setView(view);
+    if (view.panel !== this.lastPanel) {
+      if (["quote", "order", "guarantee", "saved"].includes(view.panel ?? "")) {
+        const shot = shotFor(
+          "clipboard",
+          this.mobile,
+          this.customer.group.position,
+        );
+        this.followOffset = null;
+        this.goalFov = shot.fov;
+        this.goalPos.copy(shot.eye);
+        this.goalTarget.copy(shot.target);
+        this.receptionist.goTo([v(12, 0.08, 10.3)]);
+      }
+      if (view.panel === "vehicle") {
+        const shot = shotFor(
+          "tablet",
+          this.mobile,
+          this.customer.group.position,
+        );
+        this.followOffset = null;
+        this.goalFov = shot.fov;
+        this.goalPos.copy(shot.eye);
+        this.goalTarget.copy(shot.target);
+      }
+      if (view.panel === "reception")
+        this.receptionist.goTo([v(11.1, 0.08, 10)]);
+      this.lastPanel = view.panel;
     }
+    this.avatar.group.visible = ![
+      "reception",
+      "quote",
+      "order",
+      "vehicle",
+      "guarantee",
+      "login",
+      "admin",
+    ].includes(view.panel ?? "");
+  }
+  getTabletHost() {
+    return this.interface.portal;
   }
   resetVisit() {
     if (!this.orderStatus) return;
@@ -417,7 +378,6 @@ export class CarWashWorld {
     this.customer.group.position.set(-2.5, 0.1, 17);
     this.customerWater.active = false;
     this.customerWorker.group.visible = false;
-    this.updateVehiclePin();
   }
   setVehicleColor(color: string) {
     const colors: Record<string, string> = {
@@ -442,18 +402,6 @@ export class CarWashWorld {
     this.plate = plate || "Tu vehículo";
     this.taskName =
       tasks.find((t) => t.status !== "done")?.name ?? "Revisión completada";
-    this.updateVehiclePin();
-  }
-  private updateVehiclePin() {
-    const pin = this.pins.find((p) => p.id === "vehicle");
-    if (!pin) return;
-    pin.el.querySelector(".pin-name")!.textContent = this.plate;
-    pin.el.querySelector("small")!.textContent =
-      this.orderStatus === "working"
-        ? this.taskName + " · Cubículo " + (this.orderBay ?? 4)
-        : (STATUS_LABEL[this.orderStatus as OrderStatus] ??
-          "Prepara tu visita");
-    pin.el.classList.toggle("vehicle-working", this.orderStatus === "working");
   }
   setOrderStatus(status: string, bay?: number | null) {
     const key = status + ":" + bay;
@@ -479,7 +427,6 @@ export class CarWashWorld {
     this.customerWorker.group.position.x = x + 1.6;
     this.customerWorker.target.copy(this.customerWorker.group.position);
     this.customerWater.group.position.x = x;
-    this.updateVehiclePin();
     if (this.destination === "vehicle") this.navigate("vehicle");
   }
   resize() {
@@ -489,6 +436,7 @@ export class CarWashWorld {
     this.renderer.setSize(w, h);
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
+    this.interface?.resize(w, h);
   }
   private updateAmbient(t: number, dt: number) {
     for (const visit of this.ambient) {
@@ -554,6 +502,23 @@ export class CarWashWorld {
       isWorking && /lavado|shampoo|limpieza del motor/i.test(this.taskName);
     this.customerWater.update(t);
     this.persons.forEach((p, i) => p.update(t + i * 0.7, dt));
+    const receptionistDelta = this.receptionist.target
+      .clone()
+      .sub(this.receptionist.group.position)
+      .setY(0);
+    if (
+      receptionistDelta.length() < 0.08 &&
+      !this.receptionist.waypoints.length
+    ) {
+      const delta = this.camera.position
+        .clone()
+        .sub(this.receptionist.group.position);
+      const heading = new T.Quaternion().setFromAxisAngle(
+        v(0, 1, 0),
+        Math.atan2(delta.x, delta.z),
+      );
+      this.receptionist.group.quaternion.slerp(heading, Math.min(1, dt * 4));
+    }
     if (!this.reducedMotion) {
       this.environment.palms.forEach((p, i) => {
         p.rotation.z = Math.sin(t * 0.7 + i) * 0.025;
@@ -570,24 +535,27 @@ export class CarWashWorld {
       gate.rotation.z +=
         ((open ? -Math.PI * 0.44 : 0) - gate.rotation.z) * Math.min(1, dt * 2);
     });
-    this.ring.position.copy(this.customer.group.position);
-    this.ring.position.y = 0.07;
-    this.ring.scale.set(1, 1.65, 1);
-    this.ring.visible =
-      this.destination === "vehicle" && this.orderStatus !== "delivered";
     if (this.destination === "vehicle" && this.followOffset) {
       this.goalPos.copy(this.customer.group.position).add(this.followOffset);
-      if (this.mobile) this.goalPos.z += 3;
       this.goalTarget.copy(this.customer.group.position).add(v(0, 1.2, 0));
     }
+    if (this.destination === "lounge")
+      this.goalTarget.copy(this.customer.group.position).add(v(0, 1.1, 0));
     const ease = this.reducedMotion ? 1 : 1 - Math.exp(-dt * 2.4);
     this.camera.position.lerp(this.goalPos, ease);
+    if (Math.abs(this.camera.fov - this.goalFov) > 0.01) {
+      this.camera.fov += (this.goalFov - this.camera.fov) * ease;
+      this.camera.updateProjectionMatrix();
+    }
     this.currentTarget.lerp(this.goalTarget, ease);
-    this.camera.lookAt(
-      this.currentTarget.clone().add(v(0, this.interactionOpen ? -0.7 : 0, 0)),
+    this.camera.lookAt(this.currentTarget);
+    this.interface.update(
+      this.customer.group.position,
+      !!this.customer.route.length,
+      t,
     );
     this.renderer.render(this.scene, this.camera);
-    this.updatePins();
+    this.interface.render(this.camera);
     if (++this.qualityFrames === 90) {
       const elapsed = this.clock.elapsedTime;
       const fps = this.qualityFrames / elapsed;
@@ -598,45 +566,15 @@ export class CarWashWorld {
       this.qualityFrames = -999999;
     }
   };
-  private updatePins() {
-    for (const pin of this.pins) {
-      if (pin.id.startsWith("task:")) {
-        const i = Number(pin.id.slice(5));
-        pin.position
-          .copy(this.customer.group.position)
-          .add(v(i % 2 ? 2.5 : -2.5, 1.8 - i * 0.35, 0.5 + i * 0.7));
-      }
-      if (pin.id === "vehicle")
-        pin.position.copy(this.customer.group.position).add(v(0, 2.15, 0));
-      const projected = pin.position.clone().project(this.camera);
-      const visible =
-        projected.z < 1 &&
-        projected.z > -1 &&
-        Math.abs(projected.x) < 0.97 &&
-        Math.abs(projected.y) < 0.95;
-      const service = pin.id.startsWith("service:");
-      const relevant =
-        (this.destination === "overview" &&
-          (pin.id === "reception" ||
-            (pin.id === "vehicle" && !!this.orderStatus))) ||
-        (this.destination === "services"
-          ? service
-          : pin.id === this.destination) ||
-        (this.destination === "vehicle" && pin.id.startsWith("task:")) ||
-        (this.destination === "lounge" && pin.id === "vehicle");
-      pin.el.hidden = !visible || !relevant;
-      pin.el.style.left =
-        (projected.x + 1) * 0.5 * this.host.clientWidth + "px";
-      pin.el.style.top =
-        (1 - projected.y) * 0.5 * this.host.clientHeight + "px";
-    }
-  }
   dispose() {
     this.disposed = true;
     cancelAnimationFrame(this.frame);
     this.resizeObserver.disconnect();
     this.canvas.removeEventListener("pointerdown", this.down);
     this.canvas.removeEventListener("pointerup", this.up);
+    this.canvas.removeEventListener("pointermove", this.hover);
+    this.interface.dispose();
+    this.interactions.clear();
     this.canvas.removeEventListener("webglcontextlost", this.contextLost);
     this.environment.reflector.getRenderTarget().dispose();
     this.environmentMap.dispose();
@@ -662,6 +600,5 @@ export class CarWashWorld {
     materials.forEach((m) => m.dispose());
     this.renderer.dispose();
     this.canvas.remove();
-    this.pinLayer.remove();
   }
 }
