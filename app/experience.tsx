@@ -22,11 +22,14 @@ import {
   STATUS_LABEL,
   type OrderStatus,
 } from "../lib/domain";
+import type { OperationSnapshot } from "../lib/operation-view";
+import { VEHICLE_KINDS, type AvatarSex } from "../lib/appearance";
 import type { CarWashWorld, Destination } from "../lib/world";
 import { sceneForVisit, type VisitScene } from "../lib/visit-view";
 type Panel =
   | "reception"
   | "vehicle"
+  | "profile"
   | "services"
   | "quote"
   | "order"
@@ -39,6 +42,7 @@ type Session = {
   name: string;
   email: string;
   isAdmin: boolean;
+  avatarSex: AvatarSex|null;
 } | null;
 export default function Experience() {
   const host = useRef<HTMLDivElement>(null),
@@ -58,6 +62,8 @@ export default function Experience() {
       color: "Plata",
       plate: "",
     }),
+    [operation,setOperation] = useState<OperationSnapshot|undefined>(),
+    [avatarSex,setAvatarSex] = useState<AvatarSex>("male"),
     [order, setOrder] = useState<any>(null),
     [demo, setDemo] = useState(false),
     [busy, setBusy] = useState(false),
@@ -92,6 +98,12 @@ export default function Experience() {
       return;
     }
     switch (id) {
+      case "inspect-local":
+        setIntro(false);setPanel(null);break;
+      case "enter":
+        setIntro(false);setPanel(null);world.current?.enter();break;
+      case "profile":
+        open("profile","vehicle");break;
       case "reception":
         open("reception", "reception");
         break;
@@ -191,7 +203,8 @@ export default function Experience() {
         sessionStorage.getItem("febles-draft") ?? "null",
       );
       if (draft) {
-        if (draft.vehicle) setVehicle(draft.vehicle);
+        if (draft.vehicle && VEHICLE_KINDS.includes(draft.vehicle.kind)) setVehicle(draft.vehicle);
+        if (["male","female"].includes(draft.avatarSex)) setAvatarSex(draft.avatarSex);
         if (Array.isArray(draft.selected))
           setSelected(
             [
@@ -221,7 +234,7 @@ export default function Experience() {
       );
     fetch("/api/session")
       .then((r) => r.json())
-      .then((d: any) => setSession(d.user))
+      .then((d: any) => {setSession(d.user);if(d.user?.avatarSex) setAvatarSex(d.user.avatarSex);})
       .catch(() => {});
   }, [note]);
   useEffect(() => {
@@ -229,10 +242,16 @@ export default function Experience() {
     try {
       sessionStorage.setItem(
         "febles-draft",
-        JSON.stringify({ vehicle, selected }),
+        JSON.stringify({ vehicle, selected, avatarSex }),
       );
     } catch {}
-  }, [vehicle, selected]);
+  }, [vehicle, selected, avatarSex]);
+  useEffect(()=>{
+    let cancelled=false;
+    const update=async()=>{try{const response=await fetch("/api/local");if(!response.ok)throw new Error();const data=await response.json() as OperationSnapshot;if(!cancelled)setOperation(data);}catch{if(!cancelled)setOperation(previous=>previous?{...previous,stale:true}:undefined);}};
+    update();const timer=window.setInterval(update,15000);
+    return()=>{cancelled=true;window.clearInterval(timer);};
+  },[]);
   const loadOrders = useCallback(async () => {
     if (!session) return;
     try {
@@ -314,6 +333,8 @@ export default function Experience() {
     world.current?.setExperienceView({
       panel,
       intro,
+      avatarSex,
+      operation,
       selected,
       vehicle:
         order && !["quote", "vehicle", "services"].includes(panel ?? "")
@@ -354,6 +375,8 @@ export default function Experience() {
     session,
     myOrders,
     catalog,
+    avatarSex,
+    operation,
   ]);
   useEffect(() => {
     if (ready && order && intro) {
@@ -427,6 +450,13 @@ export default function Experience() {
       return n;
     });
   };
+  const saveProfile = async () => {
+    if(!session || session.avatarSex===avatarSex) return;
+    const response=await fetch("/api/profile",{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({avatarSex})});
+    const data=await response.json() as {avatarSex:AvatarSex;error?:string};
+    if(!response.ok) throw new Error(data.error??"No se pudo guardar el personaje.");
+    setSession(prev=>prev?{...prev,avatarSex:data.avatarSex}:null);
+  };
   const saveOrder = async () => {
     if (!session) {
       open("login");
@@ -435,6 +465,7 @@ export default function Experience() {
     setBusy(true);
     setError("");
     try {
+      await saveProfile();
       const r = await fetch("/api/orders", {
         method: "POST",
         headers: {
@@ -597,7 +628,7 @@ export default function Experience() {
           </button>
           <button
             className="account-orb"
-            onClick={() => open(session ? "reception" : "login", "reception")}
+            onClick={() => open(session ? "profile" : "login", session ? "vehicle" : "reception")}
             aria-label="Mi cuenta"
           >
             {session ? (
@@ -609,7 +640,7 @@ export default function Experience() {
         </>
       )}
       {tabletHost &&
-        panel === "vehicle" &&
+        (panel === "vehicle" || panel === "profile") &&
         createPortal(
           <section
             className="tablet-screen"
@@ -622,16 +653,28 @@ export default function Experience() {
             >
               <X />
             </button>{" "}
-            {panel === "vehicle" && (
+            {(panel === "vehicle" || panel === "profile") && (
               <>
                 <div className="overline">01 / TU VISITA</div>
-                <h2>Este es tu carro.</h2>
+                <h2>{panel === "profile" ? "Tu personaje." : "Tu carro, tu visita."}</h2>
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    open("services", "services");
+                  onSubmit={async (e) => {
+                    e.preventDefault();setBusy(true);setError("");
+                    try{await saveProfile();open(panel==="profile"?"reception":"services",panel==="profile"?"reception":"services");}
+                    catch(error){setError((error as Error).message);}
+                    finally{setBusy(false);}
                   }}
                 >
+                  <fieldset className="avatar-choice">
+                    <legend>Tu personaje</legend>
+                    <div>
+                    {([{id:"male",label:"Hombre"},{id:"female",label:"Mujer"}] as const).map(option=><label key={option.id} className={avatarSex===option.id?"chosen":""}>
+                      <input type="radio" name="avatarSex" value={option.id} checked={avatarSex===option.id} onChange={()=>setAvatarSex(option.id)}/>{option.label}
+                    </label>)}
+                    </div>
+                    <small>Selecciona cómo quieres aparecer en el local.</small>
+                  </fieldset>
+                  {panel === "vehicle" && <>
                   <label>
                     Tipo de vehículo
                     <select
@@ -640,7 +683,7 @@ export default function Experience() {
                         setVehicle({ ...vehicle, kind: e.target.value })
                       }
                     >
-                      {["Sedán", "SUV", "Pickup", "Compacto"].map((x) => (
+                      {VEHICLE_KINDS.map((x) => (
                         <option key={x}>{x}</option>
                       ))}
                     </select>
@@ -674,9 +717,7 @@ export default function Experience() {
                     </div>
                     <small className="field-hint">
                       {vehicle.color}
-                      {vehicle.kind === "Pickup"
-                        ? " · Representación visual SUV provisional"
-                        : ""}
+
                     </small>
                   </label>
                   <label>
@@ -698,12 +739,13 @@ export default function Experience() {
                       autoComplete="off"
                     />
                   </label>
+                  </>}
                   <div className="mini-note">
                     <Clock size={16} />
                     <span>La llegada se confirma en el local.</span>
                   </div>
-                  <button className="primary full" type="submit">
-                    Vamos a los servicios <ArrowRight size={16} />
+                  <button className="primary full" type="submit" disabled={busy}>
+                    {busy ? "Guardando…" : panel === "profile" ? "Guardar personaje" : "Vamos a los servicios"} <ArrowRight size={16} />
                   </button>
                 </form>
               </>

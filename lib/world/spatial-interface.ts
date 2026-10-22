@@ -9,11 +9,15 @@ import {
   type HitRegion,
   InteractionRegistry,
 } from "./interactions";
-import type { WorldAssets } from "./assets";
+import type { WorldAssets, VehicleModel } from "./assets";
+import type { OperationVisit, OperationSnapshot } from "../operation-view";
+import { VEHICLE_COLORS, type AvatarSex } from "../appearance";
 import { CATALOG, money, STATUS_LABEL, type OrderStatus } from "../domain";
 export type SpatialView = {
   panel: string | null;
   intro: boolean;
+  avatarSex?: AvatarSex;
+  operation?: OperationSnapshot;
   selected: string[];
   vehicle: { kind: string; color: string; plate: string };
   total: number;
@@ -191,14 +195,24 @@ export class SpatialInterface {
   private welcome: WorldSurface;
   private speech: WorldSurface;
   private operations: WorldSurface;
+  private localStatus: WorldSurface;
+  private bayStatus: WorldSurface[] = [];
   private view: SpatialView = initial;
   private page = 0;
+  private mapMode=false;
+  private inspected:OperationVisit|null=null;
+  inspectVisit(visit:OperationVisit|null){this.inspected=visit;this.drawStatus();}
+  setMapMode(value:boolean){this.mapMode=value;}
+  private miniature?: VehicleModel;
+  private miniatureParent?: T.Group;
+  private miniatureKey="";
+  private unregisterMiniature?: () => void;
   constructor(
     private scene: T.Scene,
     host: HTMLElement,
     private registry: InteractionRegistry,
     private select: (id: string) => void,
-    assets: WorldAssets,
+    private assets: WorldAssets,
     private displays: { id: string; object: T.Object3D }[],
     private mobile = false,
   ) {
@@ -225,26 +239,13 @@ export class SpatialInterface {
     box(this.tablet, 0.88, 1.16, 0.055, m.black, 0, 0, 0, 0.045);
     box(this.tablet, 0.34, 0.09, 0.44, m.steel, 0, -0.64, -0.08, 0.035);
     this.cssTablet.position.z += 0.032;
-    this.welcome = this.surface(1.5, 1.9, 640, 800);
-    this.welcome.position.set(-5.7, 1.4, 20.4);
-    box(this.welcome, 1.66, 2.07, 0.15, m.stone, 0, 0, -0.08, 0.045);
-    cylinder(this.root, 0.07, 0.7, m.steel, -5.7, 0.35, 20.4);
-    const wc = this.welcome.paint("#252d30");
-    this.welcome.text("FEBLES", 320, 130, 80, "#fff", "center", 800);
-    this.welcome.text("CAR WASH", 320, 210, 34, "#e74034", "center", 700);
-    this.welcome.text("Bienvenido", 320, 360, 55, "#efe1c8", "center");
-    this.welcome.action(
-      "reception",
-      "Acércate a recepción  →",
-      45,
-      480,
-      550,
-      105,
-      { color: "#b83229" },
-    );
-    this.welcome.action("demo", "Recorrido de ejemplo", 70, 650, 500, 65, {
-      color: "#414746",
-    });
+    this.welcome = this.surface(2.6, 1, 900, 350);
+    this.welcome.position.set(0,1.9,23.65);
+    box(this.welcome,2.7,1.1,0.1,m.wood,0,0,-0.06,0.08);
+    this.welcome.paint("#f4eddd");
+    this.welcome.text("Tu carro. Tu lugar.",450,70,54,"#40594f","center");
+    this.welcome.action("enter","Entrar al local  →",55,125,790,110,{color:"#bd4c3c",font:44});
+    this.welcome.action("demo","Ver una visita de ejemplo",120,260,660,62,{color:"#e4ddcc",text:"#5b6a5d",font:29});
     this.welcome.commit();
     // Three tangible choices on the reception counter, as in the concept art.
     this.menu.position.set(11.2, 1.005, 11.52);
@@ -289,12 +290,8 @@ export class SpatialInterface {
         registry.register(compass, id, label);
       }
       if (index === 1) {
-        const miniature = assets.vehicle("SUV", new T.Color("#bec7cd")).root;
-        miniature.scale.setScalar(0.115);
-        miniature.position.y = 0.25;
-        miniature.rotation.y = -0.3;
-        pedestal.add(miniature);
-        registry.register(miniature, id, label);
+        this.miniatureParent=pedestal;
+
       }
       if (index === 2) {
         const paper = this.surface(0.52, 0.67, 400, 520);
@@ -365,6 +362,13 @@ export class SpatialInterface {
       -0.04,
       0.02,
     );
+    this.localStatus=this.surface(2.8,0.45,1100,180);
+    this.localStatus.position.set(11.2,2.7,7.28);
+    for(let i=0;i<5;i++){
+      const board=this.surface(3.9,0.45,1000,140);
+      board.position.set((i-2)*6,2.75,-1.48);
+      this.bayStatus.push(board);
+    }
     this.operations = this.surface(0.9, 0.26, 650, 200);
     this.operations.position.set(13.6, 1.55, 11.96);
     this.operations.paint("#343a34");
@@ -423,10 +427,10 @@ export class SpatialInterface {
         ? order.slice(0, 3)
         : order.slice(3);
     for (const display of this.displays) {
-      display.object.visible = ids.includes(display.id);
+      display.object.visible = this.view.panel === "services" && ids.includes(display.id);
       if (this.mobile) display.object.position.x = 5.6;
       const label = this.serviceLabels.get(display.id)!;
-      label.show(ids.includes(display.id));
+      label.show(display.object.visible);
       if (this.mobile) label.position.y = 1.05;
       const service =
         (this.view.catalog ?? CATALOG).find((s) => s.id === display.id) ??
@@ -500,13 +504,32 @@ export class SpatialInterface {
   }
   setView(view: SpatialView) {
     this.view = view;
+    this.localStatus.paint("#e5dfd1");
+    this.localStatus.text(view.demo?"DEMOSTRACIÓN · VISITA SIMULADA":view.operation?.stale?"SIN CONEXIÓN · ÚLTIMO ESTADO CONFIRMADO":view.operation?"LOCAL CONECTADO · ESTADOS DEL PERSONAL":"LOCAL SIN SINCRONIZAR",550,90,43,"#4b6058","center");
+    this.localStatus.commit();
+    this.bayStatus.forEach((board,index)=>{
+      const activity=view.operation?.bays.find(b=>b.bay===index+1);
+      const own=view.status==="working"&&view.bay===index+1;
+      const task=own?(view.tasks.find(t=>t.status!=="done")?.name??"Revisión final"):activity?.task;
+      board.paint("#40514f");
+      board.text(view.demo?"SERVICIO DE EJEMPLO":own||activity?(task??"En servicio"):view.operation?"DISPONIBLE":"ESTADO SIN CONFIRMAR",500,70,42,"#f2ecd9","center");
+      board.commit();
+    });
     const reception = view.panel === "reception",
       quote = view.panel === "quote",
       order = view.panel === "order" || view.panel === "saved",
       guarantee = view.panel === "guarantee",
-      vehicle = view.panel === "vehicle";
-    this.menu.visible = reception || (!view.panel && !view.intro);
-    this.speech.show(reception);
+      vehicle = view.panel === "vehicle" || view.panel === "profile";
+    this.menu.visible = reception;
+    const miniatureKey = view.vehicle.kind+":"+view.vehicle.color;
+    if(this.miniatureParent && this.miniatureKey!==miniatureKey){
+      this.unregisterMiniature?.();this.miniature?.root.removeFromParent();this.miniature?.paint?.dispose();
+      this.miniature=this.assets.vehicle(view.vehicle.kind,new T.Color(VEHICLE_COLORS[view.vehicle.color]??VEHICLE_COLORS.Plata));
+      this.miniature.root.scale.setScalar(0.115);this.miniature.root.position.y=0.25;this.miniature.root.rotation.y=-0.3;
+      this.miniatureParent.add(this.miniature.root);
+      this.unregisterMiniature=this.registry.register(this.miniature.root,"vehicle","Tu vehículo");this.miniatureKey=miniatureKey;
+    }
+    this.speech.show(false);
     this.quotation.show(quote);
     this.orderBoard.show(order || guarantee);
     this.tablet.visible = vehicle;
@@ -514,7 +537,7 @@ export class SpatialInterface {
     this.portal.style.pointerEvents = vehicle ? "auto" : "none";
     this.operations.show(view.admin);
     this.welcome.show(view.intro && !view.orderId);
-    this.statusBoard.show(!!view.orderId);
+    this.statusBoard.show(!!view.orderId && !view.panel);
     this.serviceControls.show(view.panel === "services");
     // Keep semantic controls synchronized with parent visibility.
     for (const group of this.menuObjects)
@@ -683,6 +706,17 @@ export class SpatialInterface {
     const s = this.statusBoard,
       v = this.view;
     s.paint("#272d2d");
+    if(this.inspected){
+      const a=this.inspected;
+      s.text(a.kind+" · "+a.color,320,85,45,"#f0eadc","center");
+      s.text(STATUS_LABEL[a.status],320,180,36,"#e4b05d","center");
+      s.text(a.bay?"Cubículo "+a.bay:"Área de "+(a.status==="ready"?"entrega":"espera"),320,250,30,"#b4c2b8","center");
+      s.text(a.task??"Revisión final",320,340,30,"#e9ddc3","center");
+      a.services.slice(0,3).forEach((name,i)=>s.text(name,45,440+i*52,27,"#cad9c5"));
+      s.action("overview","Volver al local",60,650,520,90,{color:"#527a64"});
+      s.text(this.view.operation?.stale?"Último estado · sin conexión":"Confirmado por el personal",320,770,22,"#b1bfad","center");
+      s.commit();return;
+    }
     s.text(
       v.activeOrder?.plate ||
         v.vehicle.plate ||
@@ -727,9 +761,10 @@ export class SpatialInterface {
     s.commit();
   }
   update(car: T.Vector3, moving: boolean, time: number) {
+    this.bayStatus.forEach(board=>board.show(!this.mapMode&&!this.view.intro));
     this.statusBoard.position.set(car.x + 2.25, 1.5, car.z + 1);
     this.statusBoard.show(
-      !!this.view.orderId && !moving && this.view.status !== "delivered",
+      (!!this.inspected||!!this.view.orderId) && !this.view.panel && !moving && (this.inspected!==null||this.view.status !== "delivered"),
     );
     this.domRenderer.domElement.style.visibility = this.cssTablet.visible
       ? "visible"
@@ -748,6 +783,7 @@ export class SpatialInterface {
     this.setServicePage(this.mobile ? (this.page + 1) % 6 : this.page ? 0 : 1);
   }
   dispose() {
+    this.unregisterMiniature?.();this.miniature?.paint?.dispose();
     this.domRenderer.domElement.remove();
     this.a11y.remove();
     this.cssTablet.removeFromParent();

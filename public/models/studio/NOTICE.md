@@ -12,3 +12,11 @@ These redistributed GLBs were optimized using glTF Transform 4.5.1: Meshopt geom
 | male.glb | https://www.innerscene.com/tools/library/3d-parts/idle-standing-sam-3d-person-animated-1f9f1217 | `681cad30d722ff49684093a3cfcff64a6cf269f6f4c9a757c4492db34ea7718a` |
 | sofa.glb | https://www.innerscene.com/tools/library/3d-parts/lowline-low-three-seat-sofa-4bb27e8c | `7c066664be928c2e8695eed93f3c97297c720d903e7b3c74b9fae5f76032aa53` |
 | palm.glb | https://www.innerscene.com/tools/library/3d-parts/palm-detailed-a8777b8c | `18ec674d85053eb09887d4a6778563094209bf4c6985c69f3fc8ce2c21aa9ff1` |
+
+## Modelos añadidos en 0.5
+
+- `pickup.glb`: https://www.innerscene.com/tools/library/3d-parts/crew-cab-pickup-with-open-bed-4f02e0cc — CC0, descargado 2026-10-22. SHA-256 `10cba9dd5892ca0b5eee26f52de8069ad3e2be9a633222ea8ee8666e9b4afa0d`.
+- `compact.glb`: https://www.innerscene.com/tools/library/3d-parts/silver-five-door-compact-hatchback-6bf4a878 — CC0, descargado 2026-10-22. SHA-256 `6404c3e62d94593d00879cd992a55c43b8379af70ed2ea7f3f6a2a2ac6496225`.
+- `van.glb`: https://www.innerscene.com/tools/library/3d-parts/passenger-van-with-side-windows-474dd4a2 — CC0, descargado 2026-10-22. SHA-256 `956ab0c3b2cf6d5d038f7c2a04379fd7b2f0e04fe0e4e895cca8b7b1bbf535d2`.
+
+Mallas optimizadas con Meshopt, conservando piezas y cuatro ruedas. Materiales adaptados en tiempo de ejecución para la dirección artística de simulación.

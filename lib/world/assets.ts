@@ -1,4 +1,5 @@
 import * as T from "three";
+import { vehicleModel } from "../appearance";
 import { GLTFLoader, type GLTF } from "three/addons/loaders/GLTFLoader.js";
 import { MeshoptDecoder } from "three/addons/libs/meshopt_decoder.module.js";
 import { clone as cloneSkeleton } from "three/addons/utils/SkeletonUtils.js";
@@ -7,6 +8,9 @@ import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 export const MODEL_FILES = [
   "suv",
   "sedan",
+  "pickup",
+  "compact",
+  "van",
   "female",
   "male",
   "sofa",
@@ -23,7 +27,19 @@ export type VehicleModel = {
 export class WorldAssets {
   private vehicles = new Map<string, T.Group>();
   constructor(private models: Map<ModelName, GLTF>) {
-    for (const kind of ["suv", "sedan"] as const)
+    const styled = new Set<T.Material>();
+    models.forEach(model => model.scene.traverse(o => {
+      if(!(o instanceof T.Mesh)) return;
+      for(const material of Array.isArray(o.material)?o.material:[o.material]) {
+        if(styled.has(material)) continue;styled.add(material);
+        if(material instanceof T.MeshStandardMaterial) {
+          material.roughness = Math.max(material.roughness,0.54);
+          material.metalness = Math.min(material.metalness,0.32);
+          material.envMapIntensity = 0.65;
+        }
+      }
+    }));
+    for (const kind of ["suv", "sedan", "pickup", "compact", "van"] as const)
       this.vehicles.set(kind, prepareVehicle(models.get(kind)!.scene));
   }
   static async load(): Promise<WorldAssets> {
@@ -41,13 +57,13 @@ export class WorldAssets {
   }
   vehicle(kind: string, color: T.Color): VehicleModel {
     const root = this.vehicles
-      .get(kind === "Sedán" || kind === "Compacto" ? "sedan" : "suv")!
+      .get(vehicleModel(kind))!
       .clone(true);
     const paint = new T.MeshPhysicalMaterial({
       color,
-      roughness: 0.27,
-      metalness: 0.65,
-      clearcoat: 1,
+      roughness: 0.48,
+      metalness: 0.25,
+      clearcoat: 0.45,
       clearcoatRoughness: 0.16,
       envMapIntensity: 1.15,
     });
@@ -55,8 +71,6 @@ export class WorldAssets {
       if (o instanceof T.Mesh && /paint/i.test(o.material.name))
         o.material = paint;
     });
-    if (kind === "Compacto") root.scale.setScalar(0.9);
-    // Pickup currently uses the SUV representation; the form labels this approximation.
     return {
       root,
       wheels: root.children.filter((o) =>
@@ -81,6 +95,7 @@ export class WorldAssets {
         const materials = Array.isArray(o.material) ? o.material : [o.material];
         const owned = materials.map((material) => {
           const m = material.clone() as T.MeshStandardMaterial;
+          m.userData.actorOwned=true;
           if (/original top|tailored business fabric/i.test(m.name))
             m.color.set(shirt);
           return m;
@@ -107,6 +122,7 @@ export class WorldAssets {
         roughness: 0.9,
         side: T.DoubleSide,
       });
+      material.userData.actorOwned=true;
       for (const side of [-1, 1]) {
         const shape = new T.Shape();
         shape.moveTo(0, 0);
@@ -115,6 +131,7 @@ export class WorldAssets {
         shape.lineTo(0, -0.06);
         shape.closePath();
         const collar = new T.Mesh(new T.ShapeGeometry(shape), material);
+        collar.geometry.userData.actorOwned=true;
         collar.position.set(side * 0.024, female ? 1.46 : 1.55, 0.115);
         root.add(collar);
       }

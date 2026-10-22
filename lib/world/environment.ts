@@ -1,6 +1,5 @@
 import * as T from "three";
 import type { WorldAssets } from "./assets";
-import { prepareArchitecturalMaterials } from "./material-kit";
 import { Reflector } from "three/addons/objects/Reflector.js";
 import {
   box,
@@ -26,31 +25,13 @@ export type Environment = {
   }[];
   gates: T.Group[];
   lounge: T.Group;
+  reception: T.Group;
+  entrance: T.Group;
+  doors: T.Group[];
+  roofs: T.Object3D[];
+  bayTargets: T.Group[];
+  signals: T.MeshStandardMaterial[];
 };
-function groundTexture() {
-  const c = document.createElement("canvas");
-  c.width = c.height = 512;
-  const ctx = c.getContext("2d")!;
-  ctx.fillStyle = "#939b9e";
-  ctx.fillRect(0, 0, 512, 512);
-  let seed = 12345;
-  for (let i = 0; i < 24000; i++) {
-    seed = (seed * 16807) % 2147483647;
-    const x = seed % 512;
-    seed = (seed * 16807) % 2147483647;
-    const y = seed % 512;
-    ctx.fillStyle = i % 2 ? "#b8bfc118" : "#30383f17";
-    ctx.fillRect(x, y, 2, 2);
-  }
-  ctx.strokeStyle = "#5c687535";
-  ctx.lineWidth = 2;
-  ctx.strokeRect(0, 0, 512, 512);
-  const tx = new T.CanvasTexture(c);
-  tx.wrapS = tx.wrapT = T.RepeatWrapping;
-  tx.repeat.set(18, 17);
-  tx.colorSpace = T.SRGBColorSpace;
-  return tx;
-}
 function leafGeometry(length: number, width: number) {
   const pos: number[] = [],
     uv: number[] = [],
@@ -159,13 +140,27 @@ function roof(
   d: number,
   y: number,
 ) {
-  box(root, w, 0.14, d, m.roof, x, y, z, 0.015);
-  for (let i = 0; i < w; i += 0.3)
-    box(root, 0.05, 0.07, d, m.red, x - w / 2 + i, y + 0.1, z, 0.008);
-  box(root, w, 0.35, 0.16, m.red, x, y - 0.1, z + d / 2, 0.02);
+  // Pitched clay canopy: a coherent life-simulation silhouette rather than stacked slabs.
+  const slope=0.17, half=d/2, length=Math.hypot(half,slope*half);
+  for(const side of [-1,1]){
+    const panel=box(root,w,0.16,length,m.roof,x,y+slope*half/2,z+side*half/2,0.035);
+    panel.rotation.x=side*Math.atan(slope);
+    for(let i=0;i<w;i+=0.42){
+      const ridge=box(root,0.11,0.07,length,m.red,x-w/2+i,y+slope*half/2+0.12,z+side*half/2,0.035);
+      ridge.rotation.x=side*Math.atan(slope);
+    }
+  }
+  box(root,w,0.22,0.22,m.cream,x,y-0.06,z+d/2,0.035);
+  box(root,w,0.18,0.28,m.red,x,y+slope*half+0.1,z,0.06);
   for (const xx of [-w / 2 + 0.2, w / 2 - 0.2])
     for (const zz of [-d / 2 + 0.2, d / 2 - 0.2])
       box(root, 0.18, y, 0.18, m.steel, x + xx, y / 2, z + zz, 0.015);
+}
+/** Keep cutaway covers separate while batching stationary supports by material. */
+function cutawayRoof(group:T.Group,height:number){
+  const cover=new T.Group();
+  for(const child of [...group.children]) if(child.position.y>height-0.1) cover.add(child);
+  batch(group);batch(cover);group.add(cover);return cover;
 }
 function lantern(root: T.Group, x: number, y: number, z: number) {
   cylinder(root, 0.015, 0.6, m.black, x, y + 0.4, z);
@@ -178,7 +173,7 @@ export function buildEnvironment(
   mobile: boolean,
   assets?: WorldAssets,
 ): Environment {
-  prepareArchitecturalMaterials();
+  // A deliberately bounded, cutaway game world. No distant scenery or billboard backdrop.
   const gates: T.Group[] = [];
   const root = new T.Group(),
     palms: T.Group[] = [],
@@ -190,100 +185,52 @@ export function buildEnvironment(
   scene.add(root);
   const fixed = new T.Group();
   root.add(fixed);
-  const floor = new T.Mesh(
-    new T.PlaneGeometry(44, 44),
-    new T.MeshStandardMaterial({
-      map: groundTexture(),
-      roughness: 0.27,
-      metalness: 0.15,
-      transparent: true,
-      opacity: 0.84,
-    }),
-  );
+  const roofs: T.Object3D[] = [], bayTargets: T.Group[] = [], signals: T.MeshStandardMaterial[] = [];
+  const paving = mat("#d0d3c6", 0.92, 0);
+  const lawn = mat("#a4c58b", 1, 0);
+  const curb = mat("#ece7d9", 0.9, 0);
+  // Continuous courtyard grounded in its neighborhood, with a readable site boundary.
+  box(fixed, 110, 0.3, 105, mat("#b7c9a6", 1, 0), 0, -0.35, 6, 0.05);
+  box(fixed, 45.6, 0.25, 43.6, lawn, 0, -0.08, 6, 0.35);
+  const floor = new T.Mesh(new T.PlaneGeometry(39, 34), paving);
   floor.rotation.x = -Math.PI / 2;
-  floor.position.set(0, 0.035, 2);
+  floor.position.set(0, 0.045, 5);
   floor.receiveShadow = true;
   scene.add(floor);
-  const reflector = new Reflector(new T.PlaneGeometry(44, 44), {
-    clipBias: 0.004,
-    textureWidth: mobile ? 384 : 768,
-    textureHeight: mobile ? 384 : 768,
-    color: 0x777e85,
-    multisample: 0,
+  // A reflection is restricted to the wash apron instead of a mirror across the whole site.
+  const reflector = new Reflector(new T.PlaneGeometry(30, 9), {
+    clipBias: 0.004, textureWidth: mobile ? 256 : 512,
+    textureHeight: mobile ? 256 : 512, color: 0x869a9a, multisample: 0,
   });
   reflector.rotation.x = -Math.PI / 2;
-  reflector.position.set(0, 0.02, 2);
+  reflector.position.set(0, 0.05, -6);
+  reflector.visible = false; // Matte game-art pavement is intentional.
   scene.add(reflector);
-  box(fixed, 240, 0.3, 240, mat("#66854b"), 0, -0.22, 0);
-  box(fixed, 100, 0.1, 9, mat("#525e64"), 0, -0.02, 29);
-  for (let i = -10; i < 11; i++)
-    box(fixed, 3, 0.01, 0.15, m.cream, i * 6, 0.05, 29);
-  // Continuous terrain replaces the toy-like overlapping spherical hills.
-  const terrainGeometry = new T.PlaneGeometry(220, 90, 100, 50);
-  terrainGeometry.rotateX(-Math.PI / 2);
-  const terrainPosition = terrainGeometry.getAttribute("position");
-  const colors: number[] = [];
-  for (let i = 0; i < terrainPosition.count; i++) {
-    const x = terrainPosition.getX(i),
-      z = terrainPosition.getZ(i),
-      depth = (z + 45) / 90;
-    const ridge =
-      Math.sin(x * 0.035 + 1.7) * 5 +
-      Math.sin(x * 0.083 - 0.4) * 3.5 +
-      Math.cos(x * 0.14) * 1.8 +
-      11;
-    const rise =
-      Math.sin(Math.PI * (0.15 + depth * 0.8)) * Math.max(0, 1 - depth) * ridge;
-    const detail = Math.sin(x * 0.25 + z * 0.2) * Math.cos(z * 0.22) * 0.7;
-    terrainPosition.setY(i, Math.max(0, rise + detail));
-    const tint = new T.Color().lerpColors(
-      new T.Color("#416249"),
-      new T.Color("#8c9585"),
-      Math.min(1, rise / 19),
-    );
-    colors.push(tint.r, tint.g, tint.b);
+  box(fixed, 40, 0.12, 5, mat("#63767b", 1, 0), 0, 0.015, 28, 0.25);
+  for (let x = -18; x < 20; x += 5) box(fixed, 2.1, 0.012, 0.1, curb, x, 0.085, 28);
+  // Continuous pedestrian route, distinct from the one-way vehicle lanes.
+  box(fixed, 2.8, 0.11, 9, curb, 0, 0.06, 20, 0.15);
+  box(fixed, 25, 0.1, 2.6, curb, 0, 0.055, 14, 0.2);
+  for(let z=16; z<24; z+=0.8) box(fixed,2.7,0.015,0.035,mat("#c4c1b5"),0,0.12,z);
+  for(const x of [-21,21]) box(fixed,0.35,0.55,35,curb,x,0.2,4,0.1);
+  box(fixed,42,0.55,0.35,curb,0,0.2,-13,0.1);
+  // Entrance portal: the visitor selects the door, then the camera crosses the threshold.
+  const entrance = new T.Group(), doors: T.Group[] = [];
+  entrance.position.set(0,0,23.5); root.add(entrance);
+  for(const side of [-1,1]) {
+    box(entrance,0.55,3.8,0.6,m.red,side*2.15,1.9,0,0.1);
+    const door = new T.Group();door.position.set(side*1.87,0,0);
+    box(door,1.87,1.05,0.1,m.steel,-side*0.935,0.65,0,0.07);
+    for(let i=0;i<6;i++) box(door,0.055,1.3,0.08,m.cream,-side*(0.2+i*0.28),0.72,0,0.01);
+    entrance.add(door);doors.push(door);
   }
-  terrainGeometry.setAttribute(
-    "color",
-    new T.Float32BufferAttribute(colors, 3),
-  );
-  terrainGeometry.computeVertexNormals();
-  const terrain = new T.Mesh(
-    terrainGeometry,
-    new T.MeshStandardMaterial({ vertexColors: true, roughness: 1 }),
-  );
-  terrain.position.set(0, -0.2, -80);
-  fixed.add(terrain);
-  for (let i = 0; i < 10; i++) {
-    const x = -38 + i * 8;
-    box(
-      fixed,
-      6,
-      3 + (i % 3),
-      5,
-      mat(["#d8c4a6", "#cda591", "#e4d8ba"][i % 3]),
-      x,
-      1.5,
-      -30,
-      0.1,
-    );
-    box(fixed, 6.4, 0.35, 5.4, m.roof, x, 3.3 + (i % 3), -30, 0.02);
-    for (let j = 0; j < 3; j++)
-      box(fixed, 0.65, 0.9, 0.04, m.glass, x - 1.6 + j * 1.6, 2, -27.47, 0.01);
-  }
-  box(fixed, 8, 5, 4, mat("#e1c69c"), 20, 4, -42, 0.1);
-  for (const x of [17, 23]) {
-    box(fixed, 1.5, 10, 1.5, m.cream, x, 6, -41, 0.1);
-    sphere(fixed, 0.9, m.roof, x, 11.1, -41, 1, 0.85, 1);
-    box(fixed, 0.12, 1, 0.12, m.gold, x, 12, -41, 0.01);
-    for (let y = 5; y < 11; y += 2)
-      box(fixed, 0.5, 0.9, 0.02, m.black, x, y, -40.23, 0.05);
-  }
+  box(entrance,4.9,0.72,0.7,m.red,0,3.7,0,0.12);
+  sign(entrance,"FEBLES CAR WASH",4.5,0.48,0,3.7,0.36,"#fff9ec","#c72d28",83);
   scene.add(clouds);
   // Landscape frames pedestrian entrance and lounge.
   for (const side of [-1, 1]) {
-    box(fixed, 0.6, 0.55, 40, m.stone, side * 21, 0.26, 0, 0.07);
-    for (let z = -16; z <= 19; z += 6) {
+    box(fixed, 0.6, 0.55, 40, m.stone, side * 21, 0.26, 2, 0.07);
+    for (let z = -10; z <= 20; z += 10) {
       palm(root, palms, side * 20, z, 6.5 + Math.cos(z) * 0.7, assets);
       plant(fixed, side * 19, z, 1.2);
     }
@@ -302,16 +249,37 @@ export function buildEnvironment(
   planter(fixed, 18, -14, 5, 2);
   planter(fixed, -18, 17, 4, 1.6);
   planter(fixed, 18, 17, 4, 1.6);
-  planter(fixed, -6, 13, 1.2, 9);
-  planter(fixed, 6.4, 14, 1, 7);
-  planter(fixed, -12, 7.4, 9, 1);
+
+  planter(fixed, 6.4, 10, 1, 4);
+
   planter(fixed, 16, 9, 1, 8);
+  // Three queue spaces and two delivery spaces: real records own these parking slots.
+  for(const [x,z]of [[-11,5.5],[-7.7,5.5],[-4.4,5.5],[12,5.5],[15.3,5.5]]){
+    box(fixed,2.8,0.018,5.1,mat(x<0?"#aebeb6":"#b9cfb9",0.96),x,0.065,z,0.12);
+    for(const dx of [-1.42,1.42])box(fixed,0.06,0.02,5.1,curb,x+dx,0.08,z,0.005);
+  }
+  sign(fixed,"ESPERA",5,0.42,-7.7,0.17,8.4,"#4b6558","#e6e8da",100).rotation.x=-Math.PI/2;
+  sign(fixed,"ENTREGA",4.8,0.42,13.6,0.17,8.4,"#4b6558","#e6e8da",100).rotation.x=-Math.PI/2;
   // Five working wash bays. Roof, steel, hoses, carts, drain channels.
   box(fixed, 31.6, 3.8, 0.3, m.stone, 0, 1.9, -11, 0.03);
-  box(fixed, 31.6, 1.3, 0.15, m.red, 0, 0.7, -10.8, 0.01);
+  box(fixed, 31.6, 0.65, 0.15, m.cream, 0, 0.36, -10.8, 0.01);
   for (let i = 0; i < 5; i++) {
     const x = (i - 2) * 6;
-    roof(fixed, x, -6.4, 6, 9.4, 3.8);
+    const canopy = new T.Group();root.add(canopy);
+    roof(canopy, x, -6.4, 6, 9.4, 3.8);
+    roofs.push(cutawayRoof(canopy,3.8));
+    for(const zz of [-10.9,-1.9]) box(fixed,5.9,0.16,0.16,m.red,x,3.72,zz,0.025);
+    const target = new T.Group();target.position.set(x,0,-6);root.add(target);
+    box(target,5.5,0.015,8.6,mat(i===3?"#c4d4c7":"#a3b9b3",0.85,0),0,0.065,0,0.08);
+    bayTargets.push(target);
+    // Low dividers keep vehicles visible from the visitor camera.
+    if(i<4){box(fixed,0.13,1.05,6.7,m.cream,x+3,0.55,-7.1,0.045);box(fixed,0.17,0.1,6.8,m.woodLight,x+3,1.11,-7.1,0.04);}
+    for(let wet=0;wet<3;wet++){
+      const puddle=new T.Mesh(new T.CircleGeometry(0.5+wet*0.24,32),new T.MeshStandardMaterial({color:"#92b7b0",roughness:0.27,transparent:true,opacity:0.35,depthWrite:false}));
+      puddle.rotation.x=-Math.PI/2;puddle.scale.y=0.45;puddle.position.set(x-0.9+wet*0.7,0.09,-3.2-wet*2);fixed.add(puddle);
+    }
+    const signal = new T.MeshStandardMaterial({color:i===3?"#86bfa3":"#edb76a",emissive:i===3?"#86bfa3":"#edb76a",emissiveIntensity:0.15});
+    sphere(root,0.14,signal,x+1.7,3.43,-1.47);signals.push(signal);
     box(fixed, 5.9, 0.83, 0.3, m.steel, x, 3.45, -1.7, 0.03);
     sign(
       fixed,
@@ -378,17 +346,23 @@ export function buildEnvironment(
     fixed.add(cart);
   }
   // Main sign echoes the illustrated brand without baking the scene into an image.
-  brand(fixed, -12, 4.9, -4.5, 5.8);
+  sign(fixed, "FEBLES · PONCE", 11, 0.65, 0, 4.35, -10.6, "#fff4e0", "#c72d28", 100);
+  const reception = new T.Group();root.add(reception);
   // Open reception: staff and other bays remain visible through the structure.
-  roof(fixed, 11.2, 10, 7, 6, 3.5);
-  box(fixed, 6, 0.2, 5.7, m.cream, 11.2, 0.1, 10, 0.05);
-  box(fixed, 5.9, 0.8, 1.3, m.stone, 11.2, 0.5, 11.3, 0.09);
+  const receptionRoof = new T.Group();root.add(receptionRoof);
+  roof(receptionRoof, 11.2, 10, 7, 6, 3.5);
+  roofs.push(cutawayRoof(receptionRoof,3.5));
+  box(reception,6.5,2.65,0.18,m.cream,11.2,1.4,7.15,0.08);
+  box(reception,6.5,0.48,0.2,m.red,11.2,2.72,7.15,0.06);
+  sign(reception,"¡ESTÁS EN TU CASA!",3.6,0.45,11.2,2.15,7.26,"#4b6058","#e5dfd1",85);
+  box(reception, 6, 0.2, 5.7, m.cream, 11.2, 0.1, 10, 0.05);
+  box(reception, 5.9, 0.8, 1.3, m.stone, 11.2, 0.5, 11.3, 0.09);
   for (let i = 0; i < 30; i++)
-    box(fixed, 0.085, 0.76, 0.05, m.woodLight, 8.4 + i * 0.19, 0.49, 12, 0.015);
-  box(fixed, 6.1, 0.12, 1.55, m.wood, 11.2, 0.94, 11.3, 0.06);
-  box(fixed, 5.8, 0.035, 0.035, m.light, 11.2, 0.85, 12.01, 0.008);
+    box(reception, 0.085, 0.76, 0.05, m.woodLight, 8.4 + i * 0.19, 0.49, 12, 0.015);
+  box(reception, 6.1, 0.12, 1.55, m.wood, 11.2, 0.94, 11.3, 0.06);
+  box(reception, 5.8, 0.035, 0.035, m.light, 11.2, 0.85, 12.01, 0.008);
   sign(
-    fixed,
+    reception,
     "RECEPCIÓN",
     3.7,
     0.55,
@@ -399,14 +373,18 @@ export function buildEnvironment(
     "#282c30",
     120,
   );
-  brand(fixed, 11.2, 0.58, 12.04, 1.05);
-  box(fixed, 0.75, 0.48, 0.055, m.steel, 12.5, 1.42, 11.1, 0.04);
-  box(fixed, 0.1, 0.25, 0.2, m.steel, 12.5, 1.2, 11.1, 0.03);
-  lantern(fixed, 9.1, 2.9, 10.8);
-  lantern(fixed, 13.4, 2.9, 10.8);
-  planter(fixed, 14, 11.25, 0.5, 0.5);
+  brand(reception, 11.2, 0.58, 12.04, 1.05);
+  box(reception, 0.75, 0.48, 0.055, m.steel, 12.5, 1.42, 11.1, 0.04);
+  box(reception, 0.1, 0.25, 0.2, m.steel, 12.5, 1.2, 11.1, 0.03);
+  lantern(reception, 9.1, 2.9, 10.8);
+  lantern(reception, 13.4, 2.9, 10.8);
+  planter(reception, 14, 11.25, 0.5, 0.5);
   // Lounge furniture with cushions, lamps, coffee and waiting visitors.
-  roof(fixed, -12, 12, 8, 7, 3.5);
+  const loungeRoof = new T.Group();root.add(loungeRoof);
+  roof(loungeRoof, -12, 12, 8, 7, 3.5);
+  roofs.push(cutawayRoof(loungeRoof,3.5));
+  box(fixed,8,0.14,7,m.cream,-12,0.08,12,0.18);
+  for(let i=0;i<12;i++) box(fixed,0.065,2.8,0.12,m.woodLight,-15.6+i*0.66,1.4,8.6,0.01);
   const lounge = new T.Group();
   root.add(lounge);
   if (assets)
@@ -575,6 +553,7 @@ export function buildEnvironment(
     }
     if (!(assets && (cfg.id === "lights" || cfg.id === "interior")))
       batch(display);
+    display.visible = false;
     root.add(display);
     serviceObjects.push({ id: cfg.id, object: display });
   }
@@ -587,6 +566,6 @@ export function buildEnvironment(
     floor,
     serviceObjects,
     gates,
-    lounge,
+    lounge, reception, entrance, doors, roofs, bayTargets, signals,
   };
 }

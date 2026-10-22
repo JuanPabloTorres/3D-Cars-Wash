@@ -32,10 +32,12 @@ for (const name of ["assets", "entities", "primitives"]) {
         },
       },
     )
-    .outputText.replaceAll("'./primitives'", "'./primitives.js'")
+    .outputText.replace(/(["'])\.\.\/appearance\1/g, '"./appearance.js"')
+    .replaceAll("'./primitives'", "'./primitives.js'")
     .replaceAll('"./primitives"', '"./primitives.js"');
   fs.writeFileSync(new URL(name + ".js", output), code);
 }
+fs.writeFileSync(new URL("appearance.js", output), ts.transpileModule(fs.readFileSync(new URL("../lib/appearance.ts",import.meta.url),"utf8"),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText);
 try {
   const { WorldAssets, MODEL_FILES } = await import(
     new URL("assets.js", output)
@@ -86,6 +88,29 @@ try {
         "material batching prevents hundreds of draw calls per vehicle",
       );
     }
+  });
+  test("Pickup, compacto y van usan carrocerías propias con medidas y ruedas correctas", () => {
+    const sizes={};
+    for(const kind of ["Sedán","SUV","Pickup","Compacto","Van"]){
+      const model=assets.vehicle(kind,new T.Color("red"));sizes[kind]=size(model.root);
+      assert.equal(model.wheels.length,4);
+      assert.ok(model.wheels.every(w=>w.children.length>0));
+    }
+    assert.ok(sizes.Pickup.z>5.5 && sizes.Pickup.y<2.1);
+    assert.ok(sizes.Compacto.z<4.4 && sizes.Compacto.y<1.7);
+    assert.ok(sizes.Van.y>2.2 && sizes.Van.z>5.4);
+    assert.throws(()=>assets.vehicle("Otro-desconocido",new T.Color()),/Categoría/);
+  });
+  test("Cambiar el personaje mantiene su posición, su ruta y el actor", () => {
+    const actor=new Person(2,18,false,"#ccccbb",assets);
+    actor.goTo([new T.Vector3(2,0.08,14),new T.Vector3(8,0.08,14)]);
+    actor.update(1,0.1);
+    const group=actor.group,position=group.position.clone(),target=actor.target.clone(),route=actor.waypoints.map(v=>v.clone());
+    actor.setAppearance(true);
+    assert.equal(actor.group,group);assert.deepEqual(group.position,position);assert.deepEqual(actor.target,target);assert.deepEqual(actor.waypoints,route);
+    assert.ok(Math.abs(size(group).y-1.73)<0.02);
+    actor.setAppearance(false);assert.ok(Math.abs(size(group).y-1.82)<0.02);
+    actor.dispose();
   });
   test("La pintura es independiente y la geometría se comparte entre vehículos", () => {
     const a = assets.vehicle("SUV", new T.Color("red")),
@@ -142,7 +167,7 @@ try {
   test("Mobiliario y vegetación usan modelos completos dentro del presupuesto de descarga", () => {
     assert.ok(size(assets.sofa()).x > 2.8);
     assert.ok(Math.abs(size(assets.palm(7)).y - 7) < 0.01);
-    assert.ok(bytesTotal < 7_000_000);
+    assert.ok(bytesTotal < 11_500_000);
     console.log("Modelos GLB:", (bytesTotal / 1e6).toFixed(2) + " MB");
   });
   test("Los servicios usan el asiento y el foco extraídos del SUV detallado", () => {

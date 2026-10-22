@@ -43,3 +43,9 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+
+.profile-test/
+
+.operation-test/
+.world-test/
+.spatial-test/

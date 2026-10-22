@@ -20,8 +20,10 @@ for (const name of ["primitives", "entities", "environment", "material-kit"]) {
   code = code
     .replaceAll('"./material-kit"', '"./material-kit.js"')
     .replaceAll("'./material-kit'", "'./material-kit.js'");
+  code=code.replace(/(["'])\.\.\/appearance\1/g, '"./appearance.js"');
   fs.writeFileSync(new URL(name + ".js", output), code);
 }
+fs.writeFileSync(new URL("appearance.js", output), ts.transpileModule(fs.readFileSync(new URL("../lib/appearance.ts",import.meta.url),"utf8"),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText);
 try {
   const T = await import("three");
   const { Car, Person, WaterEffect } = await import(

@@ -797,3 +797,12 @@ a svg {
   margin: 12px 0;
   font-size: 18px;
 }
+/* The only customer form is projected onto a tablet inside the 3D world. */
+.avatar-choice {border:0;padding:0;margin:0 0 24px;min-width:0}
+.avatar-choice legend {font-size:26px;font-weight:700;margin-bottom:14px;color:#46594f}
+.avatar-choice > div {display:flex;gap:16px}
+.avatar-choice label {display:flex;align-items:center;justify-content:center;gap:14px;border:2px solid #d5dbce;border-radius:18px;padding:16px 22px;min-height:76px;flex:1;background:#f3f1e7;font-size:28px;cursor:pointer}
+.avatar-choice label.chosen {border-color:#6e9e82;background:#e1eddf}
+.avatar-choice input {width:26px!important;height:26px!important;min-height:0!important;accent-color:#568c6c}
+.avatar-choice small {display:block;font-size:19px;margin-top:12px;color:#6b7b6d}
+.spatial-store .account-orb,.spatial-store .return-to-world {background:#f4f1e6e8;color:#3b594a;border:1px solid #ccd8c6;box-shadow:0 4px 12px #344d3820}
