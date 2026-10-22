@@ -1,6 +1,6 @@
 # Febles · Car wash virtual
 
-Versión 0.2 de una tienda 3D animada con cámara dirigida por intenciones. Three.js, React/TypeScript, API por capas y SQL D1.
+Versión 0.3 de una tienda 3D animada con cámara dirigida por intenciones. Three.js, React/TypeScript, API por capas y SQL D1.
 
 ## Recorrido
 
@@ -20,4 +20,8 @@ Consulta `ARCHITECTURE.md` para contratos, decisiones, seguridad, fuentes y sigu
 
 ## Experiencia y verificación
 
-`AUDIT-V0.2.md` documenta los cambios de jerarquía, cámara, movimiento, estado y límites de aceptación. Las referencias conceptuales no se utilizan como fondos. El acabado procedural todavía necesita una revisión artística para igualar los personajes y detalles de las ilustraciones. WebGL es necesario; el navegador de pruebas tiene su contexto gráfico deshabilitado.
+`AUDIT-V0.3.md` documenta el cambio de dirección artística y la aceptación pendiente. La escena usa modelos GLB detallados de vehículos, humanos con animación esquelética, sofás y palmeras. No se utilizan imágenes de fondo para simular el mundo. Las referencias conceptuales orientan el encuadre y los materiales; la equivalencia visual todavía requiere revisión humana sobre WebGL.
+
+Los seis modelos de ejecución suman 5,91 MB. Meshopt comprime la geometría y WebP reduce las texturas. Los vehículos conservan cuatro ruedas animadas y pintura independiente; el mundo agrupa su geometría por material. Fuentes y licencias: `public/models/studio/NOTICE.md`.
+
+`pnpm test` verifica dominio, SQL, rutas, decodificación de los GLB reales, escala, esqueletos independientes, animación sin deriva y presupuesto de recursos. El navegador de pruebas tiene WebGL deshabilitado; estas comprobaciones no sustituyen la aceptación visual ni la medición en móviles reales.

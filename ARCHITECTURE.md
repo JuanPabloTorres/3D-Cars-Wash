@@ -1,4 +1,4 @@
-# Febles virtual · v0.2
+# Febles virtual · v0.3
 
 Estado: primera implementación funcional; importes ilustrativos; no certificada para operación comercial. El mundo es una interpretación del local, no un levantamiento arquitectónico. La inspección visual en navegador quedó bloqueada por la política del navegador de pruebas.
 
@@ -57,7 +57,8 @@ Antes de uso comercial: aprobar tarifas e impuestos, términos de garantía, pol
 
 - Kenney Car Kit 3.1 — https://kenney.nl/assets/car-kit — CC0; archivos y licencia en `public/models/cars`.
 - Kenney Mini Characters — https://kenney.nl/assets/mini-characters — CC0; modelos y licencia en `public/models/characters`.
-- Escenario, cubículos, mobiliario, herramientas y vegetación: geometría original del proyecto.
+- Modelos activos de SUV, sedán, personas, sofá y palmera: Innerscene 3D Parts Library, declarados CC0. Fuentes, adaptaciones y checksums en `public/models/studio/NOTICE.md`. Los recursos Kenney se conservan como archivos históricos y no se cargan en la experiencia actual.
+- Escenario, cubículos y expositores de herramientas: geometría original del proyecto.
 - Three.js — https://threejs.org/manual/ y https://threejs.org/docs/ — carga GLTF, cámaras, animación y escena.
 - Babylon.js evaluado — https://www.babylonjs.com/specifications/ — alternativa completa; no necesario sumar dos motores.
 - OWASP — https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html y https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html.
@@ -71,3 +72,13 @@ Las licencias originales se incluyen. No se ha descargado ni reutilizado arte de
 ## Evolución v0.2 · dirección de escena
 
 La escena se divide en director, entidades, entorno y primitivas. El director recibe intención y estado confirmado; aplica interpolación de cámara, waypoints y etiquetas proyectadas. Las entidades reciben estado visual, nunca permisos ni acceso a SQL. No se necesita navegación libre. La simulación ambiental coordina un solo vehículo de tráfico por ciclo y no modifica órdenes de negocio. El carro del visitante usa la asignación real y su tipo/pintura; los materiales se reutilizan y las geometrías inmutables se agrupan por material. Un reflector planar puede desactivarse automáticamente si el rendimiento inicial es bajo. Consultar `AUDIT-V0.2.md` para límites de aceptación y trabajo artístico pendiente.
+
+## Evolución v0.3 · modelos detallados e interfaz contextual
+
+`WorldAssets` carga y valida el conjunto GLB antes de mostrar la escena. `GLTFLoader` y el decodificador Meshopt forman el adaptador de recursos. La factoría comparte geometrías/texturas y crea pinturas y esqueletos independientes por entidad; los materiales propios se liberan con el mundo. Los nombres originales de las ruedas permiten agrupar las más de 300 piezas de cada carro en menos de 30 mallas, conservando cuatro pivotes animados. La cámara recibe intenciones y enfoca cada expositor físico. Los personajes mezclan su clip de espera con gestos y marcha sobre huesos, restableciendo la pose antes de cada actualización para evitar deriva acumulativa.
+
+La interfaz elimina el dock, el branding flotante y el HUD grande. Los marcadores muestran solo puntos, con nombre al enfocar o pasar el cursor. Recepción concentra destinos y acceso administrativo; una sola conversación contextual aparece por vez. La vista general conserva una entrada breve y las visitas activas muestran un resumen compacto seleccionable. Los datos del negocio siguen controlados por la API.
+
+El tráfico ambiental ya iniciado termina su maniobra antes de mover el carro del cliente. Una nueva maniobra ambiental no empieza mientras el cliente tiene una ruta pendiente. Esta coordinación visual no cambia estados SQL. La lógica operativa y sus restricciones no dependen de que termine una animación.
+
+Límites: Pickup usa provisionalmente la carrocería SUV y Compacto un sedán reducido; la interfaz lo declara para Pickup. Las puertas del nuevo modelo no están articuladas. Los gestos y marcha son adaptaciones sobre el rig, no captura de movimiento. Verificación visual, accesibilidad de todo el recorrido y rendimiento Android/iOS siguen pendientes; no se afirma una réplica exacta de las referencias.
