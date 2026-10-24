@@ -55,3 +55,204 @@ Running 38 tests using 1 worker
   x  34 [commercial] › tests\e2e\sow.spec.ts:129:1 › Administración publica contenido y precios; cotización obsoleta se rechaza sin alterar precio aceptado (1.5m)
 (node:2572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
+  ok 35 [commercial] › tests\e2e\sow.spec.ts:174:1 › Cliente y administrador comparten llegada, fila, bahía, tarea, entrega e historial (1.9m)
+  ok 36 [commercial] › tests\e2e\sow.spec.ts:240:1 › Solicitud de contacto confirmada llega a administración; sin permiso no se recibe (7.2s)
+  ok 37 [commercial] › tests\e2e\sow.spec.ts:275:1 › Móvil: recepción, cuatro objetos accesibles, navegación, cuenta y administración (6.1s)
+  ok 38 [commercial] › tests\e2e\sow.spec.ts:310:1 › Ana saluda, señala servicios y explica vehículo, revisión e información antes de escuchar (22.0s)
+
+
+  1) [commercial] › tests\e2e\commercial.spec.ts:70:1 › Cotización vencida se renueva y no confirma datos caducados 
+
+    TimeoutError: locator.waitFor: Timeout 60000ms exceeded.
+    Call log:
+      - waiting for locator('[data-ready=true]') to be visible
+
+
+      3 | const evidence=`${process.env.CARWASH_EVIDENCE_DIR||'docs/evidence/pilot-20261023/after'}/e2e-commercial`
+      4 | const snap=(p:Page)=>p.evaluate(()=>window.__FEBLES__.snapshot() as any)
+    > 5 | async function ready(p:Page,url='/?tools=demo&scenario=mixed'){await p.goto(url);await p.locator('[data-ready=true]').waitFor({timeout:60000});await expect(p.getByText('Simulación conectada',{exact:true})).toBeVisible()}
+        |                                                                                                                       ^
+      6 | async function visit(p:Page,label:string){await p.getByRole('button',{name:/^Visitar(?: Orden activa)?$/}).click();await p.getByRole('navigation',{name:'Visitar un área'}).getByRole('button',{name:label}).click();await p.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)}
+      7 | async function capture(p:Page,name:string){await fs.mkdir(evidence,{recursive:true});await p.screenshot({path:`${evidence}/${name}.png`,animations:'disabled'})}
+      8 | async function select(p:Page){await visit(p,'Recepción');await p.getByRole('button',{name:/Conocer servicios/}).click();await p.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click();await p.getByRole('button',{name:'Añadir Cuidado interior',exact:true}).click();await p.getByRole('button',{name:'Continuar',exact:true}).click()}
+        at ready (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:5:119)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:71:2
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Cotización-venc-c774c-no-confirma-datos-caducados-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Cotización-venc-c774c-no-confirma-datos-caducados-commercial\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Cotización-venc-c774c-no-confirma-datos-caducados-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Cotización-venc-c774c-no-confirma-datos-caducados-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [commercial] › tests\e2e\commercial.spec.ts:73:1 › Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran 
+
+    TimeoutError: locator.waitFor: Timeout 60000ms exceeded.
+    Call log:
+      - waiting for locator('[data-ready=true]') to be visible
+
+
+      3 | const evidence=`${process.env.CARWASH_EVIDENCE_DIR||'docs/evidence/pilot-20261023/after'}/e2e-commercial`
+      4 | const snap=(p:Page)=>p.evaluate(()=>window.__FEBLES__.snapshot() as any)
+    > 5 | async function ready(p:Page,url='/?tools=demo&scenario=mixed'){await p.goto(url);await p.locator('[data-ready=true]').waitFor({timeout:60000});await expect(p.getByText('Simulación conectada',{exact:true})).toBeVisible()}
+        |                                                                                                                       ^
+      6 | async function visit(p:Page,label:string){await p.getByRole('button',{name:/^Visitar(?: Orden activa)?$/}).click();await p.getByRole('navigation',{name:'Visitar un área'}).getByRole('button',{name:label}).click();await p.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)}
+      7 | async function capture(p:Page,name:string){await fs.mkdir(evidence,{recursive:true});await p.screenshot({path:`${evidence}/${name}.png`,animations:'disabled'})}
+      8 | async function select(p:Page){await visit(p,'Recepción');await p.getByRole('button',{name:/Conocer servicios/}).click();await p.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click();await p.getByRole('button',{name:'Añadir Cuidado interior',exact:true}).click();await p.getByRole('button',{name:'Continuar',exact:true}).click()}
+        at ready (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:5:119)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:74:2
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ruedas-observab-93353-n-el-desplazamiento-y-paran-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ruedas-observab-93353-n-el-desplazamiento-y-paran-commercial\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ruedas-observab-93353-n-el-desplazamiento-y-paran-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ruedas-observab-93353-n-el-desplazamiento-y-paran-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [commercial] › tests\e2e\commercial.spec.ts:76:1 › Ambientes conservados: seis climas legibles con errores de página ausentes 
+
+    TimeoutError: locator.waitFor: Timeout 60000ms exceeded.
+    Call log:
+      - waiting for locator('[data-ready=true]') to be visible
+
+
+      3 | const evidence=`${process.env.CARWASH_EVIDENCE_DIR||'docs/evidence/pilot-20261023/after'}/e2e-commercial`
+      4 | const snap=(p:Page)=>p.evaluate(()=>window.__FEBLES__.snapshot() as any)
+    > 5 | async function ready(p:Page,url='/?tools=demo&scenario=mixed'){await p.goto(url);await p.locator('[data-ready=true]').waitFor({timeout:60000});await expect(p.getByText('Simulación conectada',{exact:true})).toBeVisible()}
+        |                                                                                                                       ^
+      6 | async function visit(p:Page,label:string){await p.getByRole('button',{name:/^Visitar(?: Orden activa)?$/}).click();await p.getByRole('navigation',{name:'Visitar un área'}).getByRole('button',{name:label}).click();await p.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)}
+      7 | async function capture(p:Page,name:string){await fs.mkdir(evidence,{recursive:true});await p.screenshot({path:`${evidence}/${name}.png`,animations:'disabled'})}
+      8 | async function select(p:Page){await visit(p,'Recepción');await p.getByRole('button',{name:/Conocer servicios/}).click();await p.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click();await p.getByRole('button',{name:'Añadir Cuidado interior',exact:true}).click();await p.getByRole('button',{name:'Continuar',exact:true}).click()}
+        at ready (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:5:119)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:77:31
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ambientes-conse-d8892--errores-de-página-ausentes-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ambientes-conse-d8892--errores-de-página-ausentes-commercial\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ambientes-conse-d8892--errores-de-página-ausentes-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Ambientes-conse-d8892--errores-de-página-ausentes-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [commercial] › tests\e2e\commercial.spec.ts:81:1 › Tarifas por categoría sin precio inventado y borrador conservado 
+
+    TimeoutError: locator.waitFor: Timeout 60000ms exceeded.
+    Call log:
+      - waiting for locator('[data-ready=true]') to be visible
+
+
+      3 | const evidence=`${process.env.CARWASH_EVIDENCE_DIR||'docs/evidence/pilot-20261023/after'}/e2e-commercial`
+      4 | const snap=(p:Page)=>p.evaluate(()=>window.__FEBLES__.snapshot() as any)
+    > 5 | async function ready(p:Page,url='/?tools=demo&scenario=mixed'){await p.goto(url);await p.locator('[data-ready=true]').waitFor({timeout:60000});await expect(p.getByText('Simulación conectada',{exact:true})).toBeVisible()}
+        |                                                                                                                       ^
+      6 | async function visit(p:Page,label:string){await p.getByRole('button',{name:/^Visitar(?: Orden activa)?$/}).click();await p.getByRole('navigation',{name:'Visitar un área'}).getByRole('button',{name:label}).click();await p.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)}
+      7 | async function capture(p:Page,name:string){await fs.mkdir(evidence,{recursive:true});await p.screenshot({path:`${evidence}/${name}.png`,animations:'disabled'})}
+      8 | async function select(p:Page){await visit(p,'Recepción');await p.getByRole('button',{name:/Conocer servicios/}).click();await p.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click();await p.getByRole('button',{name:'Añadir Cuidado interior',exact:true}).click();await p.getByRole('button',{name:'Continuar',exact:true}).click()}
+        at ready (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:5:119)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:82:2
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Tarifas-por-cat-fe034-ntado-y-borrador-conservado-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Tarifas-por-cat-fe034-ntado-y-borrador-conservado-commercial\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Tarifas-por-cat-fe034-ntado-y-borrador-conservado-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Tarifas-por-cat-fe034-ntado-y-borrador-conservado-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [commercial] › tests\e2e\commercial.spec.ts:89:1 › Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend 
+
+    TimeoutError: locator.waitFor: Timeout 60000ms exceeded.
+    Call log:
+      - waiting for locator('[data-ready=true]') to be visible
+
+
+      3 | const evidence=`${process.env.CARWASH_EVIDENCE_DIR||'docs/evidence/pilot-20261023/after'}/e2e-commercial`
+      4 | const snap=(p:Page)=>p.evaluate(()=>window.__FEBLES__.snapshot() as any)
+    > 5 | async function ready(p:Page,url='/?tools=demo&scenario=mixed'){await p.goto(url);await p.locator('[data-ready=true]').waitFor({timeout:60000});await expect(p.getByText('Simulación conectada',{exact:true})).toBeVisible()}
+        |                                                                                                                       ^
+      6 | async function visit(p:Page,label:string){await p.getByRole('button',{name:/^Visitar(?: Orden activa)?$/}).click();await p.getByRole('navigation',{name:'Visitar un área'}).getByRole('button',{name:label}).click();await p.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)}
+      7 | async function capture(p:Page,name:string){await fs.mkdir(evidence,{recursive:true});await p.screenshot({path:`${evidence}/${name}.png`,animations:'disabled'})}
+      8 | async function select(p:Page){await visit(p,'Recepción');await p.getByRole('button',{name:/Conocer servicios/}).click();await p.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click();await p.getByRole('button',{name:'Añadir Cuidado interior',exact:true}).click();await p.getByRole('button',{name:'Continuar',exact:true}).click()}
+        at ready (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:5:119)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:90:2
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Preguntas-autor-a8b2a-a-nunca-enviada-sin-backend-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Preguntas-autor-a8b2a-a-nunca-enviada-sin-backend-commercial\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Preguntas-autor-a8b2a-a-nunca-enviada-sin-backend-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\commercial-Preguntas-autor-a8b2a-a-nunca-enviada-sin-backend-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [commercial] › tests\e2e\sow.spec.ts:129:1 › Administración publica contenido y precios; cotización obsoleta se rechaza sin alterar precio aceptado 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: apiRequestContext.get: Test ended.
+    Browser logs:
+
+    <launching> C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=C:\Users\estju\AppData\Local\Temp\playwright_chromiumdev_profile-KUtF4f --remote-debugging-pipe --no-startup-window
+    <launched> pid=12316
+    [pid=12316] <gracefully close start>
+
+       9 | async function visit(page: Page, label: string) { await page.getByRole('button', { name: /^Visitar(?: Orden activa)?$/ }).click(); await page.getByRole('navigation', { name: 'Visitar un área' }).getByRole('button', { name: label }).click(); await page.waitForFunction(() => !(window.__FEBLES__.snapshot() as any).destination); }
+      10 | async function login(page: Page) { await page.goto('/admin'); await page.getByLabel('Clave local de administración').fill((await fs.readFile('server/.local-admin-token', 'utf8')).trim()); await page.getByRole('button', { name: 'Entrar al panel local' }).click(); await page.getByRole('heading', { name: 'Fila, bahías y próximas acciones' }).waitFor(); }
+    > 11 | async function session(context: BrowserContext) { return (await context.request.get(base + '/api/demo/session')).json(); }
+         |                                                                                 ^
+      12 | async function post(context: BrowserContext, path: string, data: unknown) { const s = await session(context); return context.request.post(base + '/api/demo/' + path, { headers: { Origin: base, 'X-Demo-Nonce': s.nonce }, data }); }
+      13 | async function quote(context: BrowserContext) { return (await post(context, 'quote', { services: ['exterior'], vehicle: { type: 'car', color: 'Azul', contact: 'test@example.test' } })).json(); }
+      14 | const errorsFor = (page: Page) => { const errors: string[] = []; page.on('pageerror', e => errors.push(e.message)); return errors; };
+        at session (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\sow.spec.ts:11:81)
+        at post (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\sow.spec.ts:12:93)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\sow.spec.ts:169:15
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\sow-Administración-publica-1fd44-sin-alterar-precio-aceptado-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\sow-Administración-publica-1fd44-sin-alterar-precio-aceptado-commercial\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\diagnostico-ux-20261023\full-attempt-1\results\sow-Administración-publica-1fd44-sin-alterar-precio-aceptado-commercial\error-context.md
+
+  6 failed
+    [commercial] › tests\e2e\commercial.spec.ts:70:1 › Cotización vencida se renueva y no confirma datos caducados 
+    [commercial] › tests\e2e\commercial.spec.ts:73:1 › Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran 
+    [commercial] › tests\e2e\commercial.spec.ts:76:1 › Ambientes conservados: seis climas legibles con errores de página ausentes 
+    [commercial] › tests\e2e\commercial.spec.ts:81:1 › Tarifas por categoría sin precio inventado y borrador conservado 
+    [commercial] › tests\e2e\commercial.spec.ts:89:1 › Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend 
+    [commercial] › tests\e2e\sow.spec.ts:129:1 › Administración publica contenido y precios; cotización obsoleta se rechaza sin alterar precio aceptado 
+  32 passed (22.5m)

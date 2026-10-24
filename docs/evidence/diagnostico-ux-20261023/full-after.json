@@ -1,0 +1,606 @@
+[
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\ASSET_LICENSES.txt",
+    "Hash": "FE1C46D98E4DB7B174E8E4506EC0BEB0816A7B80AA2810C85529DF298B90BD42"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-CaPScQ43.css",
+    "Hash": "C98B101F5793C47BEC82967570C6DDC3837C04963218D667FB9E6127C49AF56B"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-DV9UaTBB.js",
+    "Hash": "F7ECC39B4B3371D31596464CAC31863D05CC239E7E7F5C291DAF4955AFF8091D"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-CDIzn7dz.js",
+    "Hash": "F5D0F9810EDF083E849BBFABD3800E1941C939AFE00B6B353DD8CA2CFA508F8C"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-DfWZY5VG.css",
+    "Hash": "0485EF6EC50C63DBCCD4C556C1A832B74F14B6EFF6D7A318162C71AE70F8DF40"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-CQHhKH3-.css",
+    "Hash": "4D084E42D1CF3A725C0571E394D25FC1920729F16A7FE7EC14BAF34A31B34DFC"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-CtrwCYhx.js",
+    "Hash": "1E7270D376D257BA85FB6767B1B3B764404833E0C97133832A8048D36AD597B0"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+    "Hash": "C268B459A9329E59FECF39A17618EFD44C71735532048D60B12AAB76A8C14914"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\manrope-greek-wght-normal-DL7QRZyv.woff2",
+    "Hash": "2FB2E8CBFD52AE46179A8B6024EB162F1F9C6DE3D22D6E3A30D8F395DE7220BE"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
+    "Hash": "3911B66D9F2E005A4B989223405D0E5032619C668597BA467CC76A23C8FFFCFB"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\manrope-latin-wght-normal-DHIcAJRg.woff2",
+    "Hash": "A30DDCD349703AFF7464C34BEF3FFFDFF405EE50C113440D7C8693C02D210972"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\manrope-vietnamese-wght-normal-usUDDRr7.woff2",
+    "Hash": "6BBB044AB420E07EDB0A3042D2EB314B85E83A0182E945A15AB3B9092668DFD5"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\WorldBadges-Cd0OEKrK.js",
+    "Hash": "06F66433E43027F3F2E7686D80B827A26E2D5F3757E929FABA4D678E83403240"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\fonts\\dm-sans.ttf",
+    "Hash": "8CD08D97E89C24D0AA92EDD2F0F4C8EE6195EEE9B7C9F154865A58B02F0C1C0D"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\fonts\\dm-sans.woff2",
+    "Hash": "9FEA608A947E67020C33CAD9A6FE3D60C54119DFB8CFF87768A8117A15ED7543"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\fonts\\manrope-medium.ttf",
+    "Hash": "170ADFA711F62F4F343E46701FAFAE50380BA9BD50CF2B246452B9D5A075169C"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\fonts\\manrope-OFL.txt",
+    "Hash": "58172E0C0FAC2CDA8A37B348164BB55E44B0E69051E557E92B1D3F6910141F7B"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\fonts\\manrope.ttf",
+    "Hash": "3AE11C49DB0455A3CC33E37D380F20FDB8C7F8B41DC07625C177E3D87A9D6AE6"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\fonts\\OFL.txt",
+    "Hash": "9AF36190332437F5ECD09974DE43C1F7C77A310A996CDD8CEB25628B458840E1"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\index.html",
+    "Hash": "27083B9738C7CCE4649306944C89FAC087F5C392A0C80D64793BB7C2D9DD17EB"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\areca.glb",
+    "Hash": "971EA8B671828431AD3569C81C326ADFAAE9C932CE8AE7C5F46E16F238780F58"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\bench.glb",
+    "Hash": "E4D2E1111DDEF4379A0C13EE64AB29C81C0F62FFBE0A5ABD835CFCF0346946E6"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\calathea.glb",
+    "Hash": "62894480CECFA8B0AFBCA8BFACD8AC837C214FE0F205A0244AE81C5D8D794787"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\canopyTree.glb",
+    "Hash": "ECC1E14131C5DB4087262C315B09D847D26DE447A3F6BFA6A074EBF7307B9CBE"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\cart.glb",
+    "Hash": "88D279AB2B3D9817365FD9114F57B49855D4342D41B37FD7218293E8EBE602DD"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\coherentCalathea.glb",
+    "Hash": "BD4F81B337BD31611051B31E8D958F7AF76C82056017C77C7515737D2DA22967"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\coherentOak.glb",
+    "Hash": "9114F364FF0765C7504CCC8B6F71DBA408170E6963B8FDCAB993FD7A48D7B449"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\coherentShrub.glb",
+    "Hash": "28B222F8B895E251D1928153AF3AB41FF7561935E9131F57AD46915939BEAC2A"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\datePalm.glb",
+    "Hash": "94E130EE5AB0E989C51193BD467A780ACCA3AAD676BF07845AB9B8F68CFEA2C7"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\fern.glb",
+    "Hash": "6CE66D654DA80960F7AEBE97DAD75E3DF94463589BD536B17339AE607D290501"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\hose.glb",
+    "Hash": "155402C49E39718E272C4545A3BE355FF76C370D00E49191A1ABD85CA224F8AF"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\islandTree.glb",
+    "Hash": "947B09DB8A9A72784486A07ACE20D2A9ACE3F37AEDF3DC192C7AD2200DD4CD5F"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\islandTreeFar.glb",
+    "Hash": "FE71352BAAE0500B84BF19B11DB651813682CD8E25734CDB9AA08E7EBB9B8706"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\naturalFern.glb",
+    "Hash": "52950086C0ACBE8BF18D28AD43464A5C07ED33ADA5712C4B20CC94D2987F7A1F"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\naturalTree.glb",
+    "Hash": "BB9A6729ED4E65195AEE539485E893F8C0852B442B77A48A02EE9CE3F0ECD1F3"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\naturalTreeDense.glb",
+    "Hash": "5A1ED837DC16897FB3EE2300A7059FB5A13AE134FD7D7D64AB559CB7DFA924AD"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\palm.glb",
+    "Hash": "E93888E5BCF31A278B469161D99E120B7361EAB719848F65D37D118C52B2DC29"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\plant.glb",
+    "Hash": "C0EC050A66386928FED820AA9AE4D9A54DB9957F9D2C27F9009A94A522C8D695"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\pottedPlant.glb",
+    "Hash": "CF5231B4117F3C321E2A46BBA509A3FBA3F98873D66D13CA3BFFC7479123D3EF"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\receptionist.glb",
+    "Hash": "85BC5FB7DBDF76498B18F3DD1866D5505E6C330F0F8462CD493702296E8B294F"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\sander.glb",
+    "Hash": "6E9D31D115C780823C5C95A9C4FA2D52692A74149F8FC32B10703991ACAEB00D"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\shrub.glb",
+    "Hash": "E9BD86D876D0B063B8EE45916E2474649B14C9B201CE718CFE370DC932314421"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\sprayer.glb",
+    "Hash": "78C07B68A366D2DBEF2435454F94EC0FFE3D2BA340F7468C634AA18F21F18843"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\sprayWand.glb",
+    "Hash": "3DA7E36EA98C42002C8F41AAAE457D13C7529CD0A31734FDB0A5B09D235D555F"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\tropicalPalm.glb",
+    "Hash": "6B43FD5E32C8713637112FC405807F7CF418828A7AA2B57A3E2148D81124ECB3"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\urbanCalathea.glb",
+    "Hash": "4AEB3F8AE5D638565DF8C538A8B21BF6E880089E203415E634F840B42FED3587"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\urbanFern.glb",
+    "Hash": "1F17D69C9D48760E9D9BFDCEA7B5E7BA25A9587C3F0A1FC272861ABF53CF1AAB"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\urbanShrub.glb",
+    "Hash": "72CEB75CEE33655D40A05D62E2E96B64C949DC6ED82140F796FC32B85DA45650"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\urbanTree.glb",
+    "Hash": "E2D5E66843A4DA1C378B06362D9695EE1B28579AA4DF7449702A16782A1833CF"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\urbanTreeFar.glb",
+    "Hash": "8BA76BF35AE06CE91CA71279DC131F9C15F5ADE72814F393D7E13B3E6D307DE3"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\vacuum.glb",
+    "Hash": "B958974B7E6351E8A34B38114E9B637412D74AB943A44399EE67EBDF764D4522"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\vacuumNozzle.glb",
+    "Hash": "9C146B1033B36172AC5A1EC45780744732D1DA785A47034B2ABA79C2AF6524EE"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\vehicle-car.glb",
+    "Hash": "8AAAF79C74AE0EDD8A7E34D420920E2C9329C9457560C5916C2B973FBD7A7FFA"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\vehicle-pickup.glb",
+    "Hash": "20E660E331C8455D52C06CF95AC40E3CA46924F3CC49EB48438E41D8208E8822"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\vehicle-suv.glb",
+    "Hash": "FD31026A1FC2D77F556D6400B4308F603F288FA2A1240CE65484CE54C6FB5411"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\vehicle-truck.glb",
+    "Hash": "5267EA72BF485596C5D06A51815B887F35AC31044DDD38F91811E0E5D8AC9F76"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\vehicle.glb",
+    "Hash": "6AC5E4618FDA2641AA4A645D1AAF833E2B005DD4C691AC74060B1114401BC2E2"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\models\\worker.glb",
+    "Hash": "29284E5BB0CE6D1916F816E9497F1C84B3BB531D77108C2366C5C998159E010E"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\concrete-color.jpg",
+    "Hash": "6E40C0FC908F4D66431836F5ABE203F3A4EB064E88824378A91A46A26E2F464C"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\concrete-normal.jpg",
+    "Hash": "523BD94A1BE5DD2F11C2AE2B7D7C77445CF5BD9E41604DB515A7C8364DCBA067"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\concrete-roughness.jpg",
+    "Hash": "069EFE4CA018E0EF61FD8CC9964395BA8272284AE239DA68D7F87988E2E9F488"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\daylight.hdr",
+    "Hash": "AA5F1BE2C1903F9EA8B9C1B8F931B5008337E13DD8010803A4A81EAC15C3C538"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\landscape\\soil-color.jpg",
+    "Hash": "DF3F135C899F10A3B018738343B222CBC67D13E7C76C5D8DA834A3D34C984417"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\landscape\\soil-normal.jpg",
+    "Hash": "AC517CA39EB507AE0F27E2B3DB431C60888F9B5C3C52BEC49D2C0775DA0920CB"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\landscape\\soil-roughness.jpg",
+    "Hash": "AE9FB57C1173CCB4579F40EDF8321A30BDCA815042FFD72015A2A707C7E2E7BA"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\services\\exterior.webp",
+    "Hash": "E4E4E58D92F7FA23AC489FBF3AF42EB8D9C5E6E4FE86A6C422D1D31A36472575"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\services\\interior.webp",
+    "Hash": "97BCBD7AC743C704EC30C9EC6A58C9DEAF6164D0B78B751A7237A4C48D13489D"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\services\\lights.webp",
+    "Hash": "ECA29B6C22FA9507CC89385E8E8DE0B2F98C803D559915690E957FDC7BBBAB95"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\site-background.png",
+    "Hash": "55FDE27DF4BD0100681F63205022A02B973CDDAC72BEA700DB78D6E9A43F0A46"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\wood-color.jpg",
+    "Hash": "3B0669F683E4BF10F5A55A381CFA9669A7B8DFD921901829DAA3B35ACC2BBDEC"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\wood-normal.jpg",
+    "Hash": "D02ABF113E17A8ABE97E1BE3E9D6D88ADD242E8C2291E2200D37AA8C68909F25"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\textures\\wood-roughness.jpg",
+    "Hash": "1B7F115BFA25619B0A2DB554EB1AB88A6FC5EF0B74BA4890611EAE04D00B9829"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\admin\\admin.css",
+    "Hash": "22B038ADF7D5B05C148AE661F5DA37503624961CD3E64C1542435E96EFE90471"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\admin\\AdminApp.tsx",
+    "Hash": "F87803B832D1A3DC606765C0BABD42F6661F4C756C883F5D536894F1FB2F35DD"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\admin\\AdminEditors.tsx",
+    "Hash": "76D55124D0E9FDCA5F648CCD9D029E9DF37EC5FAE37B52370D37D0C2B36258D2"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\admin\\AdminOperation.tsx",
+    "Hash": "FAF1E3893B27AF26BDEF9B6860728FDAF645C06B416E18A60796D4D159CF4B37"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\admin\\useAdminSession.ts",
+    "Hash": "23B0030782C4F72B7C526617411FFE2F6E3604307443D0647AB273C421C21594"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\app\\App.tsx",
+    "Hash": "26DB87464953DDFFE544BA42C7AEBD7FE069C400EF1AD2DC4DBD8FFD5E827A41"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\app\\business.ts",
+    "Hash": "A291576F841E7211DACB14F415CBCBB05850CABEFECBAD584A258E2500E85133"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\app\\commerceStore.ts",
+    "Hash": "C78AD564C3E57AADE49F225A38273C3580E89BA043495C6D1D7903035A050680"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\app\\store.ts",
+    "Hash": "AF3468D25BD677BC27772AF75ED90329C70E0011B78FBA914A6A6798003FFFB6"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\config\\appConfig.ts",
+    "Hash": "C6CE3B1151DF9A5417B6ED9A58DE396C308570DBB6BEFE88B2E686BEA12151BF"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\administration.ts",
+    "Hash": "223279145BE8BFC2D2801FFB9C870C71327C87B9AE6BE753B6D6281DE864E2E4"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\businessContent.ts",
+    "Hash": "941DE2F7EE4C5D29B9FAB461B0EE7A1511547AA8BA2BABF7AE86DD20D8A2D8A4"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\commerce.ts",
+    "Hash": "D7C231C233C93A2939A5804CB668C2E5C638CED8FBFFB6C8A0E5616668C00B39"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\contracts.ts",
+    "Hash": "5DC174CC5BE3E2002B1F4EA5D8B04431F3C0893964343FD9C4303A47E3A0D55D"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\DemoOperationSource.ts",
+    "Hash": "482D9F390BC8B7029B3C7E54E67762E4797F54739D97A17E0ED93250EE5A5089"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\DemoOperationTransport.ts",
+    "Hash": "6960F55DB8214FF2C7F88EA64EEF6F4EF14ADDB2BD086C0D98E559D1D5E3919B"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\DemoOrderSource.ts",
+    "Hash": "0EE7D313BDE595DAAEA173CEC1576AD276AE91812C4217270E6572FEDC9E7588"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\money.ts",
+    "Hash": "2913FCCCAE5E0C8AF12DBE10C3512BE4912E24165C645E9C3EABFE4C0E0524B0"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\OperationProjection.ts",
+    "Hash": "9EF3F6832E71C50DF0BC21776F8386EA78CB96549BCEBD88032A90397F8B267D"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\ServiceTimeEstimator.ts",
+    "Hash": "453E909E16EBC41C06D9A85202BBC7F88BAEF09A10BD8A504479B45FFFABA54E"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\sitePlan.ts",
+    "Hash": "03B8DBC10AC50F9A03401DB827768EA06EEBEA1A85D9C9F4BBA498D616572601"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\vehicleMotion.ts",
+    "Hash": "F58C3DF7A539ACF2B3F7DBBE10E264336D43C936520E87A76E325795E5B925B5"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\domain\\wheelKinematics.ts",
+    "Hash": "C777B6A6E00267F9D940FB0FAF53D4A649A594D84361CF9F0862D18B88CEDCB5"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\AtmosphericClouds.tsx",
+    "Hash": "659728638DC9F7889391ABB7C8A4558D331CBA6E65829D9D0A525FB7982090BD"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\EnvironmentBoundary.tsx",
+    "Hash": "8E7B5ED7096D2BFB13953B008B8681ECD75DE1A4578BACB54E9F35D9E24040F8"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\SiteBackdrop.tsx",
+    "Hash": "A01850A1CA210928F7936BAA2652DAD5B2752AAB3D111A8D227CD8CA5633CAC9"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\UrbanSurround.tsx",
+    "Hash": "B045EAD5709CD09775510A0F61DB8906E3C9520DD991EC80666B1BB1CFD100DC"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\weather.ts",
+    "Hash": "B3DFCA23DC63525239DE02BE86BE527762D6B058F8889D583A20496B8A2CB14E"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\WeatherControls.tsx",
+    "Hash": "1FC502440E95F032BB7F709EBAD345350269BF923F19FF5603A92FF989588193"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\WeatherDataController.tsx",
+    "Hash": "F0823B9C3EA3B2285F84459B07A82191AD59D949C50DDC131EDBF446799956B9"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\environment\\WeatherEnvironmentController.tsx",
+    "Hash": "63FF0ECDED4758BA50655A4759E1B79A42581EDD7063CBA76D26A093E5F236DA"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\main.tsx",
+    "Hash": "9E472604EDDCE8743A675515BA08386E4AB93D8D2E7061CD805F40431F555788"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\reception\\BusinessInformation.tsx",
+    "Hash": "3DEAE7BDE05240B0967B349FFE661DC33C66B432235A29E9E225FC796DF4CC79"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\reception\\catalog.ts",
+    "Hash": "D75BFF3B744A060B8CBFE30991BE8D989EA2EF4A4F8B4C7B71C2AADE7F9D0202"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\reception\\ReceptionDialogue.tsx",
+    "Hash": "38B0B672E716E8914178E7D591D8EFDC4FB744540A3F319DE1474034CB6333C7"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\AccountModal.tsx",
+    "Hash": "745ED505A3B4F6E69B579EA2F5B441FE3B30948D2893D8D48A2B47BBAE107F5F"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\bay-operation.css",
+    "Hash": "AD69230DD049C61A6400626492A270187F19180E123F7A12387C158CB0BF0A59"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\BayOperationSummary.tsx",
+    "Hash": "EB29F0606018956D2684A55936D5573AA115DCB820B58A92986C45D3F3E147C4"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\DemoScenarioControls.tsx",
+    "Hash": "185161F7681F48F1776B855EE33FCC7854DA65DAEE3B370A950DCB7DAD153A3C"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\LocalAreaPanel.tsx",
+    "Hash": "9C003DCE0167985A2221CDFFCEB4D39C24AFEF0D7E47D43A8EF53AC7B4A1635C"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\lounge.css",
+    "Hash": "FB2F9DDDF96CEA9097EB31760103A5FE9EC860F69D26E575B6DF5F8ED4AA258B"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\LoungeExperience.tsx",
+    "Hash": "7A7773C736757D23C01C3472C2E52B0E39D124AA5F7D166766462681CB56BF2B"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\ServiceFlowModal.tsx",
+    "Hash": "FDB1416FD68D159225C9B38635DB273029FC8A6288445DBA3DA44C12F42E923F"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\sow.css",
+    "Hash": "1B51C14E1EB83C4562098EB502E8712F08D46F1F81878F0C3B724CA5C4FF6423"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\TouchControls.tsx",
+    "Hash": "AC833528051F3D74591182F6584B66114910F8B37BBDF4A3F5B2DE8A25E118B8"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\world.css",
+    "Hash": "8D7090F6BD5E5F20716EC71313EA5A5A132A76A031BBA20E065D251696CA52E1"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\WorldHUD.tsx",
+    "Hash": "079A302CE2CAB8FCF45F87BED72E0818B87BCE6C71C1C30304F405806F9134B3"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\ui\\WorldOverlayManager.tsx",
+    "Hash": "BCAAC49D02A73761AB09A04BD66DE1852236CA61E33A1D6E7027C7ED55C1DDAF"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\animation\\NPCAnimationController.ts",
+    "Hash": "81BB93166BE38B24357258D622B272D01B66D714469C7B87CE6A7DDC71F44D57"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\assets\\registry.ts",
+    "Hash": "3A9E6E9A6E1012F6F520EBB9935525342F838EAE348E397BFBD2349BC45C87DD"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\badges\\WorldBadges.tsx",
+    "Hash": "936C70C9E0899D8B76E8BCAA19621B2522AA55F695459100541517B5AF8A0ADD"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\diagnostics.ts",
+    "Hash": "B23761CCBDFD4DF65AA29C9906E06E155BBEE8E21B4B90B3C7AAF2F530D61BF2"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\interactions\\OrderStatusCard.tsx",
+    "Hash": "C5D101C7B8338A581E929B8EE53C6F538702589043940991A0AFD41C86334B06"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\interactions\\registry.ts",
+    "Hash": "299C323979CD63F254D7B534757D48F6042AC0EB428CF6A764BEE9159CEB6590"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\interactions\\VehicleInspectionExperience.tsx",
+    "Hash": "ABE9CEF253DE3669AFC1C6648B1DB5C293A4CF8D6AC3DF79E46808111FCD9948"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\interactions\\WorldInteractionCard.tsx",
+    "Hash": "71588DE5D18FA0A2D94555C3F7E36A7A875C52788AED4E2E3ADFCCC5E981EBD7"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\movement\\vehicleRoute.ts",
+    "Hash": "18F34F4B31062317DF054B438ABF6D180F3006169A248042EF92CD8E5D0D85E1"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\navigation\\CameraController.tsx",
+    "Hash": "D737B36838267F5AD2B99E7868E5FA656E4A80AD841969CA2091FDF38495020E"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\navigation\\input.ts",
+    "Hash": "41BA6D28E5E358DAEDF319F53E3019E0938CDA4346EE267366533761C253FA83"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\navigation\\layout.ts",
+    "Hash": "C3224B16B65F8B9354E0ACCD26527523D00F0F063F69B54991F60E9E887BD1C7"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\navigation\\WaypointPathPlanner.ts",
+    "Hash": "3C6F288C1956E91AAE2704198C00687FB453C30F725946EBB1C9BCD970EB6FCE"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\Architecture.tsx",
+    "Hash": "8697F5D4677B2124B6E53CA276C7B0DD8872DF601EE7AF7B73BF1626EDFE2836"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\CounterObjects.tsx",
+    "Hash": "7867713A3D86D20BDD53182A43C64BE2304BBA792E6CBE42EFB39739028999C7"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\EntranceForecourt.tsx",
+    "Hash": "1B70682C2D0CF1425331F15376131CE79D43FE373402C37661CB534CF1E70EB3"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\FinishedWashBay.tsx",
+    "Hash": "A053E5515550259A017756E169D82536773A017B5482E4BF605859F9A812F7EF"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\InstancedVegetation.tsx",
+    "Hash": "39A08902FA9EAB41CAD9B50A687352DC9F135AAF42A87D3183E41635020DE901"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\Landscape.tsx",
+    "Hash": "1D4303B7C6D44C465B2790ED3F51C4DA271FB7B58BE66B82BB8D7B2F7207D6DC"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\LoungePrefab.tsx",
+    "Hash": "68047673FDF259000CF4B5D05D64E006BCD1AB8CB5DBAA6E0D90C716D2637E3F"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\Model.tsx",
+    "Hash": "E627FAB01F27AFDCCDD67DE3C0CE18599A34DEF19E3E2D3537C603C6D774A884"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\ServiceActivityVisualizer.tsx",
+    "Hash": "77AE43D08291D63725DDB49DFC5AB991D58FBE575EF910CBD12079DFE217B883"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\StaffPrefab.tsx",
+    "Hash": "320BBBBA7A8B1A54A046D5B8E42627CC7F9B7526550FC06B32A8189A873C7E46"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\StaticArchitectureBatch.tsx",
+    "Hash": "AFC53F493286C7D83194E10DC314F2FBD6E29D8B5370D590434B47339BA14644"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\surfaceGeometry.ts",
+    "Hash": "7B2CF04FB49EC64F774EA9E63F416CEA22600A767C08411B7B4FEF0155420BBE"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\vegetationGeometry.ts",
+    "Hash": "908F82A3D06CE791271A30B8D94727B14A6151804FAC60897A8A72FCCF10A03E"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\VehicleAppearance.tsx",
+    "Hash": "0520DBB028508AD460F5BC1636310C93422960293EDCFC8BA48127768E010BC1"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\prefabs\\VehiclePrefab.tsx",
+    "Hash": "7579BC3109BA9C669994BF91ADC83F405AF1750EFC93EC156FC902E0CEC6F283"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\siteLandscape.ts",
+    "Hash": "B42D737EDC33204960361B318DC4CC2FDE9E4F2780ABADE5E2FC9DE2184083D8"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\WorldLayout.tsx",
+    "Hash": "187586CDFCC83DD9E7288D7F6C847D3050A7CC13C42A761EAD42EA44152C9545"
+  },
+  {
+    "Path": "C:\\Projects\\Repos\\3D-Cars-Wash\\src\\world\\WorldScene.tsx",
+    "Hash": "ECB045B1AC3C8EB4C63A5D521AF355361C2D59CA8BD9E9580E9571CCC0C883DF"
+  }
+]

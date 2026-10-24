@@ -1,0 +1,20 @@
+{
+  "explanations": [
+    {
+      "step": "vehicle",
+      "active": "Talk",
+      "time": 0.2445
+    },
+    {
+      "step": "review",
+      "active": "Talk",
+      "time": 0.21890000000037252
+    },
+    {
+      "step": "information",
+      "active": "Talk",
+      "time": 0.2072000000001863
+    }
+  ],
+  "screenshotPhase": "Approximate: Three.js animation continues while capturing."
+}

@@ -138,7 +138,7 @@ test('Administración publica contenido y precios; cotización obsoleta se recha
         expect((await post(admin, 'admin/configuration', { expectedVersion: original.version, configuration: config })).ok()).toBe(true);
         expect((await post(client, 'confirm', { quoteId: q.id, key: q.id })).status()).toBe(409);
         await visit(cp, 'Recepción');
-        await cp.getByRole('button', { name: 'Horarios', exact: true }).click();
+        await cp.getByRole('button', { name: 'Horarios e información', exact: true }).click();
         await expect(cp.getByText('Horario de prueba · 09:00 a 18:00', { exact: true })).toBeVisible();
         await capture(cp, 'desktop-shared-hours');
         const fresh = await quote(client), confirmed = await (await post(client, 'confirm', { quoteId: fresh.id, key: fresh.id })).json();
