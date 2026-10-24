@@ -17,3 +17,7 @@ MVP local, no servicio público desplegado. Docker no ejecutado debido al motor 
 Node.js 22.19 o compatible con node:sqlite. npm ci; npm run build; npm run build:server; npm start. Consultar docs/LOCAL_STAFF_SQLITE.md para inicializar la cuenta administrativa. Credenciales y bases privadas quedan fuera de Git.
 
 Comprobación final: 90 pruebas pasan. El reintento de navegación tras corregir el breakpoint pasó (28.9 s). Se encontró además que redimensionar el lounge repetía el recorrido de entrada; ahora seleccionar o redimensionar la misma zona conserva la posición, con regresión unitaria específica.
+
+## Ampliación de evidencia del portafolio
+
+El 24 de octubre se añadieron 19 capturas de un recorrido conectado entre administrador, cliente y empleado. El escenario E2E pasó en 2.2 minutos con SQLite temporal y cuentas sintéticas. Se verificó en el navegador público que las 19 imágenes nuevas cargan; la galería contiene 26 imágenes en total. El recorrido y sus límites están en [la secuencia de capturas](evidence/release-v0.1.0/journey/README.md), y los identificadores de publicación en [el manifiesto](portfolio-journey-v0.1.0.json). Esta ampliación de evidencia no cambia el tag inicial v0.1.0.
