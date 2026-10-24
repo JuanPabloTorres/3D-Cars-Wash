@@ -1,0 +1,53 @@
+{
+  "viewport": {
+    "width": 1855,
+    "height": 848
+  },
+  "targets": [
+    {
+      "label": "Servicios",
+      "x": 486.63226318359375,
+      "y": 455.4104309082031,
+      "width": 112,
+      "height": 44,
+      "css": {
+        "minWidth": 112,
+        "minHeight": 44
+      }
+    },
+    {
+      "label": "Horarios",
+      "x": 674.1929931640625,
+      "y": 452.90777587890625,
+      "width": 112,
+      "height": 44,
+      "css": {
+        "minWidth": 112,
+        "minHeight": 44
+      }
+    },
+    {
+      "label": "El local",
+      "x": 1100.6109619140625,
+      "y": 447.218017578125,
+      "width": 112,
+      "height": 44,
+      "css": {
+        "minWidth": 112,
+        "minHeight": 44
+      }
+    },
+    {
+      "label": "Preguntas",
+      "x": 1265.187744140625,
+      "y": 445.02203369140625,
+      "width": 112,
+      "height": 44,
+      "css": {
+        "minWidth": 112,
+        "minHeight": 44
+      }
+    }
+  ],
+  "errors": []
+}

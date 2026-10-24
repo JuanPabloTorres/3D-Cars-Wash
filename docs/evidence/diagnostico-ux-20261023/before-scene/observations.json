@@ -1,0 +1,454 @@
+{
+  "phase": "before-scene",
+  "comparison": "Same viewport, empty isolated session and default weather. Three.js gestures continue; captures are not exact animation-phase comparisons.",
+  "observations": [
+    {
+      "width": 1440,
+      "view": "entry",
+      "position": [
+        -7,
+        14.5
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 2.1899665077209938
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "reception",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.2813000000000465
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "counter",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.6775
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "catalog",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "PointServices",
+        "time": 0.2534000000000233
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "lounge",
+      "position": [
+        -13.6,
+        10
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 2.1464000000000234
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "lounge-closed",
+      "position": [
+        -13.6,
+        10
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 2.76529999999993
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "queue",
+      "position": [
+        -5.150000000000001,
+        9.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 1.5539332538604493
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "entry",
+      "position": [
+        -7,
+        14.5
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 0.20623325386049768
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "reception",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.0447999999999302
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "counter",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.37979999999993
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "catalog",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.6794999999999998
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "lounge",
+      "position": [
+        -13.6,
+        10
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 0.9924000000000234
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "lounge-closed",
+      "position": [
+        -13.6,
+        10
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 1.2885
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "queue",
+      "position": [
+        -5.150000000000001,
+        9.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 3.077699999999954
+      },
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    }
+  ]
+}

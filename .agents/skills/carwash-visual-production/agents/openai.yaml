@@ -1,0 +1,4 @@
+interface:
+  display_name: "CarWash - Produccion visual 3D"
+  short_description: "Composicion, Blender y validacion del mundo CarWash"
+  default_prompt: "Usa $carwash-visual-production para mejorar una toma de CarWash 3D conservando sus flujos y verificando capturas reales."

@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-10-24T00:18:44.163Z",
+  "source": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\urbanCalathea.glb",
+  "sourceSha256": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587",
+  "sourceUnchanged": true,
+  "sourcePage": "https://polyhaven.com/a/calathea_orbifolia_01",
+  "authors": [
+    "Rob Tuytel",
+    "Rico Cilliers"
+  ],
+  "license": "CC0-1.0",
+  "licenseURL": "https://polyhaven.com/license",
+  "alphaSource": {
+    "size": 57282,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/calathea_orbifolia_01/calathea_orbifolia_01_alpha_1k.png",
+    "md5": "42012873854ca2c4d5908e8d359d10c7",
+    "path": "C:\\Projects\\Assets\\CarWash-Vegetation-Coherence-20261023\\calathea-alpha\\calathea_orbifolia_01_alpha_1k.png",
+    "sha256": "24336cb9a92fb48e9521d8674c50f96e1b32a664265c8c0e9eda8429767d4cdf"
+  },
+  "output": "C:/Projects/Assets/CarWash-Vegetation-Coherence-20261023/candidates/coherentCalathea-alpha-v1.glb",
+  "sha256": "bd4f81b337bd31611051b31e8d958f7af76c82056017c77c7515737d2da22967",
+  "bytes": 342488,
+  "triangles": 3749,
+  "preservation": [
+    {
+      "material": "calathea_orbifolia_01",
+      "indices": "32791e5676f7f6fa17c7f0a7060f2617170f3683795ba405dad72aae5648f85b",
+      "attributes": {
+        "POSITION": "21496695f70464837cf605adb38cdda9c03b3debe9172fb707bc3cbc3de86e0b",
+        "NORMAL": "06975aa064618fe15c3dd9b534a17eac422dd515ab8c78abd29fd117933feb04",
+        "TEXCOORD_0": "7caac89b1e6d5e8891d1aef544d9640a30519ea62d9c00bc7dd9aaf5caf1d88b"
+      }
+    }
+  ],
+  "otherTextures": [
+    {
+      "name": "calathea_orbifolia_01_nor_gl",
+      "sha256": "5131712242100aa307125a4607db998247ea1ec95fd94b73ae7951295c0cd7a8"
+    },
+    {
+      "name": "calathea_orbifolia_01_rough",
+      "sha256": "56f9916f08844e59bde7a8e20724c8d72e8603d3c59c78bbb0dd5fcb0f157f9d"
+    }
+  ],
+  "alphaChecks": [
+    {
+      "material": "calathea_orbifolia_01",
+      "hasAlpha": true,
+      "transparentPixels": 454504,
+      "visiblePixels": 594072
+    }
+  ],
+  "validation": {
+    "numErrors": 0,
+    "numWarnings": 1,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/0/material"
+      }
+    ],
+    "truncated": false
+  },
+  "adaptation": "Only restore official alpha in the existing baseColor texture; geometry, UV, PBR scalar factors, normal/roughness maps and source materials remain unchanged; no palette tint applied to texture.",
+  "command": "node docs/evidence/vegetation-coherence/restore-calathea-alpha.mjs",
+  "artisticAcceptance": "pending same-light sample and integrator review"
+}

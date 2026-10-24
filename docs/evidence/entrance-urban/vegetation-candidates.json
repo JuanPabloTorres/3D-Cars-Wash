@@ -1,0 +1,213 @@
+{
+  "observedAt": "2026-10-23T23:49:36.173Z",
+  "results": [
+    {
+      "id": "urbanTree-v3",
+      "sha256": "e2d5e66843a4da1c378b06362d9695ee1b28579aa4df7449702a16782a1833cf",
+      "errors": 0,
+      "warnings": 3,
+      "uvReferencesValid": true,
+      "sourcesValid": true,
+      "skins": 0,
+      "animations": 0,
+      "bytes": 9479644,
+      "triangles": 206616,
+      "dimensions": [
+        2.91670211122394,
+        4.556669117882848,
+        4.292449893541974
+      ],
+      "sourcePage": "https://polyhaven.com/a/tree_small_02",
+      "authors": [
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "preview": {
+        "conditions": "Isolated 900x900 orthographic inspection, same sun/material settings; not entrance composition acceptance",
+        "errors": [],
+        "views": [
+          {
+            "view": "front",
+            "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\entrance-urban\\vegetation-urbanTree-v3-front.png",
+            "metrics": {
+              "triangles": 413234,
+              "calls": 7
+            }
+          },
+          {
+            "view": "side",
+            "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\entrance-urban\\vegetation-urbanTree-v3-side.png",
+            "metrics": {
+              "triangles": 413234,
+              "calls": 7
+            }
+          }
+        ]
+      },
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 3,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [
+          {
+            "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+            "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+            "severity": 1,
+            "pointer": "/meshes/0/primitives/0/material"
+          },
+          {
+            "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+            "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+            "severity": 1,
+            "pointer": "/meshes/0/primitives/1/material"
+          },
+          {
+            "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+            "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+            "severity": 1,
+            "pointer": "/meshes/0/primitives/2/material"
+          }
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "id": "urbanTreeFar-v1",
+      "sha256": "8ba76bf35ae06ce91ca71279dc131f9c15f5ade72814f393d7e13b3e6d307de3",
+      "errors": 0,
+      "warnings": 3,
+      "uvReferencesValid": true,
+      "sourcesValid": true,
+      "skins": 0,
+      "animations": 0,
+      "bytes": 4136576,
+      "triangles": 38697,
+      "dimensions": [
+        2.916145860225328,
+        4.556669117882848,
+        4.292449893541974
+      ],
+      "sourcePage": "https://polyhaven.com/a/tree_small_02",
+      "authors": [
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "preview": {
+        "conditions": "Isolated 900x900 orthographic inspection, same sun/material settings; not entrance composition acceptance",
+        "errors": [],
+        "views": [
+          {
+            "view": "front",
+            "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\entrance-urban\\vegetation-urbanTreeFar-v1-front.png",
+            "metrics": {
+              "triangles": 77396,
+              "calls": 7
+            }
+          },
+          {
+            "view": "side",
+            "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\entrance-urban\\vegetation-urbanTreeFar-v1-side.png",
+            "metrics": {
+              "triangles": 77396,
+              "calls": 7
+            }
+          }
+        ]
+      },
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 3,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [
+          {
+            "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+            "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+            "severity": 1,
+            "pointer": "/meshes/0/primitives/0/material"
+          },
+          {
+            "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+            "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+            "severity": 1,
+            "pointer": "/meshes/0/primitives/1/material"
+          },
+          {
+            "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+            "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+            "severity": 1,
+            "pointer": "/meshes/0/primitives/2/material"
+          }
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "id": "urbanShrub-v5",
+      "sha256": "72ceb75cee33655d40a05d62e2e96b64c949dc6ed82140f796fc32b85da45650",
+      "errors": 0,
+      "warnings": 1,
+      "uvReferencesValid": true,
+      "sourcesValid": true,
+      "skins": 0,
+      "animations": 0,
+      "bytes": 1172708,
+      "triangles": 30905,
+      "dimensions": [
+        0.3870620170928508,
+        0.3793041527559863,
+        0.3947235104441643
+      ],
+      "sourcePage": "https://polyhaven.com/a/shrub_01",
+      "authors": [
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "preview": {
+        "conditions": "Isolated 900x900 orthographic inspection, same sun/material settings; not entrance composition acceptance",
+        "errors": [],
+        "views": [
+          {
+            "view": "front",
+            "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\entrance-urban\\vegetation-urbanShrub-v5-front.png",
+            "metrics": {
+              "triangles": 61812,
+              "calls": 3
+            }
+          },
+          {
+            "view": "side",
+            "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\entrance-urban\\vegetation-urbanShrub-v5-side.png",
+            "metrics": {
+              "triangles": 61812,
+              "calls": 3
+            }
+          }
+        ]
+      },
+      "validation": {
+        "numErrors": 0,
+        "numWarnings": 1,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [
+          {
+            "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+            "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+            "severity": 1,
+            "pointer": "/meshes/0/primitives/0/material"
+          }
+        ],
+        "truncated": false
+      }
+    }
+  ],
+  "checks": {
+    "syntax": true,
+    "publicDestinationRejected": true,
+    "existingCandidateRejected": true
+  },
+  "artisticAcceptance": "pending full entrance comparison and human review",
+  "productTests": "Not run for isolated asset/script-only work; integrator owns application validation"
+}

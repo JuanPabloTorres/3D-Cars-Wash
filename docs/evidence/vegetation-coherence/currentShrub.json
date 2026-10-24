@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-24T00:19:01.359Z",
+  "filename": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\urbanShrub.glb",
+  "sha256": "72ceb75cee33655d40a05d62e2e96b64c949dc6ed82140f796fc32b85da45650",
+  "height": 0.58,
+  "frame": 1.3,
+  "sunlight": {
+    "color": "#fff0d4",
+    "position": [
+      -22,
+      30,
+      18
+    ],
+    "intensity": 2.6
+  },
+  "hemisphere": {
+    "sky": "#d9eaff",
+    "ground": "#89917a",
+    "intensity": 0.7
+  },
+  "HDRI": "public/textures/daylight.hdr",
+  "environmentIntensity": 0.6,
+  "exposure": 1.05,
+  "toneMapping": "ACESFilmicToneMapping",
+  "errors": [],
+  "views": [
+    {
+      "view": "front",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\currentShrub-front.png",
+      "metrics": {
+        "triangles": 61812,
+        "calls": 3
+      }
+    },
+    {
+      "view": "side",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\currentShrub-side.png",
+      "metrics": {
+        "triangles": 61812,
+        "calls": 3
+      }
+    }
+  ],
+  "limitation": "Same sunny lighting/exposure/HDRI parameters and sample camera; excludes building occlusion and other plants"
+}

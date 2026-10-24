@@ -1,0 +1,7549 @@
+{
+  "size": [
+    1.787398240612333,
+    1.8612500755188692,
+    0.36422623813187127
+  ],
+  "nodes": [
+    {
+      "name": "Scene",
+      "type": "Group"
+    },
+    {
+      "name": "StaffRig",
+      "type": "Object3D"
+    },
+    {
+      "name": "Staff-snow-body",
+      "type": "Group"
+    },
+    {
+      "name": "GEO-snow-body001",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-body001_1",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-eye_anim",
+      "type": "Group"
+    },
+    {
+      "name": "GEO-snow-eye_anim001",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-eye_anim001_1",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-eye_anim001_2",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-eye_anim001_3",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-eye_anim001_4",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-eye_anim001_5",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-eyebrows",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-gums_lower",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-gums_upper",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-hair_base",
+      "type": "Group"
+    },
+    {
+      "name": "GEO-snow-hair_base001",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-hair_base001_1",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-hair_base001_2",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-head",
+      "type": "Group"
+    },
+    {
+      "name": "GEO-snow-head001",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_1",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_2",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_3",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_4",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_5",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_6",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_7",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_8",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_9",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_10",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_11",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "GEO-snow-head001_12",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-pants",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-shirt",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-shoes_base",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-shoes_bottom",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-shoes_parts",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-teeth_lower",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-teeth_upper",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Staff-snow-tongue",
+      "type": "SkinnedMesh"
+    },
+    {
+      "name": "Cheek1_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek1_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek1_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek1_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek1_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek1_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek1_4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_4L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek1_4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek1_4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "CON-ACT-CheekPuffL",
+      "type": "Bone"
+    },
+    {
+      "name": "ACT-CheekPuffL",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "CON-ACT-CheekPuffR",
+      "type": "Bone"
+    },
+    {
+      "name": "ACT-CheekPuffR",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "CON-Eyebrow1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow1L",
+      "type": "Bone"
+    },
+    {
+      "name": "CON-Eyebrow1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow1R",
+      "type": "Bone"
+    },
+    {
+      "name": "CTR-Eye_HighlightL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_HighlightL",
+      "type": "Bone"
+    },
+    {
+      "name": "CTR-Eye_HighlightR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_HighlightR",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring4L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring6L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring6L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring6R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring6R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrows_Center",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrows_Center",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer4L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Top_Outer1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top_Outer1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Top_Outer1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top_Outer1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Top_Outer3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top_Outer3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Top_Outer3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top_Outer3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Face_Root",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_4L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek2_4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek2_4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_4L",
+      "type": "Bone"
+    },
+    {
+      "name": "Cheek3_4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Cheek3_4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring5L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring5L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring5R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring5R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Outer_CornerL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Outer_CornerL",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Outer_CornerR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Outer_CornerR",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead1_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead1_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead1_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead1_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead2_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead2_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead2_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead2_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead3_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead3_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead3_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead3_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead_Center3",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead_Center3",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-Eye_Ring_LowerL",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer3L",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-Eye_Ring_LowerR",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Bot_Outer3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot_Outer3R",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-Eye_Ring_UpperL",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Top_Outer2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top_Outer2L",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-Eye_Ring_UpperR",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyelid_Top_Outer2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top_Outer2R",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-EyebrowL",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-Eyebrow_ZL",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow0L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow0L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow0_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow0_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin4L",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow4L",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-EyebrowR",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-Eyebrow_ZR",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow0R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow0R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow0_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow0_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow_Skin4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow_Skin4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Eyebrow4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyebrow4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Nose_Bridge2",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nose_Bridge2",
+      "type": "Bone"
+    },
+    {
+      "name": "NoseBridge2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-NoseBridge2L",
+      "type": "Bone"
+    },
+    {
+      "name": "NoseBridge2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-NoseBridge2R",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Top0L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Top0L",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Top0R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Top0R",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-EarL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-EarL",
+      "type": "Bone"
+    },
+    {
+      "name": "Ear1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Ear1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear5L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4L-15",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-EarR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-EarR",
+      "type": "Bone"
+    },
+    {
+      "name": "Ear1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Ear1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ear5R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear5R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear4R-15",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear3R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ear1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-EyeL",
+      "type": "Bone"
+    },
+    {
+      "name": "EyeL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-EyeL",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-EyeR",
+      "type": "Bone"
+    },
+    {
+      "name": "EyeR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-EyeR",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple3_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple3_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple3_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple3_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple3_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple3_3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple3_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple3_3R",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-HNG-ThighL",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-ThighL",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-KneeL",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead1_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead1_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead1_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead1_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead1_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead1_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead1_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead1_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead2_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead2_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead2_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead2_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead2_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead2_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead2_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead2_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead3_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead3_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead3_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead3_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead3_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead3_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead3_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead3_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead_Center1",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead_Center1",
+      "type": "Bone"
+    },
+    {
+      "name": "Forehead_Center2",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forehead_Center2",
+      "type": "Bone"
+    },
+    {
+      "name": "Hip_Center",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Hip_Center",
+      "type": "Bone"
+    },
+    {
+      "name": "InnerCheekRaiserL",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring1L",
+      "type": "Bone"
+    },
+    {
+      "name": "InnerCheekRaiserR",
+      "type": "Bone"
+    },
+    {
+      "name": "Eye_Ring1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eye_Ring1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw_Bridge1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw_Bridge1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw_Bridge1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw_Bridge1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Lip_Nose",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Nose",
+      "type": "Bone"
+    },
+    {
+      "name": "Nose_Base",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nose_Base",
+      "type": "Bone"
+    },
+    {
+      "name": "Nose_Bridge3",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nose_Bridge3",
+      "type": "Bone"
+    },
+    {
+      "name": "NoseBridge1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-NoseBridge1L",
+      "type": "Bone"
+    },
+    {
+      "name": "NoseBridge1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-NoseBridge1R",
+      "type": "Bone"
+    },
+    {
+      "name": "NoseBridge3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-NoseBridge3L",
+      "type": "Bone"
+    },
+    {
+      "name": "NoseBridge3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-NoseBridge3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Nostril_BotL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nostril_BotL",
+      "type": "Bone"
+    },
+    {
+      "name": "Nostril_BotR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nostril_BotR",
+      "type": "Bone"
+    },
+    {
+      "name": "Nostril_OuterL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nostril_OuterL",
+      "type": "Bone"
+    },
+    {
+      "name": "Nostril_OuterR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nostril_OuterR",
+      "type": "Bone"
+    },
+    {
+      "name": "Nostril_TopL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nostril_TopL",
+      "type": "Bone"
+    },
+    {
+      "name": "Nostril_TopR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nostril_TopR",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_CornerL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_CornerL",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_CornerR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_CornerR",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Top2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Top2L",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Top2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Top2R",
+      "type": "Bone"
+    },
+    {
+      "name": "root",
+      "type": "Bone"
+    },
+    {
+      "name": "TORSO-Spine",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-Spine",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-OS-Spine",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-RibCage",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-OS-RibCage",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-Chest",
+      "type": "Bone"
+    },
+    {
+      "name": "FK-OS-Chest",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Neck",
+      "type": "Bone"
+    },
+    {
+      "name": "Neck",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Head",
+      "type": "Bone"
+    },
+    {
+      "name": "Head",
+      "type": "Bone"
+    },
+    {
+      "name": "LowerFace",
+      "type": "Bone"
+    },
+    {
+      "name": "SQ-JawSquash",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin",
+      "type": "Bone"
+    },
+    {
+      "name": "ChinL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-ChinL",
+      "type": "Bone"
+    },
+    {
+      "name": "ChinR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-ChinR",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_Base",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_Base",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_BaseL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_BaseL",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_BaseR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_BaseR",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_Main",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_Main",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_OuterL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_OuterL",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_OuterR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_OuterR",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_Top",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_Top",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_TopL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_TopL",
+      "type": "Bone"
+    },
+    {
+      "name": "Chin_TopR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin_TopR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chin",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw3L",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw3R",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw4L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw4L",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw4R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw4R",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw5L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw5L",
+      "type": "Bone"
+    },
+    {
+      "name": "Jaw5R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Jaw5R",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Bot2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Bot2L",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Bot2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Bot2R",
+      "type": "Bone"
+    },
+    {
+      "name": "OuterLip_Bot_Center",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-OuterLip_Bot_Center",
+      "type": "Bone"
+    },
+    {
+      "name": "MSTR-Mouth",
+      "type": "Bone"
+    },
+    {
+      "name": "HLP-Jaw",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Teeth_Lower",
+      "type": "Bone"
+    },
+    {
+      "name": "Tongue1",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Tongue1",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Tongue1",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Tongue2",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Tongue3",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Tongue4",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Tongue5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue5-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue4-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue3-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue2-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Tongue1-12",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Head",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Head",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Head-10",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Neck",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Neck",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Neck-10",
+      "type": "Bone"
+    },
+    {
+      "name": "ShoulderL",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-UpperArmL",
+      "type": "Bone"
+    },
+    {
+      "name": "UpperArmL",
+      "type": "Bone"
+    },
+    {
+      "name": "ForearmL",
+      "type": "Bone"
+    },
+    {
+      "name": "WristL",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Index_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Index1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Index1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Index1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index3L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Index_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalL-10",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Middle_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Middle1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Middle1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Middle1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle3L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Middle_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalL-10",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Pinky_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Pinky1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Pinky1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Pinky1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky3L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Pinky_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalL-10",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Ring_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Ring1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Ring1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Ring1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring3L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Ring_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring_CarpalL",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalL-10",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Thumb1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Thumb1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Thumb1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Thumb1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Thumb2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Thumb3L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-UpperArm_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-UpperArm_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-UpperArm_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forearm_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forearm_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-WristL",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-ShoulderL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-ShoulderL",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderL-10",
+      "type": "Bone"
+    },
+    {
+      "name": "ShoulderR",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-UpperArmR",
+      "type": "Bone"
+    },
+    {
+      "name": "UpperArmR",
+      "type": "Bone"
+    },
+    {
+      "name": "ForearmR",
+      "type": "Bone"
+    },
+    {
+      "name": "WristR",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Index_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Index1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Index1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Index1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index3R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index3R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Index_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Index_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Index_CarpalR-10",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Middle_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Middle1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Middle1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Middle1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle3R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Middle_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Middle_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Middle_CarpalR-10",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Pinky_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Pinky1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Pinky1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Pinky1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky3R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky3R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky1R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Pinky_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Pinky_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Pinky_CarpalR-10",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Ring_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Ring1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Ring1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Ring1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring3R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Ring_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Ring_CarpalR",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Ring_CarpalR-10",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-Finger_Thumb1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Finger_Thumb1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Finger_Thumb1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Thumb1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Thumb2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Finger_Thumb3R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb3R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Finger_Thumb1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-UpperArm_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-UpperArm_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-UpperArm_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forearm_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Forearm_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-WristR",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-WristR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_2R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Forearm_1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_2R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-UpperArm_1R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-ShoulderR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-ShoulderR",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ShoulderR-10",
+      "type": "Bone"
+    },
+    {
+      "name": "HIP-Spine",
+      "type": "Bone"
+    },
+    {
+      "name": "Spine",
+      "type": "Bone"
+    },
+    {
+      "name": "Hips",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Hips",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-ThighL",
+      "type": "Bone"
+    },
+    {
+      "name": "ThighL",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Thigh_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Thigh_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Thigh_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Knee_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Knee_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-FootL",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-ToesL",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootL-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-15",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2L-16",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-15",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1L-16",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1L-14",
+      "type": "Bone"
+    },
+    {
+      "name": "ROOT-ThighR",
+      "type": "Bone"
+    },
+    {
+      "name": "ThighR",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Thigh_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Thigh_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Thigh_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Knee_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Knee_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-FootR",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-ToesR",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-ToesR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-FootR-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-15",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_2R-16",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-15",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Knee_1R-16",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_2R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Thigh_1R-14",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Spine",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Spine",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-RibCage",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Chest",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-13",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-14",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Chest-15",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-RibCage-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Spine-7",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Eyelid_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Eyelid_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot4L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2L-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Eyelid_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Eyelid_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Bot4R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot4R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot3R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot2R-12",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Bot1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Eyelid_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Eyelid_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top3L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top4L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Eyelid_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Eyelid_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top3R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Eyelid_Top4R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top4R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top3R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top2R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Eyelid_Top1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Lip_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Lip_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Bot1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Bot2L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Lip_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Lip_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Bot1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Bot2R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Bot1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Lip_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Lip_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Top1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Top2L",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1L-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Lip_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Lip_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Top1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Lip_Top2R",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top2R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Lip_Top1R-11",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Nose",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Nose",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nose",
+      "type": "Bone"
+    },
+    {
+      "name": "Nose_Tip",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Nose_Tip",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Nose_Tip",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose_Tip-10",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Nose-10",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-P-Ponytail1",
+      "type": "Bone"
+    },
+    {
+      "name": "STR-Ponytail1",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Ponytail1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-0",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-1",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-2",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-3",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-4",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-5",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-6",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-7",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-8",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-9",
+      "type": "Bone"
+    },
+    {
+      "name": "SEG-DEF-Ponytail1-10",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple1_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple1_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple1_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple1_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple1_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple1_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple1_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple1_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple2_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple2_1L",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple2_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple2_1R",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple2_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple2_2L",
+      "type": "Bone"
+    },
+    {
+      "name": "Temple2_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "DEF-Temple2_2R",
+      "type": "Bone"
+    },
+    {
+      "name": "neutral_bone",
+      "type": "Bone"
+    }
+  ]
+}

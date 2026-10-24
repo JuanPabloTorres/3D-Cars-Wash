@@ -1,0 +1,28 @@
+{
+  "verdict": "partial",
+  "summary": "Revisión visual y funcional implementada y ejecutada localmente. Gate artístico abierto; configuración comercial real e integración de producción pendientes.",
+  "changes": [
+    "Recepción más cercana, bienvenida progresiva y mostrador con tres funciones probadas mediante picking real.",
+    "Catálogo ilustrado, FAQ honesta y contenido compartido con lounge; no hay envío de consultas ficticio.",
+    "Cuatro modelos GLB originales distintos por categoría, ruedas independientes y tarifas del servidor por servicio y tipo.",
+    "Entorno compacto con palmeras y arecas, herramientas importadas y conversión de Snow corregida para segmentos, ropa y materiales de ojos.",
+    "Capturas y videos reales de escritorio y móvil, licencias, incidentes y huellas de archivos conservados."
+  ],
+  "checks": [
+    {"label": "Build TypeScript y Vite", "status": "passed"},
+    {"label": "42 pruebas unitarias en ocho archivos", "status": "passed"},
+    {"label": "16 pruebas E2E Playwright, campaña final completa", "status": "passed"},
+    {"label": "26 GLB validados: cero errores, 69 advertencias conservadas", "status": "passed"},
+    {"label": "Galerías escritorio y móvil con cuatro etapas de servicio, sin errores de página", "status": "passed"},
+    {"label": "Avance, reversa y parada de ruedas en cuatro categorías", "status": "passed"},
+    {"label": "Rendimiento medido: quiet 39.8 FPS y busy 27.2 FPS en Intel UHD", "status": "passed"},
+    {"label": "Teléfono físico y aceptación artística humana", "status": "not_run"}
+  ],
+  "pending": [
+    "Aprobación artística y acabado fino de manos, herramientas, contacto y mangueras.",
+    "Optimización adicional del escenario lleno y validación en teléfono físico; no se promete 60 FPS.",
+    "Tarifas autorizadas para pickup/SUV/truck, horarios, contacto oficial y ofertas.",
+    "Backend real, permisos, persistencia durable, contacto y pagos de producción fuera de esta fase.",
+    "Visual Agent Live no identifica la consulta actual; cierre del observador sin confirmar."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "actualBrowser": true,
+  "revision": "before-static-batch",
+  "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "viewport": [
+    1440,
+    900
+  ],
+  "scenario": "quiet",
+  "drawCalls": 1073,
+  "triangles": 3327646,
+  "textures": 156,
+  "meanFps": 40.425818622745936,
+  "p95": 27.799999997019768,
+  "samples": 120
+}

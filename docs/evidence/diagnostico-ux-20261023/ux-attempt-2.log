@@ -1,0 +1,12 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test tests/e2e/diagnostico.spec.ts -g UX01 --output docs/evidence/diagnostico-ux-20261023/ux-attempt-2/results --reporter list
+
+
+Running 1 test using 1 worker
+
+(node:26592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [commercial] › tests\e2e\diagnostico.spec.ts:20:1 › UX01/02/11/15: el recorrido móvil reinicia lectura y conserva selección con teclado (9.6s)
+
+  1 passed (11.1s)

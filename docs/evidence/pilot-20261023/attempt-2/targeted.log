@@ -1,0 +1,15 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test --grep cuatro objetos del mostrador|Piloto: cuatro objetos completos y utilizables a 1440 --output docs/evidence/pilot-20261023/attempt-2/playwright-results
+
+
+Running 2 tests using 1 worker
+
+(node:32892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los cuatro objetos del mostrador abren funciones reales sin perder selección (1.6m)
+(node:18716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 1440×900 (24.3s)
+
+  2 passed (2.1m)

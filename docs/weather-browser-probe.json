@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-23T11:45:50.669Z",
+  "purpose": "Actual NWS browser integration using public San Juan test point; not visitor location",
+  "connected": true,
+  "weather": {
+    "kind": "sunny",
+    "source": "forecast",
+    "exposure": 1.05
+  },
+  "errors": []
+}

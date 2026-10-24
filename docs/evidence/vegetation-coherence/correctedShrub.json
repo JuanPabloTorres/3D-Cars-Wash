@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-24T00:19:01.091Z",
+  "filename": "C:\\Projects\\Assets\\CarWash-Vegetation-Coherence-20261023\\candidates\\coherentShrub-alpha-v1.glb",
+  "sha256": "28b222f8b895e251d1928153af3ab41ff7561935e9131f57ad46915939beac2a",
+  "height": 0.58,
+  "frame": 1.3,
+  "sunlight": {
+    "color": "#fff0d4",
+    "position": [
+      -22,
+      30,
+      18
+    ],
+    "intensity": 2.6
+  },
+  "hemisphere": {
+    "sky": "#d9eaff",
+    "ground": "#89917a",
+    "intensity": 0.7
+  },
+  "HDRI": "public/textures/daylight.hdr",
+  "environmentIntensity": 0.6,
+  "exposure": 1.05,
+  "toneMapping": "ACESFilmicToneMapping",
+  "errors": [],
+  "views": [
+    {
+      "view": "front",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\correctedShrub-front.png",
+      "metrics": {
+        "triangles": 61812,
+        "calls": 3
+      }
+    },
+    {
+      "view": "side",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\correctedShrub-side.png",
+      "metrics": {
+        "triangles": 61812,
+        "calls": 3
+      }
+    }
+  ],
+  "limitation": "Same sunny lighting/exposure/HDRI parameters and sample camera; excludes building occlusion and other plants"
+}

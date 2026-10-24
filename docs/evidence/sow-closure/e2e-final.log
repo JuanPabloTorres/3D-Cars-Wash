@@ -1,0 +1,38 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test --reporter=line
+
+
+Running 22 tests using 1 worker
+
+
+
+(node:33676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/22] [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los tres accesos físicos del mostrador abren funciones reales sin perder selección
+[2/22] [commercial] › tests\e2e\commercial.spec.ts:29:1 › Área útil, cuatro opciones, transición breve y solo última selección
+[3/22] [commercial] › tests\e2e\commercial.spec.ts:33:1 › Servicios, validación, volver, confirmación, recuperación y cancelación aceptada
+[4/22] [commercial] › tests\e2e\commercial.spec.ts:36:1 › Fallo de red conserva borrador y no crea éxito
+[5/22] [commercial] › tests\e2e\commercial.spec.ts:39:1 › Cancelación rechazada por proveedor tras comenzar atención
+[6/22] [commercial] › tests\e2e\commercial.spec.ts:42:1 › El local contiene datos útiles en bahías, cola y espera
+[7/22] [commercial] › tests\e2e\commercial.spec.ts:45:1 › Dos contextos: comando DEMO del servidor llega a ambos visitantes y reconecta
+[8/22] [commercial] › tests\e2e\commercial.spec.ts:48:1 › Móvil: navegación, servicios y formulario visibles sin tapar el rostro
+[9/22] [commercial] › tests\e2e\commercial.spec.ts:51:1 › Movimiento reducido, foco y fallo GLB sin carga eterna
+[10/22] [commercial] › tests\e2e\commercial.spec.ts:54:1 › API DEMO valida importes, idempotencia y aislamiento entre sesiones
+[11/22] [commercial] › tests\e2e\commercial.spec.ts:58:1 › Cotización vencida se renueva y no confirma datos caducados
+[12/22] [commercial] › tests\e2e\commercial.spec.ts:61:1 › Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran
+[13/22] [commercial] › tests\e2e\commercial.spec.ts:64:1 › Ambientes conservados: seis climas legibles con errores de página ausentes
+[14/22] [commercial] › tests\e2e\commercial.spec.ts:69:1 › Tarifas por categoría sin precio inventado y borrador conservado
+[15/22] [commercial] › tests\e2e\commercial.spec.ts:77:1 › Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend
+[16/22] [commercial] › tests\e2e\commercial.spec.ts:85:1 › El catálogo público no sustituye la cookie de la sesión privada
+
+(node:30152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[17/22] [commercial] › tests\e2e\sow.spec.ts:15:1 › Operación vacía, cuenta de sesión, logout real y permisos administrativos
+[18/22] [commercial] › tests\e2e\sow.spec.ts:32:1 › Administración publica contenido y precios; cotización obsoleta se rechaza sin alterar precio aceptado
+[19/22] [commercial] › tests\e2e\sow.spec.ts:65:1 › Cliente y administrador comparten llegada, fila, bahía, tarea, entrega e historial
+[20/22] [commercial] › tests\e2e\sow.spec.ts:109:1 › Solicitud de contacto confirmada llega a administración; sin permiso no se recibe
+[21/22] [commercial] › tests\e2e\sow.spec.ts:144:1 › Móvil: recepción, cinco displays accesibles, navegación, cuenta y administración
+[22/22] [commercial] › tests\e2e\sow.spec.ts:178:1 › Ana saluda, señala los displays reales y vuelve a escucha natural
+  22 passed (4.9m)

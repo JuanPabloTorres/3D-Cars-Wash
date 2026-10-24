@@ -1,0 +1,12 @@
+{
+  "status": "rejected before candidate export",
+  "stage": "foliage-components acceptance",
+  "error": 0.0004,
+  "observedAt": "2026-10-23T23:42:41.4008170Z",
+  "attempt": 1,
+  "asset": "tree_small_02",
+  "after": 29792,
+  "reason": "1.51% disconnected foliage islands disappeared; acceptance requires >=99% survive",
+  "foliageRatio": 0.2,
+  "before": 30250
+}

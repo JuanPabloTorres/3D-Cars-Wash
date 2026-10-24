@@ -1,0 +1,9 @@
+test_existing_evidence_is_preserved (__main__.ContextBoundaries.test_existing_evidence_is_preserved) ... ok
+test_invalid_project_does_not_produce_a_report (__main__.ContextBoundaries.test_invalid_project_does_not_produce_a_report) ... ok
+test_missing_inputs_are_explicit_and_sources_unchanged (__main__.ContextBoundaries.test_missing_inputs_are_explicit_and_sources_unchanged) ... ok
+test_product_destination_is_rejected (__main__.ContextBoundaries.test_product_destination_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.374s
+
+OK

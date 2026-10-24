@@ -1,0 +1,13 @@
+
+> febles-carwash-world@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Projects/Repos/3D-Cars-Wash
+
+
+ Test Files  12 passed (12)
+      Tests  59 passed (59)
+   Start at  21:41:24
+   Duration  1.45s (tests 76%, import 14%, transform 8%, worker 2%)
+

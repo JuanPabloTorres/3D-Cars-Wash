@@ -1,0 +1,35 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test
+
+
+Running 22 tests using 1 worker
+
+(node:32688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los tres accesos físicos del mostrador abren funciones reales sin perder selección (21.2s)
+  ok  2 [commercial] › tests\e2e\commercial.spec.ts:29:1 › Área útil, cuatro opciones, transición breve y solo última selección (9.0s)
+  ok  3 [commercial] › tests\e2e\commercial.spec.ts:33:1 › Servicios, validación, volver, confirmación, recuperación y cancelación aceptada (23.5s)
+  ok  4 [commercial] › tests\e2e\commercial.spec.ts:36:1 › Fallo de red conserva borrador y no crea éxito (9.2s)
+  ok  5 [commercial] › tests\e2e\commercial.spec.ts:39:1 › Cancelación rechazada por proveedor tras comenzar atención (13.2s)
+  ok  6 [commercial] › tests\e2e\commercial.spec.ts:42:1 › El local contiene datos útiles en bahías, cola y espera (15.6s)
+  ok  7 [commercial] › tests\e2e\commercial.spec.ts:45:1 › Dos contextos: comando DEMO del servidor llega a ambos visitantes y reconecta (25.1s)
+  ok  8 [commercial] › tests\e2e\commercial.spec.ts:48:1 › Móvil: navegación, servicios y formulario visibles sin tapar el rostro (6.7s)
+  ok  9 [commercial] › tests\e2e\commercial.spec.ts:51:1 › Movimiento reducido, foco y fallo GLB sin carga eterna (9.7s)
+  ok 10 [commercial] › tests\e2e\commercial.spec.ts:54:1 › API DEMO valida importes, idempotencia y aislamiento entre sesiones (144ms)
+  ok 11 [commercial] › tests\e2e\commercial.spec.ts:58:1 › Cotización vencida se renueva y no confirma datos caducados (8.6s)
+  ok 12 [commercial] › tests\e2e\commercial.spec.ts:61:1 › Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran (9.3s)
+  ok 13 [commercial] › tests\e2e\commercial.spec.ts:64:1 › Ambientes conservados: seis climas legibles con errores de página ausentes (16.8s)
+  ok 14 [commercial] › tests\e2e\commercial.spec.ts:69:1 › Tarifas por categoría sin precio inventado y borrador conservado (16.5s)
+  ok 15 [commercial] › tests\e2e\commercial.spec.ts:77:1 › Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend (14.8s)
+  ok 16 [commercial] › tests\e2e\commercial.spec.ts:85:1 › El catálogo público no sustituye la cookie de la sesión privada (125ms)
+(node:34440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 17 [commercial] › tests\e2e\sow.spec.ts:15:1 › Operación vacía, cuenta de sesión, logout real y permisos administrativos (6.2s)
+  ok 18 [commercial] › tests\e2e\sow.spec.ts:32:1 › Administración publica contenido y precios; cotización obsoleta se rechaza sin alterar precio aceptado (5.9s)
+  ok 19 [commercial] › tests\e2e\sow.spec.ts:77:1 › Cliente y administrador comparten llegada, fila, bahía, tarea, entrega e historial (1.6m)
+  ok 20 [commercial] › tests\e2e\sow.spec.ts:121:1 › Solicitud de contacto confirmada llega a administración; sin permiso no se recibe (9.2s)
+  ok 21 [commercial] › tests\e2e\sow.spec.ts:156:1 › Móvil: recepción, cinco displays accesibles, navegación, cuenta y administración (7.6s)
+  ok 22 [commercial] › tests\e2e\sow.spec.ts:190:1 › Ana saluda, señala los displays reales y vuelve a escucha natural (16.6s)
+
+  22 passed (5.8m)

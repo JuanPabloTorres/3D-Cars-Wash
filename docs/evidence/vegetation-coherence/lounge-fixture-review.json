@@ -1,0 +1,6 @@
+{
+  "observedAt": "2026-10-24T00:56:25.275Z",
+  "reason": "Static review before this file executes: opening quiet SSE resumes it, so reset alone does not make a paused deterministic fixture.",
+  "changed": "Explicit sandbox pause after openLounge and after reconnect; no product/runtime/bundle changes; preserves all original assertions.",
+  "scope": "tests/e2e/lounge.spec.ts"
+}

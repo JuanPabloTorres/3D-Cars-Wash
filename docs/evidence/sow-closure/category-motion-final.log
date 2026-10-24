@@ -1,0 +1,44 @@
+{
+  actualBrowser: true,
+  scenario: 'busy',
+  speed: 8,
+  elapsedMs: 32902,
+  observations: 97,
+  categories: {
+    car: {
+      entity: 'demo-vehicle-05',
+      wheels: 4,
+      motion: true,
+      reverse: true,
+      motionSample: [Object],
+      reverseSample: [Object]
+    },
+    suv: {
+      entity: 'demo-vehicle-06',
+      wheels: 4,
+      motion: true,
+      reverse: true,
+      motionSample: [Object],
+      reverseSample: [Object]
+    },
+    pickup: {
+      entity: 'demo-vehicle-07',
+      wheels: 4,
+      motion: true,
+      reverse: true,
+      motionSample: [Object],
+      reverseSample: [Object]
+    },
+    truck: {
+      entity: 'demo-vehicle-04',
+      wheels: 6,
+      motion: true,
+      reverse: true,
+      motionSample: [Object],
+      reverseSample: [Object]
+    }
+  },
+  stopped: true,
+  errors: [],
+  renderer: 'ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)'
+}

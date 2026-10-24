@@ -1,0 +1,20 @@
+[
+  {
+    "file": "public/models/naturalTree.glb",
+    "sampledArea": 36.271959897062956,
+    "sampledOpaqueAreaAt45": 24.78997455110612,
+    "sampling": "one barycentre per sampled triangle, at most approximately50k triangles; relative CPU proxy, not viewport coverage"
+  },
+  {
+    "file": "C:/Projects/Assets/CarWash-Natural-Landscape-20261023/naturalTree-dense-v2.glb",
+    "sampledArea": 38.76986916407548,
+    "sampledOpaqueAreaAt45": 35.44733837205425,
+    "sampling": "one barycentre per sampled triangle, at most approximately50k triangles; relative CPU proxy, not viewport coverage"
+  },
+  {
+    "file": "C:/Projects/Assets/CarWash-Entrance-Urban-20261023/tree_small_02/tree_small_02_1k.gltf",
+    "sampledArea": 45.202001729147355,
+    "sampledOpaqueAreaAt45": 45.138720949245034,
+    "sampling": "one barycentre per sampled triangle, at most approximately50k triangles; relative CPU proxy, not viewport coverage"
+  }
+]

@@ -1,0 +1,165 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "samples": 240,
+  "meanFPS": 81.39456013039583,
+  "frameMsP50": 12.200000002980232,
+  "frameMsP95": 14,
+  "frameMsP99": 16.400000005960464,
+  "drawCalls": 1199,
+  "triangles": 2532762,
+  "geometries": 530,
+  "textures": 142,
+  "gpuMemoryBytes": null,
+  "network": [
+    {
+      "name": "/assets/index-Cx6arGFV.js",
+      "bytes": 419373,
+      "durationMs": 79.80000000447035
+    },
+    {
+      "name": "/assets/index-BMJq7_r5.css",
+      "bytes": 7568,
+      "durationMs": 9.199999995529652
+    },
+    {
+      "name": "/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+      "bytes": 25136,
+      "durationMs": 3.2000000029802322
+    },
+    {
+      "name": "/textures/daylight.hdr",
+      "bytes": 1199778,
+      "durationMs": 152.60000000149012
+    },
+    {
+      "name": "/models/palm.glb",
+      "bytes": 16952,
+      "durationMs": 15.400000005960464
+    },
+    {
+      "name": "/models/islandTreeFar.glb",
+      "bytes": 1410632,
+      "durationMs": 31
+    },
+    {
+      "name": "/textures/concrete-color.jpg",
+      "bytes": 119106,
+      "durationMs": 14
+    },
+    {
+      "name": "/textures/concrete-normal.jpg",
+      "bytes": 111206,
+      "durationMs": 42.20000000298023
+    },
+    {
+      "name": "/textures/concrete-roughness.jpg",
+      "bytes": 182242,
+      "durationMs": 28.100000001490116
+    },
+    {
+      "name": "/textures/wood-roughness.jpg",
+      "bytes": 300057,
+      "durationMs": 28.100000001490116
+    },
+    {
+      "name": "/textures/wood-color.jpg",
+      "bytes": 609825,
+      "durationMs": 31.200000002980232
+    },
+    {
+      "name": "/textures/wood-normal.jpg",
+      "bytes": 652741,
+      "durationMs": 31
+    },
+    {
+      "name": "/models/calathea.glb",
+      "bytes": 536656,
+      "durationMs": 105.69999999552965
+    },
+    {
+      "name": "/models/islandTree.glb",
+      "bytes": 4187236,
+      "durationMs": 257.1000000014901
+    },
+    {
+      "name": "/models/fern.glb",
+      "bytes": 361296,
+      "durationMs": 94.19999999552965
+    },
+    {
+      "name": "/models/pottedPlant.glb",
+      "bytes": 683028,
+      "durationMs": 119.40000000596046
+    },
+    {
+      "name": "/models/receptionist.glb",
+      "bytes": 5316212,
+      "durationMs": 271.5
+    },
+    {
+      "name": "/models/hose.glb",
+      "bytes": 2583448,
+      "durationMs": 235.19999999552965
+    },
+    {
+      "name": "/models/cart.glb",
+      "bytes": 3171756,
+      "durationMs": 260.69999999552965
+    },
+    {
+      "name": "/models/worker.glb",
+      "bytes": 3877152,
+      "durationMs": 284.5
+    },
+    {
+      "name": "/models/vehicle.glb",
+      "bytes": 5020188,
+      "durationMs": 284.79999999701977
+    },
+    {
+      "name": "/models/bench.glb",
+      "bytes": 412948,
+      "durationMs": 258.09999999403954
+    }
+  ],
+  "animations": {
+    "receptionist": {
+      "clips": [
+        "Idle",
+        "Greet",
+        "Talk",
+        "Service"
+      ],
+      "active": "Idle",
+      "time": 70.57809999999458
+    },
+    "worker:02": {
+      "clips": [
+        "Idle",
+        "Greet",
+        "Talk",
+        "Service"
+      ],
+      "active": "Service",
+      "time": 68.5123999999917
+    },
+    "worker:05": {
+      "clips": [
+        "Idle",
+        "Greet",
+        "Talk",
+        "Service"
+      ],
+      "active": "Idle",
+      "time": 68.5123999999917
+    }
+  },
+  "vehicleCount": 6,
+  "contextLost": false
+}

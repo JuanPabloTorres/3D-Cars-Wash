@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-10-23T21:48:16.3488758-04:00",
+  "url": "http://127.0.0.1:4173/",
+  "owningProcess": [
+    31368
+  ],
+  "developmentRefreshPresent": true,
+  "expectedBundleServed": false,
+  "limitation": "Dist manifests do not freeze a Vite development runtime. Do not attribute this run to the built bundle."
+}

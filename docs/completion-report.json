@@ -1,0 +1,49 @@
+{
+  "verdict": "fulfilled",
+  "summary": "G0 y G1 implementados y verificados en producción local. Saludo breve, mirador sin poste, tres espacios de fila y destinos seguros. Detención en gate de evaluación del usuario.",
+  "checks": [
+    {
+      "status": "passed",
+      "label": "Build TypeScript y Vite",
+      "evidence": []
+    },
+    {
+      "status": "passed",
+      "label": "12 pruebas unitarias de navegación y proyección",
+      "evidence": []
+    },
+    {
+      "status": "passed",
+      "label": "3 escenarios Playwright sobre Vite preview, escritorio y móvil",
+      "evidence": []
+    },
+    {
+      "status": "passed",
+      "label": "Raycasts verifican líneas de visión de servicio, trabajador, fila y llegada",
+      "evidence": []
+    },
+    {
+      "status": "passed",
+      "label": "Ocho GLB sin errores del validador, con advertencias documentadas",
+      "evidence": []
+    },
+    {
+      "status": "passed",
+      "label": "npm audit runtime sin vulnerabilidades reportadas",
+      "evidence": []
+    }
+  ],
+  "changes": [
+    "Mundo Three.js nuevo desde repositorio vacío con navegación de primera persona y controles móviles",
+    "Recepción GLB con conversación determinista y gesto de saludo que retorna a reposo",
+    "Una bahía y un vehículo DEMO con eventos independientes de la animación",
+    "Tres espacios de espera y observadores de fila y llegada",
+    "Recursos licenciados, inventario, capturas y videos reales"
+  ],
+  "pending": [
+    "Aceptación artística y funcional del usuario",
+    "Prueba en teléfono físico y rendimiento sostenido",
+    "Equipamiento y gestos necesitan valoración artística",
+    "Backend, pagos, entrega real y cinco bahías fuera del alcance implementado"
+  ]
+}

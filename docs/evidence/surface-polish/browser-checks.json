@@ -1,0 +1,399 @@
+{
+  "observedAt": "2026-10-24T01:04:29.989Z",
+  "scenario": "operation; anonymous, empty, default simulated sunny weather",
+  "comparison": "Entry/reception baseline 1440x900; greeting phase is approximate, CSS motion disabled for final captures. Frame timings are single-run observations, not a before/after benchmark.",
+  "checks": [
+    {
+      "file": "after-1440-entry",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "entrance",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 249,
+      "triangles": 7723956,
+      "frameMsP50": 37.8999999910593,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": null
+    },
+    {
+      "file": "after-1440-reception",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 235,
+      "triangles": 7675469,
+      "frameMsP50": 42.3999999910593,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "26px"
+    },
+    {
+      "file": "after-1440-catalogue",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 224,
+      "triangles": 7618638,
+      "frameMsP50": 45.70000000298023,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "26px"
+    },
+    {
+      "file": "after-1440-lounge",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "lounge",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 264,
+      "triangles": 7784947,
+      "frameMsP50": 25.700000002980232,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "23px"
+    },
+    {
+      "file": "after-1440-bay",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "viewing",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 162,
+      "triangles": 7627599,
+      "frameMsP50": 22.400000005960464,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "26px"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "selectionPreserved": true,
+      "focus": {
+        "label": "Abrir Servicios del mostrador",
+        "outline": "solid",
+        "outlineWidth": "3px"
+      }
+    },
+    {
+      "file": "after-650-entry",
+      "viewport": {
+        "width": 650,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "entrance",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 232,
+      "triangles": 7634384,
+      "frameMsP50": 17.69999998807907,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": null
+    },
+    {
+      "file": "after-650-reception",
+      "viewport": {
+        "width": 650,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 228,
+      "triangles": 7626855,
+      "frameMsP50": 16.80000001192093,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "23px"
+    },
+    {
+      "file": "after-650-catalogue",
+      "viewport": {
+        "width": 650,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 228,
+      "triangles": 7626855,
+      "frameMsP50": 17.299999997019768,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "23px"
+    },
+    {
+      "file": "after-650-lounge",
+      "viewport": {
+        "width": 650,
+        "height": 900,
+        "dpr": 1
+      },
+      "view": "lounge",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 244,
+      "triangles": 7688994,
+      "frameMsP50": 16.69999998807907,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "20px"
+    },
+    {
+      "viewport": {
+        "width": 650,
+        "height": 900
+      },
+      "errors": [],
+      "selectionPreserved": true,
+      "focus": {
+        "label": "Abrir Servicios del mostrador",
+        "outline": "solid",
+        "outlineWidth": "3px"
+      }
+    },
+    {
+      "file": "after-390-entry",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "view": "entrance",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 224,
+      "triangles": 7583997,
+      "frameMsP50": 41.20000000298023,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": null
+    },
+    {
+      "file": "after-390-reception",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 218,
+      "triangles": 7572411,
+      "frameMsP50": 33.3999999910593,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "23px"
+    },
+    {
+      "file": "after-390-catalogue",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 218,
+      "triangles": 7572411,
+      "frameMsP50": 32,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "23px"
+    },
+    {
+      "file": "after-390-lounge",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "view": "lounge",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 234,
+      "triangles": 7639663,
+      "frameMsP50": 16.600000008940697,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "20px"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "selectionPreserved": true,
+      "focus": {
+        "label": "Abrir Servicios del mostrador",
+        "outline": "solid",
+        "outlineWidth": "3px"
+      }
+    },
+    {
+      "file": "after-375-entry",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "dpr": 1
+      },
+      "view": "entrance",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 224,
+      "triangles": 7583997,
+      "frameMsP50": 30.700000002980232,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": null
+    },
+    {
+      "file": "after-375-reception",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 218,
+      "triangles": 7572411,
+      "frameMsP50": 31.599999994039536,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "23px"
+    },
+    {
+      "file": "after-375-catalogue",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "dpr": 1
+      },
+      "view": "reception",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "drawCalls": 218,
+      "triangles": 7572411,
+      "frameMsP50": 30.80000001192093,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "23px"
+    },
+    {
+      "file": "after-375-lounge",
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "dpr": 1
+      },
+      "view": "lounge",
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "drawCalls": 234,
+      "triangles": 7639663,
+      "frameMsP50": 17.099999994039536,
+      "contextLost": false,
+      "horizontalOverflow": false,
+      "panelRadius": "20px"
+    },
+    {
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "errors": [],
+      "selectionPreserved": true,
+      "focus": {
+        "label": "Abrir Servicios del mostrador",
+        "outline": "solid",
+        "outlineWidth": "3px"
+      }
+    }
+  ]
+}

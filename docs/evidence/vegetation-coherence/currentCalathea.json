@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-24T00:19:01.121Z",
+  "filename": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\urbanCalathea.glb",
+  "sha256": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587",
+  "height": 0.75,
+  "frame": 1.8,
+  "sunlight": {
+    "color": "#fff0d4",
+    "position": [
+      -22,
+      30,
+      18
+    ],
+    "intensity": 2.6
+  },
+  "hemisphere": {
+    "sky": "#d9eaff",
+    "ground": "#89917a",
+    "intensity": 0.7
+  },
+  "HDRI": "public/textures/daylight.hdr",
+  "environmentIntensity": 0.6,
+  "exposure": 1.05,
+  "toneMapping": "ACESFilmicToneMapping",
+  "errors": [],
+  "views": [
+    {
+      "view": "front",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\currentCalathea-front.png",
+      "metrics": {
+        "triangles": 7500,
+        "calls": 3
+      }
+    },
+    {
+      "view": "side",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\currentCalathea-side.png",
+      "metrics": {
+        "triangles": 7500,
+        "calls": 3
+      }
+    }
+  ],
+  "limitation": "Same sunny lighting/exposure/HDRI parameters and sample camera; excludes building occlusion and other plants"
+}

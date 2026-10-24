@@ -1,0 +1,59 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test tests/e2e/diagnostico.spec.ts --output docs/evidence/diagnostico-ux-20261023/ux-attempt-1/results --reporter list
+
+
+Running 7 tests using 1 worker
+
+(node:13052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [commercial] › tests\e2e\diagnostico.spec.ts:20:1 › UX01/02/11/15: el recorrido móvil reinicia lectura y conserva selección con teclado (1.5m)
+(node:11908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 320px (9.1s)
+  ok 3 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 390px (5.0s)
+  ok 4 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 650px (4.8s)
+  ok 5 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 768px (4.9s)
+  ok 6 [commercial] › tests\e2e\diagnostico.spec.ts:75:1 › UX04/05/07/08: consulta sin canal es honesta y lounge se descubre directamente (5.9s)
+  ok 7 [commercial] › tests\e2e\diagnostico.spec.ts:94:1 › UX06/14/21: llegada pendiente no busca un auto; nueva solicitud respeta orden activa (9.1s)
+
+
+  1) [commercial] › tests\e2e\diagnostico.spec.ts:20:1 › UX01/02/11/15: el recorrido móvil reinicia lectura y conserva selección con teclado 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Color', { exact: true })
+
+
+      31 |  await page.keyboard.press('Enter')
+      32 |  await stepAtStart(page,'Tu vehículo')
+    > 33 |  await page.getByLabel('Color',{exact:true}).selectOption('Azul')
+         |                                              ^
+      34 |  await page.getByRole('button',{name:'Revisar cotización',exact:true}).focus()
+      35 |  await page.keyboard.press('Enter')
+      36 |  const review=await stepAtStart(page,'Revisar cotización')
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\diagnostico.spec.ts:33:46
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\ux-attempt-1\results\diagnostico-UX01-02-11-15--4267c-serva-selección-con-teclado-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\ux-attempt-1\results\diagnostico-UX01-02-11-15--4267c-serva-selección-con-teclado-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\diagnostico-ux-20261023\ux-attempt-1\results\diagnostico-UX01-02-11-15--4267c-serva-selección-con-teclado-commercial\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\diagnostico-ux-20261023\ux-attempt-1\results\diagnostico-UX01-02-11-15--4267c-serva-selección-con-teclado-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\diagnostico-ux-20261023\ux-attempt-1\results\diagnostico-UX01-02-11-15--4267c-serva-selección-con-teclado-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [commercial] › tests\e2e\diagnostico.spec.ts:20:1 › UX01/02/11/15: el recorrido móvil reinicia lectura y conserva selección con teclado 
+  6 passed (2.2m)

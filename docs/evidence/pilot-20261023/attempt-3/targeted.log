@@ -1,0 +1,206 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test --grep Piloto:|cuatro objetos del mostrador|Ana saluda|Lounge de referencia:|Preparar desde el lounge|Orden de la sesión:|Lounge móvil: --output docs/evidence/pilot-20261023/attempt-3/playwright-results
+
+
+Running 11 tests using 1 worker
+
+(node:20832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los cuatro objetos del mostrador abren funciones reales sin perder selección (45.2s)
+  ok  2 [commercial] › tests\e2e\lounge.spec.ts:30:1 › Lounge de referencia: vacío honesto, tarjetas iguales y vistas internas con datos configurados (12.4s)
+  x   3 [commercial] › tests\e2e\lounge.spec.ts:67:1 › Preparar desde el lounge recupera el borrador sin crear una orden (25.0s)
+(node:2964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   4 [commercial] › tests\e2e\lounge.spec.ts:78:1 › Orden de la sesión: llegada pendiente, atención real, lista y último estado al reconectar (1.6m)
+(node:29240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   5 [commercial] › tests\e2e\lounge.spec.ts:111:1 › Lounge móvil: hoja de 58%, contenido legible y vehículo ajeno nunca seleccionado (1.5m)
+(node:17108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 1855×848 (23.4s)
+  ok  7 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 1440×900 (9.1s)
+  ok  8 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 650×900 (8.1s)
+  ok  9 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 390×844 (6.9s)
+  x  10 [commercial] › tests\e2e\sow.spec.ts:77:1 › Piloto: Tab, Enter y Escape conservan foco y selección entre objetos y diálogo (22.5s)
+(node:22676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  11 [commercial] › tests\e2e\sow.spec.ts:309:1 › Ana saluda, señala servicios y explica vehículo, revisión e información antes de escuchar (37.0s)
+
+
+  1) [commercial] › tests\e2e\lounge.spec.ts:67:1 › Preparar desde el lounge recupera el borrador sin crear una orden 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog', { name: 'Ana · Recepción' })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog', { name: 'Ana · Recepción' }) with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'Ana · Recepción' })
+
+
+      69 |  await openLounge(page)
+      70 |  await page.getByRole('dialog',{name:'Tu espera'}).getByRole('button',{name:'Preparar mi orden',exact:true}).click()
+    > 71 |  await expect(page.getByRole('dialog',{name:'Ana · Recepción'})).toBeVisible()
+         |                                                                  ^
+      72 |  await expect(page.getByRole('combobox',{name:'Color',exact:true})).toHaveValue('Azul')
+      73 |  expect((await(await page.request.get('/api/demo/session')).json()).order).toBeNull()
+      74 |  expect(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('febles.demo.draft.v1')!).services)).toEqual(['exterior'])
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\lounge.spec.ts:71:66
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Preparar-desde-el-l-b8917-orrador-sin-crear-una-orden-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Preparar-desde-el-l-b8917-orrador-sin-crear-una-orden-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Preparar-desde-el-l-b8917-orrador-sin-crear-una-orden-commercial\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Preparar-desde-el-l-b8917-orrador-sin-crear-una-orden-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Preparar-desde-el-l-b8917-orrador-sin-crear-una-orden-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [commercial] › tests\e2e\lounge.spec.ts:78:1 › Orden de la sesión: llegada pendiente, atención real, lista y último estado al reconectar 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Espera y mi orden' })
+
+
+      13 |  await visit(page,'El local')
+      14 |  await page.getByText('Consultar otra zona del local',{exact:true}).click()
+    > 15 |  await page.getByRole('button',{name:'Espera y mi orden'}).click()
+         |                                                            ^
+      16 |  await expect(page.getByRole('dialog',{name:'Tu espera'})).toBeVisible()
+      17 |  await page.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)
+      18 | }
+        at openLounge (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\lounge.spec.ts:15:60)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\lounge.spec.ts:84:2
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Orden-de-la-sesión--e6882-último-estado-al-reconectar-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Orden-de-la-sesión--e6882-último-estado-al-reconectar-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Orden-de-la-sesión--e6882-último-estado-al-reconectar-commercial\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Orden-de-la-sesión--e6882-último-estado-al-reconectar-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Orden-de-la-sesión--e6882-último-estado-al-reconectar-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [commercial] › tests\e2e\lounge.spec.ts:111:1 › Lounge móvil: hoja de 58%, contenido legible y vehículo ajeno nunca seleccionado 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByText('Consultar otra zona del local', { exact: true })
+
+
+      12 |  await page.locator('[data-ready=true]').waitFor({timeout:60000})
+      13 |  await visit(page,'El local')
+    > 14 |  await page.getByText('Consultar otra zona del local',{exact:true}).click()
+         |                                                                     ^
+      15 |  await page.getByRole('button',{name:'Espera y mi orden'}).click()
+      16 |  await expect(page.getByRole('dialog',{name:'Tu espera'})).toBeVisible()
+      17 |  await page.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)
+        at openLounge (C:\Projects\Repos\3D-Cars-Wash\tests\e2e\lounge.spec.ts:14:69)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\lounge.spec.ts:113:2
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Lounge-móvil-hoja-d-d8127-lo-ajeno-nunca-seleccionado-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Lounge-móvil-hoja-d-d8127-lo-ajeno-nunca-seleccionado-commercial\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Lounge-móvil-hoja-d-d8127-lo-ajeno-nunca-seleccionado-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\evidence\pilot-20261023\attempt-3\playwright-results\lounge-Lounge-móvil-hoja-d-d8127-lo-ajeno-nunca-seleccionado-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [commercial] › tests\e2e\sow.spec.ts:77:1 › Piloto: Tab, Enter y Escape conservan foco y selección entre objetos y diálogo 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog', { name: 'Ana · Recepción' })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog', { name: 'Ana · Recepción' }) with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'Ana · Recepción' })
+
+
+      91 |     await services.focus();
+      92 |     await page.keyboard.press('Enter');
+    > 93 |     await expect(page.getByRole('dialog', { name: 'Ana · Recepción' })).toBeVisible();
+         |                                                                         ^
+      94 |     await page.getByRole('button', { name: 'Añadir Lavado exterior', exact: true }).click();
+      95 |     await page.keyboard.press('Escape');
+      96 |     await expect(services).toBeFocused();
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\sow.spec.ts:93:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\sow-Piloto-Tab-Enter-y-Esc-8fc2f-ión-entre-objetos-y-diálogo-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\pilot-20261023\attempt-3\playwright-results\sow-Piloto-Tab-Enter-y-Esc-8fc2f-ión-entre-objetos-y-diálogo-commercial\error-context.md
+
+  5) [commercial] › tests\e2e\sow.spec.ts:309:1 › Ana saluda, señala servicios y explica vehículo, revisión e información antes de escuchar 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Información del establecimiento', exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Información del establecimiento', exact: true }) with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Información del establecimiento', exact: true })
+
+
+      340 |     await page.keyboard.press('Escape');
+      341 |     await page.getByRole('button', { name: 'Abrir Horarios del mostrador', exact: true }).click();
+    > 342 |     await expect(page.getByRole('heading', { name: 'Información del establecimiento', exact: true })).toBeVisible();
+          |                                                                                                       ^
+      343 |     await explanation('information');
+      344 |     await capture(page, 'desktop-reception-listening');
+      345 |     await fs.writeFile(`${evidence}/reception-explanations.json`, JSON.stringify({ explanations, screenshotPhase: 'Approximate: Three.js animation continues while capturing.' }, null, 2));
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\sow.spec.ts:342:103
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\evidence\pilot-20261023\attempt-3\playwright-results\sow-Ana-saluda-señala-serv-e5c0f-formación-antes-de-escuchar-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\evidence\pilot-20261023\attempt-3\playwright-results\sow-Ana-saluda-señala-serv-e5c0f-formación-antes-de-escuchar-commercial\error-context.md
+
+  5 failed
+    [commercial] › tests\e2e\lounge.spec.ts:67:1 › Preparar desde el lounge recupera el borrador sin crear una orden 
+    [commercial] › tests\e2e\lounge.spec.ts:78:1 › Orden de la sesión: llegada pendiente, atención real, lista y último estado al reconectar 
+    [commercial] › tests\e2e\lounge.spec.ts:111:1 › Lounge móvil: hoja de 58%, contenido legible y vehículo ajeno nunca seleccionado 
+    [commercial] › tests\e2e\sow.spec.ts:77:1 › Piloto: Tab, Enter y Escape conservan foco y selección entre objetos y diálogo 
+    [commercial] › tests\e2e\sow.spec.ts:309:1 › Ana saluda, señala servicios y explica vehículo, revisión e información antes de escuchar 
+  6 passed (7.2m)

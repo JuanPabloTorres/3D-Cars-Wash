@@ -1,0 +1,28 @@
+
+> febles-carwash-world@0.1.0 build
+> tsc -b && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 2178 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                0.46 kB │ gzip:   0.31 kB
+dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2      8.52 kB
+dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2           9.44 kB
+dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2       14.50 kB
+dist/assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2      15.12 kB
+dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2          24.83 kB
+dist/assets/AdminApp-CaPScQ43.css                              6.04 kB │ gzip:   1.67 kB
+dist/assets/index-CtF-orqj.css                                31.02 kB │ gzip:   9.62 kB
+dist/assets/WorldBadges-DSLOX3Kf.js                            6.37 kB │ gzip:   3.06 kB
+dist/assets/AdminApp-KEJbC_5G.js                              21.98 kB │ gzip:   6.75 kB
+dist/assets/index-MYrw_4Nu.js                                222.35 kB │ gzip:  69.79 kB
+dist/assets/App-DgGV3lOw.js                                1,276.49 kB │ gzip: 363.44 kB
+
+✓ built in 567ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 1100 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

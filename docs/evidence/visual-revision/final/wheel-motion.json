@@ -1,0 +1,35 @@
+{
+  "before": {
+    "position": [
+      3.4,
+      31.677019432659723
+    ],
+    "yaw": 3.141592653589793,
+    "stage": "arriving",
+    "moving": true,
+    "observedAt": 6210.700000002983,
+    "wheels": {
+      "wheelAngle": 7.10196023079457,
+      "steering": 0,
+      "radius": 0.3270900556817651,
+      "count": 4
+    }
+  },
+  "after": {
+    "position": [
+      3.4,
+      29.68621943265972
+    ],
+    "yaw": 3.141592653589793,
+    "stage": "arriving",
+    "moving": true,
+    "observedAt": 6921.700000002982,
+    "wheels": {
+      "wheelAngle": 13.188357433701006,
+      "steering": 0,
+      "radius": 0.3270900556817651,
+      "count": 4
+    }
+  },
+  "pausedAngle": 17.16206429940651
+}

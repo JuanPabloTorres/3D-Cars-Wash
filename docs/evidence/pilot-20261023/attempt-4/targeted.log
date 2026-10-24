@@ -1,0 +1,24 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test --grep Piloto:|cuatro objetos del mostrador|Ana saluda|Lounge de referencia:|Preparar desde el lounge|Orden de la sesión:|Lounge móvil: --output docs/evidence/pilot-20261023/attempt-4/playwright-results
+
+
+Running 11 tests using 1 worker
+
+(node:27520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los cuatro objetos del mostrador abren funciones reales sin perder selección (1.4m)
+  ok  2 [commercial] › tests\e2e\lounge.spec.ts:29:1 › Lounge de referencia: vacío honesto, tarjetas iguales y vistas internas con datos configurados (17.8s)
+  ok  3 [commercial] › tests\e2e\lounge.spec.ts:68:1 › Preparar desde el lounge recupera el borrador sin crear una orden (16.4s)
+  ok  4 [commercial] › tests\e2e\lounge.spec.ts:79:1 › Orden de la sesión: llegada pendiente, atención real, lista y último estado al reconectar (31.2s)
+  ok  5 [commercial] › tests\e2e\lounge.spec.ts:113:1 › Lounge móvil: hoja de 58%, contenido legible y vehículo ajeno nunca seleccionado (38.6s)
+(node:2864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 1855×848 (9.9s)
+  ok  7 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 1440×900 (5.6s)
+  ok  8 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 650×900 (5.3s)
+  ok  9 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 390×844 (4.7s)
+  ok 10 [commercial] › tests\e2e\sow.spec.ts:77:1 › Piloto: Tab, Enter y Escape conservan foco y selección entre objetos y diálogo (6.5s)
+  ok 11 [commercial] › tests\e2e\sow.spec.ts:309:1 › Ana saluda, señala servicios y explica vehículo, revisión e información antes de escuchar (21.3s)
+
+  11 passed (4.1m)

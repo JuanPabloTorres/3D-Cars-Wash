@@ -1,0 +1,621 @@
+{
+  "observedAt": "2026-10-24T02:35:28.763510+00:00",
+  "project": "3D-Cars-Wash",
+  "scope": "Static identities only; not execution, quality or acceptance",
+  "commandsAvailable": {
+    "dev": "vite --host 127.0.0.1 --port 4173 --strictPort",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "lucide-react": "^0.468.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1",
+    "zustand": "^5.0.8"
+  },
+  "owners": [
+    {
+      "file": "AGENTS.md",
+      "status": "present",
+      "bytes": 2942,
+      "sha256": "2cc0d5a9997d8a4504a9b36b8caca25585a87b23e17c643b75b910fc719dc9d1"
+    },
+    {
+      "file": "package.json",
+      "status": "present",
+      "bytes": 1142,
+      "sha256": "195e4829ae5b8938606184a607174ed2800d6e62417ab3097dc886aeebb537e1"
+    },
+    {
+      "file": "package-lock.json",
+      "status": "present",
+      "bytes": 93745,
+      "sha256": "5390d2085ef2a6d8947e3197dc1859b2ca34d40c2bcf88b7af2b16d6a179267e"
+    },
+    {
+      "file": "playwright.config.ts",
+      "status": "present",
+      "bytes": 493,
+      "sha256": "bcb45d6858990406c9001221acaef6209029a4b94fd60d52e935d1b9c3b85c02"
+    },
+    {
+      "file": "src/app/App.tsx",
+      "status": "present",
+      "bytes": 2956,
+      "sha256": "26db87464953ddffe544ba42c7aebd7fe069c400ef1ad2dc4dbd8ffd5e827a41"
+    },
+    {
+      "file": "src/app/store.ts",
+      "status": "present",
+      "bytes": 3335,
+      "sha256": "af3468d25bd677bc27772af75ed90329c70e0011b78fba914a6a6798003fffb6"
+    },
+    {
+      "file": "src/app/commerceStore.ts",
+      "status": "present",
+      "bytes": 5761,
+      "sha256": "c78ad564c3e57aade49f225a38273c3580e89ba043495c6d1d7903035a050680"
+    },
+    {
+      "file": "src/world/WorldScene.tsx",
+      "status": "present",
+      "bytes": 3022,
+      "sha256": "ecb045b1ac3c8eb4c63a5d521af355361c2d59ca8bd9e9580e9571ccc0c883df"
+    },
+    {
+      "file": "src/world/WorldLayout.tsx",
+      "status": "present",
+      "bytes": 4150,
+      "sha256": "187586cdfcc83dd9e7288d7f6c847d3050a7cc13c42a761ead42ea44152c9545"
+    },
+    {
+      "file": "src/world/siteLandscape.ts",
+      "status": "present",
+      "bytes": 5871,
+      "sha256": "b42d737edc33204960361b318dc4cc2fde9e4f2780abade5e2fc9de2184083d8"
+    },
+    {
+      "file": "src/world/prefabs/Landscape.tsx",
+      "status": "present",
+      "bytes": 3031,
+      "sha256": "1d4303b7c6d44c465b2790ed3f51c4da271fb7b58be66b82bb8d7b2f7207d6dc"
+    },
+    {
+      "file": "src/world/prefabs/EntranceForecourt.tsx",
+      "status": "present",
+      "bytes": 2772,
+      "sha256": "1b70682c2d0cf1425331f15376131ce79d43fe373402c37661cb534cf1e70eb3"
+    },
+    {
+      "file": "src/world/prefabs/LoungePrefab.tsx",
+      "status": "present",
+      "bytes": 5028,
+      "sha256": "68047673fdf259000cf4b5d05d64e006bcd1ab8cb5dbaa6e0d90c716d2637e3f"
+    },
+    {
+      "file": "src/world/navigation/CameraController.tsx",
+      "status": "present",
+      "bytes": 6439,
+      "sha256": "d737b36838267f5ad2b99e7868e5fa656e4a80ad841969ca2091fdf38495020e"
+    },
+    {
+      "file": "src/world/navigation/layout.ts",
+      "status": "present",
+      "bytes": 3804,
+      "sha256": "c3224b16b65f8b9354e0accd26527523d00f0f063f69b54991f60e9e887bd1c7"
+    },
+    {
+      "file": "src/world/prefabs/Architecture.tsx",
+      "status": "present",
+      "bytes": 10209,
+      "sha256": "8697f5d4677b2124b6e53ca276c7b0dd8872df601ee7af7b73bf1626edfe2836"
+    },
+    {
+      "file": "src/world/prefabs/CounterObjects.tsx",
+      "status": "present",
+      "bytes": 7629,
+      "sha256": "7867713a3d86d20bdd53182a43c64be2304bba792e6cbe42efb39739028999c7"
+    },
+    {
+      "file": "src/world/prefabs/StaffPrefab.tsx",
+      "status": "present",
+      "bytes": 4913,
+      "sha256": "320bbbba7a8b1a54a046d5b8e42627cc7f9b7526550fc06b32a8189a873c7e46"
+    },
+    {
+      "file": "src/world/prefabs/VehicleAppearance.tsx",
+      "status": "present",
+      "bytes": 3395,
+      "sha256": "0520dbb028508ad460f5bc1636310c93422960293edcfc8ba48127768e010bc1"
+    },
+    {
+      "file": "src/world/prefabs/ServiceActivityVisualizer.tsx",
+      "status": "present",
+      "bytes": 2410,
+      "sha256": "77ae43d08291d63725ddb49dfc5ab991d58fbe575ef910cbd12079dfe217b883"
+    },
+    {
+      "file": "src/world/animation/NPCAnimationController.ts",
+      "status": "present",
+      "bytes": 1520,
+      "sha256": "81bb93166be38b24357258d622b272d01b66d714469c7b87ce6a7ddc71f44d57"
+    },
+    {
+      "file": "src/world/assets/registry.ts",
+      "status": "present",
+      "bytes": 949,
+      "sha256": "3a9e6e9a6e1012f6f520ebb9935525342f838eae348e397bfbd2349bc45c87dd"
+    },
+    {
+      "file": "src/ui/WorldHUD.tsx",
+      "status": "present",
+      "bytes": 7050,
+      "sha256": "079a302ce2cab8fcf45f87bed72e0818b87bce6c71c1c30304f405806f9134b3"
+    },
+    {
+      "file": "src/ui/WorldOverlayManager.tsx",
+      "status": "present",
+      "bytes": 3176,
+      "sha256": "bcaac49d02a73761ab09a04bd66de1852236ca61e33a1d6e7027c7ed55c1ddaf"
+    },
+    {
+      "file": "src/ui/world.css",
+      "status": "present",
+      "bytes": 22267,
+      "sha256": "8d7090f6bd5e5f20716ec71313ea5a5a132a76a031bba20e065d251696ca52e1"
+    },
+    {
+      "file": "src/ui/sow.css",
+      "status": "present",
+      "bytes": 10137,
+      "sha256": "1b51c14e1eb83c4562098eb502e8712f08d46f1f81878f0c3b724ca5c4ff6423"
+    },
+    {
+      "file": "src/reception/ReceptionDialogue.tsx",
+      "status": "present",
+      "bytes": 10808,
+      "sha256": "38b0b672e716e8914178e7d591d8efdc4fb744540a3f319de1474034cb6333c7"
+    },
+    {
+      "file": "src/domain/sitePlan.ts",
+      "status": "present",
+      "bytes": 2148,
+      "sha256": "03b8dbc10ac50f9a03401db827768ea06eebea1a85d9c9f4bba498d616572601"
+    },
+    {
+      "file": "src/domain/DemoOperationSource.ts",
+      "status": "present",
+      "bytes": 12087,
+      "sha256": "482d9f390bc8b7029b3c7e54e67762e4797f54739d97a17e0ed93250ee5a5089"
+    },
+    {
+      "file": "src/domain/DemoOperationTransport.ts",
+      "status": "present",
+      "bytes": 2131,
+      "sha256": "6960f55db8214ff2c7f88ea64eef6f4ef14addb2bd086c0d98e559d1d5e3919b"
+    },
+    {
+      "file": "src/domain/OperationProjection.ts",
+      "status": "present",
+      "bytes": 1191,
+      "sha256": "9ef3f6832e71c50df0bc21776f8386ea78cb96549bcebd88032a90397f8b267d"
+    },
+    {
+      "file": "server/demoApi.ts",
+      "status": "present",
+      "bytes": 18939,
+      "sha256": "247e582c9f8b1499708bd79230afacca0c2a339bc28c2eddcccde45030cc4e5b"
+    },
+    {
+      "file": "server/configuration.ts",
+      "status": "present",
+      "bytes": 4136,
+      "sha256": "bdcca28fa1a5cbd3fe758a346ddb3c62ea04d0ff2010ca1c88a30bd8cbdfa913"
+    },
+    {
+      "file": "scripts/export-staff.py",
+      "status": "present",
+      "bytes": 13916,
+      "sha256": "db04d40067f3df0f5769e1d1cad38a4464b93d88153553f2b6f3b9621ab2a256"
+    },
+    {
+      "file": "scripts/prepare-sow-receptionist.mjs",
+      "status": "present",
+      "bytes": 1514,
+      "sha256": "9142699a192b24b7744558a78a2366a5d5b35d724d2a4deee1aa003a3d77a2c7"
+    },
+    {
+      "file": "scripts/optimize-staff.mjs",
+      "status": "present",
+      "bytes": 485,
+      "sha256": "8b46666d96756aa6a2d38beb6992ffa20a8a52b93deca2ae22c04be0502f1194"
+    },
+    {
+      "file": "scripts/prepare-innerscene-vehicles.py",
+      "status": "present",
+      "bytes": 3598,
+      "sha256": "f716498fbe3b81600337a28ecf6726f991c07093bb2ed12ac7da2c2288eefbbe"
+    },
+    {
+      "file": "scripts/capture-revision-final.mjs",
+      "status": "present",
+      "bytes": 4620,
+      "sha256": "09e063563de01411d3d1c005d26a807a334ca808a8f1c9e1c2a02a1dc6f16666"
+    },
+    {
+      "file": "scripts/validate-assets.mjs",
+      "status": "present",
+      "bytes": 701,
+      "sha256": "1dfec8e41e81e0f2e24e19cf21be7b00cb42ff6c50c15b6f02f8d12e3a8edd08"
+    },
+    {
+      "file": "tests/e2e/commercial.spec.ts",
+      "status": "present",
+      "bytes": 23469,
+      "sha256": "b417b66627b968d8bea2be3d41281f217c1f37934de224f941f7cd8f4c9f9de7"
+    },
+    {
+      "file": "tests/e2e/sow.spec.ts",
+      "status": "present",
+      "bytes": 25584,
+      "sha256": "5025eb6fffe2407f0d94a4fd0cc2c60970da6c86553b302a3a8d367d5772bd90"
+    },
+    {
+      "file": "tests/e2e/lounge.spec.ts",
+      "status": "present",
+      "bytes": 9717,
+      "sha256": "eb495dfc65fe54ccc6b34990f9d3120a397dc9782be67aef603ae1fe447d836d"
+    },
+    {
+      "file": "docs/ASSET_INVENTORY.md",
+      "status": "present",
+      "bytes": 14729,
+      "sha256": "8d15bab121b1488f3994029c9536d26d0c55e31420fa453118d6f8e19eb61676"
+    },
+    {
+      "file": "public/ASSET_LICENSES.txt",
+      "status": "present",
+      "bytes": 11012,
+      "sha256": "fe1c46d98e4db7b174e8e4506ec0beb0816a7b80aa2810c85529df298b90bd42"
+    },
+    {
+      "file": "docs/design/visual-experience-sow.md",
+      "status": "present",
+      "bytes": 26627,
+      "sha256": "7cad31a8f71768882788a18961abce5eaf9407ea5d5e0cc4ec89fbf8758da695"
+    },
+    {
+      "file": "docs/design/reference-reconciliation.md",
+      "status": "present",
+      "bytes": 9679,
+      "sha256": "478398af5d37a11be0768cfcea60d7449a7e5f9c004fe04549cda91a6b79d6aa"
+    }
+  ],
+  "models": [
+    {
+      "file": "public/models/areca.glb",
+      "status": "present",
+      "bytes": 2112456,
+      "sha256": "971ea8b671828431ad3569c81c326adfaae9c932ce8ae7c5f46e16f238780f58"
+    },
+    {
+      "file": "public/models/bench.glb",
+      "status": "present",
+      "bytes": 412648,
+      "sha256": "e4d2e1111ddef4379a0c13ee64ab29c81c0f62ffbe0a5abd835cfcf0346946e6"
+    },
+    {
+      "file": "public/models/calathea.glb",
+      "status": "present",
+      "bytes": 536356,
+      "sha256": "62894480cecfa8b0afbca8bfacd8ac837c214fe0f205a0244ae81c5d8d794787"
+    },
+    {
+      "file": "public/models/canopyTree.glb",
+      "status": "present",
+      "bytes": 10353072,
+      "sha256": "ecc1e14131c5db4087262c315b09d847d26de447a3f6bfa6a074ebf7307b9cbe"
+    },
+    {
+      "file": "public/models/cart.glb",
+      "status": "present",
+      "bytes": 3171456,
+      "sha256": "88d279ab2b3d9817365fd9114f57b49855d4342d41b37fd7218293e8ebe602dd"
+    },
+    {
+      "file": "public/models/coherentCalathea.glb",
+      "status": "present",
+      "bytes": 342488,
+      "sha256": "bd4f81b337bd31611051b31e8d958f7af76c82056017c77c7515737d2da22967"
+    },
+    {
+      "file": "public/models/coherentOak.glb",
+      "status": "present",
+      "bytes": 5354748,
+      "sha256": "9114f364ff0765c7504ccc8b6f71dba408170e6963b8fdcab993fd7a48d7b449"
+    },
+    {
+      "file": "public/models/coherentShrub.glb",
+      "status": "present",
+      "bytes": 1189924,
+      "sha256": "28b222f8b895e251d1928153af3ab41ff7561935e9131f57ad46915939beac2a"
+    },
+    {
+      "file": "public/models/datePalm.glb",
+      "status": "present",
+      "bytes": 2293312,
+      "sha256": "94e130ee5ab0e989c51193bd467a780acca3aad676bf07845ab9b8f68cfea2c7"
+    },
+    {
+      "file": "public/models/fern.glb",
+      "status": "present",
+      "bytes": 360996,
+      "sha256": "6ce66d654da80960f7aebe97dad75e3df94463589bd536b17339ae607d290501"
+    },
+    {
+      "file": "public/models/hose.glb",
+      "status": "present",
+      "bytes": 2583148,
+      "sha256": "155402c49e39718e272c4545a3be355ff76c370d00e49191a1abd85ca224f8af"
+    },
+    {
+      "file": "public/models/islandTree.glb",
+      "status": "present",
+      "bytes": 6362972,
+      "sha256": "947b09db8a9a72784486a07ace20d2a9ace3f37aedf3dc192c7ad2200dd4cd5f"
+    },
+    {
+      "file": "public/models/islandTreeFar.glb",
+      "status": "present",
+      "bytes": 2040940,
+      "sha256": "fe71352baae0500b84bf19b11db651813682cd8e25734cdb9aa08e7ebb9b8706"
+    },
+    {
+      "file": "public/models/naturalFern.glb",
+      "status": "present",
+      "bytes": 291136,
+      "sha256": "52950086c0acbe8bf18d28ad43464a5c07ed33ada5712c4b20cc94d2987f7a1f"
+    },
+    {
+      "file": "public/models/naturalTree.glb",
+      "status": "present",
+      "bytes": 9598192,
+      "sha256": "bb9a6729ed4e65195aee539485e893f8c0852b442b77a48a02ee9ce3f0ecd1f3"
+    },
+    {
+      "file": "public/models/naturalTreeDense.glb",
+      "status": "present",
+      "bytes": 18358996,
+      "sha256": "5a1ed837dc16897fb3ee2300a7059fb5a13ae134fd7d7d64ab559cb7dfa924ad"
+    },
+    {
+      "file": "public/models/palm.glb",
+      "status": "present",
+      "bytes": 16652,
+      "sha256": "e93888e5bcf31a278b469161d99e120b7361eab719848f65d37d118c52b2dc29"
+    },
+    {
+      "file": "public/models/plant.glb",
+      "status": "present",
+      "bytes": 2700,
+      "sha256": "c0ec050a66386928fed820aa9ae4d9a54db9957f9d2c27f9009a94a522c8d695"
+    },
+    {
+      "file": "public/models/pottedPlant.glb",
+      "status": "present",
+      "bytes": 682728,
+      "sha256": "cf5231b4117f3c321e2a46bba509a3fba3f98873d66d13ca3bffc7479123d3ef"
+    },
+    {
+      "file": "public/models/receptionist.glb",
+      "status": "present",
+      "bytes": 5962808,
+      "sha256": "85bc5fb7dbdf76498b18f3dd1866d5505e6c330f0f8462cd493702296e8b294f"
+    },
+    {
+      "file": "public/models/sander.glb",
+      "status": "present",
+      "bytes": 89476,
+      "sha256": "6e9d31d115c780823c5c95a9c4fa2d52692a74149f8fc32b10703991acaeb00d"
+    },
+    {
+      "file": "public/models/shrub.glb",
+      "status": "present",
+      "bytes": 7916,
+      "sha256": "e9bd86d876d0b063b8ee45916e2474649b14c9b201ce718cfe370dc932314421"
+    },
+    {
+      "file": "public/models/sprayer.glb",
+      "status": "present",
+      "bytes": 87100,
+      "sha256": "78c07b68a366d2dbef2435454f94ec0ffe3d2ba340f7468c634aa18f21f18843"
+    },
+    {
+      "file": "public/models/sprayWand.glb",
+      "status": "present",
+      "bytes": 25704,
+      "sha256": "3da7e36ea98c42002c8f41aaae457d13c7529cd0a31734fdb0a5b09d235d555f"
+    },
+    {
+      "file": "public/models/tropicalPalm.glb",
+      "status": "present",
+      "bytes": 852716,
+      "sha256": "6b43fd5e32c8713637112fc405807f7cf418828a7aa2b57a3e2148d81124ecb3"
+    },
+    {
+      "file": "public/models/urbanCalathea.glb",
+      "status": "present",
+      "bytes": 329448,
+      "sha256": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587"
+    },
+    {
+      "file": "public/models/urbanFern.glb",
+      "status": "present",
+      "bytes": 250752,
+      "sha256": "1f17d69c9d48760e9d9bfdcea7b5e7ba25a9587c3f0a1fc272861abf53cf1aab"
+    },
+    {
+      "file": "public/models/urbanShrub.glb",
+      "status": "present",
+      "bytes": 1172708,
+      "sha256": "72ceb75cee33655d40a05d62e2e96b64c949dc6ed82140f796fc32b85da45650"
+    },
+    {
+      "file": "public/models/urbanTree.glb",
+      "status": "present",
+      "bytes": 9479644,
+      "sha256": "e2d5e66843a4da1c378b06362d9695ee1b28579aa4df7449702a16782a1833cf"
+    },
+    {
+      "file": "public/models/urbanTreeFar.glb",
+      "status": "present",
+      "bytes": 4136576,
+      "sha256": "8ba76bf35ae06ce91ca71279dc131f9c15f5ade72814f393d7e13b3e6d307de3"
+    },
+    {
+      "file": "public/models/vacuum.glb",
+      "status": "present",
+      "bytes": 419452,
+      "sha256": "b958974b7e6351e8a34b38114e9b637412d74ab943a44399ee67ebdf764d4522"
+    },
+    {
+      "file": "public/models/vacuumNozzle.glb",
+      "status": "present",
+      "bytes": 15744,
+      "sha256": "9c146b1033b36172ac5a1ec45780744732d1da785a47034b2aba79c2af6524ee"
+    },
+    {
+      "file": "public/models/vehicle-car.glb",
+      "status": "present",
+      "bytes": 5281728,
+      "sha256": "8aaaf79c74ae0edd8a7e34d420920e2c9329c9457560c5916c2b973fbd7a7ffa"
+    },
+    {
+      "file": "public/models/vehicle-pickup.glb",
+      "status": "present",
+      "bytes": 5880832,
+      "sha256": "20e660e331c8455d52c06cf95ac40e3ca46924f3cc49eb48438e41d8208e8822"
+    },
+    {
+      "file": "public/models/vehicle-suv.glb",
+      "status": "present",
+      "bytes": 5785288,
+      "sha256": "fd31026a1fc2d77f556d6400b4308f603f288fa2a1240ce65484ce54c6fb5411"
+    },
+    {
+      "file": "public/models/vehicle-truck.glb",
+      "status": "present",
+      "bytes": 6452024,
+      "sha256": "5267ea72bf485596c5d06a51815b887f35ac31044ddd38f91811e0e5d8ac9f76"
+    },
+    {
+      "file": "public/models/vehicle.glb",
+      "status": "present",
+      "bytes": 5036492,
+      "sha256": "6ac5e4618fda2641aa4a645d1aaf833e2b005dd4c691ac74060b1114401bc2e2"
+    },
+    {
+      "file": "public/models/worker.glb",
+      "status": "present",
+      "bytes": 11198360,
+      "sha256": "29284e5bb0ce6d1916f816e9497f1c84b3bb531d77108c2366c5c998159e010e"
+    }
+  ],
+  "agents": [
+    {
+      "file": ".codex/agents/carwash_architecture.toml",
+      "status": "present",
+      "bytes": 1318,
+      "sha256": "b9ca0b1cfcc267b1441d11b0a5d2bb1242cb88972cd1366ef8ad33e9d20c65d5"
+    },
+    {
+      "file": ".codex/agents/carwash_blender.toml",
+      "status": "present",
+      "bytes": 1465,
+      "sha256": "0ac3cba2514c9dd720e0797f5272478914ec8d3f313b56af9052cdecf7bda020"
+    },
+    {
+      "file": ".codex/agents/carwash_interaction.toml",
+      "status": "present",
+      "bytes": 1427,
+      "sha256": "1abe1aec418f36841f120f2b69a786e39eb797a0b50cb7d4d57a7326ba845385"
+    },
+    {
+      "file": ".codex/agents/carwash_scene.toml",
+      "status": "present",
+      "bytes": 1595,
+      "sha256": "3a1216fc9f492c10e621e70dd8190b3b573f5cecdf5b74aa0152018cb447aaad"
+    },
+    {
+      "file": ".codex/agents/carwash_validation.toml",
+      "status": "present",
+      "bytes": 1679,
+      "sha256": "8666ec78b482547403db9ac8ced933018c0a82473c2e9e82afb25e3af1b0f86e"
+    }
+  ],
+  "references": [
+    {
+      "file": "Febles Car Wash entrance UI concept-1.png",
+      "status": "present",
+      "bytes": 2578369,
+      "sha256": "f9f9cb565528377232f3f7473890f291502cf3ee297d401dd72dc8af6315423b",
+      "pixels": {
+        "width": 1855,
+        "height": 848
+      }
+    },
+    {
+      "file": "Polished car wash service catalog-2.png",
+      "status": "present",
+      "bytes": 2046185,
+      "sha256": "cf61b8cf08c7b4e4c280cc7ad83d8608d139de033b3f0988d1d9cbc444a7bc0a",
+      "pixels": {
+        "width": 1855,
+        "height": 848
+      }
+    },
+    {
+      "file": "Febles Car Wash Reception Concept-3.png",
+      "status": "present",
+      "bytes": 1879416,
+      "sha256": "639518b02c8277c3dcfe2add5d38e0c0c3ed7b617dc1f18184d721ca0222db47",
+      "pixels": {
+        "width": 1855,
+        "height": 848
+      }
+    },
+    {
+      "file": "Polished Car Wash Operations UI-4.png",
+      "status": "present",
+      "bytes": 2201635,
+      "sha256": "974f40e56a38754285ee02e4a93955c2a0dfcce603018f632933dd77ccc4ac55",
+      "pixels": {
+        "width": 1855,
+        "height": 848
+      }
+    },
+    {
+      "file": "Febles Car Wash Lounge UI-5.png",
+      "status": "present",
+      "bytes": 2208904,
+      "sha256": "b6108e54d571524133961577d209fbeca626f80d2fc1008a07c3f70de909b82b",
+      "pixels": {
+        "width": 1855,
+        "height": 848
+      }
+    }
+  ],
+  "checksNotRun": [
+    "browser",
+    "Blender live",
+    "unit/E2E/build",
+    "artistic acceptance"
+  ],
+  "privacy": "No env files, credentials, local overrides, sessions or private orders read"
+}

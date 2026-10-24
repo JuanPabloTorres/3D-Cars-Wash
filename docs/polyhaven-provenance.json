@@ -1,0 +1,38 @@
+[
+  {
+    "id": "garden_hose_wall_mounted_01",
+    "name": "Garden Hose Wall Mounted 01",
+    "authors": {
+      "Kuutti Siitonen": "All"
+    }
+  },
+  {
+    "id": "tool_cart",
+    "name": "Tool Cart",
+    "authors": {
+      "Savva Zakharov": "All"
+    }
+  },
+  {
+    "id": "concrete_floor_worn_001",
+    "name": "Concrete Floor Worn 001",
+    "authors": {
+      "Dimitrios Savva": "Photography",
+      "Rico Cilliers": "Processing"
+    }
+  },
+  {
+    "id": "wood_planks",
+    "name": "Wood Planks",
+    "authors": {
+      "Amal Kumar": "All"
+    }
+  },
+  {
+    "id": "kiara_6_afternoon",
+    "name": "Kiara 6 Afternoon",
+    "authors": {
+      "Greg Zaal": "All"
+    }
+  }
+]

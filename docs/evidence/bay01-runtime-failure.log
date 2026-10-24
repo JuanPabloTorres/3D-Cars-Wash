@@ -1,0 +1,15 @@
+Error: Could not load /models/naturalTreeDense.glb: Unexpected token '<', "<!doctype "... is not valid JSON
+    at http://127.0.0.1:4173/assets/App-D8eV3aLq.js:4220:79048
+    at o (http://127.0.0.1:4173/assets/App-D8eV3aLq.js:4349:1625)
+    at Object.onLoad (http://127.0.0.1:4173/assets/App-D8eV3aLq.js:4349:1939)
+    at http://127.0.0.1:4173/assets/App-D8eV3aLq.js:5:35399
+Error: Could not load /models/naturalTreeDense.glb: Unexpected token '<', "<!doctype "... is not valid JSON
+    at http://127.0.0.1:4173/assets/App-D8eV3aLq.js:4220:79048
+    at o (http://127.0.0.1:4173/assets/App-D8eV3aLq.js:4349:1625)
+    at Object.onLoad (http://127.0.0.1:4173/assets/App-D8eV3aLq.js:4349:1939)
+    at http://127.0.0.1:4173/assets/App-D8eV3aLq.js:5:35399
+No se pudo cargar la visita
+
+Comprueba tu conexión y vuelve a intentar.
+
+Reintentar carga

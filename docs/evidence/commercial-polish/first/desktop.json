@@ -1,0 +1,809 @@
+{
+  "errors": [],
+  "transitionMs": 2202,
+  "snapshot": {
+    "ready": true,
+    "entered": true,
+    "destination": null,
+    "navRevision": 1,
+    "activeView": "reception",
+    "sync": "connected",
+    "interaction": "reception",
+    "dialogue": true,
+    "paused": false,
+    "world": {
+      "clockSeconds": 126.45867459999998,
+      "speed": 1,
+      "scenario": "mixed",
+      "vehicles": [
+        {
+          "worldEntityId": "demo-vehicle-01",
+          "visibility": "own",
+          "operationalState": "in-service",
+          "visualLocation": "bay:01",
+          "locationConfidence": "demo",
+          "stage": "interior",
+          "bayId": "01",
+          "queueIndex": null,
+          "color": "#b5c1c5",
+          "position": [
+            3.4,
+            -4.2
+          ],
+          "yaw": 0,
+          "phaseStarted": 115.91232489999999,
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "done"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "active"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ],
+          "assignedWorkerId": "demo-worker-01"
+        },
+        {
+          "worldEntityId": "demo-vehicle-02",
+          "visibility": "anonymous",
+          "operationalState": "transit",
+          "visualLocation": "bay:02",
+          "locationConfidence": "demo",
+          "stage": "departing",
+          "bayId": null,
+          "queueIndex": null,
+          "color": "#b2293c",
+          "position": [
+            11.4,
+            -4.2
+          ],
+          "yaw": 0,
+          "phaseStarted": 111.3138899,
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "done"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "done"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "done"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "done"
+            }
+          ],
+          "assignedWorkerId": null,
+          "movement": {
+            "path": [
+              [
+                11.4,
+                -4.2
+              ],
+              [
+                11.4,
+                -9
+              ],
+              [
+                11.382086918355284,
+                -9.36667666263773
+              ],
+              [
+                11.328347673421135,
+                -9.716706650550917
+              ],
+              [
+                11.238782265197553,
+                -10.050089963739563
+              ],
+              [
+                11.113390693684542,
+                -10.366826602203668
+              ],
+              [
+                10.952172958882095,
+                -10.666916565943232
+              ],
+              [
+                10.755129060790217,
+                -10.950359854958254
+              ],
+              [
+                10.522258999408907,
+                -11.217156469248735
+              ],
+              [
+                10.253562774738164,
+                -11.467306408814673
+              ],
+              [
+                8.597431571424103,
+                -12.864667111610913
+              ],
+              [
+                8.496158546871579,
+                -12.943260757327106
+              ],
+              [
+                8.391055258926057,
+                -13.011375250281137
+              ],
+              [
+                8.282121707587539,
+                -13.069010590473013
+              ],
+              [
+                8.169357892856025,
+                -13.116166777902727
+              ],
+              [
+                8.052763814731513,
+                -13.152843812570286
+              ],
+              [
+                7.9323394732140065,
+                -13.179041694475682
+              ],
+              [
+                7.808084868303501,
+                -13.19476042361892
+              ],
+              [
+                7.68,
+                -13.2
+              ],
+              [
+                6.9,
+                -13.2
+              ],
+              [
+                46.490563018870944,
+                -13.2
+              ],
+              [
+                46.85683731132307,
+                -13.179999999999998
+              ],
+              [
+                47.2009416981149,
+                -13.12
+              ],
+              [
+                47.52287617924646,
+                -13.02
+              ],
+              [
+                47.82264075471774,
+                -12.879999999999999
+              ],
+              [
+                48.10023542452873,
+                -12.7
+              ],
+              [
+                48.35566018867944,
+                -12.48
+              ],
+              [
+                48.588915047169856,
+                -12.22
+              ],
+              [
+                48.8,
+                -11.92
+              ],
+              [
+                49.2,
+                -11.28
+              ],
+              [
+                49.3875,
+                -10.956415047169857
+              ],
+              [
+                49.55,
+                -10.625660188679433
+              ],
+              [
+                49.6875,
+                -10.287735424528726
+              ],
+              [
+                49.8,
+                -9.942640754717736
+              ],
+              [
+                49.8875,
+                -9.590376179246462
+              ],
+              [
+                49.95,
+                -9.230941698114906
+              ],
+              [
+                49.9875,
+                -8.864337311323066
+              ],
+              [
+                50,
+                -8.490563018870944
+              ],
+              [
+                50,
+                17
+              ]
+            ],
+            "startedAt": 111.3138899,
+            "duration": 32.37981457792889,
+            "reverseMeters": 11.558901662152412,
+            "purpose": "handover"
+          }
+        },
+        {
+          "worldEntityId": "demo-vehicle-04",
+          "visibility": "anonymous",
+          "operationalState": "in-service",
+          "visualLocation": "bay:03",
+          "locationConfidence": "demo",
+          "stage": "lights",
+          "bayId": "03",
+          "queueIndex": null,
+          "color": "#e2a846",
+          "position": [
+            19.4,
+            -4.2
+          ],
+          "yaw": 0,
+          "phaseStarted": 113.8689987,
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "done"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "done"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "active"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ],
+          "assignedWorkerId": "demo-worker-03"
+        },
+        {
+          "worldEntityId": "demo-vehicle-05",
+          "visibility": "anonymous",
+          "operationalState": "in-service",
+          "visualLocation": "bay:05",
+          "locationConfidence": "demo",
+          "stage": "washing",
+          "bayId": "05",
+          "queueIndex": null,
+          "color": "#4f7068",
+          "position": [
+            35.4,
+            -4.2
+          ],
+          "yaw": 0,
+          "phaseStarted": 102.61484420000001,
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "active"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "pending"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "pending"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ],
+          "assignedWorkerId": "demo-worker-05"
+        },
+        {
+          "worldEntityId": "demo-vehicle-06",
+          "visibility": "anonymous",
+          "operationalState": "queued",
+          "visualLocation": "queue",
+          "locationConfidence": "demo",
+          "stage": "queued",
+          "bayId": null,
+          "queueIndex": 2,
+          "color": "#d4d2c8",
+          "position": [
+            3.4,
+            24.8
+          ],
+          "yaw": 3.141592653589793,
+          "phaseStarted": 6.1704246000000005,
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "pending"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "pending"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "pending"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ],
+          "assignedWorkerId": null
+        }
+      ],
+      "bays": [
+        {
+          "bayId": "01",
+          "occupancy": "occupied",
+          "vehicleId": "demo-vehicle-01",
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "done"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "active"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ]
+        },
+        {
+          "bayId": "02",
+          "occupancy": "free",
+          "vehicleId": null,
+          "tasks": []
+        },
+        {
+          "bayId": "03",
+          "occupancy": "occupied",
+          "vehicleId": "demo-vehicle-04",
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "done"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "done"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "active"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ]
+        },
+        {
+          "bayId": "04",
+          "occupancy": "out-of-service",
+          "vehicleId": null,
+          "tasks": []
+        },
+        {
+          "bayId": "05",
+          "occupancy": "occupied",
+          "vehicleId": "demo-vehicle-05",
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "active"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "pending"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "pending"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ]
+        }
+      ],
+      "paused": false,
+      "revision": 497,
+      "eventIds": [
+        "demo-event-488",
+        "demo-event-489",
+        "demo-event-490",
+        "demo-event-491",
+        "demo-event-492",
+        "demo-event-493",
+        "demo-event-494",
+        "demo-event-495",
+        "demo-event-496",
+        "demo-event-497"
+      ],
+      "stage": "interior",
+      "bay": {
+        "bayId": "01",
+        "occupancy": "occupied",
+        "vehicleId": "demo-vehicle-01",
+        "tasks": [
+          {
+            "id": "exterior",
+            "label": "Exterior",
+            "status": "done"
+          },
+          {
+            "id": "interior",
+            "label": "Interior",
+            "status": "active"
+          },
+          {
+            "id": "inspection",
+            "label": "Inspección",
+            "status": "pending"
+          }
+        ]
+      }
+    },
+    "position": [
+      -6,
+      2.25
+    ],
+    "yaw": 0,
+    "pitch": -0.05449145624073118,
+    "walking": false,
+    "route": [],
+    "vehiclePosition": [
+      3.4,
+      -4.2
+    ],
+    "vehicleCount": 1,
+    "vehicleDistance": 0,
+    "frames": [
+      14.799999997019768,
+      83.60000000149012,
+      406.5,
+      19.399999998509884,
+      25.5,
+      51.70000000298023,
+      15.799999997019768,
+      23.80000000447035,
+      9,
+      19.799999997019768,
+      21.600000001490116,
+      14.5,
+      23.5,
+      25.799999997019768,
+      30.100000001490116,
+      27.600000001490116,
+      29.299999997019768,
+      29.100000001490116,
+      21.799999997019768,
+      14.300000004470348,
+      23,
+      28,
+      28.5,
+      29,
+      22.799999997019768,
+      14.100000001490116,
+      22,
+      28,
+      30.799999997019768,
+      26.900000005960464,
+      30.799999997019768,
+      29.200000002980232,
+      31.099999994039536,
+      27.30000000447035,
+      29.19999999552965,
+      29.100000001490116,
+      20.80000000447035,
+      14.299999997019768,
+      24.399999998509884,
+      27.899999998509884,
+      8,
+      20.600000001490116,
+      8.300000004470348,
+      78.29999999701977,
+      16.100000001490116,
+      46.19999999552965,
+      28.5,
+      27.700000002980232,
+      13.700000002980232,
+      41.099999994039536,
+      30,
+      27.900000005960464,
+      27.69999999552965,
+      28,
+      8,
+      32,
+      74.39999999850988,
+      32.600000001490116,
+      10.399999998509884,
+      20.80000000447035,
+      29.69999999552965,
+      53.900000005960464,
+      8.399999998509884
+    ],
+    "drawCalls": 1051,
+    "triangles": 2451531,
+    "geometries": 548,
+    "textures": 139,
+    "animations": {
+      "receptionist": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service"
+        ],
+        "active": "Greet",
+        "time": 7.863700000002979
+      },
+      "worker:01": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "ServiceInterior",
+          "ServiceLights",
+          "ServiceInspect"
+        ],
+        "active": "ServiceInterior",
+        "time": 2.082200000002981
+      },
+      "worker:03": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "ServiceInterior",
+          "ServiceLights",
+          "ServiceInspect"
+        ],
+        "active": "ServiceLights",
+        "time": 2.082200000002981
+      },
+      "worker:05": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "ServiceInterior",
+          "ServiceLights",
+          "ServiceInspect"
+        ],
+        "active": "Service",
+        "time": 2.082200000002981
+      }
+    },
+    "contextLost": false,
+    "quality": "desktop",
+    "modelBounds": {
+      "calathea": {
+        "sourceSize": [
+          2.491507440805435,
+          0.4242942640557885,
+          1.1935922279953957
+        ],
+        "sourceCenter": [
+          -0.047964468598365784,
+          0.2037210906855762,
+          0.28129808977246284
+        ],
+        "scale": 1.885483891186452
+      },
+      "pottedPlant": {
+        "sourceSize": [
+          0.16788632422685623,
+          0.2674576655845158,
+          0.18475142866373062
+        ],
+        "sourceCenter": [
+          3.725290298461914e-9,
+          0.13410422127344646,
+          0.008432555943727493
+        ],
+        "scale": 2.43029115871275
+      },
+      "receptionist": {
+        "sourceSize": [
+          1.3965498973729318,
+          1.6487953549961625,
+          0.6956597860886709
+        ],
+        "sourceCenter": [
+          2.980261309959431e-8,
+          0.8255550645789309,
+          -0.16130968488525935
+        ],
+        "scale": 1.0431858597782155
+      },
+      "hose": {
+        "sourceSize": [
+          0.4667283743619919,
+          0.5570019036531448,
+          0.2503091422840953
+        ],
+        "sourceCenter": [
+          -0.0009660916402935982,
+          -0.02322499454021454,
+          0.11936639109626412
+        ],
+        "scale": 1.8850923006070264
+      },
+      "cart": {
+        "sourceSize": [
+          1.2734254002571106,
+          0.964644730091095,
+          0.7536306381225586
+        ],
+        "sourceCenter": [
+          -0.02089211344718933,
+          0.47876235842704773,
+          -0.008127272129058838
+        ],
+        "scale": 0.9329859708195469
+      },
+      "vehicle": {
+        "sourceSize": [
+          2.5423209977504473,
+          1.1488961344483861,
+          4.357102990150452
+        ],
+        "sourceCenter": [
+          -0.00024780455694939363,
+          0.5742069897292371,
+          0.23832029104232788
+        ],
+        "scale": 1.0792968683764919
+      },
+      "bench": {
+        "sourceSize": [
+          1.1649435758590698,
+          0.8892914750613272,
+          0.4965430945158005
+        ],
+        "sourceCenter": [
+          0.006410717964172363,
+          0.4441462408285588,
+          -0.005427248775959015
+        ],
+        "scale": 1.0682661721619295
+      },
+      "worker": {
+        "sourceSize": [
+          1.7873980949117032,
+          1.869090775817281,
+          0.3642243528091137
+        ],
+        "sourceCenter": [
+          -4.138601361614036e-8,
+          0.9232648426671144,
+          0.027852249929997464
+        ],
+        "scale": 0.9523346982554526
+      }
+    },
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "sightLines": {},
+    "weather": {
+      "kind": "sunny",
+      "source": "simulation",
+      "exposure": 1.05
+    },
+    "vehicles": {
+      "demo-vehicle-01": {
+        "position": [
+          3.4,
+          -4.2
+        ],
+        "yaw": 0,
+        "stage": "interior",
+        "moving": false,
+        "observedAt": 8877.200000002977
+      },
+      "demo-vehicle-02": {
+        "position": [
+          15.49715111687986,
+          -6.227637338897764
+        ],
+        "yaw": 1.5707930176385945,
+        "stage": "departing",
+        "moving": true,
+        "observedAt": 8877.200000002977
+      },
+      "demo-vehicle-04": {
+        "position": [
+          6.6146052877457215,
+          8.745212146157462
+        ],
+        "yaw": 0.000006618312604232289,
+        "stage": "lights",
+        "moving": false,
+        "observedAt": 8877.200000002977
+      },
+      "demo-vehicle-05": {
+        "position": [
+          7.136686521445276,
+          15.760965144229264
+        ],
+        "yaw": 0.000006618312604232289,
+        "stage": "washing",
+        "moving": false,
+        "observedAt": 8877.200000002977
+      },
+      "demo-vehicle-06": {
+        "position": [
+          3.4,
+          34.40690934400931
+        ],
+        "yaw": 3.141592653589793,
+        "stage": "queued",
+        "moving": false,
+        "observedAt": 8877.200000002977
+      }
+    }
+  }
+}

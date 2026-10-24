@@ -1,0 +1,28 @@
+{
+  "entry": [
+    {
+      "viewport": {
+        "width": 1855,
+        "height": 848
+      },
+      "positionUnchanged": true,
+      "yawDelta": 2.7949864644938316e-14,
+      "pitchDelta": 2.914335439641036e-15,
+      "exposureDelta": 2.220446049250313e-16,
+      "kind": "sunny"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "positionUnchanged": true,
+      "yawDelta": 1.567903029631168e-10,
+      "pitchDelta": 1.6220705334468732e-11,
+      "exposureDelta": 0,
+      "kind": "sunny"
+    }
+  ],
+  "lounge": "Before/after-materials retains prior configured camera; final lounge deliberately changes pose to meet the supplied lounge SOW. No claim of identical final camera.",
+  "animation": "Three.js gestures/clouds were not frozen; early paired panel shots preceded settle-helper correction."
+}

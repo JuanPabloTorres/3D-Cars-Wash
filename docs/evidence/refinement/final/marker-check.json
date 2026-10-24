@@ -1,0 +1,14 @@
+[
+  {
+    "mobile": false,
+    "ownMarkerVisible": true,
+    "dialogAboveWorldLabels": "50",
+    "errors": []
+  },
+  {
+    "mobile": true,
+    "ownMarkerVisible": true,
+    "dialogAboveWorldLabels": "50",
+    "errors": []
+  }
+]

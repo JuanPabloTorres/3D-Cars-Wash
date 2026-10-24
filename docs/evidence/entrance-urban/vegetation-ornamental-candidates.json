@@ -1,0 +1,378 @@
+[
+  {
+    "observedAt": "2026-10-23T23:57:13.881Z",
+    "source": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\calathea.glb",
+    "sourceHash": "62894480cecfa8b0afbca8bfacd8ac837c214fe0f205a0244ae81c5d8d794787",
+    "observedNodes": [
+      {
+        "name": "calathea_orbifolia_01_a",
+        "translation": [
+          -1,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -1.2937181890010834,
+            -0.008426041342318058,
+            -0.315498024225235
+          ],
+          "max": [
+            -0.6931182742118835,
+            0.41586822271347046,
+            0.21012963354587555
+          ]
+        }
+      },
+      {
+        "name": "calathea_orbifolia_01_b",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -0.178414985537529,
+            -0.006017263047397137,
+            -0.1974693387746811
+          ],
+          "max": [
+            0.16900880634784698,
+            0.297185480594635,
+            0.24281249940395355
+          ]
+        }
+      },
+      {
+        "name": "calathea_orbifolia_01_c",
+        "translation": [
+          1,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            0.8225708901882172,
+            -0.004648428410291672,
+            -0.22870343923568726
+          ],
+          "max": [
+            1.1977892518043518,
+            0.2793288230895996,
+            0.15513624250888824
+          ]
+        }
+      },
+      {
+        "name": "calathea_orbifolia_01_d",
+        "translation": [
+          -0.5,
+          0,
+          0.800000011920929
+        ],
+        "bounds": {
+          "min": [
+            -0.578909307718277,
+            -0.003510290291160345,
+            0.7024677842855453
+          ],
+          "max": [
+            -0.35252395272254944,
+            0.126848503947258,
+            0.8655520305037498
+          ]
+        }
+      },
+      {
+        "name": "calathea_orbifolia_01_e",
+        "translation": [
+          0.5,
+          0,
+          0.800000011920929
+        ],
+        "bounds": {
+          "min": [
+            0.39092743396759033,
+            -0.004412822425365448,
+            0.6265394687652588
+          ],
+          "max": [
+            0.6037199422717094,
+            0.14715179800987244,
+            0.8780942037701607
+          ]
+        }
+      }
+    ],
+    "selectedName": "calathea_orbifolia_01_a",
+    "destination": "C:\\Projects\\Assets\\CarWash-Entrance-Urban-20261023\\candidates\\urbanCalathea-single-v1.glb",
+    "sha256": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587",
+    "bytes": 329448,
+    "sourcePage": "https://polyhaven.com/a/calathea_orbifolia_01",
+    "license": "CC0-1.0",
+    "licenseURL": "https://polyhaven.com/license",
+    "authors": {
+      "Rob Tuytel": "scanning",
+      "Rico Cilliers": "modeling"
+    },
+    "provenance": "Existing repository docs/refinement-asset-provenance.json and public/ASSET_LICENSES.txt; no new source download",
+    "adaptation": "Retain one complete named source node, its mesh/UV/PBR/texture bytes; remove other sample variants; centre X/Z and place minimum Y at zero",
+    "primitives": [
+      {
+        "triangles": 3749,
+        "vertices": 2253,
+        "semantics": [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0"
+        ],
+        "material": "calathea_orbifolia_01"
+      }
+    ],
+    "bounds": {
+      "min": [
+        -0.3002999573945999,
+        0,
+        -0.26281382888555527
+      ],
+      "max": [
+        0.3002999573945999,
+        0.4242942640557885,
+        0.26281382888555527
+      ]
+    },
+    "dimensions": [
+      0.6005999147891998,
+      0.4242942640557885,
+      0.5256276577711105
+    ],
+    "textures": [
+      {
+        "name": "calathea_orbifolia_01_nor_gl",
+        "mimeType": "image/webp",
+        "sha256": "5131712242100aa307125a4607db998247ea1ec95fd94b73ae7951295c0cd7a8",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "name": "calathea_orbifolia_01_diff",
+        "mimeType": "image/webp",
+        "sha256": "5384e86c43f369b330d4ec61ca916a501d0f828efb1747086330c52db292a7ac",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "name": "calathea_orbifolia_01_rough",
+        "mimeType": "image/webp",
+        "sha256": "56f9916f08844e59bde7a8e20724c8d72e8603d3c59c78bbb0dd5fcb0f157f9d",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "uvReferencesValid": true,
+    "skins": 0,
+    "clips": 0,
+    "validation": {
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/0/material"
+        }
+      ],
+      "truncated": false
+    },
+    "artisticAcceptance": "pending entrance runtime inspection",
+    "command": "node docs/evidence/entrance-urban/vegetation-extract-ornamental.mjs"
+  },
+  {
+    "observedAt": "2026-10-23T23:57:13.961Z",
+    "source": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\fern.glb",
+    "sourceHash": "6ce66d654da80960f7aebe97dad75e3df94463589bd536b17339ae607d290501",
+    "observedNodes": [
+      {
+        "name": "fern_02_b",
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            -0.5281425714492798,
+            -0.030510280281305313,
+            -0.421874463558197
+          ],
+          "max": [
+            0.4616048336029053,
+            0.39718443155288696,
+            0.4718152582645416
+          ]
+        }
+      },
+      {
+        "name": "fern_02_c",
+        "translation": [
+          1.0000009536743164,
+          0,
+          0
+        ],
+        "bounds": {
+          "min": [
+            0.5700613856315613,
+            -0.028773672878742218,
+            -0.4172818064689636
+          ],
+          "max": [
+            1.4443871974945068,
+            0.32024669647216797,
+            0.34794387221336365
+          ]
+        }
+      },
+      {
+        "name": "fern_02_a",
+        "translation": [
+          0,
+          0,
+          1.0000001192092896
+        ],
+        "bounds": {
+          "min": [
+            -0.2976571321487427,
+            -0.028773518279194832,
+            0.6887320578098297
+          ],
+          "max": [
+            0.25428348779678345,
+            0.2580300271511078,
+            1.3021531403064728
+          ]
+        }
+      },
+      {
+        "name": "fern_02_d",
+        "translation": [
+          1,
+          0,
+          0.9999995827674866
+        ],
+        "bounds": {
+          "min": [
+            0.7092197835445404,
+            -0.013578944839537144,
+            0.6478629410266876
+          ],
+          "max": [
+            1.2820019721984863,
+            0.19950860738754272,
+            1.2411412298679352
+          ]
+        }
+      }
+    ],
+    "selectedName": "fern_02_b",
+    "destination": "C:\\Projects\\Assets\\CarWash-Entrance-Urban-20261023\\candidates\\urbanFern-single-v1.glb",
+    "sha256": "1f17d69c9d48760e9d9bfdcea7b5e7ba25a9587c3f0a1fc272861abf53cf1aab",
+    "bytes": 250752,
+    "sourcePage": "https://polyhaven.com/a/fern_02",
+    "license": "CC0-1.0",
+    "licenseURL": "https://polyhaven.com/license",
+    "authors": {
+      "Rob Tuytel": "scanning",
+      "Rico Cilliers": "modeling"
+    },
+    "provenance": "Existing repository docs/refinement-asset-provenance.json and public/ASSET_LICENSES.txt; no new source download",
+    "adaptation": "Retain one complete named source node, its mesh/UV/PBR/texture bytes; remove other sample variants; centre X/Z and place minimum Y at zero",
+    "primitives": [
+      {
+        "triangles": 2365,
+        "vertices": 1646,
+        "semantics": [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0"
+        ],
+        "material": "fern_02"
+      }
+    ],
+    "bounds": {
+      "min": [
+        -0.49487370252609253,
+        0,
+        -0.4468448609113693
+      ],
+      "max": [
+        0.49487370252609253,
+        0.4276947118341923,
+        0.4468448609113693
+      ]
+    },
+    "dimensions": [
+      0.9897474050521851,
+      0.4276947118341923,
+      0.8936897218227386
+    ],
+    "textures": [
+      {
+        "name": "fern_02_nor_gl",
+        "mimeType": "image/webp",
+        "sha256": "1f57b895a4f2b6a71ac6897382be31ad6236aba332450dbd47e70b282972a41a",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "name": "fern_02_diff-fern_02_alpha",
+        "mimeType": "image/webp",
+        "sha256": "601c0add2ffe101728c3983a5008947d69b0900a0843150dbfad98e0c7b4db8d",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "name": "fern_02_rough",
+        "mimeType": "image/webp",
+        "sha256": "8875d997bfc4613bee9198cf9b6cde72440a0f5163f76c83e4938193d07a8ce3",
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "uvReferencesValid": true,
+    "skins": 0,
+    "clips": 0,
+    "validation": {
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/0/material"
+        }
+      ],
+      "truncated": false
+    },
+    "artisticAcceptance": "pending entrance runtime inspection",
+    "command": "node docs/evidence/entrance-urban/vegetation-extract-ornamental.mjs"
+  }
+]

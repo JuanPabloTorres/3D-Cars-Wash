@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-23T21:58:32.6886187-04:00",
+  "files": [
+    {
+      "path": "assets/AdminApp-CaPScQ43.css",
+      "sha256": "C98B101F5793C47BEC82967570C6DDC3837C04963218D667FB9E6127C49AF56B",
+      "bytes": 6041
+    },
+    {
+      "path": "assets/AdminApp-OL5aKnkj.js",
+      "sha256": "6C46E61A28B5C5D6900687E027331D796136F50BD3F3DA0DE4F6938E503BFE3F",
+      "bytes": 22334
+    },
+    {
+      "path": "assets/App-D7LsGU-k.js",
+      "sha256": "CF9477DA10D89A4E1D3C5387DD1AAABB3D5CE1F47AB834A56BCEB9B250D6FD70",
+      "bytes": 1298172
+    },
+    {
+      "path": "assets/App-QJcWMJ_Y.css",
+      "sha256": "6CDE45D7F8771097BC16270517CFE9047623C0C18C5AC7CC37A948965A3E031B",
+      "bytes": 6325
+    },
+    {
+      "path": "assets/index-BUVGw9qR.css",
+      "sha256": "9EED9B045566BFD72B394EB7ADF8AB0700395F00D07207F08187CF9DEA8F771B",
+      "bytes": 36129
+    },
+    {
+      "path": "assets/index-FXtXVk5r.js",
+      "sha256": "E8ABEB60871CFB3D306DDB6F4DEF6EA96E0CFD56ACA08352D19E5617C76A48DC",
+      "bytes": 222385
+    },
+    {
+      "path": "assets/WorldBadges-5C56nI0f.js",
+      "sha256": "8AB80BBD170408AA773ABA4AC2C03D97B2415C627AF1D3E9C0D53B8754338050",
+      "bytes": 6743
+    },
+    {
+      "path": "index.html",
+      "sha256": "D57E15565D7E2193DACC630D66E4FEBBCFE7E7E5D4BC342D8E973DA5BFE5DC03",
+      "bytes": 460
+    }
+  ]
+}

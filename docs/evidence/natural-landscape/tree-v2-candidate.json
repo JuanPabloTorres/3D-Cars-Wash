@@ -1,0 +1,41 @@
+{
+  "source": "C:/Projects/Assets/CarWash-Entrance-Urban-20261023/tree_small_02/tree_small_02_1k.gltf",
+  "output": "C:\\Projects\\Assets\\CarWash-Natural-Landscape-20261023\\naturalTree-dense-v2.glb",
+  "bytes": 18358996,
+  "triangles": 472062,
+  "sha256": "5a1ed837dc16897fb3ee2300a7059fb5a13ae134fd7d7d64ab559cb7dfa924ad",
+  "provenance": {
+    "page": "https://polyhaven.com/a/tree_small_02",
+    "author": "Rico Cilliers",
+    "license": "CC0-1.0"
+  },
+  "adaptation": "Original source, connected leaf-island extrema locked; UV weights .5/.5, ratio .16, error .0008; official alpha, original PBR and transform; no duplicated foliage or invented geometry.",
+  "validation": {
+    "numErrors": 0,
+    "numWarnings": 3,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/0/material"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/1/material"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/2/material"
+      }
+    ],
+    "truncated": false
+  },
+  "artisticAcceptance": "pending viewport comparison"
+}

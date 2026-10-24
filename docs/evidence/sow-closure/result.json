@@ -1,0 +1,57 @@
+{
+  "verdict": "partial",
+  "pending": [
+    "Aprobación artística humana y acabado fino de gestos/contactos",
+    "Tarifas y datos oficiales aún no autorizados",
+    "Identidad y roles comerciales, persistencia duradera y cobros de producción",
+    "Validación en teléfono físico; sin promesa de FPS",
+    "No hay lint/formateador configurados; aviso de bundle 3D grande y advertencias GLB conservadas"
+  ],
+  "checks": [
+    {
+      "label": "Compilación TypeScript y Vite ejecutada",
+      "status": "passed"
+    },
+    {
+      "label": "45 pruebas unitarias en 9 archivos; unit-final.log",
+      "status": "passed"
+    },
+    {
+      "label": "22 pruebas Playwright de ambos roles, escritorio y móvil emulado; e2e-final.log",
+      "status": "passed"
+    },
+    {
+      "label": "Edición de tarifa desde formulario administrativo y conservación del importe aceptado; admin-editor-final.log",
+      "status": "passed"
+    },
+    {
+      "label": "26 GLB validados, 0 errores y 69 advertencias",
+      "status": "passed"
+    },
+    {
+      "label": "Cuatro categorías en navegador: avance, reversa y parada; category-wheel-motion.json",
+      "status": "passed"
+    },
+    {
+      "label": "Draw calls observados 1073 a 387; no se demuestra mejora de FPS",
+      "status": "passed"
+    },
+    {
+      "label": "Git diff whitespace del alcance modificado",
+      "status": "passed"
+    },
+    {
+      "label": "Aceptación artística, teléfono físico y producción",
+      "status": "not_run"
+    }
+  ],
+  "changes": [
+    "Administración local con clave, cookie y validación en servidor",
+    "Catálogo, precios y contenido compartidos; cotizaciones versionadas y precio aceptado conservado",
+    "Operación inicial vacía; llegada, fila, bahía, tareas y entrega asociadas a órdenes",
+    "Perfil y cierre de sesión reales del sandbox; consultas con recibo del servidor",
+    "Escena refinada, fondo físico, displays accesibles, animaciones adaptadas y arquitectura instanciada",
+    "Administración separada en composición, transporte, operación y editores; contratos y reportes actualizados"
+  ],
+  "summary": "Circuito local de cliente y administración implementado y verificado. Aceptación artística y habilitación de producción pendientes."
+}

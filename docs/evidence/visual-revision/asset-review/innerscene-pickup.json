@@ -1,0 +1,1489 @@
+{
+  "size": [
+    5.690920549444854,
+    1.9601240353658795,
+    2.320120006799698
+  ],
+  "nodes": [
+    {
+      "name": "Scene",
+      "type": "Group"
+    },
+    {
+      "name": "Crew-cab_pickup_with_tonneau_cover",
+      "type": "Object3D"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Center_cap",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Center_cap001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Center_cap002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Center_cap003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_1001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_1002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_1003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_2001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_2002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_2003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_3",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_3001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_3002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_3003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_4",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_4001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_4002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_4003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_5",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_5001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_5002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Lug_5003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Sculpted_tyre",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Sculpted_tyre001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Sculpted_tyre002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Sculpted_tyre003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Adjustable_headrest",
+      "type": "Mesh"
+    },
+    {
+      "name": "Adjustable_headrest001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Adjustable_headrest002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Adjustable_headrest003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Aerodynamic_mirror_lower_housing",
+      "type": "Mesh"
+    },
+    {
+      "name": "Aerodynamic_mirror_lower_housing001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Aerodynamic_mirror_painted_cap",
+      "type": "Mesh"
+    },
+    {
+      "name": "Aerodynamic_mirror_painted_cap001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_caliper",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_caliper001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_caliper002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_caliper003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_rotor_hat",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_rotor_hat001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_rotor_hat002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Brake_rotor_hat003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cabin_carpet",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cargo_bed_liner",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cargo_tie-down",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cargo_tie-down001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cargo_tie-down002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cargo_tie-down003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Center_console",
+      "type": "Mesh"
+    },
+    {
+      "name": "Closed_pickup_rear_glazing_sill_corner",
+      "type": "Mesh"
+    },
+    {
+      "name": "Closed_pickup_rear_glazing_sill_corner001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Continuous_painted_rear_cab_bulkhead",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_back",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_back001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_back002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_back003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_cushion",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_cushion001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_cushion002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Contoured_seat_cushion003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Crew_cab_step_rail",
+      "type": "Mesh"
+    },
+    {
+      "name": "Crew_cab_step_rail001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Crew_door_shutline",
+      "type": "Mesh"
+    },
+    {
+      "name": "Crew_door_shutline001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Crew_door_shutline002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Crew_door_shutline003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Crowned_roof_pressing",
+      "type": "Mesh"
+    },
+    {
+      "name": "Exhaust_dark_bore",
+      "type": "Mesh"
+    },
+    {
+      "name": "Exhaust_dark_bore001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Exhaust_polished_outer_tip",
+      "type": "Mesh"
+    },
+    {
+      "name": "Exhaust_polished_outer_tip001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Faceted_headlamp_reflector_interior",
+      "type": "Mesh"
+    },
+    {
+      "name": "Faceted_headlamp_reflector_interior001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fine_headlamp_perimeter_gasket",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fine_headlamp_perimeter_gasket001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Flush_formed_protective_bed_rail_cap",
+      "type": "Mesh"
+    },
+    {
+      "name": "Flush_formed_protective_bed_rail_cap001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Flush_swept_transparent_headlamp_lens",
+      "type": "Mesh"
+    },
+    {
+      "name": "Flush_swept_transparent_headlamp_lens001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fog_flush_lens",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fog_flush_lens001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fog_lamp_recessed_housing",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fog_lamp_recessed_housing001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fog_reflector",
+      "type": "Mesh"
+    },
+    {
+      "name": "Fog_reflector001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Formed_painted_rear_bumper_cover",
+      "type": "Mesh"
+    },
+    {
+      "name": "Front_bumper_continuous_shut_line",
+      "type": "Mesh"
+    },
+    {
+      "name": "Front_license_plate",
+      "type": "Mesh"
+    },
+    {
+      "name": "Front_splitter",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh004",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh005",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh006",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh007",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh008",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh009",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh010",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh011",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh012",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh013",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh014",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh015",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh016",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh017",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh018",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh019",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh020",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh021",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh022",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_inner_mesh023",
+      "type": "Mesh"
+    },
+    {
+      "name": "Grille_shadow_cavity",
+      "type": "Mesh"
+    },
+    {
+      "name": "Headlamp_deep_graphite_housing",
+      "type": "Mesh"
+    },
+    {
+      "name": "Headlamp_deep_graphite_housing001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Inner_bed_wheelhouse_hump",
+      "type": "Mesh"
+    },
+    {
+      "name": "Inner_bed_wheelhouse_hump001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Instrument_panel",
+      "type": "Mesh"
+    },
+    {
+      "name": "Integrated_pickup_rear_roof_pillar",
+      "type": "Mesh"
+    },
+    {
+      "name": "Integrated_pickup_rear_roof_pillar001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Lower_intake_bridge",
+      "type": "Mesh"
+    },
+    {
+      "name": "Lower_intake_bridge001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Lower_intake_bridge002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Lower_intake_recessed_mesh",
+      "type": "Mesh"
+    },
+    {
+      "name": "Mirror_reflective_insert",
+      "type": "Mesh"
+    },
+    {
+      "name": "Mirror_reflective_insert001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_continuous_painted_glazing_sill",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_continuous_painted_glazing_sill001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_flat_black_B_pillar",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_flat_black_B_pillar001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_flush_roof_flange",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_flush_roof_flange001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_front_door_glass",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_front_door_glass_rubber_seal",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_front_door_glass_rubber_seal001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_front_door_glass001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_fuel_filler_seam",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_handle_pocket",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_handle_pocket001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_handle_pocket002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_handle_pocket003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_high_mount_stop_lamp",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_inset_reversing_optic",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_inset_reversing_optic001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib004",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib005",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib006",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_molded_lens_optical_rib007",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_pressed_A_pillar",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_pressed_A_pillar001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_pull_handle",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_pull_handle001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_pull_handle002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_pull_handle003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_quarter_lamp_ruby_side_return",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_quarter_lamp_ruby_side_return001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_rear_cab_glass",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_rear_cab_glass_rubber_seal",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_rear_door_glass",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_rear_door_glass_rubber_seal",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_rear_door_glass_rubber_seal001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_rear_door_glass001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_roof_antenna",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_side_return_fine_gasket",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_side_return_fine_gasket001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_stop_lamp_attached_housing",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_deep_ruby_lens",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_deep_ruby_lens001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_lamp_faceted_reflector",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_lamp_faceted_reflector001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_lamp_molded_black_rim",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_lamp_molded_black_rim001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_lamp_recessed_housing",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_vertical_lamp_recessed_housing001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_windshield",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_windshield_rubber_seal",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_wiper",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_wiper001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_wrap_lamp_inner_housing",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_wrap_lamp_inner_housing001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_wrap_lamp_reflective_inner",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pickup_wrap_lamp_reflective_inner001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib004",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib005",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib006",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib007",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib008",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib009",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib010",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib011",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib012",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib013",
+      "type": "Mesh"
+    },
+    {
+      "name": "Pressed_longitudinal_bed_rib014",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_bumper_corner_joint",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_bumper_corner_joint001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_bumper_formed_corner",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_bumper_formed_corner001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_bumper_upper_panel_break",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_parking_sensor",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_parking_sensor001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_parking_sensor002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_parking_sensor003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_plate_recessed_back",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rear_registration_plate",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_grille_blade",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_grille_blade001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_grille_blade002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_grille_blade003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_grille_blade004",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_optical_glass",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_optical_glass001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_optical_glass002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_optical_glass003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_reflector",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_reflector001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_reflector002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Recessed_projector_reflector003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rolled_fender_lip",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rolled_fender_lip001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rolled_fender_lip002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rolled_fender_lip003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess004",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess005",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess006",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess007",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess008",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess009",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess010",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess011",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess012",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess013",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess014",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess015",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess016",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess017",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess018",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess019",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess020",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess021",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess022",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess023",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess024",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess025",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess026",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess027",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess028",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess029",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess030",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess031",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess032",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess033",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess034",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess035",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess036",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess037",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess038",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess039",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess040",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess041",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess042",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess043",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess044",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess045",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess046",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess047",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess048",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess049",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess050",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess051",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess052",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess053",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess054",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess055",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess056",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess057",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess058",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess059",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess060",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess061",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess062",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess063",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess064",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess065",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess066",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess067",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess068",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess069",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess070",
+      "type": "Mesh"
+    },
+    {
+      "name": "Rotor_drill_recess071",
+      "type": "Mesh"
+    },
+    {
+      "name": "Satin_grille_surround",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sculpted_rear_lower_bumper_insert",
+      "type": "Mesh"
+    },
+    {
+      "name": "Seated_retractable_tonneau",
+      "type": "Mesh"
+    },
+    {
+      "name": "Separate_14-station_cargo_bed",
+      "type": "Group"
+    },
+    {
+      "name": "Separate_14-station_cargo_bed_closed_tessellation",
+      "type": "Mesh"
+    },
+    {
+      "name": "Separate_14-station_cargo_bed_closed_tessellation_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Separate_14-station_pickup_cab",
+      "type": "Group"
+    },
+    {
+      "name": "Separate_14-station_pickup_cab_closed_tessellation",
+      "type": "Mesh"
+    },
+    {
+      "name": "Separate_14-station_pickup_cab_closed_tessellation_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Short_mirror_plinth",
+      "type": "Mesh"
+    },
+    {
+      "name": "Short_mirror_plinth001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Siped_tread_blocks",
+      "type": "Mesh"
+    },
+    {
+      "name": "Siped_tread_blocks001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Siped_tread_blocks002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Siped_tread_blocks003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Steering_boss",
+      "type": "Mesh"
+    },
+    {
+      "name": "Steering_rim",
+      "type": "Mesh"
+    },
+    {
+      "name": "Steering_spoke",
+      "type": "Mesh"
+    },
+    {
+      "name": "Steering_spoke001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Steering_spoke002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_bracket_frame_mount",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_bracket_frame_mount001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_bracket_frame_mount002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_bracket_frame_mount003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_rail_attached_support_bracket",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_rail_attached_support_bracket001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_rail_attached_support_bracket002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Step_rail_attached_support_bracket003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tailgate_handle",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tailgate_shut_line",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat004",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat005",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat006",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat007",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat008",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat009",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat010",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat011",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat012",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat013",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat014",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat015",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat016",
+      "type": "Mesh"
+    },
+    {
+      "name": "Tonneau_slat017",
+      "type": "Mesh"
+    },
+    {
+      "name": "Ventilated_brake_rotor",
+      "type": "Mesh"
+    },
+    {
+      "name": "Ventilated_brake_rotor001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Ventilated_brake_rotor002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Ventilated_brake_rotor003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Wheelhouse_inner_liner",
+      "type": "Mesh"
+    },
+    {
+      "name": "Wheelhouse_inner_liner001",
+      "type": "Mesh"
+    },
+    {
+      "name": "Wheelhouse_inner_liner002",
+      "type": "Mesh"
+    },
+    {
+      "name": "Wheelhouse_inner_liner003",
+      "type": "Mesh"
+    }
+  ]
+}

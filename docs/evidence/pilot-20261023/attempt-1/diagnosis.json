@@ -1,0 +1,27 @@
+{
+  "suite": "targeted pilot: six tests, one worker",
+  "exitCode": 1,
+  "passed": [
+    "1855x848 targets",
+    "650x900 targets",
+    "390x844 targets",
+    "Tab Enter Escape focus and draft"
+  ],
+  "failed": [
+    {
+      "test": "four-object interaction flow",
+      "classification": "test time budget",
+      "observed": "Cold asset readiness took 52.18s. Successful clicks after readiness took 0.99-4.35s. Final Volver was visible and stable, input was dispatched, final snapshot shows selected service in catalogue; 90s total test timeout interrupted remaining assertion.",
+      "adjustment": "Only this test now allows 150000ms; same fixture and assertions retained."
+    },
+    {
+      "test": "1440x900 targets",
+      "classification": "DOMRect floating-point measurement",
+      "observedHeight": 43.999969482421875,
+      "requiredHeight": 44,
+      "adjustment": "Allow 0.01px only for DOMRect dimensions; independently assert computed CSS min-width and min-height >=44 without tolerance."
+    }
+  ],
+  "productChanged": false,
+  "rerun": "pending coordinated attempt-2"
+}

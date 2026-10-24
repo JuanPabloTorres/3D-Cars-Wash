@@ -1,0 +1,111 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test
+
+
+Running 15 tests using 1 worker
+
+(node:29216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [commercial] › tests\e2e\commercial.spec.ts:11:1 › Área útil, cuatro opciones, transición breve y solo última selección (16.6s)
+  ok  2 [commercial] › tests\e2e\commercial.spec.ts:15:1 › Servicios, validación, volver, confirmación, recuperación y cancelación aceptada (16.4s)
+  x   3 [commercial] › tests\e2e\commercial.spec.ts:18:1 › Fallo de red conserva borrador y no crea éxito (1.6m)
+(node:9524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   4 [commercial] › tests\e2e\commercial.spec.ts:21:1 › Cancelación rechazada por proveedor tras comenzar atención (31.5s)
+(node:27220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  5 [commercial] › tests\e2e\commercial.spec.ts:24:1 › El local contiene datos útiles en bahías, cola y espera (15.9s)
+  ok  6 [commercial] › tests\e2e\commercial.spec.ts:27:1 › Dos contextos: comando DEMO del servidor llega a ambos visitantes y reconecta (30.3s)
+  ok  7 [commercial] › tests\e2e\commercial.spec.ts:30:1 › Móvil: navegación, servicios y formulario visibles sin tapar el rostro (14.5s)
+  ok  8 [commercial] › tests\e2e\commercial.spec.ts:33:1 › Movimiento reducido, foco y fallo GLB sin carga eterna (8.8s)
+  ok  9 [commercial] › tests\e2e\commercial.spec.ts:36:1 › API DEMO valida importes, idempotencia y aislamiento entre sesiones (198ms)
+  ok 10 [commercial] › tests\e2e\commercial.spec.ts:40:1 › Cotización vencida se renueva y no confirma datos caducados (6.5s)
+  ok 11 [commercial] › tests\e2e\commercial.spec.ts:43:1 › Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran (8.5s)
+  ok 12 [commercial] › tests\e2e\commercial.spec.ts:46:1 › Ambientes conservados: seis climas legibles con errores de página ausentes (10.0s)
+  ok 13 [commercial] › tests\e2e\commercial.spec.ts:51:1 › Tarifas por categoría sin precio inventado y borrador conservado (7.1s)
+  ok 14 [commercial] › tests\e2e\commercial.spec.ts:59:1 › Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend (9.2s)
+  ok 15 [commercial] › tests\e2e\commercial.spec.ts:67:1 › El catálogo público no sustituye la cookie de la sesión privada (123ms)
+
+
+  1) [commercial] › tests\e2e\commercial.spec.ts:18:1 › Fallo de red conserva borrador y no crea éxito 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Reintentar conexión' })
+
+
+      17 | })
+      18 | test('Fallo de red conserva borrador y no crea éxito',async({page})=>{
+    > 19 |  await ready(page);await select(page);await page.route('**/api/demo/quote',r=>r.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'Proveedor temporalmente indisponible.'})}));await page.getByRole('button',{name:'Revisar cotización',exact:true}).click();await expect(page.getByRole('alert')).toContainText('Proveedor temporalmente');await expect(page.getByText('Orden confirmada',{exact:true})).toHaveCount(0);await page.unroute('**/api/demo/quote');await page.getByRole('button',{name:'Reintentar conexión'}).click();await expect(page.getByRole('button',{name:'Revisar cotización'})).toBeEnabled();await page.getByRole('button',{name:'Volver',exact:true}).click();await expect(page.getByRole('button',{name:'Quitar Lavado exterior'})).toBeVisible()
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+      20 | })
+      21 | test('Cancelación rechazada por proveedor tras comenzar atención',async({page})=>{
+      22 |  await ready(page);await quote(page);await page.getByRole('button',{name:'Confirmar orden DEMO'}).click();await page.getByRole('button',{name:'Ayuda de la visita'}).click();await page.getByRole('button',{name:'Asignar atención DEMO'}).click();await page.getByRole('button',{name:'Cerrar Tu visita a Febles'}).click();await visit(page,'Mi orden');await page.getByRole('button',{name:'Ampliar detalles'}).click();await page.getByRole('button',{name:'Solicitar cancelación',exact:true}).click();await page.getByRole('button',{name:'Sí, solicitar cancelación'}).click();await expect(page.getByRole('alert')).toContainText('La atención ya comenzó');await expect(page.getByText('Orden cancelada',{exact:true})).toHaveCount(0)
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:19:538
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\commercial-Fallo-de-red-conserva-borrador-y-no-crea-éxito-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\commercial-Fallo-de-red-conserva-borrador-y-no-crea-éxito-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\commercial-Fallo-de-red-conserva-borrador-y-no-crea-éxito-commercial\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\commercial-Fallo-de-red-conserva-borrador-y-no-crea-éxito-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\commercial-Fallo-de-red-conserva-borrador-y-no-crea-éxito-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [commercial] › tests\e2e\commercial.spec.ts:21:1 › Cancelación rechazada por proveedor tras comenzar atención 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('alert')
+    Expected substring: "La atención ya comenzó"
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByRole('alert') with timeout 15000ms
+      - waiting for getByRole('alert')
+
+
+      20 | })
+      21 | test('Cancelación rechazada por proveedor tras comenzar atención',async({page})=>{
+    > 22 |  await ready(page);await quote(page);await page.getByRole('button',{name:'Confirmar orden DEMO'}).click();await page.getByRole('button',{name:'Ayuda de la visita'}).click();await page.getByRole('button',{name:'Asignar atención DEMO'}).click();await page.getByRole('button',{name:'Cerrar Tu visita a Febles'}).click();await visit(page,'Mi orden');await page.getByRole('button',{name:'Ampliar detalles'}).click();await page.getByRole('button',{name:'Solicitar cancelación',exact:true}).click();await page.getByRole('button',{name:'Sí, solicitar cancelación'}).click();await expect(page.getByRole('alert')).toContainText('La atención ya comenzó');await expect(page.getByText('Orden cancelada',{exact:true})).toHaveCount(0)
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^
+      23 | })
+      24 | test('El local contiene datos útiles en bahías, cola y espera',async({page})=>{
+      25 |  const errors=errorsFor(page);await ready(page);await visit(page,'El local');await expect(page.getByRole('dialog',{name:'Bahía 01'})).toBeVisible();await capture(page,'desktop-bay');await page.getByText('Consultar otra zona del local',{exact:true}).click();await page.getByRole('button',{name:/Bahía 04/}).click();await expect(page.getByRole('dialog',{name:'Bahía 04'})).toContainText('Fuera de servicio');await page.getByText('Consultar otra zona del local',{exact:true}).click();await page.getByRole('button',{name:'Cola y turno'}).click();await expect(page.getByRole('dialog',{name:'Fila de espera'})).toContainText('posiciones físicas');await capture(page,'desktop-queue');await page.getByText('Consultar otra zona del local',{exact:true}).click();await page.getByRole('button',{name:'Espera y mi orden'}).click();await expect(page.getByRole('button',{name:'Consultar mi orden',exact:true})).toBeVisible();await capture(page,'desktop-lounge');expect(errors).toEqual([])
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:22:605
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\commercial-Cancelación-rec-cf1d0-edor-tras-comenzar-atención-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\commercial-Cancelación-rec-cf1d0-edor-tras-comenzar-atención-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\commercial-Cancelación-rec-cf1d0-edor-tras-comenzar-atención-commercial\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\commercial-Cancelación-rec-cf1d0-edor-tras-comenzar-atención-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\commercial-Cancelación-rec-cf1d0-edor-tras-comenzar-atención-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [commercial] › tests\e2e\commercial.spec.ts:18:1 › Fallo de red conserva borrador y no crea éxito 
+    [commercial] › tests\e2e\commercial.spec.ts:21:1 › Cancelación rechazada por proveedor tras comenzar atención 
+  13 passed (4.7m)

@@ -1,0 +1,79 @@
+{
+  "observedAt": "2026-10-23T21:58:51.5782115-04:00",
+  "inventoryRemaining": [
+    {
+      "id": 19108,
+      "parentId": 11740,
+      "created": "2026-10-23T21:57:46.562005-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false,
+      "renderer": true
+    },
+    {
+      "id": 29616,
+      "parentId": 11740,
+      "created": "2026-10-23T21:58:17.412456-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false,
+      "renderer": true
+    },
+    {
+      "id": 4524,
+      "parentId": 11740,
+      "created": "2026-10-23T21:58:22.24466-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false,
+      "renderer": true
+    },
+    {
+      "id": 28760,
+      "parentId": 11740,
+      "created": "2026-10-23T21:58:22.248434-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false,
+      "renderer": true
+    },
+    {
+      "id": 13060,
+      "parentId": 11740,
+      "created": "2026-10-23T21:58:22.255477-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false,
+      "renderer": true
+    },
+    {
+      "id": 16876,
+      "parentId": 11740,
+      "created": "2026-10-23T21:58:23.68291-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false,
+      "renderer": true
+    },
+    {
+      "id": 9584,
+      "parentId": 11740,
+      "created": "2026-10-23T21:58:26.837201-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false,
+      "renderer": true
+    }
+  ],
+  "parents": [
+    {
+      "id": 11740,
+      "parentId": 8580,
+      "created": "2026-10-23T21:33:28.717935-04:00",
+      "automation": false,
+      "headless": false,
+      "playwrightProfile": false
+    }
+  ],
+  "testWorkersRemaining": []
+}

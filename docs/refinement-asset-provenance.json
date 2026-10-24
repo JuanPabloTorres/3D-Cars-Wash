@@ -1,0 +1,356 @@
+[
+  {
+    "metadata": {
+      "date_published": 1623767629,
+      "name": "Potted Plant 04",
+      "categories": [
+        "decorative",
+        "plants",
+        "potted plants",
+        "succulent",
+        "nature"
+      ],
+      "type": 2,
+      "staging": null,
+      "tags": [
+        "cactus",
+        "aloe",
+        "succulent",
+        "potplant",
+        "small",
+        "pot",
+        "plant",
+        "decor"
+      ],
+      "authors": {
+        "James Ray Cock": "All"
+      },
+      "sponsors": [
+        "78546118"
+      ],
+      "max_resolution": [
+        8192,
+        8192
+      ],
+      "polycount": 6097,
+      "texel_density": 13467.404038911603,
+      "dimensions": [
+        170.27407884597778,
+        185.9453096985817,
+        267.5964875961654
+      ],
+      "files_hash": "c71ad499bc2ad1a95b689fc8895447eff788408b",
+      "description": "Free 8K potted succulent model - small zebra haworthia in a weathered ceramic pot. Realistic textures and natural detail; ideal for interior decor scenes.",
+      "category_id": "3dde8a0d-8ee9-5e81-85c4-3251ec4a5d88",
+      "category": "Nature/Plants/Potted Plants",
+      "attributes": {
+        "condition": [
+          "weathered"
+        ],
+        "material": [
+          "ceramic"
+        ]
+      },
+      "img_version": "0458b049",
+      "download_count": 87644,
+      "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/potted_plant_04.png?width=256&height=256&format=webp&v=0458b049"
+    },
+    "price": 0,
+    "source": "https://polyhaven.com/a/potted_plant_04",
+    "license": "CC0-1.0",
+    "id": "potted_plant_04",
+    "format": "glTF 2.0 + 1K PBR",
+    "author": {
+      "James Ray Cock": "All"
+    }
+  },
+  {
+    "metadata": {
+      "date_published": 1653609600,
+      "name": "Fern 02",
+      "type": 2,
+      "staging": null,
+      "authors": {
+        "Rob Tuytel": "scanning",
+        "Rico Cilliers": "modeling"
+      },
+      "sponsors": [
+        "78546118",
+        "25436656"
+      ],
+      "categories": [
+        "plants",
+        "nature",
+        "collection: smugglers_cove",
+        "collection: pine_forest"
+      ],
+      "tags": [
+        "plant",
+        "fern",
+        "foliage",
+        "jungle",
+        "shrub",
+        "bush",
+        "leaf",
+        "leaves",
+        "green",
+        "nature",
+        "forest",
+        "outdoor"
+      ],
+      "max_resolution": [
+        8192,
+        8192
+      ],
+      "polycount": 6232,
+      "texel_density": 10144.159682262632,
+      "dimensions": [
+        1972.5302457809448,
+        1724.0281701087952,
+        427.6947118341923
+      ],
+      "files_hash": "36e2a53d7f23f422640ad368c1f27745de2fef82",
+      "description": "Free 8K model of four realistic fern clumps featuring detailed serrated fronds, varied silhouettes and rich dappled green foliage.",
+      "category_id": "b46752a1-8a91-5224-8bda-44c37b96c364",
+      "category": "Nature/Plants/Ferns",
+      "collections": [
+        "pine_forest",
+        "smugglers_cove"
+      ],
+      "attributes": {
+        "condition": [
+          "clean"
+        ],
+        "material": [
+          "plant"
+        ]
+      },
+      "img_version": "334ce7aa",
+      "download_count": 81670,
+      "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/fern_02.png?width=256&height=256&format=webp&v=334ce7aa"
+    },
+    "price": 0,
+    "source": "https://polyhaven.com/a/fern_02",
+    "license": "CC0-1.0",
+    "id": "fern_02",
+    "format": "glTF 2.0 + 1K PBR",
+    "author": {
+      "Rob Tuytel": "scanning",
+      "Rico Cilliers": "modeling"
+    }
+  },
+  {
+    "metadata": {
+      "date_published": 1651795200,
+      "name": "Calathea Orbifolia 01",
+      "type": 2,
+      "staging": null,
+      "authors": {
+        "Rob Tuytel": "scanning",
+        "Rico Cilliers": "modeling"
+      },
+      "categories": [
+        "plants",
+        "nature",
+        "ground cover",
+        "collection: smugglers_cove"
+      ],
+      "tags": [
+        "nature",
+        "bush",
+        "leaf",
+        "shrub",
+        "green",
+        "leaves",
+        "forest",
+        "plant",
+        "jungle",
+        "outdoor",
+        "botany",
+        "decorative"
+      ],
+      "max_resolution": [
+        8192,
+        8192
+      ],
+      "polycount": 16688,
+      "dimensions": [
+        2491.507411003113,
+        1193.592220544815,
+        424.2942640557885
+      ],
+      "texel_density": 20169.022167680178,
+      "files_hash": "5b3ad0b0352b1429f1f11e3de6f5b360ea6ef35a",
+      "description": "Free 8K shrub featuring clusters of broad, glossy, ribbed heart-shaped leaves with deep green tones and subtle vein highlights.",
+      "collections": [
+        "smugglers_cove"
+      ],
+      "category_id": "5a6111fb-71be-5686-a0cc-7e96df75aaf7",
+      "category": "Nature/Plants/Tropical Plants",
+      "attributes": {
+        "condition": [
+          "clean"
+        ],
+        "material": [
+          "plant"
+        ]
+      },
+      "img_version": "35d3c40e",
+      "download_count": 24551,
+      "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/calathea_orbifolia_01.png?width=256&height=256&format=webp&v=35d3c40e"
+    },
+    "price": 0,
+    "source": "https://polyhaven.com/a/calathea_orbifolia_01",
+    "license": "CC0-1.0",
+    "id": "calathea_orbifolia_01",
+    "format": "glTF 2.0 + 1K PBR",
+    "author": {
+      "Rob Tuytel": "scanning",
+      "Rico Cilliers": "modeling"
+    }
+  },
+  {
+    "metadata": {
+      "date_published": 1666742400,
+      "sponsors": [
+        "78546118"
+      ],
+      "name": "Island Tree 02",
+      "type": 2,
+      "staging": null,
+      "info": null,
+      "authors": {
+        "Rob Tuytel": "scanning, processing",
+        "Rico Cilliers": "cleanup, processing"
+      },
+      "tags": [
+        "tree",
+        "natural",
+        "nature",
+        "green",
+        "plant",
+        "outdoor",
+        "leaf",
+        "botany",
+        "leaves",
+        "forest",
+        "bush",
+        "jungle",
+        "foliage",
+        "small",
+        "geometry nodes",
+        "trunk",
+        "bark",
+        "island",
+        "coastal"
+      ],
+      "geonodes": true,
+      "categories": [
+        "nature",
+        "plants",
+        "trees"
+      ],
+      "max_resolution": [
+        8192,
+        8192
+      ],
+      "polycount": 1762064,
+      "files_hash": "4292954a33702fc0809a2b2f17a310bb36fd1aca",
+      "texel_density": 42649.360319440406,
+      "dimensions": [
+        8485.51321029663,
+        4078.6155462265015,
+        3408.9039135724306
+      ],
+      "lods": true,
+      "description": "Free 8K model of a small coastal island tree with a twisted, weathered trunk and sprawling dense green foliage; detailed bark and branched canopy.",
+      "category_id": "6f8ff47d-ba79-5786-8199-a90ccceb01fd",
+      "category": "Nature/Trees/Coastal Trees",
+      "attributes": {
+        "condition": [
+          "weathered"
+        ],
+        "material": [
+          "wood"
+        ],
+        "lods": true,
+        "geonodes": true
+      },
+      "img_version": "854bdc1f",
+      "download_count": 90533,
+      "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/island_tree_02.png?width=256&height=256&format=webp&v=854bdc1f"
+    },
+    "price": 0,
+    "source": "https://polyhaven.com/a/island_tree_02",
+    "license": "CC0-1.0",
+    "id": "island_tree_02",
+    "format": "glTF 2.0 + 1K PBR",
+    "author": {
+      "Rob Tuytel": "scanning, processing",
+      "Rico Cilliers": "cleanup, processing"
+    }
+  },
+  {
+    "metadata": {
+      "name": "Painted Wooden Bench",
+      "categories": [
+        "furniture",
+        "seating"
+      ],
+      "type": 2,
+      "tags": [
+        "vintage",
+        "old",
+        "wooden",
+        "worn",
+        "antique",
+        "farmhouse",
+        "aged",
+        "rustic",
+        "small",
+        "seat",
+        "stool"
+      ],
+      "authors": {
+        "Kirill Sannikov": "All"
+      },
+      "info": null,
+      "date_published": 1712707200,
+      "staging": null,
+      "polycount": 630,
+      "dimensions": [
+        1164.9435758590698,
+        496.5430945158005,
+        889.2914750613272
+      ],
+      "max_resolution": [
+        4096,
+        4096
+      ],
+      "texel_density": 1621.0608929808423,
+      "files_hash": "6784218e3b57df8750c5aa76ece84edfdd53b797",
+      "description": "Free 4K painted wooden bench model with worn, antique red finish, rustic farmhouse charm, compact seating and lower shelf - great aged prop for interiors.",
+      "category_id": "c7642d58-13d1-5289-844b-dd12b1455a27",
+      "category": "Furniture/Seating/Benches",
+      "attributes": {
+        "condition": [
+          "worn"
+        ],
+        "material": [
+          "wood"
+        ]
+      },
+      "img_version": "68ce259c",
+      "download_count": 3754,
+      "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/painted_wooden_bench.png?width=256&height=256&format=webp&v=68ce259c"
+    },
+    "price": 0,
+    "source": "https://polyhaven.com/a/painted_wooden_bench",
+    "license": "CC0-1.0",
+    "id": "painted_wooden_bench",
+    "format": "glTF 2.0 + 1K PBR",
+    "author": {
+      "Kirill Sannikov": "All"
+    }
+  }
+]

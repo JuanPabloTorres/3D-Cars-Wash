@@ -1,0 +1,34 @@
+
+> febles-carwash-world@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Projects/Repos/3D-Cars-Wash
+
+ ❯ tests/unit/world.test.ts (19 tests | 2 failed) 442ms
+   ❯ physical pedestrian navigation (15)
+     × walkable route to lounge 13ms
+     × routes between every destination pair 33ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/world.test.ts > physical pedestrian navigation > walkable route to lounge
+AssertionError: expected null not to be null
+ ❯ tests/unit/world.test.ts:10:147
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/world.test.ts > physical pedestrian navigation > routes between every destination pair
+AssertionError: expected null not to be null
+ ❯ tests/unit/world.test.ts:13:182
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 9 passed (10)
+      Tests  2 failed | 47 passed (49)
+   Start at  20:30:14
+   Duration  2.50s (tests 72%, import 14%, transform 11%, worker 3%)
+

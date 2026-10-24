@@ -1,0 +1,10 @@
+{
+  "stage": "glTF validation",
+  "asset": "shrub_01 clustered",
+  "reason": "two empty variant groups from using world instead of local stem centres",
+  "observedAt": "2026-10-23T23:45:41.6130006Z",
+  "errors": 12,
+  "warnings": 9,
+  "status": "rejected before candidate export",
+  "attempt": 1
+}

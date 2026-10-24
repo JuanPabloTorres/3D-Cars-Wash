@@ -1,0 +1,596 @@
+{
+  "phase": "after-candidate-2",
+  "resourcesStable": true,
+  "before": {
+    "dist/index.html": "2aa7e550b688c9200c5c2dae4b9e5e9790f381941f9801ab4994a484dc981696",
+    "dist/assets/AdminApp-BHE-0fXx.js": "7a6c1853a8d1fe8d131b610ed47d461c6b6b240e163727619dfabcfeca67148e",
+    "dist/assets/AdminApp-CaPScQ43.css": "c98b101f5793c47bec82967570c6ddc3837c04963218d667fb9e6127c49af56b",
+    "dist/assets/App-CmDPw6h9.js": "d73672368f6171fb60e31ddd8d9ad04eb8ad6ba8416b7aab78eeee7f329f45ba",
+    "dist/assets/App-QJcWMJ_Y.css": "6cde45d7f8771097bc16270517cfe9047623c0c18c5ac7cc37a948965a3e031b",
+    "dist/assets/index-CQHhKH3-.css": "4d084e42d1cf3a725c0571e394d25fc1920729f16a7fe7ec14baf34a31b34dfc",
+    "dist/assets/index-hhmTqSQ5.js": "15e320a729f973a24166134432c8d4ce01e1e5eeadcb5fd53b1cfc44c154337e",
+    "dist/assets/WorldBadges-D4EH4JvX.js": "6a33ee6c30bf0aadf0c7cc0e7796d9d38ffdff95960b7926ebd1bf48f30d35eb",
+    "public/models/areca.glb": "971ea8b671828431ad3569c81c326adfaae9c932ce8ae7c5f46e16f238780f58",
+    "public/models/bench.glb": "e4d2e1111ddef4379a0c13ee64ab29c81c0f62ffbe0a5abd835cfcf0346946e6",
+    "public/models/calathea.glb": "62894480cecfa8b0afbca8bfacd8ac837c214fe0f205a0244ae81c5d8d794787",
+    "public/models/canopyTree.glb": "ecc1e14131c5db4087262c315b09d847d26de447a3f6bfa6a074ebf7307b9cbe",
+    "public/models/cart.glb": "88d279ab2b3d9817365fd9114f57b49855d4342d41b37fd7218293e8ebe602dd",
+    "public/models/coherentCalathea.glb": "bd4f81b337bd31611051b31e8d958f7af76c82056017c77c7515737d2da22967",
+    "public/models/coherentOak.glb": "9114f364ff0765c7504ccc8b6f71dba408170e6963b8fdcab993fd7a48d7b449",
+    "public/models/coherentShrub.glb": "28b222f8b895e251d1928153af3ab41ff7561935e9131f57ad46915939beac2a",
+    "public/models/datePalm.glb": "94e130ee5ab0e989c51193bd467a780acca3aad676bf07845ab9b8f68cfea2c7",
+    "public/models/fern.glb": "6ce66d654da80960f7aebe97dad75e3df94463589bd536b17339ae607d290501",
+    "public/models/hose.glb": "155402c49e39718e272c4545a3be355ff76c370d00e49191a1abd85ca224f8af",
+    "public/models/islandTree.glb": "947b09db8a9a72784486a07ace20d2a9ace3f37aedf3dc192c7ad2200dd4cd5f",
+    "public/models/islandTreeFar.glb": "fe71352baae0500b84bf19b11db651813682cd8e25734cdb9aa08e7ebb9b8706",
+    "public/models/naturalFern.glb": "52950086c0acbe8bf18d28ad43464a5c07ed33ada5712c4b20cc94d2987f7a1f",
+    "public/models/naturalTree.glb": "bb9a6729ed4e65195aee539485e893f8c0852b442b77a48a02ee9ce3f0ecd1f3",
+    "public/models/palm.glb": "e93888e5bcf31a278b469161d99e120b7361eab719848f65d37d118c52b2dc29",
+    "public/models/plant.glb": "c0ec050a66386928fed820aa9ae4d9a54db9957f9d2c27f9009a94a522c8d695",
+    "public/models/pottedPlant.glb": "cf5231b4117f3c321e2a46bba509a3fba3f98873d66d13ca3bffc7479123d3ef",
+    "public/models/receptionist.glb": "85bc5fb7dbdf76498b18f3dd1866d5505e6c330f0f8462cd493702296e8b294f",
+    "public/models/sander.glb": "6e9d31d115c780823c5c95a9c4fa2d52692a74149f8fc32b10703991acaeb00d",
+    "public/models/shrub.glb": "e9bd86d876d0b063b8ee45916e2474649b14c9b201ce718cfe370dc932314421",
+    "public/models/sprayer.glb": "78c07b68a366d2dbef2435454f94ec0ffe3d2ba340f7468c634aa18f21f18843",
+    "public/models/sprayWand.glb": "3da7e36ea98c42002c8f41aaae457d13c7529cd0a31734fdb0a5b09d235d555f",
+    "public/models/tropicalPalm.glb": "6b43fd5e32c8713637112fc405807f7cf418828a7aa2b57a3e2148d81124ecb3",
+    "public/models/urbanCalathea.glb": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587",
+    "public/models/urbanFern.glb": "1f17d69c9d48760e9d9bfdcea7b5e7ba25a9587c3f0a1fc272861abf53cf1aab",
+    "public/models/urbanShrub.glb": "72ceb75cee33655d40a05d62e2e96b64c949dc6ed82140f796fc32b85da45650",
+    "public/models/urbanTree.glb": "e2d5e66843a4da1c378b06362d9695ee1b28579aa4df7449702a16782a1833cf",
+    "public/models/urbanTreeFar.glb": "8ba76bf35ae06ce91ca71279dc131f9c15f5ade72814f393d7e13b3e6d307de3",
+    "public/models/vacuum.glb": "b958974b7e6351e8a34b38114e9b637412d74ab943a44399ee67ebdf764d4522",
+    "public/models/vacuumNozzle.glb": "9c146b1033b36172ac5a1ec45780744732d1da785a47034b2aba79c2af6524ee",
+    "public/models/vehicle-car.glb": "8aaaf79c74ae0edd8a7e34d420920e2c9329c9457560c5916c2b973fbd7a7ffa",
+    "public/models/vehicle-pickup.glb": "20e660e331c8455d52c06cf95ac40e3ca46924f3cc49eb48438e41d8208e8822",
+    "public/models/vehicle-suv.glb": "fd31026a1fc2d77f556d6400b4308f603f288fa2a1240ce65484ce54c6fb5411",
+    "public/models/vehicle-truck.glb": "5267ea72bf485596c5d06a51815b887f35ac31044ddd38f91811e0e5d8ac9f76",
+    "public/models/vehicle.glb": "6ac5e4618fda2641aa4a645d1aaf833e2b005dd4c691ac74060b1114401bc2e2",
+    "public/models/worker.glb": "29284e5bb0ce6d1916f816e9497f1c84b3bb531d77108c2366c5c998159e010e"
+  },
+  "after": {
+    "dist/index.html": "2aa7e550b688c9200c5c2dae4b9e5e9790f381941f9801ab4994a484dc981696",
+    "dist/assets/AdminApp-BHE-0fXx.js": "7a6c1853a8d1fe8d131b610ed47d461c6b6b240e163727619dfabcfeca67148e",
+    "dist/assets/AdminApp-CaPScQ43.css": "c98b101f5793c47bec82967570c6ddc3837c04963218d667fb9e6127c49af56b",
+    "dist/assets/App-CmDPw6h9.js": "d73672368f6171fb60e31ddd8d9ad04eb8ad6ba8416b7aab78eeee7f329f45ba",
+    "dist/assets/App-QJcWMJ_Y.css": "6cde45d7f8771097bc16270517cfe9047623c0c18c5ac7cc37a948965a3e031b",
+    "dist/assets/index-CQHhKH3-.css": "4d084e42d1cf3a725c0571e394d25fc1920729f16a7fe7ec14baf34a31b34dfc",
+    "dist/assets/index-hhmTqSQ5.js": "15e320a729f973a24166134432c8d4ce01e1e5eeadcb5fd53b1cfc44c154337e",
+    "dist/assets/WorldBadges-D4EH4JvX.js": "6a33ee6c30bf0aadf0c7cc0e7796d9d38ffdff95960b7926ebd1bf48f30d35eb",
+    "public/models/areca.glb": "971ea8b671828431ad3569c81c326adfaae9c932ce8ae7c5f46e16f238780f58",
+    "public/models/bench.glb": "e4d2e1111ddef4379a0c13ee64ab29c81c0f62ffbe0a5abd835cfcf0346946e6",
+    "public/models/calathea.glb": "62894480cecfa8b0afbca8bfacd8ac837c214fe0f205a0244ae81c5d8d794787",
+    "public/models/canopyTree.glb": "ecc1e14131c5db4087262c315b09d847d26de447a3f6bfa6a074ebf7307b9cbe",
+    "public/models/cart.glb": "88d279ab2b3d9817365fd9114f57b49855d4342d41b37fd7218293e8ebe602dd",
+    "public/models/coherentCalathea.glb": "bd4f81b337bd31611051b31e8d958f7af76c82056017c77c7515737d2da22967",
+    "public/models/coherentOak.glb": "9114f364ff0765c7504ccc8b6f71dba408170e6963b8fdcab993fd7a48d7b449",
+    "public/models/coherentShrub.glb": "28b222f8b895e251d1928153af3ab41ff7561935e9131f57ad46915939beac2a",
+    "public/models/datePalm.glb": "94e130ee5ab0e989c51193bd467a780acca3aad676bf07845ab9b8f68cfea2c7",
+    "public/models/fern.glb": "6ce66d654da80960f7aebe97dad75e3df94463589bd536b17339ae607d290501",
+    "public/models/hose.glb": "155402c49e39718e272c4545a3be355ff76c370d00e49191a1abd85ca224f8af",
+    "public/models/islandTree.glb": "947b09db8a9a72784486a07ace20d2a9ace3f37aedf3dc192c7ad2200dd4cd5f",
+    "public/models/islandTreeFar.glb": "fe71352baae0500b84bf19b11db651813682cd8e25734cdb9aa08e7ebb9b8706",
+    "public/models/naturalFern.glb": "52950086c0acbe8bf18d28ad43464a5c07ed33ada5712c4b20cc94d2987f7a1f",
+    "public/models/naturalTree.glb": "bb9a6729ed4e65195aee539485e893f8c0852b442b77a48a02ee9ce3f0ecd1f3",
+    "public/models/palm.glb": "e93888e5bcf31a278b469161d99e120b7361eab719848f65d37d118c52b2dc29",
+    "public/models/plant.glb": "c0ec050a66386928fed820aa9ae4d9a54db9957f9d2c27f9009a94a522c8d695",
+    "public/models/pottedPlant.glb": "cf5231b4117f3c321e2a46bba509a3fba3f98873d66d13ca3bffc7479123d3ef",
+    "public/models/receptionist.glb": "85bc5fb7dbdf76498b18f3dd1866d5505e6c330f0f8462cd493702296e8b294f",
+    "public/models/sander.glb": "6e9d31d115c780823c5c95a9c4fa2d52692a74149f8fc32b10703991acaeb00d",
+    "public/models/shrub.glb": "e9bd86d876d0b063b8ee45916e2474649b14c9b201ce718cfe370dc932314421",
+    "public/models/sprayer.glb": "78c07b68a366d2dbef2435454f94ec0ffe3d2ba340f7468c634aa18f21f18843",
+    "public/models/sprayWand.glb": "3da7e36ea98c42002c8f41aaae457d13c7529cd0a31734fdb0a5b09d235d555f",
+    "public/models/tropicalPalm.glb": "6b43fd5e32c8713637112fc405807f7cf418828a7aa2b57a3e2148d81124ecb3",
+    "public/models/urbanCalathea.glb": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587",
+    "public/models/urbanFern.glb": "1f17d69c9d48760e9d9bfdcea7b5e7ba25a9587c3f0a1fc272861abf53cf1aab",
+    "public/models/urbanShrub.glb": "72ceb75cee33655d40a05d62e2e96b64c949dc6ed82140f796fc32b85da45650",
+    "public/models/urbanTree.glb": "e2d5e66843a4da1c378b06362d9695ee1b28579aa4df7449702a16782a1833cf",
+    "public/models/urbanTreeFar.glb": "8ba76bf35ae06ce91ca71279dc131f9c15f5ade72814f393d7e13b3e6d307de3",
+    "public/models/vacuum.glb": "b958974b7e6351e8a34b38114e9b637412d74ab943a44399ee67ebdf764d4522",
+    "public/models/vacuumNozzle.glb": "9c146b1033b36172ac5a1ec45780744732d1da785a47034b2aba79c2af6524ee",
+    "public/models/vehicle-car.glb": "8aaaf79c74ae0edd8a7e34d420920e2c9329c9457560c5916c2b973fbd7a7ffa",
+    "public/models/vehicle-pickup.glb": "20e660e331c8455d52c06cf95ac40e3ca46924f3cc49eb48438e41d8208e8822",
+    "public/models/vehicle-suv.glb": "fd31026a1fc2d77f556d6400b4308f603f288fa2a1240ce65484ce54c6fb5411",
+    "public/models/vehicle-truck.glb": "5267ea72bf485596c5d06a51815b887f35ac31044ddd38f91811e0e5d8ac9f76",
+    "public/models/vehicle.glb": "6ac5e4618fda2641aa4a645d1aaf833e2b005dd4c691ac74060b1114401bc2e2",
+    "public/models/worker.glb": "29284e5bb0ce6d1916f816e9497f1c84b3bb531d77108c2366c5c998159e010e"
+  },
+  "http": [
+    {
+      "width": 1440,
+      "entry": "/assets/index-hhmTqSQ5.js",
+      "verified": true
+    },
+    {
+      "width": 390,
+      "entry": "/assets/index-hhmTqSQ5.js",
+      "verified": true
+    }
+  ],
+  "comparison": "Same viewport, empty isolated session and default weather. Three.js gestures continue; captures are not exact animation-phase comparisons. Frame timings are observations on this renderer, not a hardware-independent performance guarantee.",
+  "observations": [
+    {
+      "width": 1440,
+      "view": "entry",
+      "position": [
+        -7,
+        14.5
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 2.637633253860751
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 250,
+      "triangles": 6124808,
+      "frameMsP95": 41.200000000186265,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "reception",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.1562000000001857
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 226,
+      "triangles": 6026990,
+      "frameMsP95": 39,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "counter",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.5126000000000928
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 226,
+      "triangles": 6026990,
+      "frameMsP95": 39,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "catalog",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.9243999999999066
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 229,
+      "triangles": 6005813,
+      "frameMsP95": 39,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "lounge",
+      "position": [
+        -13.3,
+        9.95
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 1.0933000000002793
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 265,
+      "triangles": 6185799,
+      "frameMsP95": 40.5,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "lounge-closed",
+      "position": [
+        -13.3,
+        9.95
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 1.4324999999999999
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 265,
+      "triangles": 6185799,
+      "frameMsP95": 41.299999999813735,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 1440,
+      "view": "queue",
+      "position": [
+        -5.15,
+        14.5
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 2.9396000000000937
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 147,
+      "triangles": 5834909,
+      "frameMsP95": 37.200000000186265,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision"
+      ]
+    },
+    {
+      "width": 390,
+      "view": "entry",
+      "position": [
+        -7,
+        14.5
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 1.5092000000001862
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 226,
+      "triangles": 5992349,
+      "frameMsP95": 32.10000000009313,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "width": 390,
+      "view": "reception",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 0.9742000000001865
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 220,
+      "triangles": 5980763,
+      "frameMsP95": 21.600000000093132,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "width": 390,
+      "view": "counter",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.1042000000001864
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 220,
+      "triangles": 5980763,
+      "frameMsP95": 21.600000000093132,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "width": 390,
+      "view": "catalog",
+      "position": [
+        -6.450000000000001,
+        7.4
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Greet",
+        "time": 1.312799999999814
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 220,
+      "triangles": 5980763,
+      "frameMsP95": 23.100000000093132,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "width": 390,
+      "view": "lounge",
+      "position": [
+        -13.3,
+        9.95
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 0.9338999999999068
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 216,
+      "triangles": 6000987,
+      "frameMsP95": 22.199999999720603,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "width": 390,
+      "view": "lounge-closed",
+      "position": [
+        -13.3,
+        9.95
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 1.100300000000279
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 230,
+      "triangles": 6037057,
+      "frameMsP95": 22.59999999962747,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "width": 390,
+      "view": "queue",
+      "position": [
+        -5.15,
+        14.5
+      ],
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "vehicles": 0,
+      "animation": {
+        "clips": [
+          "Idle",
+          "Greet",
+          "Talk",
+          "Service",
+          "PointServices",
+          "PointOrder"
+        ],
+        "active": "Idle",
+        "time": 2.412899999999907
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 142,
+      "triangles": 5840821,
+      "frameMsP95": 23.399999999906868,
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    }
+  ]
+}

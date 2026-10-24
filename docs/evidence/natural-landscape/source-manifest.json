@@ -1,0 +1,65 @@
+{
+  "scope": "Final frozen natural vegetation source/assets; no build/GPU from this task during shared capture",
+  "files": [
+    {
+      "path": "src/world/siteLandscape.ts",
+      "sha256": "b42d737edc33204960361b318dc4cc2fde9e4f2780abade5e2fc9de2184083d8",
+      "bytes": 5871
+    },
+    {
+      "path": "src/world/prefabs/Landscape.tsx",
+      "sha256": "1d4303b7c6d44c465b2790ed3f51c4da271fb7b58be66b82bb8d7b2f7207d6dc",
+      "bytes": 3031
+    },
+    {
+      "path": "src/world/prefabs/vegetationGeometry.ts",
+      "sha256": "908f82a3d06ce791271a30b8d94727b14a6151804fac60897a8a72fccf10a03e",
+      "bytes": 1320
+    },
+    {
+      "path": "src/world/prefabs/InstancedVegetation.tsx",
+      "sha256": "39a08902fa9eab41cad9b50a687352dc9f135aaf42a87d3183e41635020de901",
+      "bytes": 3922
+    },
+    {
+      "path": "tests/unit/landscape.test.ts",
+      "sha256": "d755ddfd61bfa4b47816273eab6b000af2a23e39210517dd6123bb6db52c8d21",
+      "bytes": 6215
+    },
+    {
+      "path": "tests/unit/vegetation-frame.test.ts",
+      "sha256": "a3f723f69bf007c0df4866ec87add89f8276ccbfbe5365a28636d74d1711e59f",
+      "bytes": 2403
+    },
+    {
+      "path": "public/models/naturalTree.glb",
+      "sha256": "bb9a6729ed4e65195aee539485e893f8c0852b442b77a48a02ee9ce3f0ecd1f3",
+      "bytes": 9598192
+    },
+    {
+      "path": "public/models/naturalTreeDense.glb",
+      "sha256": "5a1ed837dc16897fb3ee2300a7059fb5a13ae134fd7d7d64ab559cb7dfa924ad",
+      "bytes": 18358996
+    },
+    {
+      "path": "public/models/naturalFern.glb",
+      "sha256": "52950086c0acbe8bf18d28ad43464a5c07ed33ada5712c4b20cc94d2987f7a1f",
+      "bytes": 291136
+    },
+    {
+      "path": "public/textures/landscape/soil-color.jpg",
+      "sha256": "df3f135c899f10a3b018738343b222cbc67d13e7c76c5d8da834a3d34c984417",
+      "bytes": 501955
+    },
+    {
+      "path": "public/textures/landscape/soil-normal.jpg",
+      "sha256": "ac517ca39eb507ae0f27e2b3db431c60888f9b5c3c52bec49d2c0775da0920cb",
+      "bytes": 1011780
+    },
+    {
+      "path": "public/textures/landscape/soil-roughness.jpg",
+      "sha256": "ae9fb57c1173ccb4579f40edf8321a30bdca815042ffd72015a2a707c7e2e7ba",
+      "bytes": 340815
+    }
+  ]
+}

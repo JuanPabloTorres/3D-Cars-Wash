@@ -1,0 +1,39 @@
+{
+  "source": "C:/Projects/Assets/Febles-Refinement-20261023/island_tree_02/island_tree_02.gltf",
+  "sourceHash": "d8c5d9ead41cdbef91a648f40ff60470faa19eb3a7010e59e44cb1a01250f75d",
+  "sourceLicense": "CC0; Poly Haven island_tree_02; see public/ASSET_LICENSES.txt",
+  "sourceAuthorRecord": "docs/refinement-asset-provenance.json",
+  "output": "C:\\Projects\\Assets\\CarWash-Entrance-20261023\\canopyTree-quantized.glb",
+  "sha256": "ecc1e14131c5db4087262c315b09d847d26de447a3f6bfa6a074ebf7307b9cbe",
+  "bytes": 10353072,
+  "triangles": 262127,
+  "adaptation": "Preserve 30% foliage, 2.5% woody geometry; portable 1K PBR; original unchanged",
+  "validation": {
+    "numErrors": 0,
+    "numWarnings": 3,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/0/material"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/1/material"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/2/material"
+      }
+    ],
+    "truncated": false
+  },
+  "artisticAcceptance": "pending browser comparison"
+}

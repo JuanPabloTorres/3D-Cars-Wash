@@ -1,0 +1,3097 @@
+[
+  {
+    "time": 1792755542811,
+    "stage": "arriving",
+    "pose": {
+      "position": [
+        3.4,
+        37.16991999993324
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "arriving",
+      "moving": true,
+      "observedAt": 2274.10000000149
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "arriving",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755543339,
+    "stage": "arriving",
+    "pose": {
+      "position": [
+        3.4,
+        26.012497353111794
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "arriving",
+      "moving": true,
+      "observedAt": 2815.5
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "arriving",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755543617,
+    "stage": "arriving",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "arriving",
+      "moving": true,
+      "observedAt": 3087.800000004471
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "arriving",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755543955,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 3401.7000000029807
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755544556,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 4017.9000000059614
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755544845,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 4317.80000000447
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755545134,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 4593
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755545429,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 4897.30000000447
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755545720,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 5183.500000000001
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755546022,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 5494.9000000059605
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755546314,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 5767.200000002978
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "interior",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755546598,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 6068.700000002978
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755546884,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 6347.499999999997
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755547163,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 6633.8000000044685
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755547429,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 6900.800000004467
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755547702,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 7172.6000000014865
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755547990,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 7458.6000000014865
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755548283,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 7757.800000004465
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755548576,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 8037.100000001486
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755548861,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 8339.100000001483
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755549163,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 8616.700000002971
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "assigned",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "lights",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755549446,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 8920.99999999999
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755549719,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 9196.99999999999
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755550029,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 9478.400000005951
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755550327,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 9752.200000002971
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755550608,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 10072.700000002971
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755550879,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 10349.300000004461
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755551160,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 10620.20000000297
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755551462,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 10925.600000001481
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "inspection",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755551746,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 11224.20000000297
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755552018,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 11477.900000005951
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755552294,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 11768.80000000446
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755552573,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 12048.30000000446
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755552853,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 12300.600000001477
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755553171,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 12631.499999999985
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755553445,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 12916.900000005942
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755553799,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 13247.300000004452
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755554078,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 13526.200000002962
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755554343,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 13814.400000005939
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "washing",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "assigned",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "ready",
+        "bay": "02"
+      }
+    ]
+  },
+  {
+    "time": 1792755554692,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 14144.20000000296
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "interior",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755554996,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 14469.499999999978
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "interior",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755555434,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 14811.499999999978
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "interior",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755555972,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 15385.499999999976
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "interior",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755556576,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 15863.400000005935
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "interior",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755557156,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 16493.700000002962
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "interior",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755557939,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 17184.40000000594
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "interior",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755558616,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        24.8
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": false,
+      "observedAt": 17957.49999999999
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "lights",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755559146,
+    "stage": "queued",
+    "pose": {
+      "position": [
+        3.4,
+        20.033279999733324
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "queued",
+      "moving": true,
+      "observedAt": 18526.40000000595
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "queued",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "lights",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "washing",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755559827,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        3.4,
+        10.796420223721677
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 19090.300000004463
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "lights",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755561036,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        32.32578247948701,
+        9.5
+      ],
+      "yaw": 1.5707963267948966,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 20422.900000005953
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "lights",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755561454,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        41.86370247942026,
+        9.5
+      ],
+      "yaw": 1.5707963267948966,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 20848.700000002973
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "inspection",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755561951,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        46,
+        1.7880013226622467
+      ],
+      "yaw": 3.141592637048995,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 21335.300000004463
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "inspection",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755562517,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        46,
+        -10.912798677337666
+      ],
+      "yaw": 3.141592653589793,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 21902.300000004463
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "inspection",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755562919,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        37.335225124845216,
+        -14
+      ],
+      "yaw": 4.712388978970915,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 22384.600000001472
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "inspection",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755563199,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        30.85266512487866,
+        -14
+      ],
+      "yaw": 4.71238898038469,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 22673.99999999998
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "inspection",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755563488,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        24.746425124845423,
+        -14
+      ],
+      "yaw": 4.71238898038469,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 22953.300000004445
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "inspection",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "interior",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755563790,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        17.97490512491218,
+        -14
+      ],
+      "yaw": 4.71238898038469,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 23255.60000000147
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "ready",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "lights",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755564189,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        11.4,
+        -11.466128926927825
+      ],
+      "yaw": 6.239387273108859,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 23619.900000005946
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "ready",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "lights",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755564619,
+    "stage": "assigned",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.2831853071791555,
+      "stage": "assigned",
+      "moving": true,
+      "observedAt": 24015.90000000595
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "assigned",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "ready",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "lights",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755565055,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 24472.80000000446
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "ready",
+        "bay": "01"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "lights",
+        "bay": "03"
+      },
+      {
+        "id": "demo-vehicle-04",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755566284,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 25581.80000000446
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "lights",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755566972,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 26290.999999999996
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "inspection",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755567462,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 26835.400000005953
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "inspection",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755567965,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 27348.900000005957
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "inspection",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755568494,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 27829.600000001486
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "inspection",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755569064,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 28408.100000001494
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755569571,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 28945.5
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755570017,
+    "stage": "washing",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "washing",
+      "moving": false,
+      "observedAt": 29415.300000004474
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "washing",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755570592,
+    "stage": "interior",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "interior",
+      "moving": false,
+      "observedAt": 29918.400000005968
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "interior",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755571859,
+    "stage": "interior",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "interior",
+      "moving": false,
+      "observedAt": 31121.800000004478
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "interior",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "handover",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755572410,
+    "stage": "interior",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "interior",
+      "moving": false,
+      "observedAt": 31771.6000000015
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "interior",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "handover",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755572959,
+    "stage": "interior",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "interior",
+      "moving": false,
+      "observedAt": 32339.1000000015
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "interior",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "handover",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755573539,
+    "stage": "interior",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "interior",
+      "moving": false,
+      "observedAt": 32877.30000000449
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "interior",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755574057,
+    "stage": "interior",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "interior",
+      "moving": false,
+      "observedAt": 33421.90000000599
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "interior",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755574592,
+    "stage": "lights",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "lights",
+      "moving": false,
+      "observedAt": 33913.000000000015
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "lights",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-02",
+        "stage": "departing",
+        "bay": null
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "ready",
+        "bay": "03"
+      }
+    ]
+  },
+  {
+    "time": 1792755575862,
+    "stage": "lights",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "lights",
+      "moving": false,
+      "observedAt": 35195.90000000595
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "lights",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755576551,
+    "stage": "lights",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "lights",
+      "moving": false,
+      "observedAt": 35870.99999999999
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "lights",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755577114,
+    "stage": "inspection",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "inspection",
+      "moving": false,
+      "observedAt": 36468.70000000297
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "inspection",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755578548,
+    "stage": "inspection",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "inspection",
+      "moving": false,
+      "observedAt": 37850.40000000595
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "inspection",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755579163,
+    "stage": "inspection",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "inspection",
+      "moving": false,
+      "observedAt": 38493.600000001476
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "inspection",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755579683,
+    "stage": "ready",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "ready",
+      "moving": false,
+      "observedAt": 39091.6000000015
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "ready",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755580816,
+    "stage": "ready",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "ready",
+      "moving": false,
+      "observedAt": 40214.100000001505
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "ready",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755581397,
+    "stage": "ready",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "ready",
+      "moving": false,
+      "observedAt": 40771.50000000002
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "ready",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755581987,
+    "stage": "ready",
+    "pose": {
+      "position": [
+        11.4,
+        -4.2
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "ready",
+      "moving": false,
+      "observedAt": 41286.300000004514
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "ready",
+        "bay": "02"
+      },
+      {
+        "id": "demo-vehicle-03",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755582542,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        11.4,
+        -5.99871999993461
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 41884.00000000004
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755583935,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        24.044458337815453,
+        -13.2
+      ],
+      "yaw": 7.853981633974483,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 43297.60000000153
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755584601,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        37.95933833788217,
+        -13.2
+      ],
+      "yaw": 7.853981633974483,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 43918.8000000045
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755585227,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        49.90603111530739,
+        -9.483804630201645
+      ],
+      "yaw": 6.495930926106888,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 44543.60000000153
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755585893,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        50,
+        5.605639181733405
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 45217.50000000004
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755586550,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        50,
+        16.99999999999999
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 45814.50000000001
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755587243,
+    "stage": "handover",
+    "pose": {
+      "position": [
+        50,
+        17
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "handover",
+      "moving": false,
+      "observedAt": 46545.40000000598
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755588692,
+    "stage": "handover",
+    "pose": {
+      "position": [
+        50,
+        17
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "handover",
+      "moving": false,
+      "observedAt": 48026.10000000149
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "handover",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755589224,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        50,
+        18.402240000033977
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 48633.00000000001
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755589785,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        50,
+        29.80832000010031
+      ],
+      "yaw": 6.283185307179586,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 49142.20000000297
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755590491,
+    "stage": "departing",
+    "pose": {
+      "position": [
+        51,
+        38
+      ],
+      "yaw": 6.48058086702586,
+      "stage": "departing",
+      "moving": true,
+      "observedAt": 49719.30000000445
+    },
+    "world": [
+      {
+        "id": "demo-vehicle-01",
+        "stage": "departing",
+        "bay": null
+      }
+    ]
+  },
+  {
+    "time": 1792755591226,
+    "stage": "exited",
+    "world": []
+  }
+]

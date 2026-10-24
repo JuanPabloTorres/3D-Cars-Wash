@@ -1,0 +1,41 @@
+{
+  "scope": "Tooling only; no product validation claimed",
+  "checks": [
+    {
+      "label": "Five standalone profiles parse; no model/permission overrides",
+      "status": "passed",
+      "profiles": [
+        "carwash_architecture",
+        "carwash_blender",
+        "carwash_interaction",
+        "carwash_scene",
+        "carwash_validation"
+      ]
+    },
+    {
+      "label": "Existing evidence cannot be overwritten",
+      "status": "passed",
+      "exitCode": 1
+    },
+    {
+      "label": "Report cannot be written into product src",
+      "status": "passed",
+      "exitCode": 1
+    },
+    {
+      "label": "Missing references reported honestly, existing models identified",
+      "status": "passed",
+      "missingReferences": 5,
+      "models": 26
+    },
+    {
+      "label": "Unrelated project rejected without output",
+      "status": "passed",
+      "exitCode": 1
+    },
+    {
+      "label": "Both user specifications preserved byte for byte",
+      "status": "passed"
+    }
+  ]
+}

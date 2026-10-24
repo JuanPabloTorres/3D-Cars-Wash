@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-23T21:58:33.8010613-04:00",
+  "manifestsEqual": true,
+  "bundleEvents": [],
+  "httpBeforeValid": true,
+  "httpAfterValid": true,
+  "browserProcessesRemaining": [
+    {
+      "Id": 4524,
+      "StartTime": "2026-10-23T21:58:22.2446608-04:00"
+    },
+    {
+      "Id": 9584,
+      "StartTime": "2026-10-23T21:58:26.8372014-04:00"
+    },
+    {
+      "Id": 13060,
+      "StartTime": "2026-10-23T21:58:22.2554772-04:00"
+    },
+    {
+      "Id": 16876,
+      "StartTime": "2026-10-23T21:58:23.6829102-04:00"
+    },
+    {
+      "Id": 19108,
+      "StartTime": "2026-10-23T21:57:46.5620052-04:00"
+    },
+    {
+      "Id": 28760,
+      "StartTime": "2026-10-23T21:58:22.2484341-04:00"
+    },
+    {
+      "Id": 29616,
+      "StartTime": "2026-10-23T21:58:17.4124563-04:00"
+    }
+  ],
+  "testExecuted": true,
+  "testExitCode": 0,
+  "acceptedBundle": true
+}

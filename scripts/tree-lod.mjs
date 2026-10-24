@@ -1,0 +1,3 @@
+import{NodeIO}from '@gltf-transform/core';import{ALL_EXTENSIONS}from '@gltf-transform/extensions';import{simplify,weld,prune}from '@gltf-transform/functions';import{MeshoptSimplifier}from 'meshoptimizer';
+await MeshoptSimplifier.ready;const io=new NodeIO().registerExtensions(ALL_EXTENSIONS)
+for(const [name,ratio,error] of [['islandTree',.16,.025],['islandTreeFar',.035,.08]]){const d=await io.read('public/models/islandTree.glb');await d.transform(weld(),simplify({simplifier:MeshoptSimplifier,ratio,error}),prune());console.log(name,d.getRoot().listMeshes().reduce((a,m)=>a+m.listPrimitives().reduce((b,p)=>b+p.getIndices().getCount()/3,0),0));await io.write('public/models/'+name+'.glb',d)}

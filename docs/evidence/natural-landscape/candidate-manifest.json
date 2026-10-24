@@ -1,0 +1,226 @@
+{
+  "observedAt": "2026-10-24T01:59:51.525Z",
+  "tree": {
+    "source": "public/models/urbanTree.glb",
+    "sourceSha256": "e2d5e66843a4da1c378b06362d9695ee1b28579aa4df7449702a16782a1833cf",
+    "output": "naturalTree.glb",
+    "bytes": 9598192,
+    "sha256": "bb9a6729ed4e65195aee539485e893f8c0852b442b77a48a02ee9ce3f0ecd1f3",
+    "bounds": {
+      "min": [
+        -1.3089945115941783,
+        -0.024031998589634895,
+        -1.3826131532529207
+      ],
+      "max": [
+        1.6077075996297618,
+        4.532637119293213,
+        2.9098367402890535
+      ]
+    },
+    "triangles": 206616,
+    "repaired": [
+      {
+        "material": "tree_small_02_leaves",
+        "width": 1024,
+        "height": 1024,
+        "transparent": 482156,
+        "visible": 566420,
+        "alphaMode": "MASK"
+      }
+    ],
+    "provenance": {
+      "page": "https://polyhaven.com/a/tree_small_02",
+      "author": "Rico Cilliers",
+      "license": "CC0-1.0",
+      "sourceGeometry": "Existing preserved urbanTree-v3, original detailed bark/leaf UV and PBR maps; repaired official alpha, no geometry removed."
+    },
+    "validation": {
+      "numErrors": 0,
+      "numWarnings": 3,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/0/material"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/1/material"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/2/material"
+        }
+      ],
+      "truncated": false
+    },
+    "artisticAcceptance": "pending browser comparison"
+  },
+  "fern": {
+    "source": "public/models/urbanFern.glb",
+    "sourceSha256": "1f17d69c9d48760e9d9bfdcea7b5e7ba25a9587c3f0a1fc272861abf53cf1aab",
+    "output": "naturalFern.glb",
+    "bytes": 291136,
+    "sha256": "52950086c0acbe8bf18d28ad43464a5c07ed33ada5712c4b20cc94d2987f7a1f",
+    "bounds": {
+      "min": [
+        -0.49487370252609253,
+        0,
+        -0.4468448609113693
+      ],
+      "max": [
+        0.49487370252609253,
+        0.4276947118341923,
+        0.4468448609113693
+      ]
+    },
+    "triangles": 2365,
+    "repaired": [
+      {
+        "material": "fern_02",
+        "width": 1024,
+        "height": 1024,
+        "transparent": 886064,
+        "visible": 162512,
+        "alphaMode": "MASK"
+      }
+    ],
+    "provenance": {
+      "page": "https://polyhaven.com/a/fern_02",
+      "authors": [
+        "Rob Tuytel",
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "sourceGeometry": "Existing single-variant geometry; repaired official alpha."
+    },
+    "validation": {
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/0/material"
+        }
+      ],
+      "truncated": false
+    },
+    "artisticAcceptance": "pending browser comparison"
+  },
+  "soil": {
+    "page": "https://polyhaven.com/a/brown_mud",
+    "authors": [
+      "Rob Tuytel"
+    ],
+    "license": "CC0-1.0",
+    "dimensions": [
+      1299.996018409729,
+      1299.996018409729
+    ],
+    "maps": [
+      "soil-color.jpg",
+      "soil-normal.jpg",
+      "soil-roughness.jpg"
+    ]
+  },
+  "downloads": [
+    {
+      "filename": "tree-alpha.png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/tree_small_02/tree_small_02_leaves_alpha_1k.png",
+      "bytes": 264711,
+      "md5": "63199ba87a9e8928424bd8c3b8017bd0",
+      "sha256": "4f143e2dda8a6a572f427ac378b92255d21761e4611de0d26e21816c01aa533b"
+    },
+    {
+      "filename": "fern-alpha.png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/fern_02/fern_02_alpha_1k.png",
+      "bytes": 114589,
+      "md5": "1421e5e36946c23a7ddcc907de89025c",
+      "sha256": "ea3c64284c7ebdeedf484d2d816eae92825ec526140c3bb83859ddc7a64001f9"
+    },
+    {
+      "filename": "soil-color.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud/brown_mud_diff_1k.jpg",
+      "bytes": 501955,
+      "md5": "b141af27b413db140818d0a4998c394c",
+      "sha256": "df3f135c899f10a3b018738343b222cbc67d13e7c76c5d8da834a3d34c984417"
+    },
+    {
+      "filename": "soil-normal.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud/brown_mud_nor_gl_1k.jpg",
+      "bytes": 1011780,
+      "md5": "62df05266fa5a0adc7733a7184a15dea",
+      "sha256": "ac517ca39eb507ae0f27e2b3db431c60888f9b5c3c52bec49d2c0775da0920cb"
+    },
+    {
+      "filename": "soil-roughness.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud/brown_mud_rough_1k.jpg",
+      "bytes": 340815,
+      "md5": "fb4d5d8ef98ebee6a402955b99103a3a",
+      "sha256": "ae9fb57c1173ccb4579f40edf8321a30bdca815042ffd72015a2a707c7e2e7ba"
+    }
+  ],
+  "treeNear": {
+    "source": "C:/Projects/Assets/CarWash-Entrance-Urban-20261023/tree_small_02/tree_small_02_1k.gltf",
+    "output": "C:\\Projects\\Assets\\CarWash-Natural-Landscape-20261023\\naturalTree-dense-v2.glb",
+    "bytes": 18358996,
+    "triangles": 472062,
+    "sha256": "5a1ed837dc16897fb3ee2300a7059fb5a13ae134fd7d7d64ab559cb7dfa924ad",
+    "provenance": {
+      "page": "https://polyhaven.com/a/tree_small_02",
+      "author": "Rico Cilliers",
+      "license": "CC0-1.0"
+    },
+    "adaptation": "Original source, connected leaf-island extrema locked; UV weights .5/.5, ratio .16, error .0008; official alpha, original PBR and transform; no duplicated foliage or invented geometry.",
+    "validation": {
+      "numErrors": 0,
+      "numWarnings": 3,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/0/material"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/1/material"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "severity": 1,
+          "pointer": "/meshes/0/primitives/2/material"
+        }
+      ],
+      "truncated": false
+    },
+    "artisticAcceptance": "pending viewport comparison",
+    "publishedAs": "public/models/naturalTreeDense.glb"
+  },
+  "selection": {
+    "nearTrees": 2,
+    "distantTrees": 3,
+    "shrubs": 48,
+    "calatheas": 36,
+    "ferns": 12,
+    "unitResult": "65/65 tests in14files; unit-final.log",
+    "browserAcceptance": "pending final common capture"
+  }
+}

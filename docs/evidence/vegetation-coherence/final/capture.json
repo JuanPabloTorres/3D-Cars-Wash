@@ -1,0 +1,208 @@
+{
+  "actualBrowser": true,
+  "sourceManifest": "../../site-zones-lounge/after/capture.json",
+  "capture": {
+    "observedAt": "2026-10-24T00:48:28.557Z",
+    "actualBrowser": true,
+    "entryBundle": "/assets/index-Ds3b6eNw.js",
+    "initialBuild": {
+      "dist/index.html": "b49ca62afcea4d7073bd5161e8801c26db695a4109bbe2996f6a7e63a71fe30f",
+      "dist/assets/AdminApp-CqsBNNs2.js": "dd69aceab4e2ad5900566ad98d51cf35fe46d480394358b4ddbc0d3bb4b859b2",
+      "dist/assets/App-BaYcfnPh.js": "faaf7230a3bd1fa524b27a0257cc5cdf7e5f498720b2ed7a275f463a3b51a9c6",
+      "dist/assets/index-Ds3b6eNw.js": "75b947a309734425351533e3603e313bf37c63320e1604f55642033df94ed660",
+      "dist/assets/WorldBadges-3B-bxFwF.js": "35eada3a68903071deefeb4468c8cf6ff076c2967555fd9c5c71bd524ff36cdc"
+    },
+    "results": [
+      {
+        "viewport": {
+          "width": 1855,
+          "height": 848
+        },
+        "entrance": {
+          "ready": true,
+          "activeView": "entrance",
+          "destination": null,
+          "position": [
+            -7,
+            14.5
+          ],
+          "yaw": -0.19118469754155568,
+          "pitch": -0.0758629166037148,
+          "weather": {
+            "kind": "sunny",
+            "source": "simulation",
+            "exposure": 1.05
+          },
+          "contextLost": false,
+          "vehicles": 0,
+          "drawCalls": 0,
+          "triangles": 0
+        },
+        "lounge": {
+          "ready": true,
+          "activeView": "lounge",
+          "destination": null,
+          "position": [
+            -13.599999999999998,
+            10
+          ],
+          "yaw": -0.8310096603963245,
+          "pitch": -0.007620456512287288,
+          "weather": {
+            "kind": "sunny",
+            "source": "simulation",
+            "exposure": 1.0499999999999998
+          },
+          "contextLost": false,
+          "vehicles": 0,
+          "drawCalls": 213,
+          "triangles": 7547130
+        },
+        "returnToReception": true,
+        "scripts": [
+          "/assets/index-Ds3b6eNw.js"
+        ]
+      },
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "entrance": {
+          "ready": true,
+          "activeView": "entrance",
+          "destination": null,
+          "position": [
+            -7,
+            14.5
+          ],
+          "yaw": -0.191184464257954,
+          "pitch": -0.07586289246942915,
+          "weather": {
+            "kind": "sunny",
+            "source": "simulation",
+            "exposure": 1.05
+          },
+          "contextLost": false,
+          "vehicles": 0,
+          "drawCalls": 0,
+          "triangles": 0
+        },
+        "lounge": {
+          "ready": true,
+          "activeView": "lounge",
+          "destination": null,
+          "position": [
+            -13.599999999999998,
+            10
+          ],
+          "yaw": -0.8310096603963245,
+          "pitch": -0.007620456512287288,
+          "weather": {
+            "kind": "sunny",
+            "source": "simulation",
+            "exposure": 1.0499999999999998
+          },
+          "contextLost": false,
+          "vehicles": 0,
+          "drawCalls": 264,
+          "triangles": 7571571
+        },
+        "returnToReception": true,
+        "scripts": [
+          "/assets/index-Ds3b6eNw.js"
+        ]
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "entrance": {
+          "ready": true,
+          "activeView": "entrance",
+          "destination": null,
+          "position": [
+            -7,
+            14.5
+          ],
+          "yaw": -0.19118448305596053,
+          "pitch": -0.0758628944141713,
+          "weather": {
+            "kind": "sunny",
+            "source": "simulation",
+            "exposure": 1.05
+          },
+          "contextLost": false,
+          "vehicles": 0,
+          "drawCalls": 0,
+          "triangles": 0
+        },
+        "lounge": {
+          "ready": true,
+          "activeView": "lounge",
+          "destination": null,
+          "position": [
+            -13.599999999999998,
+            10
+          ],
+          "yaw": -0.671271745386705,
+          "pitch": -0.02221000112438469,
+          "weather": {
+            "kind": "sunny",
+            "source": "simulation",
+            "exposure": 1.0499999999999998
+          },
+          "contextLost": false,
+          "vehicles": 0,
+          "drawCalls": 234,
+          "triangles": 7426287
+        },
+        "returnToReception": true,
+        "scripts": [
+          "/assets/index-Ds3b6eNw.js"
+        ]
+      }
+    ],
+    "errors": [],
+    "failure": null
+  },
+  "copies": [
+    {
+      "source": "docs/evidence/site-zones-lounge/after/1855-entrance.png",
+      "copy": "final/desktop-entrance.png",
+      "sha256": "ce10a103521b9c8ea62424ebb942eee5809920b14c88161355156cd128d71391"
+    },
+    {
+      "source": "docs/evidence/site-zones-lounge/after/1855-lounge.png",
+      "copy": "final/desktop-lounge.png",
+      "sha256": "a43e79a363e96fff02ce87eb1589ae6d892a0656ccabee2c6f9314f3138b479f"
+    },
+    {
+      "source": "docs/evidence/site-zones-lounge/after/1855-lounge-unobstructed.png",
+      "copy": "final/desktop-lounge-unobstructed.png",
+      "sha256": "d57cc29876cb7338f6aeb5d8af73fe685912c6d6eec1900652f465d79915642b"
+    },
+    {
+      "source": "docs/evidence/site-zones-lounge/after/1440-lounge.png",
+      "copy": "final/desktop-lounge-1440.png",
+      "sha256": "425959cd3be6013a58488d38a3371762d75d734538a879d6c2f542f723b7acd5"
+    },
+    {
+      "source": "docs/evidence/site-zones-lounge/after/390-entrance.png",
+      "copy": "final/mobile-entrance.png",
+      "sha256": "4edbe8f59aec7f253aaacd5484902d0d402313cfa83d4e91c905fd90d4ae6a83"
+    },
+    {
+      "source": "docs/evidence/site-zones-lounge/after/390-lounge.png",
+      "copy": "final/mobile-lounge.png",
+      "sha256": "2a3c38dabda2e8ce1bd967e7ff50f4b0cb616d5ee59fd4fd84a38eac57b6b091"
+    },
+    {
+      "source": "docs/evidence/site-zones-lounge/after/390-lounge-unobstructed.png",
+      "copy": "final/mobile-lounge-unobstructed.png",
+      "sha256": "b55b472cc8e144791cac80ba207ac71373cf284a23b1a683b25daef9a91f5699"
+    }
+  ],
+  "copyNote": "Byte-identical copies of coordinated Playwright evidence; no generated or edited product images"
+}

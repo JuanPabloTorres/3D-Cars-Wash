@@ -1,0 +1,134 @@
+{
+  "hardware": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "scenario": "quiet",
+  "loadedMs": 3062,
+  "samples": 180,
+  "meanFPS": 38.86933425469302,
+  "frameMsP95": 36.600000001490116,
+  "drawCalls": 853,
+  "triangles": 2051278,
+  "textures": 102,
+  "gpuMemoryBytes": null,
+  "errors": [],
+  "network": [
+    {
+      "name": "/assets/index-DD_4_qjz.js",
+      "bytes": 420760,
+      "duration": 39.70000000298023
+    },
+    {
+      "name": "/assets/index-CXPeHgw9.css",
+      "bytes": 7553,
+      "duration": 5.799999997019768
+    },
+    {
+      "name": "/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+      "bytes": 25136,
+      "duration": 2.6999999955296516
+    },
+    {
+      "name": "/api/demo/session",
+      "bytes": 388,
+      "duration": 1.3999999985098839
+    },
+    {
+      "name": "/textures/daylight.hdr",
+      "bytes": 1199778,
+      "duration": 79.79999999701977
+    },
+    {
+      "name": "/models/islandTreeFar.glb",
+      "bytes": 2041240,
+      "duration": 8.899999998509884
+    },
+    {
+      "name": "/textures/concrete-color.jpg",
+      "bytes": 119106,
+      "duration": 3.5
+    },
+    {
+      "name": "/textures/concrete-normal.jpg",
+      "bytes": 111206,
+      "duration": 6
+    },
+    {
+      "name": "/textures/concrete-roughness.jpg",
+      "bytes": 182242,
+      "duration": 6.399999998509884
+    },
+    {
+      "name": "/textures/wood-color.jpg",
+      "bytes": 609825,
+      "duration": 13.200000002980232
+    },
+    {
+      "name": "/textures/wood-normal.jpg",
+      "bytes": 652741,
+      "duration": 13.799999997019768
+    },
+    {
+      "name": "/textures/wood-roughness.jpg",
+      "bytes": 300057,
+      "duration": 11
+    },
+    {
+      "name": "/models/calathea.glb",
+      "bytes": 536656,
+      "duration": 12.599999994039536
+    },
+    {
+      "name": "/models/islandTree.glb",
+      "bytes": 6363272,
+      "duration": 122.29999999701977
+    },
+    {
+      "name": "/models/fern.glb",
+      "bytes": 361296,
+      "duration": 11.200000002980232
+    },
+    {
+      "name": "/models/pottedPlant.glb",
+      "bytes": 683028,
+      "duration": 16.099999994039536
+    },
+    {
+      "name": "/models/receptionist.glb",
+      "bytes": 5316212,
+      "duration": 80.60000000149012
+    },
+    {
+      "name": "/models/hose.glb",
+      "bytes": 2583448,
+      "duration": 66.60000000149012
+    },
+    {
+      "name": "/models/cart.glb",
+      "bytes": 3171756,
+      "duration": 86.30000000447035
+    },
+    {
+      "name": "/models/vehicle.glb",
+      "bytes": 5036792,
+      "duration": 125.89999999850988
+    },
+    {
+      "name": "/models/bench.glb",
+      "bytes": 412948,
+      "duration": 29.100000001490116
+    },
+    {
+      "name": "/models/worker.glb",
+      "bytes": 4531240,
+      "duration": 11.899999998509884
+    },
+    {
+      "name": "/api/demo/session",
+      "bytes": 388,
+      "duration": 2.5
+    }
+  ]
+}

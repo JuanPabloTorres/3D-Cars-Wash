@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-24T00:19:01.069Z",
+  "filename": "C:\\Projects\\Assets\\CarWash-Vegetation-Coherence-20261023\\candidates\\coherentCalathea-alpha-v1.glb",
+  "sha256": "bd4f81b337bd31611051b31e8d958f7af76c82056017c77c7515737d2da22967",
+  "height": 0.75,
+  "frame": 1.8,
+  "sunlight": {
+    "color": "#fff0d4",
+    "position": [
+      -22,
+      30,
+      18
+    ],
+    "intensity": 2.6
+  },
+  "hemisphere": {
+    "sky": "#d9eaff",
+    "ground": "#89917a",
+    "intensity": 0.7
+  },
+  "HDRI": "public/textures/daylight.hdr",
+  "environmentIntensity": 0.6,
+  "exposure": 1.05,
+  "toneMapping": "ACESFilmicToneMapping",
+  "errors": [],
+  "views": [
+    {
+      "view": "front",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\correctedCalathea-front.png",
+      "metrics": {
+        "triangles": 7500,
+        "calls": 3
+      }
+    },
+    {
+      "view": "side",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\correctedCalathea-side.png",
+      "metrics": {
+        "triangles": 7500,
+        "calls": 3
+      }
+    }
+  ],
+  "limitation": "Same sunny lighting/exposure/HDRI parameters and sample camera; excludes building occlusion and other plants"
+}

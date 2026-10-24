@@ -1,0 +1,137 @@
+{
+  "size": [
+    2.1809000968933105,
+    1.5451387166976929,
+    4.840295791625977
+  ],
+  "nodes": [
+    {
+      "name": "Scene",
+      "type": "Group"
+    },
+    {
+      "name": "Body",
+      "type": "Group"
+    },
+    {
+      "name": "107_reused_Valve_stem",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_3",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_4",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_5",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_6",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_7",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_8",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Valve_stem_9",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelFrontL",
+      "type": "Group"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim001",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim001_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim001_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim001_3",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelFrontR",
+      "type": "Group"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim_3",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearL",
+      "type": "Group"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim003",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim003_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim003_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim003_3",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearR",
+      "type": "Group"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim002",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim002_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim002_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "107_reused_Alloy_five_spoke_rim002_3",
+      "type": "Mesh"
+    }
+  ]
+}

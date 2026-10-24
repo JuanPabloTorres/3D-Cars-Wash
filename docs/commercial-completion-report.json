@@ -1,0 +1,42 @@
+{
+  "verdict": "partial",
+  "summary": "Navegación comercial por áreas y flujo conectado DEMO implementados y probados. El mundo y la aceptación artística siguen en revisión.",
+  "changes": [
+    "Cuatro accesos funcionales con transición breve y apertura automática.",
+    "Recepción conecta servicios, vehículo, cotización, confirmación y consulta/cancelación de la misma orden DEMO.",
+    "Servidor local valida comandos y transmite operación SSE entre contextos.",
+    "Paneles accesibles, miniaturas de assets, cielo y vegetación revisados; ruedas y clips de trabajo diferenciados."
+  ],
+  "checks": [
+    {
+      "label": "34 pruebas unitarias",
+      "status": "passed"
+    },
+    {
+      "label": "Build TypeScript/Vite",
+      "status": "passed"
+    },
+    {
+      "label": "12 E2E Edge: escritorio, móvil, negocio DEMO, privacidad, reconexión, ruedas y ambientes",
+      "status": "passed"
+    },
+    {
+      "label": "14 GLB validados: 0 errores, 55 advertencias",
+      "status": "passed"
+    },
+    {
+      "label": "Capturas y clips del navegador real revisados",
+      "status": "passed"
+    },
+    {
+      "label": "Auditoría npm actual: endpoint remoto devuelve HTTP 400",
+      "status": "failed"
+    }
+  ],
+  "pending": [
+    "Aprobación artística.",
+    "GLB aptos específicos de pickup, truck y SUV; herramientas portátiles de servicio.",
+    "Backend, permisos, pagos y almacenamiento de producción.",
+    "Hardware móvil/Safari sin verificar; rendimiento de cinco bahías requiere seguir presupuestándose."
+  ]
+}

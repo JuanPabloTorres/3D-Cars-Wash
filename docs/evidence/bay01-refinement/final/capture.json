@@ -1,0 +1,1114 @@
+{
+  "observedAt": "2026-10-24T02:31:14.657Z",
+  "entry": "/assets/index-Dbn7wan8.js",
+  "stable": true,
+  "before": {
+    "dist/index.html": "93dc9a93dbd397cfd815dea2c236fdc839500d609bf3b47b8479ffd7c52ad3b2",
+    "dist/assets/AdminApp-CaPScQ43.css": "c98b101f5793c47bec82967570c6ddc3837c04963218d667fb9e6127c49af56b",
+    "dist/assets/AdminApp-Dma-3ndt.js": "e86e5b0ac806c44058a0ab534c7b5a3f1a06ca4b1f133997584b62505417d07e",
+    "dist/assets/App-DfWZY5VG.css": "0485ef6ec50c63dbccd4c556c1a832b74f14b6eff6d7a318162c71ae70f8df40",
+    "dist/assets/App-r9tbVm3w.js": "fef4dbe40a2c44e673914a56e64b93c219277382a84103ee353d694335bcf806",
+    "dist/assets/index-CQHhKH3-.css": "4d084e42d1cf3a725c0571e394d25fc1920729f16a7fe7ec14baf34a31b34dfc",
+    "dist/assets/index-Dbn7wan8.js": "cbe94ee894885ee6720225c65955acd46715a90b28e7e7831ee1809c6b67e995",
+    "dist/assets/WorldBadges-BqapxkcZ.js": "6210debc706e24ae84ec440c120b74898613ac6733e9934d48b3d68436bd6aba",
+    "dist/models/areca.glb": "971ea8b671828431ad3569c81c326adfaae9c932ce8ae7c5f46e16f238780f58",
+    "dist/models/bench.glb": "e4d2e1111ddef4379a0c13ee64ab29c81c0f62ffbe0a5abd835cfcf0346946e6",
+    "dist/models/calathea.glb": "62894480cecfa8b0afbca8bfacd8ac837c214fe0f205a0244ae81c5d8d794787",
+    "dist/models/canopyTree.glb": "ecc1e14131c5db4087262c315b09d847d26de447a3f6bfa6a074ebf7307b9cbe",
+    "dist/models/cart.glb": "88d279ab2b3d9817365fd9114f57b49855d4342d41b37fd7218293e8ebe602dd",
+    "dist/models/coherentCalathea.glb": "bd4f81b337bd31611051b31e8d958f7af76c82056017c77c7515737d2da22967",
+    "dist/models/coherentOak.glb": "9114f364ff0765c7504ccc8b6f71dba408170e6963b8fdcab993fd7a48d7b449",
+    "dist/models/coherentShrub.glb": "28b222f8b895e251d1928153af3ab41ff7561935e9131f57ad46915939beac2a",
+    "dist/models/datePalm.glb": "94e130ee5ab0e989c51193bd467a780acca3aad676bf07845ab9b8f68cfea2c7",
+    "dist/models/fern.glb": "6ce66d654da80960f7aebe97dad75e3df94463589bd536b17339ae607d290501",
+    "dist/models/hose.glb": "155402c49e39718e272c4545a3be355ff76c370d00e49191a1abd85ca224f8af",
+    "dist/models/islandTree.glb": "947b09db8a9a72784486a07ace20d2a9ace3f37aedf3dc192c7ad2200dd4cd5f",
+    "dist/models/islandTreeFar.glb": "fe71352baae0500b84bf19b11db651813682cd8e25734cdb9aa08e7ebb9b8706",
+    "dist/models/naturalFern.glb": "52950086c0acbe8bf18d28ad43464a5c07ed33ada5712c4b20cc94d2987f7a1f",
+    "dist/models/naturalTree.glb": "bb9a6729ed4e65195aee539485e893f8c0852b442b77a48a02ee9ce3f0ecd1f3",
+    "dist/models/naturalTreeDense.glb": "5a1ed837dc16897fb3ee2300a7059fb5a13ae134fd7d7d64ab559cb7dfa924ad",
+    "dist/models/palm.glb": "e93888e5bcf31a278b469161d99e120b7361eab719848f65d37d118c52b2dc29",
+    "dist/models/plant.glb": "c0ec050a66386928fed820aa9ae4d9a54db9957f9d2c27f9009a94a522c8d695",
+    "dist/models/pottedPlant.glb": "cf5231b4117f3c321e2a46bba509a3fba3f98873d66d13ca3bffc7479123d3ef",
+    "dist/models/receptionist.glb": "85bc5fb7dbdf76498b18f3dd1866d5505e6c330f0f8462cd493702296e8b294f",
+    "dist/models/sander.glb": "6e9d31d115c780823c5c95a9c4fa2d52692a74149f8fc32b10703991acaeb00d",
+    "dist/models/shrub.glb": "e9bd86d876d0b063b8ee45916e2474649b14c9b201ce718cfe370dc932314421",
+    "dist/models/sprayer.glb": "78c07b68a366d2dbef2435454f94ec0ffe3d2ba340f7468c634aa18f21f18843",
+    "dist/models/sprayWand.glb": "3da7e36ea98c42002c8f41aaae457d13c7529cd0a31734fdb0a5b09d235d555f",
+    "dist/models/tropicalPalm.glb": "6b43fd5e32c8713637112fc405807f7cf418828a7aa2b57a3e2148d81124ecb3",
+    "dist/models/urbanCalathea.glb": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587",
+    "dist/models/urbanFern.glb": "1f17d69c9d48760e9d9bfdcea7b5e7ba25a9587c3f0a1fc272861abf53cf1aab",
+    "dist/models/urbanShrub.glb": "72ceb75cee33655d40a05d62e2e96b64c949dc6ed82140f796fc32b85da45650",
+    "dist/models/urbanTree.glb": "e2d5e66843a4da1c378b06362d9695ee1b28579aa4df7449702a16782a1833cf",
+    "dist/models/urbanTreeFar.glb": "8ba76bf35ae06ce91ca71279dc131f9c15f5ade72814f393d7e13b3e6d307de3",
+    "dist/models/vacuum.glb": "b958974b7e6351e8a34b38114e9b637412d74ab943a44399ee67ebdf764d4522",
+    "dist/models/vacuumNozzle.glb": "9c146b1033b36172ac5a1ec45780744732d1da785a47034b2aba79c2af6524ee",
+    "dist/models/vehicle-car.glb": "8aaaf79c74ae0edd8a7e34d420920e2c9329c9457560c5916c2b973fbd7a7ffa",
+    "dist/models/vehicle-pickup.glb": "20e660e331c8455d52c06cf95ac40e3ca46924f3cc49eb48438e41d8208e8822",
+    "dist/models/vehicle-suv.glb": "fd31026a1fc2d77f556d6400b4308f603f288fa2a1240ce65484ce54c6fb5411",
+    "dist/models/vehicle-truck.glb": "5267ea72bf485596c5d06a51815b887f35ac31044ddd38f91811e0e5d8ac9f76",
+    "dist/models/vehicle.glb": "6ac5e4618fda2641aa4a645d1aaf833e2b005dd4c691ac74060b1114401bc2e2",
+    "dist/models/worker.glb": "29284e5bb0ce6d1916f816e9497f1c84b3bb531d77108c2366c5c998159e010e"
+  },
+  "results": [
+    {
+      "width": 1855,
+      "scenario": "operation",
+      "entry": "/assets/index-Dbn7wan8.js",
+      "position": [
+        1.1999999999999993,
+        4.3
+      ],
+      "yaw": -0.27159959176007614,
+      "pitch": -0.09724601276516942,
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 225,
+      "triangles": 6045261,
+      "meanFrameMs": 33.96916666666512,
+      "p95FrameMs": 37.3000000002794,
+      "world": {
+        "clockSeconds": 6.6451438000000005,
+        "speed": 1,
+        "scenario": "operation",
+        "vehicles": [],
+        "bays": [
+          {
+            "bayId": "01",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "02",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "03",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "04",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "05",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          }
+        ],
+        "paused": false,
+        "streamId": "7001b531-2c8e-4f15-8aeb-d855f04ec36e",
+        "revision": 29,
+        "eventIds": [
+          "demo-event-3",
+          "demo-event-4",
+          "demo-event-5",
+          "demo-event-6",
+          "demo-event-7",
+          "demo-event-8",
+          "demo-event-9",
+          "demo-event-10",
+          "demo-event-11",
+          "demo-event-12",
+          "demo-event-13",
+          "demo-event-14",
+          "demo-event-15",
+          "demo-event-16",
+          "demo-event-17",
+          "demo-event-18",
+          "demo-event-19",
+          "demo-event-20",
+          "demo-event-21",
+          "demo-event-22",
+          "demo-event-23",
+          "demo-event-24",
+          "demo-event-25",
+          "demo-event-26",
+          "demo-event-27",
+          "demo-event-28",
+          "demo-event-29"
+        ],
+        "stage": "exited",
+        "bay": {
+          "bayId": "01",
+          "occupancy": "free",
+          "vehicleId": null,
+          "tasks": []
+        }
+      },
+      "panel": "OPERACIÓN ILUSTRATIVA · DEMO\nBahía 01\nESTADO DE LA BAHÍA\nDisponible\n\nEspacio libre. El vehículo aparecerá cuando el personal lo asigne a esta bahía.\n\nConsultar mi vehículo\n\nEl personal confirma el avance del servicio.\n\n5 disponibles · 0 en espera\nLounge · Sala de espera\nFila de espera\nConsultar otra zona del local\nSolo información operativa. Datos de otros clientes protegidos.",
+      "errors": [],
+      "video": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\bay01-refinement\\final\\video\\page@d470a1004dd1fe74a34d4194803548db.webm"
+    },
+    {
+      "width": 1855,
+      "scenario": "mixed",
+      "entry": "/assets/index-Dbn7wan8.js",
+      "position": [
+        1.1999999999999993,
+        4.3
+      ],
+      "yaw": -0.2715995917600761,
+      "pitch": -0.0972460127651694,
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.05
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 828,
+      "triangles": 10225411,
+      "meanFrameMs": 76.85916666666745,
+      "p95FrameMs": 79.70000000018626,
+      "world": {
+        "clockSeconds": 0.25058359999999813,
+        "speed": 1,
+        "scenario": "mixed",
+        "vehicles": [
+          {
+            "worldEntityId": "demo-vehicle-01",
+            "type": "car",
+            "visibility": "own",
+            "operationalState": "in-service",
+            "visualLocation": "bay:01",
+            "locationConfidence": "demo",
+            "stage": "washing",
+            "bayId": "01",
+            "queueIndex": null,
+            "color": "#b5c1c5",
+            "position": [
+              3.4,
+              -4.2
+            ],
+            "yaw": 0,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "active"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": "demo-worker-01"
+          },
+          {
+            "worldEntityId": "demo-vehicle-02",
+            "type": "suv",
+            "visibility": "anonymous",
+            "operationalState": "in-service",
+            "visualLocation": "bay:02",
+            "locationConfidence": "demo",
+            "stage": "interior",
+            "bayId": "02",
+            "queueIndex": null,
+            "color": "#b2293c",
+            "position": [
+              11.4,
+              -4.2
+            ],
+            "yaw": 0,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "active"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": "demo-worker-02"
+          },
+          {
+            "worldEntityId": "demo-vehicle-03",
+            "type": "pickup",
+            "visibility": "anonymous",
+            "operationalState": "in-service",
+            "visualLocation": "bay:05",
+            "locationConfidence": "demo",
+            "stage": "inspection",
+            "bayId": "05",
+            "queueIndex": null,
+            "color": "#215d85",
+            "position": [
+              35.4,
+              -4.2
+            ],
+            "yaw": 0,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "done"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "done"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "active"
+              }
+            ],
+            "assignedWorkerId": "demo-worker-05"
+          },
+          {
+            "worldEntityId": "demo-vehicle-04",
+            "type": "truck",
+            "visibility": "anonymous",
+            "operationalState": "queued",
+            "visualLocation": "queue",
+            "locationConfidence": "demo",
+            "stage": "queued",
+            "bayId": null,
+            "queueIndex": 0,
+            "color": "#e2a846",
+            "position": [
+              3.4,
+              10.8
+            ],
+            "yaw": 3.141592653589793,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "pending"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": null
+          },
+          {
+            "worldEntityId": "demo-vehicle-05",
+            "type": "car",
+            "visibility": "anonymous",
+            "operationalState": "queued",
+            "visualLocation": "queue",
+            "locationConfidence": "demo",
+            "stage": "queued",
+            "bayId": null,
+            "queueIndex": 1,
+            "color": "#4f7068",
+            "position": [
+              3.4,
+              18.200000000000003
+            ],
+            "yaw": 3.141592653589793,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "pending"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": null
+          },
+          {
+            "worldEntityId": "demo-vehicle-06",
+            "type": "suv",
+            "visibility": "anonymous",
+            "operationalState": "queued",
+            "visualLocation": "entry",
+            "locationConfidence": "demo",
+            "stage": "arriving",
+            "bayId": null,
+            "queueIndex": 2,
+            "color": "#d4d2c8",
+            "position": [
+              3.4,
+              34
+            ],
+            "yaw": 3.141592653589793,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "pending"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "movement": {
+              "path": [
+                [
+                  3.4,
+                  34
+                ],
+                [
+                  3.4,
+                  25.6
+                ]
+              ],
+              "startedAt": 0,
+              "duration": 3.9999999999999996,
+              "purpose": "entry"
+            },
+            "assignedWorkerId": null
+          }
+        ],
+        "bays": [
+          {
+            "bayId": "01",
+            "occupancy": "occupied",
+            "vehicleId": "demo-vehicle-01",
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "active"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "bayId": "02",
+            "occupancy": "occupied",
+            "vehicleId": "demo-vehicle-02",
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "active"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "bayId": "03",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "04",
+            "occupancy": "out-of-service",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "05",
+            "occupancy": "occupied",
+            "vehicleId": "demo-vehicle-03",
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "done"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "done"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "active"
+              }
+            ]
+          }
+        ],
+        "paused": true,
+        "streamId": "aa403c20-ee44-4e73-86c5-3c29c0859585",
+        "revision": 23,
+        "eventIds": [
+          "demo-event-3",
+          "demo-event-4",
+          "demo-event-5",
+          "demo-event-6",
+          "demo-event-7",
+          "demo-event-8",
+          "demo-event-9",
+          "demo-event-10",
+          "demo-event-11",
+          "demo-event-12",
+          "demo-event-13",
+          "demo-event-14",
+          "demo-event-15",
+          "demo-event-16",
+          "demo-event-17",
+          "demo-event-18",
+          "demo-event-19",
+          "demo-event-20",
+          "demo-event-21",
+          "demo-event-22",
+          "demo-event-23"
+        ],
+        "stage": "washing",
+        "bay": {
+          "bayId": "01",
+          "occupancy": "occupied",
+          "vehicleId": "demo-vehicle-01",
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "active"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "pending"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "pending"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ]
+        }
+      },
+      "panel": "OPERACIÓN ILUSTRATIVA · DEMO\nBahía 01\nATENCIÓN EN CURSO\nExterior · En proceso\nExterior\nEn proceso\nInterior\nPendiente\nFocos\nPendiente\nInspección\nPendiente\nConsultar mi vehículo\n\nEl personal confirma el avance del servicio.\n\n1 disponibles · 2 en espera\nLounge · Sala de espera\nFila de espera\nConsultar otra zona del local\nSolo información operativa. Datos de otros clientes protegidos.",
+      "errors": [],
+      "video": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\bay01-refinement\\final\\video\\page@aa987f0b43cb83c6ffe8961f1ddf0b78.webm"
+    },
+    {
+      "width": 390,
+      "scenario": "operation",
+      "entry": "/assets/index-Dbn7wan8.js",
+      "position": [
+        1.1999999999999993,
+        4.3
+      ],
+      "yaw": -0.27159959176007614,
+      "pitch": -0.0972460127651694,
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 193,
+      "triangles": 6018459,
+      "meanFrameMs": 16.495833333333334,
+      "p95FrameMs": 18.299999999813735,
+      "world": {
+        "clockSeconds": 67.1661846,
+        "speed": 1,
+        "scenario": "operation",
+        "vehicles": [],
+        "bays": [
+          {
+            "bayId": "01",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "02",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "03",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "04",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "05",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          }
+        ],
+        "paused": false,
+        "streamId": "7001b531-2c8e-4f15-8aeb-d855f04ec36e",
+        "revision": 266,
+        "eventIds": [
+          "demo-event-250",
+          "demo-event-251",
+          "demo-event-252",
+          "demo-event-253",
+          "demo-event-254",
+          "demo-event-255",
+          "demo-event-256",
+          "demo-event-257",
+          "demo-event-258",
+          "demo-event-259",
+          "demo-event-260",
+          "demo-event-261",
+          "demo-event-262",
+          "demo-event-263",
+          "demo-event-264",
+          "demo-event-265",
+          "demo-event-266"
+        ],
+        "stage": "exited",
+        "bay": {
+          "bayId": "01",
+          "occupancy": "free",
+          "vehicleId": null,
+          "tasks": []
+        }
+      },
+      "panel": "OPERACIÓN ILUSTRATIVA · DEMO\nBahía 01\nESTADO DE LA BAHÍA\nDisponible\n\nEspacio libre. El vehículo aparecerá cuando el personal lo asigne a esta bahía.\n\nConsultar mi vehículo\n\nEl personal confirma el avance del servicio.\n\n5 disponibles · 0 en espera\nLounge · Sala de espera\nFila de espera\nConsultar otra zona del local\nSolo información operativa. Datos de otros clientes protegidos.",
+      "errors": [],
+      "video": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\bay01-refinement\\final\\video\\page@30d4470995477e29663af062ce18bc42.webm"
+    },
+    {
+      "width": 390,
+      "scenario": "mixed",
+      "entry": "/assets/index-Dbn7wan8.js",
+      "position": [
+        1.1999999999999993,
+        4.3
+      ],
+      "yaw": -0.2715995917600761,
+      "pitch": -0.09724601276516939,
+      "weather": {
+        "kind": "sunny",
+        "source": "simulation",
+        "exposure": 1.0499999999999998
+      },
+      "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "drawCalls": 632,
+      "triangles": 9777035,
+      "meanFrameMs": 37.19833333333178,
+      "p95FrameMs": 45.700000000186265,
+      "world": {
+        "clockSeconds": 0,
+        "speed": 1,
+        "scenario": "mixed",
+        "vehicles": [
+          {
+            "worldEntityId": "demo-vehicle-01",
+            "type": "car",
+            "visibility": "own",
+            "operationalState": "in-service",
+            "visualLocation": "bay:01",
+            "locationConfidence": "demo",
+            "stage": "washing",
+            "bayId": "01",
+            "queueIndex": null,
+            "color": "#b5c1c5",
+            "position": [
+              3.4,
+              -4.2
+            ],
+            "yaw": 0,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "active"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": "demo-worker-01"
+          },
+          {
+            "worldEntityId": "demo-vehicle-02",
+            "type": "suv",
+            "visibility": "anonymous",
+            "operationalState": "in-service",
+            "visualLocation": "bay:02",
+            "locationConfidence": "demo",
+            "stage": "interior",
+            "bayId": "02",
+            "queueIndex": null,
+            "color": "#b2293c",
+            "position": [
+              11.4,
+              -4.2
+            ],
+            "yaw": 0,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "active"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": "demo-worker-02"
+          },
+          {
+            "worldEntityId": "demo-vehicle-03",
+            "type": "pickup",
+            "visibility": "anonymous",
+            "operationalState": "in-service",
+            "visualLocation": "bay:05",
+            "locationConfidence": "demo",
+            "stage": "inspection",
+            "bayId": "05",
+            "queueIndex": null,
+            "color": "#215d85",
+            "position": [
+              35.4,
+              -4.2
+            ],
+            "yaw": 0,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "done"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "done"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "active"
+              }
+            ],
+            "assignedWorkerId": "demo-worker-05"
+          },
+          {
+            "worldEntityId": "demo-vehicle-04",
+            "type": "truck",
+            "visibility": "anonymous",
+            "operationalState": "queued",
+            "visualLocation": "queue",
+            "locationConfidence": "demo",
+            "stage": "queued",
+            "bayId": null,
+            "queueIndex": 0,
+            "color": "#e2a846",
+            "position": [
+              3.4,
+              10.8
+            ],
+            "yaw": 3.141592653589793,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "pending"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": null
+          },
+          {
+            "worldEntityId": "demo-vehicle-05",
+            "type": "car",
+            "visibility": "anonymous",
+            "operationalState": "queued",
+            "visualLocation": "queue",
+            "locationConfidence": "demo",
+            "stage": "queued",
+            "bayId": null,
+            "queueIndex": 1,
+            "color": "#4f7068",
+            "position": [
+              3.4,
+              18.200000000000003
+            ],
+            "yaw": 3.141592653589793,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "pending"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "assignedWorkerId": null
+          },
+          {
+            "worldEntityId": "demo-vehicle-06",
+            "type": "suv",
+            "visibility": "anonymous",
+            "operationalState": "queued",
+            "visualLocation": "entry",
+            "locationConfidence": "demo",
+            "stage": "arriving",
+            "bayId": null,
+            "queueIndex": 2,
+            "color": "#d4d2c8",
+            "position": [
+              3.4,
+              34
+            ],
+            "yaw": 3.141592653589793,
+            "phaseStarted": 0,
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "pending"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ],
+            "movement": {
+              "path": [
+                [
+                  3.4,
+                  34
+                ],
+                [
+                  3.4,
+                  25.6
+                ]
+              ],
+              "startedAt": 0,
+              "duration": 3.9999999999999996,
+              "purpose": "entry"
+            },
+            "assignedWorkerId": null
+          }
+        ],
+        "bays": [
+          {
+            "bayId": "01",
+            "occupancy": "occupied",
+            "vehicleId": "demo-vehicle-01",
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "active"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "pending"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "bayId": "02",
+            "occupancy": "occupied",
+            "vehicleId": "demo-vehicle-02",
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "active"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "pending"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "bayId": "03",
+            "occupancy": "free",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "04",
+            "occupancy": "out-of-service",
+            "vehicleId": null,
+            "tasks": []
+          },
+          {
+            "bayId": "05",
+            "occupancy": "occupied",
+            "vehicleId": "demo-vehicle-03",
+            "tasks": [
+              {
+                "id": "exterior",
+                "label": "Exterior",
+                "status": "done"
+              },
+              {
+                "id": "interior",
+                "label": "Interior",
+                "status": "done"
+              },
+              {
+                "id": "lights",
+                "label": "Focos",
+                "status": "done"
+              },
+              {
+                "id": "inspection",
+                "label": "Inspección",
+                "status": "active"
+              }
+            ]
+          }
+        ],
+        "paused": true,
+        "streamId": "aa403c20-ee44-4e73-86c5-3c29c0859585",
+        "revision": 30,
+        "eventIds": [
+          "demo-event-25",
+          "demo-event-26",
+          "demo-event-27",
+          "demo-event-28",
+          "demo-event-29",
+          "demo-event-30"
+        ],
+        "stage": "washing",
+        "bay": {
+          "bayId": "01",
+          "occupancy": "occupied",
+          "vehicleId": "demo-vehicle-01",
+          "tasks": [
+            {
+              "id": "exterior",
+              "label": "Exterior",
+              "status": "active"
+            },
+            {
+              "id": "interior",
+              "label": "Interior",
+              "status": "pending"
+            },
+            {
+              "id": "lights",
+              "label": "Focos",
+              "status": "pending"
+            },
+            {
+              "id": "inspection",
+              "label": "Inspección",
+              "status": "pending"
+            }
+          ]
+        }
+      },
+      "panel": "OPERACIÓN ILUSTRATIVA · DEMO\nBahía 01\nATENCIÓN EN CURSO\nExterior · En proceso\nExterior\nEn proceso\nInterior\nPendiente\nFocos\nPendiente\nInspección\nPendiente\nConsultar mi vehículo\n\nEl personal confirma el avance del servicio.\n\n1 disponibles · 2 en espera\nLounge · Sala de espera\nFila de espera\nConsultar otra zona del local\nSolo información operativa. Datos de otros clientes protegidos.",
+      "errors": [],
+      "video": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\bay01-refinement\\final\\video\\page@5ad53991557627a4bd251d9ad9512799.webm"
+    }
+  ]
+}

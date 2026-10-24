@@ -1,0 +1,57 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test --output docs/evidence/diagnostico-ux-20261023/full-attempt-1/results --reporter list
+
+
+Running 38 tests using 1 worker
+
+(node:22652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los cuatro objetos del mostrador abren funciones reales sin perder selección (1.1m)
+  ok  2 [commercial] › tests\e2e\commercial.spec.ts:41:1 › Área útil, cuatro opciones, transición breve y solo última selección (9.4s)
+  ok  3 [commercial] › tests\e2e\commercial.spec.ts:45:1 › Servicios, validación, volver, confirmación, recuperación y cancelación aceptada (35.4s)
+  ok  4 [commercial] › tests\e2e\commercial.spec.ts:48:1 › Fallo de red conserva borrador y no crea éxito (10.7s)
+  ok  5 [commercial] › tests\e2e\commercial.spec.ts:51:1 › Cancelación rechazada por proveedor tras comenzar atención (12.7s)
+  ok  6 [commercial] › tests\e2e\commercial.spec.ts:54:1 › El local contiene datos útiles en bahías, cola y espera (16.2s)
+  ok  7 [commercial] › tests\e2e\commercial.spec.ts:57:1 › Dos contextos: comando DEMO del servidor llega a ambos visitantes y reconecta (34.3s)
+  ok  8 [commercial] › tests\e2e\commercial.spec.ts:60:1 › Móvil: navegación, servicios y formulario visibles sin tapar el rostro (7.6s)
+  ok  9 [commercial] › tests\e2e\commercial.spec.ts:63:1 › Movimiento reducido, foco y fallo GLB sin carga eterna (27.2s)
+  ok 10 [commercial] › tests\e2e\commercial.spec.ts:66:1 › API DEMO valida importes, idempotencia y aislamiento entre sesiones (561ms)
+  x  11 [commercial] › tests\e2e\commercial.spec.ts:70:1 › Cotización vencida se renueva y no confirma datos caducados (2.3m)
+(node:24212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  12 [commercial] › tests\e2e\commercial.spec.ts:73:1 › Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran (1.4m)
+(node:30128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  13 [commercial] › tests\e2e\commercial.spec.ts:76:1 › Ambientes conservados: seis climas legibles con errores de página ausentes (1.3m)
+(node:24096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  14 [commercial] › tests\e2e\commercial.spec.ts:81:1 › Tarifas por categoría sin precio inventado y borrador conservado (1.4m)
+(node:13404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  15 [commercial] › tests\e2e\commercial.spec.ts:89:1 › Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend (1.4m)
+(node:15992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 16 [commercial] › tests\e2e\commercial.spec.ts:97:1 › El catálogo público no sustituye la cookie de la sesión privada (135ms)
+  ok 17 [commercial] › tests\e2e\diagnostico.spec.ts:20:1 › UX01/02/11/15: el recorrido móvil reinicia lectura y conserva selección con teclado (53.6s)
+  ok 18 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 320px (13.2s)
+  ok 19 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 390px (5.9s)
+  ok 20 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 650px (5.0s)
+  ok 21 [commercial] › tests\e2e\diagnostico.spec.ts:50:38 › UX03/09/18/19: cabecera y paneles sin solapes a 768px (6.2s)
+  ok 22 [commercial] › tests\e2e\diagnostico.spec.ts:75:1 › UX04/05/07/08: consulta sin canal es honesta y lounge se descubre directamente (6.5s)
+  ok 23 [commercial] › tests\e2e\diagnostico.spec.ts:99:1 › UX06/14/21: llegada pendiente no busca un auto; nueva solicitud respeta orden activa (9.4s)
+  ok 24 [commercial] › tests\e2e\lounge.spec.ts:29:1 › Lounge de referencia: vacío honesto, tarjetas iguales y vistas internas con datos configurados (6.4s)
+  ok 25 [commercial] › tests\e2e\lounge.spec.ts:70:1 › Preparar desde el lounge recupera el borrador sin crear una orden (5.9s)
+  ok 26 [commercial] › tests\e2e\lounge.spec.ts:81:1 › Orden de la sesión: llegada pendiente, atención real, lista y último estado al reconectar (39.7s)
+  ok 27 [commercial] › tests\e2e\lounge.spec.ts:115:1 › Lounge móvil: hoja de 58%, contenido legible y vehículo ajeno nunca seleccionado (24.9s)
+(node:6420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 28 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 1855×848 (31.2s)
+  ok 29 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 1440×900 (5.0s)
+  ok 30 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 650×900 (4.8s)
+  ok 31 [commercial] › tests\e2e\sow.spec.ts:61:5 › Piloto: cuatro objetos completos y utilizables a 390×844 (5.4s)
+  ok 32 [commercial] › tests\e2e\sow.spec.ts:77:1 › Piloto: Tab, Enter y Escape conservan foco y selección entre objetos y diálogo (5.3s)
+  ok 33 [commercial] › tests\e2e\sow.spec.ts:112:1 › Operación vacía, cuenta de sesión, logout real y permisos administrativos (4.1s)
+  x  34 [commercial] › tests\e2e\sow.spec.ts:129:1 › Administración publica contenido y precios; cotización obsoleta se rechaza sin alterar precio aceptado (1.5m)
+(node:2572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

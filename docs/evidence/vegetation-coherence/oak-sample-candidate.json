@@ -1,0 +1,75 @@
+{
+  "observedAt": "2026-10-24T00:17:17.273Z",
+  "source": "C:/Projects/Assets/CarWash-Vegetation-Coherence-20261023/innerscene-oak/oak-detailed-original.glb",
+  "sourceSha256": "a02698ef246d8005110c291c510b8f7f397ae26e69414aa538cc4993b06256dd",
+  "sourceBytes": 6184040,
+  "sourcePage": "https://www.innerscene.com/tools/library/3d-parts/oak-street-tree-detailed-leaves-a273fef9",
+  "sourceDownload": "https://www.innerscene.com/api/library/oak-street-tree-detailed-leaves-a273fef9/download",
+  "author": "Innerscene - original model",
+  "license": "CC0-1.0",
+  "licenseURL": "https://www.innerscene.com/tools/library/terms",
+  "output": "C:/Projects/Assets/CarWash-Vegetation-Coherence-20261023/candidates/coherentOak-sample-v1.glb",
+  "sha256": "9114f364ff0765c7504ccc8b6f71dba408170e6963b8fdcab993fd7a48d7b449",
+  "bytes": 5354748,
+  "triangles": 213372,
+  "sourceTriangles": 213372,
+  "leafCount": 9450,
+  "palette": [
+    {
+      "name": "foliage-medium",
+      "srgb": "#46733A",
+      "fraction": 0.6,
+      "leafCount": 5670
+    },
+    {
+      "name": "foliage-deep",
+      "srgb": "#24452C",
+      "fraction": 0.3,
+      "leafCount": 2835
+    },
+    {
+      "name": "foliage-light",
+      "srgb": "#76A449",
+      "fraction": 0.1,
+      "leafCount": 945
+    }
+  ],
+  "materialCount": 4,
+  "nodes": [
+    "Leaf twig",
+    "foliage-medium",
+    "foliage-deep",
+    "foliage-light"
+  ],
+  "bounds": {
+    "min": [
+      -3.9318618774414062,
+      -0.0059981257654726505,
+      -3.824295512214769
+    ],
+    "max": [
+      3.832960605621338,
+      8.605710144864013,
+      3.8139064226304185
+    ]
+  },
+  "dimensions": [
+    7.764822483062744,
+    8.611708270629485,
+    7.6382019348451875
+  ],
+  "textures": 0,
+  "skins": 0,
+  "clips": 0,
+  "validation": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  "adaptation": "Preserve every original leaf/branch triangle and silhouette; merge hundreds of bark nodes by material; scatter complete original leaves across requested 60/30/10 untextured palette; foliage roughness .58 and bark .84; quantize positions/normals. No new organic geometry.",
+  "limitations": "Original is an architectural procedural tree with geometry leaves and no texture/UV maps; less photoreal than scanned bark; human visual acceptance pending.",
+  "command": "node docs/evidence/vegetation-coherence/prepare-oak-sample.mjs"
+}

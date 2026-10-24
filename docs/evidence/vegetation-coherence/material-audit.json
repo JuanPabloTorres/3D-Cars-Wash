@@ -1,0 +1,344 @@
+{
+  "observedAt": "2026-10-24T00:10:21.328Z",
+  "palette": {
+    "medium": "#46733A",
+    "deep": "#24452C",
+    "light": "#76A449",
+    "accent": "#A7BD55",
+    "proportions": [
+      60,
+      30,
+      10
+    ],
+    "use": "Orientative for untextured surfaces; preserve texture variation"
+  },
+  "files": [
+    {
+      "id": "urbanTree",
+      "filename": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\urbanTree.glb",
+      "sha256": "e2d5e66843a4da1c378b06362d9695ee1b28579aa4df7449702a16782a1833cf",
+      "bytes": 9479644,
+      "materials": [
+        {
+          "name": "tree_small_02_branches",
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "alphaMode": "OPAQUE",
+          "alphaCutoff": 0.5,
+          "doubleSided": true,
+          "metallicFactor": 0,
+          "roughnessFactor": 1,
+          "baseColorMap": {
+            "name": "tree_small_02_branch_diff",
+            "mimeType": "image/webp",
+            "size": [
+              1024,
+              1024
+            ],
+            "hasAlpha": false,
+            "visibleRGBMean": [
+              115.4596700668335,
+              102.18530368804932,
+              90.13612747192383
+            ],
+            "visiblePixels": 1048576,
+            "transparentPixels": 0,
+            "intermediateAlphaPixels": 0
+          },
+          "armMap": {
+            "name": "tree_small_02_branch_rough",
+            "meanRoughnessG": 0.8210305681415633,
+            "meanMetalnessB": 0.0031745050467696843,
+            "effectiveMeanMetalness": 0
+          }
+        },
+        {
+          "name": "tree_small_02_leaves",
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "alphaMode": "MASK",
+          "alphaCutoff": 0.5,
+          "doubleSided": true,
+          "metallicFactor": 0,
+          "roughnessFactor": 1,
+          "baseColorMap": {
+            "name": "tree_small_02_leaves_diff-tree_small_02_leaves_alpha",
+            "mimeType": "image/webp",
+            "size": [
+              1024,
+              1024
+            ],
+            "hasAlpha": false,
+            "visibleRGBMean": [
+              53.57075500488281,
+              62.6282958984375,
+              30.93149471282959
+            ],
+            "visiblePixels": 1048576,
+            "transparentPixels": 0,
+            "intermediateAlphaPixels": 0
+          },
+          "armMap": {
+            "name": "tree_small_02_leaves_rough",
+            "meanRoughnessG": 0.40837328293744257,
+            "meanMetalnessB": 0.006194084765864354,
+            "effectiveMeanMetalness": 0
+          }
+        },
+        {
+          "name": "tree_small_02_trunk",
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "alphaMode": "OPAQUE",
+          "alphaCutoff": 0.5,
+          "doubleSided": true,
+          "metallicFactor": 0,
+          "roughnessFactor": 1,
+          "baseColorMap": {
+            "name": "tree_small_02_diff",
+            "mimeType": "image/webp",
+            "size": [
+              1024,
+              1024
+            ],
+            "hasAlpha": false,
+            "visibleRGBMean": [
+              101.40387725830078,
+              88.14384174346924,
+              76.29927921295166
+            ],
+            "visiblePixels": 1048576,
+            "transparentPixels": 0,
+            "intermediateAlphaPixels": 0
+          },
+          "armMap": {
+            "name": "tree_small_02_rough",
+            "meanRoughnessG": 0.6878865634693819,
+            "meanMetalnessB": 0.006890768163344439,
+            "effectiveMeanMetalness": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "urbanShrub",
+      "filename": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\urbanShrub.glb",
+      "sha256": "72ceb75cee33655d40a05d62e2e96b64c949dc6ed82140f796fc32b85da45650",
+      "bytes": 1172708,
+      "materials": [
+        {
+          "name": "shrub_01",
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "alphaMode": "MASK",
+          "alphaCutoff": 0.5,
+          "doubleSided": true,
+          "metallicFactor": 0,
+          "roughnessFactor": 1,
+          "baseColorMap": {
+            "name": "shrub_01_diff",
+            "mimeType": "image/webp",
+            "size": [
+              1024,
+              1024
+            ],
+            "hasAlpha": false,
+            "visibleRGBMean": [
+              121.1422290802002,
+              120.14533710479736,
+              62.366830825805664
+            ],
+            "visiblePixels": 1048576,
+            "transparentPixels": 0,
+            "intermediateAlphaPixels": 0
+          },
+          "armMap": {
+            "name": "shrub_01_rough",
+            "meanRoughnessG": 0.5023823831595626,
+            "meanMetalnessB": 0.0037732442220052083,
+            "effectiveMeanMetalness": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "urbanCalathea",
+      "filename": "C:\\Projects\\Repos\\3D-Cars-Wash\\public\\models\\urbanCalathea.glb",
+      "sha256": "4aeb3f8ae5d638565df8c538a8b21bf6e880089e203415e634f840b42fed3587",
+      "bytes": 329448,
+      "materials": [
+        {
+          "name": "calathea_orbifolia_01",
+          "baseColorFactor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "alphaMode": "MASK",
+          "alphaCutoff": 0.5,
+          "doubleSided": true,
+          "metallicFactor": 0,
+          "roughnessFactor": 1,
+          "baseColorMap": {
+            "name": "calathea_orbifolia_01_diff",
+            "mimeType": "image/webp",
+            "size": [
+              1024,
+              1024
+            ],
+            "hasAlpha": false,
+            "visibleRGBMean": [
+              76.64249038696289,
+              87.9628210067749,
+              45.58322238922119
+            ],
+            "visiblePixels": 1048576,
+            "transparentPixels": 0,
+            "intermediateAlphaPixels": 0
+          },
+          "armMap": {
+            "name": "calathea_orbifolia_01_rough",
+            "meanRoughnessG": 0.5105932684505687,
+            "meanMetalnessB": 0.004063980252135033,
+            "effectiveMeanMetalness": 0
+          }
+        }
+      ]
+    }
+  ],
+  "runtime": [
+    {
+      "id": "urbanTree",
+      "materials": [
+        {
+          "name": "tree_small_02_branches",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "metalness": 0,
+          "roughness": 1,
+          "transparent": false,
+          "alphaTest": 0,
+          "alphaToCoverage": false,
+          "depthWrite": true,
+          "side": 2,
+          "mapColorSpace": "srgb",
+          "normalColorSpace": "",
+          "roughnessColorSpace": "",
+          "metalnessColorSpace": "",
+          "flipY": false
+        },
+        {
+          "name": "tree_small_02_leaves",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "metalness": 0,
+          "roughness": 1,
+          "transparent": false,
+          "alphaTest": 0.5,
+          "alphaToCoverage": false,
+          "depthWrite": true,
+          "side": 2,
+          "mapColorSpace": "srgb",
+          "normalColorSpace": "",
+          "roughnessColorSpace": "",
+          "metalnessColorSpace": "",
+          "flipY": false
+        },
+        {
+          "name": "tree_small_02_trunk",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "metalness": 0,
+          "roughness": 1,
+          "transparent": false,
+          "alphaTest": 0,
+          "alphaToCoverage": false,
+          "depthWrite": true,
+          "side": 2,
+          "mapColorSpace": "srgb",
+          "normalColorSpace": "",
+          "roughnessColorSpace": "",
+          "metalnessColorSpace": "",
+          "flipY": false
+        }
+      ]
+    },
+    {
+      "id": "urbanShrub",
+      "materials": [
+        {
+          "name": "shrub_01",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "metalness": 0,
+          "roughness": 1,
+          "transparent": false,
+          "alphaTest": 0.5,
+          "alphaToCoverage": false,
+          "depthWrite": true,
+          "side": 2,
+          "mapColorSpace": "srgb",
+          "normalColorSpace": "",
+          "roughnessColorSpace": "",
+          "metalnessColorSpace": "",
+          "flipY": false
+        }
+      ]
+    },
+    {
+      "id": "urbanCalathea",
+      "materials": [
+        {
+          "name": "calathea_orbifolia_01",
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "metalness": 0,
+          "roughness": 1,
+          "transparent": false,
+          "alphaTest": 0.5,
+          "alphaToCoverage": false,
+          "depthWrite": true,
+          "side": 2,
+          "mapColorSpace": "srgb",
+          "normalColorSpace": "",
+          "roughnessColorSpace": "",
+          "metalnessColorSpace": "",
+          "flipY": false
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

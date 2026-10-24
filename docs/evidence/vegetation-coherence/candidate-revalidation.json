@@ -1,0 +1,44 @@
+{
+  "observedAt": "2026-10-24T00:19:13.405Z",
+  "results": [
+    {
+      "id": "coherentOak-sample-v1",
+      "bytes": 5354748,
+      "errors": 0,
+      "warnings": 0,
+      "alpha": [],
+      "skins": 0,
+      "clips": 0
+    },
+    {
+      "id": "coherentShrub-alpha-v1",
+      "bytes": 1189924,
+      "errors": 0,
+      "warnings": 1,
+      "alpha": [
+        {
+          "material": "shrub_01",
+          "hasAlpha": true,
+          "transparentPixels": 618572
+        }
+      ],
+      "skins": 0,
+      "clips": 0
+    },
+    {
+      "id": "coherentCalathea-alpha-v1",
+      "bytes": 342488,
+      "errors": 0,
+      "warnings": 1,
+      "alpha": [
+        {
+          "material": "calathea_orbifolia_01",
+          "hasAlpha": true,
+          "transparentPixels": 454504
+        }
+      ],
+      "skins": 0,
+      "clips": 0
+    }
+  ]
+}

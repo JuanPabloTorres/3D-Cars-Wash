@@ -1,0 +1,52 @@
+.world-panel.lounge-panel{top:84px;bottom:24px;right:24px;width:clamp(440px,30vw,600px);max-width:calc(100vw - 48px);max-height:none;background:#11212d;border:1px solid #4a5c6a;border-radius:23px;box-shadow:0 18px 55px #06141b55}
+.lounge-panel>.panel-heading{padding:16px 18px 0 22px;border:0;align-items:flex-start;background:#11212d}
+.lounge-panel>.panel-heading>button:first-of-type{display:none}
+.lounge-panel>.panel-heading small{font-size:11px;letter-spacing:.035em;color:#b5c2ca}
+.lounge-panel>.panel-heading h2{position:relative;font-size:24px;line-height:1.2;margin-top:16px;font-weight:800}
+.lounge-panel>.panel-heading h2:before{content:'';position:absolute;left:0;top:-11px;width:24px;height:3px;background:#d92837;border-radius:2px}
+.lounge-panel>.panel-content{padding:8px 22px 18px}
+.lounge-message{font-size:16px;line-height:1.45;letter-spacing:-.025em;margin:0 0 12px;color:#e1e7ea}
+.lounge-order{padding:14px;border:1px solid #3e5361;border-radius:17px;background:#192d3a}
+.lounge-order-heading{display:flex;align-items:center;gap:16px}
+.lounge-car-icon{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid #70838e;border-radius:50%;color:#e7edef}
+.lounge-order h3{font-size:16px;line-height:1.4;margin:0 0 7px;letter-spacing:-.015em}
+.lounge-order-heading p{font-size:14px;line-height:1.55;margin:0;color:#cbd5dc}
+.lounge-primary{margin-top:12px;min-height:48px;font-size:14px;gap:10px}
+.lounge-primary>svg:last-child{margin-left:auto}
+.lounge-primary>svg:first-child{margin-left:auto}
+.lounge-order-facts{margin:17px 0 0;font-size:13px}
+.lounge-order-facts>div{display:flex;justify-content:space-between;gap:20px;padding:7px 0;border-top:1px solid #3e5361}
+.lounge-order-facts dt{color:#cbd5dc}.lounge-order-facts dd{margin:0;text-align:right;font-weight:650}
+.lounge-arrival-note,.lounge-connection{font-size:13px;line-height:1.55;color:#e2d2af}
+.lounge-connection{padding:12px 14px;border:1px solid #8c794c;border-radius:10px;background:#383629;margin:0 0 16px}
+.lounge-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.lounge-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #425765;border-radius:15px;background:#192d3a;color:#f4f6f5;padding:0;text-align:left;min-width:0}
+.lounge-card:hover{background:#253e4d;border-color:#8ca0ac}
+.lounge-card>img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#253745}
+.lounge-card-body{position:relative;display:flex;flex:1;flex-direction:column;gap:6px;padding:10px;min-height:96px;width:100%}
+.lounge-card-title{font-size:14px;line-height:1.35;font-weight:650;padding-right:9px}
+.lounge-card-body small{font-size:11px;line-height:1.4;color:#cbd5dc;padding-right:4px}
+.lounge-card-arrow{position:absolute;right:9px;top:51px}
+.lounge-image-note{font-size:10px;color:#b7c5cc;margin:7px 0 0}
+.lounge-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;padding-top:16px;border-top:1px solid #425765}
+.lounge-actions>button{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:12px 10px;font-size:13px;font-weight:650;color:#f4f6f5;background:#192d3a;border:1px solid #425765;border-radius:13px}
+.lounge-actions>button:hover{background:#253e4d;border-color:#8ca0ac}.lounge-actions>button>svg:last-child{margin-left:auto}
+.lounge-privacy{display:block;margin-top:12px;font-size:10px;line-height:1.5;color:#b7c5cc}
+.lounge-detail{font-size:14px;line-height:1.65;color:#d8e0e5}
+.lounge-back{display:flex;align-items:center;gap:8px;color:#f0ca8a;font-size:14px;border:0;background:transparent;padding:8px 0}
+.lounge-detail>h3{font-size:23px;line-height:1.3;color:#f4f6f5;margin:16px 0}
+.lounge-detail article{padding:16px 0;border-top:1px solid #425765}.lounge-detail h4{font-size:17px;color:#f4f6f5;margin:0 0 10px}.lounge-detail p{margin:10px 0}.lounge-detail .lounge-conditions,.lounge-content-note{font-size:13px;color:#cbd5dc}.lounge-detail .muted,.lounge-detail .inline-note{font-size:14px}.lounge-detail a{display:inline-flex;min-height:44px;align-items:center}
+.lounge-detail .care-card{display:grid;grid-template-columns:100px minmax(0,1fr);gap:14px;align-items:start}
+.care-card>img{width:100%;height:80px;object-fit:cover;border-radius:10px}
+.care-card summary{cursor:pointer;min-height:48px;padding:4px 0}
+.care-card summary h4{display:inline;font-size:16px}
+.care-card summary span{display:block;margin-top:5px;color:#cbd5dc;font-size:13px}
+@media(min-width:1700px){.world-panel.lounge-panel{min-width:555px}}
+@media(max-width:1050px) and (min-width:701px){.world-panel.lounge-panel{width:430px}.lounge-panel>.panel-content{padding-left:22px;padding-right:22px}.lounge-cards{gap:9px}.lounge-card-body{padding:12px 10px}.lounge-card-title{font-size:13px}.lounge-order{padding:16px}.lounge-car-icon{flex-basis:54px;width:54px;height:54px}}
+@media(max-width:700px){
+ .world-panel.lounge-panel,.world-panel.lounge-panel.compact{top:auto;right:12px;bottom:max(12px,calc(var(--keyboard-inset,0px) + 8px),env(safe-area-inset-bottom));width:calc(100vw - 24px);min-width:0;max-width:none;height:58dvh;max-height:min(58dvh,calc(var(--usable-height,100dvh) - 160px));border-radius:20px}
+ .world-panel.lounge-panel.lounge-expanded{height:calc(var(--usable-height,100dvh) - 160px);max-height:calc(var(--usable-height,100dvh) - 160px)}
+ .lounge-panel>.panel-heading{padding:10px 12px 0 20px}.lounge-panel>.panel-heading small{font-size:9px}.lounge-panel>.panel-heading h2{font-size:26px;margin-top:17px}.lounge-panel>.panel-content{padding:10px 20px 20px}.lounge-message{font-size:18px;margin-bottom:16px}.lounge-order{padding:16px}.lounge-order-heading{gap:12px}.lounge-car-icon{flex-basis:54px;width:54px;height:54px}.lounge-order h3{font-size:16px}.lounge-order-heading p{font-size:14px}
+ .lounge-panel>.panel-heading>button:first-of-type{display:inline-flex}
+ .lounge-cards{grid-template-columns:1fr;gap:12px;margin-top:16px}.lounge-card{flex-direction:row;min-height:118px}.lounge-card>img{width:34%;aspect-ratio:auto;object-fit:cover}.lounge-card-body{padding:14px;min-height:118px;gap:7px}.lounge-card-title{font-size:16px}.lounge-card-body small{font-size:12px}.lounge-card-arrow{right:13px;top:50%}.lounge-actions{gap:10px}.lounge-actions>button{font-size:13px;padding:10px 8px;gap:6px}.lounge-actions>button>svg:first-child{display:none}.lounge-detail>h3{font-size:21px}
+}

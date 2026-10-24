@@ -1,0 +1,35 @@
+{
+  "pending": [
+    "Naturalidad y densidad de plantas aún inferiores a referencia; aprobación artística pendiente.",
+    "Nuevos cambios de otros chats posteriores a FXtXVk5r requieren validación independiente."
+  ],
+  "checks": [
+    {
+      "label": "Compilación y 59 pruebas unitarias",
+      "status": "passed"
+    },
+    {
+      "label": "11 E2E sobre preview HTTP verificado y estable",
+      "status": "passed"
+    },
+    {
+      "label": "16 capturas y cuatro vídeos reales, cuatro viewports, cero errores registrados",
+      "status": "passed"
+    },
+    {
+      "label": "Suite amplia previa: 30/31, fallo de selector preservado y revalidado",
+      "status": "failed"
+    },
+    {
+      "label": "Aceptación artística y teléfono físico",
+      "status": "not_run"
+    }
+  ],
+  "verdict": "partial",
+  "changes": [
+    "Restaurado fondo retirado; corregido alfa de follaje y recursos por capas.",
+    "Lounge con estados propios y solicitud de llegada confirmada exclusivamente por personal.",
+    "Comparación real y snapshot exacto de la versión verificada conservados."
+  ],
+  "summary": "Vegetación, fondo, lounge y solicitud de llegada integrados y verificados técnicamente; aceptación artística pendiente."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "demo-category-20261023-1",
+  "currency": "USD",
+  "taxBasisPoints": 1150,
+  "allServicesDiscountCents": 500,
+  "prices": {
+    "car": {"exterior": 3500, "interior": 2000, "lights": 1000},
+    "pickup": {"exterior": null, "interior": null, "lights": null},
+    "truck": {"exterior": null, "interior": null, "lights": null},
+    "suv": {"exterior": null, "interior": null, "lights": null}
+  }
+}

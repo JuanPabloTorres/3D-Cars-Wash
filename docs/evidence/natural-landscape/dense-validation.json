@@ -1,0 +1,27 @@
+{
+  "numErrors": 0,
+  "numWarnings": 3,
+  "numInfos": 0,
+  "numHints": 0,
+  "messages": [
+    {
+      "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+      "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+      "severity": 1,
+      "pointer": "/meshes/0/primitives/0/material"
+    },
+    {
+      "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+      "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+      "severity": 1,
+      "pointer": "/meshes/0/primitives/1/material"
+    },
+    {
+      "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+      "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+      "severity": 1,
+      "pointer": "/meshes/0/primitives/2/material"
+    }
+  ],
+  "truncated": false
+}

@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-10-23T13:30:14.052Z",
+  "unitTests": 34,
+  "e2eTests": 12,
+  "scope": "local DEMO commercial experience",
+  "files": [
+    {
+      "file": "dist/assets/index-DD_4_qjz.js",
+      "bytes": 1469589,
+      "sha256": "23b5771cb180d874c3576d1272db4e303c6d7b0c65fb554630def53a838b3716"
+    },
+    {
+      "file": "public/models/vehicle.glb",
+      "bytes": 5036492,
+      "sha256": "6ac5e4618fda2641aa4a645d1aaf833e2b005dd4c691ac74060b1114401bc2e2"
+    },
+    {
+      "file": "public/models/worker.glb",
+      "bytes": 4530940,
+      "sha256": "a34431fd7ae2df81f1e574345e78fbdb53e6869a1e4c33aaa3b1a8f22efb9ea4"
+    },
+    {
+      "file": "public/models/islandTree.glb",
+      "bytes": 6362972,
+      "sha256": "947b09db8a9a72784486a07ace20d2a9ace3f37aedf3dc192c7ad2200dd4cd5f"
+    },
+    {
+      "file": "public/models/islandTreeFar.glb",
+      "bytes": 2040940,
+      "sha256": "fe71352baae0500b84bf19b11db651813682cd8e25734cdb9aa08e7ebb9b8706"
+    }
+  ]
+}

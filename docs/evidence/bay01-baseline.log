@@ -1,0 +1,16 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('navigation').getByRole('button', { name: 'El local', exact: true })
+
+    at C:\Projects\Repos\3D-Cars-Wash\scripts\capture-bay01.mjs:33:87 {
+  log: [
+    "  - waiting for getByRole('navigation').getByRole('button', { name: 'El local', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.19.0

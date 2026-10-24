@@ -1,0 +1,37 @@
+{
+  "verdict": "partial",
+  "summary": "Acabado visual de CarWash 3D implementado: aristas biseladas, texturas proporcionadas y paneles/controles redondeados. Validación global parcial.",
+  "changes": [
+    "Geometría arquitectónica con biseles contenidos y UV por metro; agrupación conserva geometrías reales y cleanup.",
+    "Madera, grafito y cemento ajustados; pavimento peatonal claro con grano discreto.",
+    "Paneles, tarjetas, controles y props del mostrador con acabado redondeado y sombras suaves.",
+    "17 capturas finales en 1440, 650, 390 y 375 px; informe en 3D-Cars-Wash/docs/evidence/surface-polish/README.md."
+  ],
+  "checks": [
+    {
+      "label": "TypeScript y compilación Vite",
+      "status": "passed"
+    },
+    {
+      "label": "Vitest: 59/59 pruebas unitarias",
+      "status": "passed"
+    },
+    {
+      "label": "Capturas Playwright: selección conservada, foco visible, sin errores JS ni desbordamientos en cuatro anchos",
+      "status": "passed"
+    },
+    {
+      "label": "Suite E2E completa: 28/31; dos timeouts y un selector de Color no resuelto",
+      "status": "failed"
+    },
+    {
+      "label": "Repetición aislada de tres casos cancelada para evitar interferencia con otra tanda GPU compartida",
+      "status": "not_run"
+    }
+  ],
+  "pending": [
+    "Resolver los tres casos E2E con ejecución coordinada; causas sin confirmar.",
+    "Aceptación artística del usuario.",
+    "No se certificó rendimiento comparativo ni GPU memory."
+  ]
+}

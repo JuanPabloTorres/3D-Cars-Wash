@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-10-24T00:20:05.953Z",
+  "results": [
+    {
+      "source": "urbanShrub",
+      "candidate": "coherentShrub-alpha-v1",
+      "geometryAndUVIdentical": true,
+      "PBRScalarsNormalRoughnessIdentical": true
+    },
+    {
+      "source": "urbanCalathea",
+      "candidate": "coherentCalathea-alpha-v1",
+      "geometryAndUVIdentical": true,
+      "PBRScalarsNormalRoughnessIdentical": true
+    }
+  ],
+  "coverage": [
+    {
+      "file": "currentTree-front",
+      "greenPixels": 39482,
+      "bbox": [
+        315,
+        208,
+        685,
+        599
+      ],
+      "occupancy": 0.27148082952857694
+    },
+    {
+      "file": "oak-sample-v1-front",
+      "greenPixels": 84226,
+      "bbox": [
+        238,
+        209,
+        761,
+        586
+      ],
+      "occupancy": 0.4252292095803546
+    }
+  ],
+  "coverageLimitation": "Approximate green-pixel segmentation of equal-light equal-height samples; not an artistic acceptance or botanical density measurement",
+  "versions": {
+    "node": "v22.19.0",
+    "three": "0.186.1",
+    "gltfTransform": "4.5.1",
+    "sharp": "0.35.5"
+  }
+}

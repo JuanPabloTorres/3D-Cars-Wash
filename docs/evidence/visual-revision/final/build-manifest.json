@@ -1,0 +1,410 @@
+{
+  "observedAt": "2026-10-23T15:37:48.289Z",
+  "preview": "http://127.0.0.1:4173/",
+  "assetsMatchDist": true,
+  "assets": [
+    {
+      "file": "public/models/areca.glb",
+      "bytes": 2112456,
+      "sha256": "971ea8b671828431ad3569c81c326adfaae9c932ce8ae7c5f46e16f238780f58"
+    },
+    {
+      "file": "public/models/bench.glb",
+      "bytes": 412648,
+      "sha256": "e4d2e1111ddef4379a0c13ee64ab29c81c0f62ffbe0a5abd835cfcf0346946e6"
+    },
+    {
+      "file": "public/models/calathea.glb",
+      "bytes": 536356,
+      "sha256": "62894480cecfa8b0afbca8bfacd8ac837c214fe0f205a0244ae81c5d8d794787"
+    },
+    {
+      "file": "public/models/cart.glb",
+      "bytes": 3171456,
+      "sha256": "88d279ab2b3d9817365fd9114f57b49855d4342d41b37fd7218293e8ebe602dd"
+    },
+    {
+      "file": "public/models/datePalm.glb",
+      "bytes": 2293312,
+      "sha256": "94e130ee5ab0e989c51193bd467a780acca3aad676bf07845ab9b8f68cfea2c7"
+    },
+    {
+      "file": "public/models/fern.glb",
+      "bytes": 360996,
+      "sha256": "6ce66d654da80960f7aebe97dad75e3df94463589bd536b17339ae607d290501"
+    },
+    {
+      "file": "public/models/hose.glb",
+      "bytes": 2583148,
+      "sha256": "155402c49e39718e272c4545a3be355ff76c370d00e49191a1abd85ca224f8af"
+    },
+    {
+      "file": "public/models/islandTree.glb",
+      "bytes": 6362972,
+      "sha256": "947b09db8a9a72784486a07ace20d2a9ace3f37aedf3dc192c7ad2200dd4cd5f"
+    },
+    {
+      "file": "public/models/islandTreeFar.glb",
+      "bytes": 2040940,
+      "sha256": "fe71352baae0500b84bf19b11db651813682cd8e25734cdb9aa08e7ebb9b8706"
+    },
+    {
+      "file": "public/models/palm.glb",
+      "bytes": 16652,
+      "sha256": "e93888e5bcf31a278b469161d99e120b7361eab719848f65d37d118c52b2dc29"
+    },
+    {
+      "file": "public/models/plant.glb",
+      "bytes": 2700,
+      "sha256": "c0ec050a66386928fed820aa9ae4d9a54db9957f9d2c27f9009a94a522c8d695"
+    },
+    {
+      "file": "public/models/pottedPlant.glb",
+      "bytes": 682728,
+      "sha256": "cf5231b4117f3c321e2a46bba509a3fba3f98873d66d13ca3bffc7479123d3ef"
+    },
+    {
+      "file": "public/models/receptionist.glb",
+      "bytes": 5315912,
+      "sha256": "606c4d51c08827e39cc575a6dc6b5ca371e3c564529383b2fca847c7880a22db"
+    },
+    {
+      "file": "public/models/sander.glb",
+      "bytes": 89476,
+      "sha256": "6e9d31d115c780823c5c95a9c4fa2d52692a74149f8fc32b10703991acaeb00d"
+    },
+    {
+      "file": "public/models/shrub.glb",
+      "bytes": 7916,
+      "sha256": "e9bd86d876d0b063b8ee45916e2474649b14c9b201ce718cfe370dc932314421"
+    },
+    {
+      "file": "public/models/sprayWand.glb",
+      "bytes": 25704,
+      "sha256": "3da7e36ea98c42002c8f41aaae457d13c7529cd0a31734fdb0a5b09d235d555f"
+    },
+    {
+      "file": "public/models/sprayer.glb",
+      "bytes": 87100,
+      "sha256": "78c07b68a366d2dbef2435454f94ec0ffe3d2ba340f7468c634aa18f21f18843"
+    },
+    {
+      "file": "public/models/tropicalPalm.glb",
+      "bytes": 852716,
+      "sha256": "6b43fd5e32c8713637112fc405807f7cf418828a7aa2b57a3e2148d81124ecb3"
+    },
+    {
+      "file": "public/models/vacuum.glb",
+      "bytes": 419452,
+      "sha256": "b958974b7e6351e8a34b38114e9b637412d74ab943a44399ee67ebdf764d4522"
+    },
+    {
+      "file": "public/models/vacuumNozzle.glb",
+      "bytes": 15744,
+      "sha256": "9c146b1033b36172ac5a1ec45780744732d1da785a47034b2aba79c2af6524ee"
+    },
+    {
+      "file": "public/models/vehicle-car.glb",
+      "bytes": 5281728,
+      "sha256": "8aaaf79c74ae0edd8a7e34d420920e2c9329c9457560c5916c2b973fbd7a7ffa"
+    },
+    {
+      "file": "public/models/vehicle-pickup.glb",
+      "bytes": 5880832,
+      "sha256": "20e660e331c8455d52c06cf95ac40e3ca46924f3cc49eb48438e41d8208e8822"
+    },
+    {
+      "file": "public/models/vehicle-suv.glb",
+      "bytes": 5785288,
+      "sha256": "fd31026a1fc2d77f556d6400b4308f603f288fa2a1240ce65484ce54c6fb5411"
+    },
+    {
+      "file": "public/models/vehicle-truck.glb",
+      "bytes": 6452024,
+      "sha256": "5267ea72bf485596c5d06a51815b887f35ac31044ddd38f91811e0e5d8ac9f76"
+    },
+    {
+      "file": "public/models/vehicle.glb",
+      "bytes": 5036492,
+      "sha256": "6ac5e4618fda2641aa4a645d1aaf833e2b005dd4c691ac74060b1114401bc2e2"
+    },
+    {
+      "file": "public/models/worker.glb",
+      "bytes": 11198360,
+      "sha256": "29284e5bb0ce6d1916f816e9497f1c84b3bb531d77108c2366c5c998159e010e"
+    }
+  ],
+  "bundles": [
+    {
+      "file": "dist/assets/index-BFu0ML46.js",
+      "bytes": 1478037,
+      "sha256": "c0c59ab6482ef3ea4ac6c96c96b945f143e9ab24e6868b2db2aa6ac879434dca"
+    },
+    {
+      "file": "dist/assets/index-ynCCzECH.css",
+      "bytes": 23571,
+      "sha256": "cbc2289a0aa6a5611f10f6e60110f8d3fef0c9e8e9c97b6aaf875a3954bf8026"
+    }
+  ],
+  "receipts": [
+    {
+      "file": "docs/evidence/visual-revision/build-final.log",
+      "bytes": 1240,
+      "sha256": "fd0b8c14bf31d282ab58bc50a389009fbc8e8af2145c478761f76976dfee9650"
+    },
+    {
+      "file": "docs/evidence/visual-revision/unit-tests-final.log",
+      "bytes": 255,
+      "sha256": "971a8cbc3e3390dcd1f4f3a1c43e164995b1f1b7f8fb4a76a7fce15eb5f3f8f4"
+    },
+    {
+      "file": "docs/evidence/visual-revision/e2e-final.log",
+      "bytes": 2541,
+      "sha256": "e70646ab25dad0e31f748fad4e8cd2e06274899402e13cb7100bb28b931a0ea1"
+    },
+    {
+      "file": "docs/evidence/visual-revision/asset-validation-final.log",
+      "bytes": 890,
+      "sha256": "2d38b1d5db5a97b468c441a8bede0fde53b24de4e319f60e56082db1cfc5e498"
+    },
+    {
+      "file": "docs/evidence/visual-revision/gallery-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs/evidence/visual-revision/category-motion-final.log",
+      "bytes": 972,
+      "sha256": "44ea6cf2a95b40b4e422815789f546b9f8c4936e3b4ac312620bf8f60076a98b"
+    },
+    {
+      "file": "docs/evidence/visual-revision/benchmark-final.log",
+      "bytes": 874,
+      "sha256": "89e5c4293a2981bd39ab83f7b409b9e3879c563914f33c3761bffc6a22c0519a"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "docs/evidence/visual-revision/final/asset-error.png",
+      "bytes": 18718,
+      "sha256": "be7a8e97a1d365312eaf7356c494e9dc859c63c3209124ccf25feafda427fb3b"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/category-quotation-required.png",
+      "bytes": 588465,
+      "sha256": "03c6a35d8e44f69bda236f492e2e96c6ab3d1206cdc4bfadbbe8969a49d4ecba"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-bay.png",
+      "bytes": 698775,
+      "sha256": "458ecbb5649fd03f9f34d52bd731973378e0051155fa0da8156589c6edc6770e"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-counter-interaction.png",
+      "bytes": 631536,
+      "sha256": "6b1e6eedc2d4db25783eca49808d4d1efa6ec62dbbd3a09e566e936f60914c95"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-entry.png",
+      "bytes": 737549,
+      "sha256": "09028f7a48b007871725881ee8e2c836c0792262c9928aff2111e0259cd0baac"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-experience.webm",
+      "bytes": 32189961,
+      "sha256": "c98dc39cab900cefe57b0ef4ad64c149e452eb8c37cc4d36b75970330442a5c1"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-exterior-service.png",
+      "bytes": 736285,
+      "sha256": "00d9c68f8d859fa94cceca565fa94c15f43720e3780917c77218dc00ecaf939b"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-inspection-service.png",
+      "bytes": 734209,
+      "sha256": "c9dd373e22c57fd3fe711c4a1577d69096038862cf13b6781ce441f4a760a4d4"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-interior-service.png",
+      "bytes": 733784,
+      "sha256": "ba795fd0579ffc9e78b892b7767a2bbedd582f500ba70cdd57781f31bc209f98"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-lights-service.png",
+      "bytes": 745978,
+      "sha256": "c3c811c7ab76f8a5e0c06cd4d14085d2b5a4ca51eab5046e3364be98d925d9c8"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-lounge-content.png",
+      "bytes": 649327,
+      "sha256": "454ed10e6e3e974f4de71e731bac933a3e16bad660fec817fef3530736107ce8"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-lounge.png",
+      "bytes": 621950,
+      "sha256": "006096e0aa495dcfb18a539668c8f03d28d16b930c05e496f269518a5106531a"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-menu.png",
+      "bytes": 714420,
+      "sha256": "2617bc1953865339fc85a4105d2aae33c1a96e84f9b16911430eb37de80db391"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-order.png",
+      "bytes": 516881,
+      "sha256": "2a9051ff0ff033c16d940994e421c66c34d6a0f54385cf591e6313b7440610d3"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-queue.png",
+      "bytes": 939941,
+      "sha256": "461cc41c3a84871409f1e6dff85d5033b921ab78a2157559956dd2cd7dec8a3e"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-quote.png",
+      "bytes": 584756,
+      "sha256": "7902d6a849710a9a9d5446bd0177ccecdbe2cb26d3173984efef342dfe1459a9"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-reception.png",
+      "bytes": 612323,
+      "sha256": "c79b732ec275f2d415a54968c71c30bb2e473fd7c1b45bc41da3a92aef2f4ad1"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-registration.png",
+      "bytes": 585219,
+      "sha256": "45a17fb4f75d4099ca4c52d9ac8ec8736c790eac3783688c4e417030f218fe4e"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/desktop-services.png",
+      "bytes": 630156,
+      "sha256": "caaf13e5ecee47be00ac241539644d613e64b693feff65c969c5675d6de75f9f"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/four-category-operation.png",
+      "bytes": 691131,
+      "sha256": "8095d6b0a96dd22e34473cd62192fef1abcc99dec8da797d8f0a4cd43017c271"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/lounge-expanded.png",
+      "bytes": 654877,
+      "sha256": "8deb657e9c44611900617e5a8b9e5a8e8ca24708580253e85d216e9175b30be8"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-bay.png",
+      "bytes": 163184,
+      "sha256": "a7f5e19b7f0ea801f751f9d7f77bf4e2ffd55614462477c2a0dcceb8b1d6e0d6"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-entry.png",
+      "bytes": 143906,
+      "sha256": "cce3481e590931f74abfc2c35bca47a15d384f717a16a67b82607020ab5b3ac5"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-experience.webm",
+      "bytes": 6365540,
+      "sha256": "4560258bc732eb0033e92db31c2b08dea613cd43d5620929594b57f32135f09f"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-exterior-service.png",
+      "bytes": 175461,
+      "sha256": "829ef0e679e688e136ff20d5cd2692a2b30810ca3488349b72466e0399f95bf0"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-inspection-service.png",
+      "bytes": 173051,
+      "sha256": "4d3a3ff2805f1032617d547f9935b2548d732f42fbc382411c8ba9779826fd73"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-interior-service.png",
+      "bytes": 172882,
+      "sha256": "8e04a611fa2555aba66a5c1acc867daf033e16fe083c1bbb2941747fcd4354c2"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-lights-service.png",
+      "bytes": 173200,
+      "sha256": "830392bd5a313867b8385f1584d2e224d1beea2f8f5df3e9060f98676a7cd050"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-lounge-content.png",
+      "bytes": 136041,
+      "sha256": "be87cc8d10ed00b548c6b75ca0d3d046dcbfc2487374f51f54b7f2f501075f85"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-lounge.png",
+      "bytes": 133224,
+      "sha256": "34dee1b522a0216d73445bda4fa6cfc5716ae427ed83583eeaf8029a89113619"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-order.png",
+      "bytes": 97321,
+      "sha256": "d5624abd13ecbc141932953222f4720cdad8c4ba43681cf94233bae8bb9416f8"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-queue.png",
+      "bytes": 234319,
+      "sha256": "9daf56a2868f70f2db50da3d7b08b76b533bcf93ee244dbea3d4ab11630af55e"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-quote.png",
+      "bytes": 97947,
+      "sha256": "379e133e97e4549af3943216cf36f5ef4bf10004ab4c1268f81066777ac4e9d2"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-reception.png",
+      "bytes": 106889,
+      "sha256": "2fd0c4818704cebd80df2b67e98c699069d2c44a26d2458eb114c62bf25c8c18"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-registration.png",
+      "bytes": 103683,
+      "sha256": "b588883cea66113bc7b6cd639a363c01d97d3d549bb18a5be324fecce27cb8cb"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/mobile-services.png",
+      "bytes": 163175,
+      "sha256": "50283c74884d2cbed5e3b5b3175d72cbc1051c5f998cbb266f8d6b612ee16570"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/question-unconfigured-contact.png",
+      "bytes": 601577,
+      "sha256": "d20cca542b522836ade60975e2d6fd71c3327c765d276223770cc77074e2b8c5"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/weather-night.png",
+      "bytes": 522632,
+      "sha256": "7621eb4f4c34ca03114d0c690fcd7b4d072c0791cf2cb6f69b6b63d1b3762cba"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/weather-overcast.png",
+      "bytes": 693646,
+      "sha256": "75b026b9bab6ba14f131f2ea4e4dac4df96edd3ea04dc3f8ca757af2cc5b2d83"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/weather-partly-cloudy.png",
+      "bytes": 660280,
+      "sha256": "11e1b1fc6f62c37013dbefe3a6595abaf639a41d638b514b4d10e07fabc7c9d1"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/weather-rain.png",
+      "bytes": 710174,
+      "sha256": "2f69bf24778fc2411fa542509d297cf5d75d375bab4d391e062d436f9ca8d0fb"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/weather-sunny.png",
+      "bytes": 645249,
+      "sha256": "786abeff372320609f9e9275882bea4b95cde7c13e5d8476552b2ed4968e066e"
+    },
+    {
+      "file": "docs/evidence/visual-revision/final/weather-sunset.png",
+      "bytes": 712387,
+      "sha256": "fc80a1d7523883c946ee18ee7c03c16b0ccce8e18519d57132ba8e881760933e"
+    }
+  ],
+  "gltfValidation": {
+    "files": 26,
+    "errors": 0,
+    "warnings": 69
+  },
+  "artisticAcceptance": "pending",
+  "mobile": "Browser emulation on desktop GPU; no physical phone verified"
+}

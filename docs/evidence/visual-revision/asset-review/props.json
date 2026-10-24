@@ -1,0 +1,50 @@
+[
+  {
+    "source": "tropicalPalm",
+    "target": "tropicalPalm",
+    "primitives": 6,
+    "bytes": 852716
+  },
+  {
+    "source": "datePalm",
+    "target": "datePalm",
+    "primitives": 4,
+    "bytes": 2293312
+  },
+  {
+    "source": "areca",
+    "target": "areca",
+    "primitives": 4,
+    "bytes": 2112456
+  },
+  {
+    "source": "sander",
+    "target": "sander",
+    "primitives": 3,
+    "bytes": 89476
+  },
+  {
+    "source": "vacuum",
+    "target": "vacuum",
+    "primitives": 5,
+    "bytes": 419452
+  },
+  {
+    "source": "sprayer",
+    "target": "sprayer",
+    "primitives": 4,
+    "bytes": 87100
+  },
+  {
+    "source": "sprayer",
+    "target": "sprayWand",
+    "primitives": 2,
+    "bytes": 25704
+  },
+  {
+    "source": "vacuum",
+    "target": "vacuumNozzle",
+    "primitives": 1,
+    "bytes": 15744
+  }
+]

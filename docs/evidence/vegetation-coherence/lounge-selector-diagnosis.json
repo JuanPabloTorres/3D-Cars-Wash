@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-24T01:03:35.353Z",
+  "failedCase": "Preparar desde el lounge recupera el borrador sin crear una orden",
+  "observedSnapshot": "Ana Reception registration form visible; Color combobox Azul selected; getByLabel exact did not resolve nested select label.",
+  "repair": "Select by accessible role combobox and exact accessible name Color; retain toHaveValue Azul and no-order/services assertions.",
+  "productChanged": false,
+  "rerun": "Pending after full"
+}

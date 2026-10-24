@@ -1,0 +1,11 @@
+{
+  "counts": {
+    "coherentShrub": 48,
+    "coherentCalathea": 36,
+    "naturalFern": 12,
+    "naturalTreeDense": 2,
+    "naturalTree": 3
+  },
+  "instancedPlantTriangles": 3210756,
+  "note": "Geometry count only; excludes rest of world, shadows/overdraw and does not prove FPS."
+}

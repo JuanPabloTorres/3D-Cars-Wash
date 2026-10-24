@@ -1,0 +1,73 @@
+
+> febles-carwash-world@0.1.0 test:e2e
+> playwright test
+
+
+Running 16 tests using 1 worker
+
+(node:1976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   1 [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los tres accesos físicos del mostrador abren funciones reales sin perder selección (29.4s)
+(node:16648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  2 [commercial] › tests\e2e\commercial.spec.ts:28:1 › Área útil, cuatro opciones, transición breve y solo última selección (16.9s)
+  ok  3 [commercial] › tests\e2e\commercial.spec.ts:32:1 › Servicios, validación, volver, confirmación, recuperación y cancelación aceptada (18.9s)
+  ok  4 [commercial] › tests\e2e\commercial.spec.ts:35:1 › Fallo de red conserva borrador y no crea éxito (7.5s)
+  ok  5 [commercial] › tests\e2e\commercial.spec.ts:38:1 › Cancelación rechazada por proveedor tras comenzar atención (11.1s)
+  ok  6 [commercial] › tests\e2e\commercial.spec.ts:41:1 › El local contiene datos útiles en bahías, cola y espera (11.8s)
+  ok  7 [commercial] › tests\e2e\commercial.spec.ts:44:1 › Dos contextos: comando DEMO del servidor llega a ambos visitantes y reconecta (15.3s)
+  ok  8 [commercial] › tests\e2e\commercial.spec.ts:47:1 › Móvil: navegación, servicios y formulario visibles sin tapar el rostro (15.9s)
+  ok  9 [commercial] › tests\e2e\commercial.spec.ts:50:1 › Movimiento reducido, foco y fallo GLB sin carga eterna (7.8s)
+  ok 10 [commercial] › tests\e2e\commercial.spec.ts:53:1 › API DEMO valida importes, idempotencia y aislamiento entre sesiones (175ms)
+  ok 11 [commercial] › tests\e2e\commercial.spec.ts:57:1 › Cotización vencida se renueva y no confirma datos caducados (8.3s)
+  ok 12 [commercial] › tests\e2e\commercial.spec.ts:60:1 › Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran (7.7s)
+  ok 13 [commercial] › tests\e2e\commercial.spec.ts:63:1 › Ambientes conservados: seis climas legibles con errores de página ausentes (11.0s)
+  ok 14 [commercial] › tests\e2e\commercial.spec.ts:68:1 › Tarifas por categoría sin precio inventado y borrador conservado (7.5s)
+  ok 15 [commercial] › tests\e2e\commercial.spec.ts:76:1 › Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend (12.2s)
+  ok 16 [commercial] › tests\e2e\commercial.spec.ts:84:1 › El catálogo público no sustituye la cookie de la sesión privada (112ms)
+
+
+  1) [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los tres accesos físicos del mostrador abren funciones reales sin perder selección 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('El cuidado que tu auto necesita.', { exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText('El cuidado que tu auto necesita.', { exact: true }) with timeout 15000ms
+      - waiting for getByText('El cuidado que tu auto necesita.', { exact: true })
+
+
+      16 |  // Real canvas ray picking at the visible signs in the fixed desktop fixture.
+      17 |  await page.mouse.click(135,530)
+    > 18 |  await expect(page.getByText('El cuidado que tu auto necesita.',{exact:true})).toBeVisible()
+         |                                                                                ^
+      19 |  await page.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click()
+      20 |  await page.keyboard.press('Escape');await page.mouse.click(335,530)
+      21 |  await expect(page.getByRole('heading',{name:'Información del establecimiento',exact:true})).toBeVisible()
+        at C:\Projects\Repos\3D-Cars-Wash\tests\e2e\commercial.spec.ts:18:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\commercial-Los-tres-acceso-2c370-reales-sin-perder-selección-commercial\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\commercial-Los-tres-acceso-2c370-reales-sin-perder-selección-commercial\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\commercial-Los-tres-acceso-2c370-reales-sin-perder-selección-commercial\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\commercial-Los-tres-acceso-2c370-reales-sin-perder-selección-commercial\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\commercial-Los-tres-acceso-2c370-reales-sin-perder-selección-commercial\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [commercial] › tests\e2e\commercial.spec.ts:12:1 › Los tres accesos físicos del mostrador abren funciones reales sin perder selección 
+  15 passed (3.2m)

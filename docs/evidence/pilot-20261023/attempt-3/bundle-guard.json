@@ -1,0 +1,142 @@
+{
+  "observedAt": "2026-10-23T21:50:19.3518027-04:00",
+  "manifestsEqual": false,
+  "bundleEvents": [
+    {
+      "observedAt": "2026-10-23T21:47:56.3644195-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-FXtXVk5r.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3650987-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-OL5aKnkj.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3656319-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-D7LsGU-k.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3660887-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\WorldBadges-5C56nI0f.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3667053-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-CaPScQ43.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3669383-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-QJcWMJ_Y.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3671893-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-BUVGw9qR.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3687850-04:00",
+      "event": "Changed",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\index.html"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3642654-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-FXtXVk5r.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3646750-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-OL5aKnkj.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3651684-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-D7LsGU-k.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3659951-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\WorldBadges-5C56nI0f.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3666047-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-CaPScQ43.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3668569-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-QJcWMJ_Y.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3671041-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-BUVGw9qR.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:56.3687302-04:00",
+      "event": "Created",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\index.html"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9147233-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-CaPScQ43.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9147407-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-B9NByHg4.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9146818-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\AdminApp-54xJ5kPy.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9148713-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\App-DXPUkGcM.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9161624-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-B2s8vlTf.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9163261-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\index-BKCWPNlH.css"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9174029-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\assets\\WorldBadges-DMwRoKt6.js"
+    },
+    {
+      "observedAt": "2026-10-23T21:47:55.9185587-04:00",
+      "event": "Deleted",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\dist\\index.html"
+    }
+  ],
+  "browserProcessesRemaining": [
+    {
+      "Id": 6008,
+      "StartTime": "2026-10-23T21:49:03.4604535-04:00"
+    },
+    {
+      "Id": 6440,
+      "StartTime": "2026-10-23T21:49:03.7276943-04:00"
+    },
+    {
+      "Id": 7572,
+      "StartTime": "2026-10-23T21:49:03.2479641-04:00"
+    }
+  ],
+  "testExitCode": 1,
+  "acceptedBundle": false
+}

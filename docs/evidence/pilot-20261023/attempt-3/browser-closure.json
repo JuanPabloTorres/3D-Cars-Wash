@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-10-23T21:52:54.9555744-04:00",
+  "testWorkersRemaining": [],
+  "remainingInventoryRenderers": [
+    {
+      "id": 6008,
+      "parentId": 11740,
+      "automation": false,
+      "headless": false
+    },
+    {
+      "id": 6440,
+      "parentId": 11740,
+      "automation": false,
+      "headless": false
+    }
+  ],
+  "rendererParent11740": "Existing visible Edge started 2026-10-23T21:33:28.717935-04:00; no automation/headless/Playwright profile; preserved."
+}

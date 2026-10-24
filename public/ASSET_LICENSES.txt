@@ -1,0 +1,172 @@
+FEBLES CAR WASH — Third-party assets, G0/G1 prototype — 2026-10-23
+
+CHARACTERS
+Rain Rig © Blender Foundation | studio.blender.org
+https://studio.blender.org/characters/rain/v3/
+Snow Rig © Blender Foundation | studio.blender.org
+https://studio.blender.org/characters/snow/
+License: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+Changes: conversion from official Blender rigs to GLB, web-compatible PBR materials,
+single-image UV tile textures at up to 1024 px, baked skeletal animation, normalization
+to world scale. Idle/Greet/Talk/Service motion authored for this prototype; these
+are not motion-capture performances or clips advertised by Blender Studio.
+
+VEHICLE
+Car Concept © 2024 Darmstadt Graphics Group GmbH; model/textures by Eric Chadwick.
+Original concept model by Unity Fan, public domain CC0; adapted sample by DGG.
+https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept
+License of adapted sample: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+Changes: Pearl material variant, removal of separate sample license-plate mesh,
+omission of transmission/iridescence/clearcoat, mesh simplification with error bound,
+material batching, texture resizing and compression. No affiliation or endorsement
+by Khronos, DGG or any vehicle manufacturer is implied.
+
+VEGETATION
+Nature Kit by Kenney — CC0 1.0 Universal, free including commercial redistribution.
+https://kenney.nl/assets/nature-kit
+https://creativecommons.org/publicdomain/zero/1.0/
+Models used: tree_palmDetailedTall, plant_bushDetailed, plant_flatTall.
+Changes: recolored PBR palette, scale and placement; geometry remains supplied art.
+Kenney Car Kit was inspected but its SUV was replaced, and is not shipped here.
+
+PBR EQUIPMENT / MATERIALS / LIGHT
+All following resources: Poly Haven, CC0 1.0 Universal.
+https://polyhaven.com/license
+Garden Hose Wall Mounted 01 — Kuutti Siitonen
+https://polyhaven.com/a/garden_hose_wall_mounted_01
+Tool Cart — Savva Zakharov
+https://polyhaven.com/a/tool_cart
+Concrete Floor Worn 001 — Dimitrios Savva (photography), Rico Cilliers (processing)
+https://polyhaven.com/a/concrete_floor_worn_001
+Wood Planks — Amal Kumar
+https://polyhaven.com/a/wood_planks
+Kiara 6 Afternoon HDRI — Greg Zaal
+https://polyhaven.com/a/kiara_6_afternoon
+Changes: equipment packed as self-contained GLB with 1K textures; textures tiled on
+new modular infrastructure; HDRI limited to 1K. A wall-mounted garden hose is an
+evaluation prop; it is not presented as a professional pressure-washer model.
+
+FONT
+DM Sans by the DM Sans project authors — SIL Open Font License 1.1.
+https://github.com/google/fonts/tree/main/ofl/dmsans
+Full font license: /fonts/OFL.txt
+
+UI ICONS
+Lucide contributors — ISC License, https://lucide.dev/license
+Used only for accessible interface controls, never as vehicles or people.
+
+All resources were obtained free of charge. No paid resource was purchased.
+Architectural meshes and code are new for this authorized implementation.
+
+## Refinamiento: recursos añadidos — CC0 1.0, gratuitos
+Poly Haven: https://polyhaven.com/license
+potted_plant_04 (planta en maceta) — James Ray Cock — https://polyhaven.com/a/potted_plant_04
+fern_02 — Rob Tuytel / Rico Cilliers — https://polyhaven.com/a/fern_02
+calathea_orbifolia_01 — https://polyhaven.com/a/calathea_orbifolia_01 (autor en docs/refinement-asset-provenance.json)
+island_tree_02 — https://polyhaven.com/a/island_tree_02 (autor en docs/refinement-asset-provenance.json)
+painted_wooden_bench — Kirill Sannikov — https://polyhaven.com/a/painted_wooden_bench
+Adaptaciones: glTF empaquetado GLB, PBR 1K WebP, simplificación conservadora y LOD del árbol. Geometría profesional, no modelos improvisados.
+Manrope — Mikhail Sharanda, Mirko Velimirovic — SIL OFL 1.1: /fonts/manrope-OFL.txt
+Clima NWS: datos abiertos gratuitos https://www.weather.gov/documentation/services-web-api
+
+
+UX polish 2026-10-23 — adaptations of the same licensed resources:
+Car Concept: four original wheel assemblies retained; body grouped separately.
+Service thumbnails are browser-rendered views of the licensed Car Concept model,
+including an illustrative cutaway of its interior. Same CC BY attribution as above.
+Snow: additional authored service clips (interior, lights, inspection).
+Poly Haven island_tree_02: per-material LOD and foliage alpha-mask/tint adaptation.
+  No new purchased resource. No conceptual image used as a runtime background.
+
+Entrance refinement 2026-10-23:
+canopyTree.glb derives from the existing Poly Haven island_tree_02 (CC0).
+The existing author record remains docs/refinement-asset-provenance.json.
+Adaptation: retain 30% foliage and 2.5% wood geometry, quantized attributes,
+portable 1K PBR; originals and existing LOD files preserved.
+Pipeline: scripts/prepare-entrance-canopy.mjs. Candidate identity and validation:
+docs/evidence/entrance-refinement/canopy-provenance.json.
+The user-provided site-background.png is shown on distant scenic plates;
+it is separate from the conceptual entrance image and from HDRI illumination.
+
+Revisión visual actual — 23-10-2026 (fuentes nuevas)
+Innerscene original models — CC0 1.0 Universal, gratuitos, descarga oficial:
+https://www.innerscene.com/tools/library/3d-parts/red-four-door-sedan-1d32e180
+https://www.innerscene.com/tools/library/3d-parts/crew-cab-pickup-with-tonneau-cover-059c14f0
+https://www.innerscene.com/tools/library/3d-parts/generic-compact-suv-9f157ee5
+https://www.innerscene.com/tools/library/3d-parts/7-5-t-class-box-truck-with-roll-up-door-12baea66
+https://www.innerscene.com/tools/library/3d-parts/palm-detailed-a8777b8c
+https://www.innerscene.com/tools/library/3d-parts/potted-areca-palm-aee9b13e
+https://www.innerscene.com/tools/library/3d-parts/workshop-vac-wet-dry-vacuum-119e0848
+https://www.innerscene.com/tools/library/3d-parts/spray-pump-pressure-sprayer-2d59466a
+https://www.innerscene.com/tools/library/3d-parts/orbit-sand-orbital-sander-4cfe0083
+Licencia: https://creativecommons.org/publicdomain/zero/1.0/
+Adaptaciones: orientación +Z y suelo cero, agrupado de carrocerías/ruedas,
+ventanilla delantera independiente, materiales de pintura, agrupado de props,
+extracción de boquilla/lanza y montaje en muñeca. Sin marcas de automóviles.
+Sander representa herramienta orbital de tratamiento, no una marca o máquina certificada.
+Mature date palm tree (candidato descargado, no activo):
+https://www.innerscene.com/tools/library/3d-parts/mature-date-palm-tree-af8bdc6f — CC0.
+Car Concept queda retirado de la escena activa; su atribución histórica se conserva arriba.
+Rgsdev CC0 fue evaluado y rechazado visualmente; no se utiliza en la escena final:
+https://opengameart.org/content/free-low-poly-vehicles-pack
+Las tres miniaturas actuales del catálogo son ilustraciones generadas con OpenAI Image Generation
+para este proyecto (23-10-2026), identificadas como ilustrativas en la UI.
+No son fotografías del establecimiento ni capturas de ejecución. Sustituyen las miniaturas
+históricas del Car Concept; no se les atribuye una licencia CC0 de terceros.
+Snow adaptation: original Blender Studio geometry, body masks and animation-eye
+material regions retained; B-Bone deformation baked into portable segmented joints.
+Seven authored clips. Same CC BY 4.0 attribution as the Snow source above.
+
+SOW refinement 2026-10-23: Rain adaptation retains the same Blender Studio CC BY 4.0 source.
+Added locally authored PointServices and PointOrder clips to the professional rig; all six clips
+return to rest. Source .blend files remain outside this repository and were opened with
+Blender 5.2.1 LTS --disable-autoexec. No additional model purchases or license substitutions.
+site-background.png: image supplied by the user for this project; no CC0 ownership claim.
+Used as a distant physical backdrop, separately from the existing HDRI lighting source.
+
+
+Vegetation coherence / lounge — 2026-10-23 (supersedes earlier active backdrop/canopy choices)
+coherentOak.glb: Innerscene original Oak street tree detailed leaves, CC0, free.
+https://www.innerscene.com/tools/library/3d-parts/oak-street-tree-detailed-leaves-a273fef9
+https://www.innerscene.com/tools/library/terms
+Adaptation: keep original213372triangles/9450mesh leaves; merge branches by material;
+leaf colors60%#46733A/30%#24452C/10%#76A449, roughness .58; no source textures.
+coherentShrub.glb: Poly Haven shrub_01, Rico Cilliers, CC0, free.
+https://polyhaven.com/a/shrub_01
+https://polyhaven.com/license
+Adaptation: source variants clustered,30905triangles,1KWebP; alpha from official mask
+restored and checked after encoding. Textured variation preserved, three instance tone groups.
+coherentCalathea.glb: Poly Haven calathea_orbifolia_01, Rob Tuytel/Rico Cilliers, CC0.
+https://polyhaven.com/a/calathea_orbifolia_01
+Adaptation: one complete named variant3749triangles; official alpha restored, original UV/PBR.
+urbanFern.glb: Poly Haven fern_02, Rob Tuytel/Rico Cilliers, CC0; one complete variant2365triangles.
+https://polyhaven.com/a/fern_02
+No new paid resources. Full hashes/source-integrity/actual previews:
+docs/evidence/vegetation-coherence/REPORT.md and candidate-revalidation.json.
+Earlier canopyTree and urbanTree candidates are not active; their historical notices remain.
+site-background.png remains the user's supplied image, now restored on a continuous
+mirrored surround rather than finite scenic plates; not claimed as a captured360panorama.
+The foreground lounge, vehicles, workers, soil and buildings remain actual3Dgeometry.
+
+Natural vegetation increment (2026-10-23):
+naturalTree.glb: Tree Small 02, Rico Cilliers, Poly Haven, CC0-1.0.
+https://polyhaven.com/a/tree_small_02
+Existing preserved urbanTree-v3 geometry (206616 triangles), original bark/leaf
+PBR maps and UV transforms; official leaves_alpha restored and verified after encoding.
+naturalFern.glb: Fern 02, Rob Tuytel / Rico Cilliers, Poly Haven, CC0-1.0.
+https://polyhaven.com/a/fern_02
+Existing single-variant geometry (2365 triangles); official alpha restored.
+public/textures/landscape/soil-*.jpg: Brown Mud, Rob Tuytel, Poly Haven, CC0-1.0.
+https://polyhaven.com/a/brown_mud
+Diffuse/normal(GL)/roughness at1K; original downloads verified against official MD5.
+License: https://polyhaven.com/license
+Current rendering selection is vegetationModels in src/world/siteLandscape.ts.
+naturalTreeDense.glb: same Tree Small 02 source/license/author,472062triangles;
+two nearby trees only. Strict UV-aware simplification from original preserved
+source, official leaf alpha and original bark PBR; no duplicated/invented foliage.
+nearTreeModel selects it; three rear trees retain lighter naturalTree.glb.
+coherentOak and urbanFern remain preserved as historical assets; no original was overwritten.
+See docs/evidence/natural-landscape/candidate-manifest.json for provenance, hashes,
+alpha-mask measurements and glTF validation. Browser/human appearance review is separate.

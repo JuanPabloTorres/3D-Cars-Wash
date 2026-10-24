@@ -1,0 +1,129 @@
+{
+  "size": [
+    2.1735000610351562,
+    1.7299935817718506,
+    4.492966651916504
+  ],
+  "nodes": [
+    {
+      "name": "Scene",
+      "type": "Group"
+    },
+    {
+      "name": "Body",
+      "type": "Group"
+    },
+    {
+      "name": "Sphere062",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_3",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_4",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_5",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_6",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_7",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_8",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_9",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_10",
+      "type": "Mesh"
+    },
+    {
+      "name": "Sphere062_11",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelFrontL",
+      "type": "Group"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke005",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke005_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke005_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelFrontR",
+      "type": "Group"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearL",
+      "type": "Group"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke015",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke015_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke015_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearR",
+      "type": "Group"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke010",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke010_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Cast_swept_alloy_spoke010_2",
+      "type": "Mesh"
+    }
+  ]
+}

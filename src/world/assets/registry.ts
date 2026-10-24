@@ -1,0 +1,10 @@
+export const assets={
+  receptionist:'/models/receptionist.glb',worker:'/models/worker.glb',vehicle:'/models/vehicle.glb',
+  car:'/models/vehicle-car.glb',pickup:'/models/vehicle-pickup.glb',truck:'/models/vehicle-truck.glb',suv:'/models/vehicle-suv.glb',
+  tropicalPalm:'/models/tropicalPalm.glb',datePalm:'/models/datePalm.glb',areca:'/models/areca.glb',sander:'/models/sander.glb',vacuum:'/models/vacuum.glb',sprayer:'/models/sprayer.glb',sprayWand:'/models/sprayWand.glb',vacuumNozzle:'/models/vacuumNozzle.glb',
+  palm:'/models/palm.glb',shrub:'/models/shrub.glb',plant:'/models/plant.glb',
+  hose:'/models/hose.glb',cart:'/models/cart.glb',
+  coherentCalathea:'/models/coherentCalathea.glb',urbanCalathea:'/models/urbanCalathea.glb',pottedPlant:'/models/pottedPlant.glb',fern:'/models/fern.glb',calathea:'/models/calathea.glb',islandTree:'/models/islandTree.glb',bench:'/models/bench.glb',
+} as const
+export type AssetId=keyof typeof assets
+

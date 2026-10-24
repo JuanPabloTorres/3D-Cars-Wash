@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-24T00:17:30.001Z",
+  "filename": "C:\\Projects\\Assets\\CarWash-Vegetation-Coherence-20261023\\candidates\\coherentOak-sample-v1.glb",
+  "sha256": "9114f364ff0765c7504ccc8b6f71dba408170e6963b8fdcab993fd7a48d7b449",
+  "height": 7,
+  "frame": 12,
+  "sunlight": {
+    "color": "#fff0d4",
+    "position": [
+      -22,
+      30,
+      18
+    ],
+    "intensity": 2.6
+  },
+  "hemisphere": {
+    "sky": "#d9eaff",
+    "ground": "#89917a",
+    "intensity": 0.7
+  },
+  "HDRI": "public/textures/daylight.hdr",
+  "environmentIntensity": 0.6,
+  "exposure": 1.05,
+  "toneMapping": "ACESFilmicToneMapping",
+  "errors": [],
+  "views": [
+    {
+      "view": "front",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\oak-sample-v1-front.png",
+      "metrics": {
+        "triangles": 426746,
+        "calls": 9
+      }
+    },
+    {
+      "view": "side",
+      "screenshot": "C:\\Projects\\Repos\\3D-Cars-Wash\\docs\\evidence\\vegetation-coherence\\oak-sample-v1-side.png",
+      "metrics": {
+        "triangles": 426746,
+        "calls": 9
+      }
+    }
+  ],
+  "limitation": "Same sunny lighting/exposure/HDRI parameters and sample camera; excludes building occlusion and other plants"
+}

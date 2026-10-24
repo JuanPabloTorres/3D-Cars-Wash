@@ -1,0 +1,156 @@
+{
+  "actualBrowser": true,
+  "scenario": "busy",
+  "speed": 8,
+  "elapsedMs": 33388,
+  "observations": 100,
+  "categories": {
+    "car": {
+      "entity": "demo-vehicle-05",
+      "wheels": 4,
+      "motion": true,
+      "reverse": true,
+      "motionSample": {
+        "entity": "demo-vehicle-01",
+        "distance": 4.527151999999405,
+        "signedDistance": -4.527151999999405,
+        "wheelAngleDelta": -13.840689808081466,
+        "radius": 0.3270900556817651,
+        "from": [
+          3.4,
+          -4.2
+        ],
+        "to": [
+          3.4,
+          -8.727151999999405
+        ]
+      },
+      "reverseSample": {
+        "entity": "demo-vehicle-01",
+        "distance": 4.527151999999405,
+        "signedDistance": -4.527151999999405,
+        "wheelAngleDelta": -13.840689808081466,
+        "radius": 0.3270900556817651,
+        "from": [
+          3.4,
+          -4.2
+        ],
+        "to": [
+          3.4,
+          -8.727151999999405
+        ]
+      }
+    },
+    "suv": {
+      "entity": "demo-vehicle-06",
+      "wheels": 4,
+      "motion": true,
+      "reverse": true,
+      "motionSample": {
+        "entity": "demo-vehicle-06",
+        "distance": 2.4296637046235223,
+        "signedDistance": 1.6701351441426244,
+        "wheelAngleDelta": 7.2300319264250135,
+        "radius": 0.3499999745981768,
+        "from": [
+          3.4,
+          12
+        ],
+        "to": [
+          3.8519644276114167,
+          9.61274344199481
+        ]
+      },
+      "reverseSample": {
+        "entity": "demo-vehicle-02",
+        "distance": 5.567286247327488,
+        "signedDistance": -5.449807425157194,
+        "wheelAngleDelta": -15.919000472458277,
+        "radius": 0.3499999745981768,
+        "from": [
+          11.4,
+          -4.2
+        ],
+        "to": [
+          11.314933771563146,
+          -9.766636317962698
+        ]
+      }
+    },
+    "pickup": {
+      "entity": "demo-vehicle-07",
+      "wheels": 4,
+      "motion": true,
+      "reverse": true,
+      "motionSample": {
+        "entity": "demo-vehicle-07",
+        "distance": 0.5805452920087077,
+        "signedDistance": 0.5805452920087077,
+        "wheelAngleDelta": 1.4881676906814838,
+        "radius": 0.39010744262486696,
+        "from": [
+          3.4,
+          20.4
+        ],
+        "to": [
+          3.4,
+          19.81945470799129
+        ]
+      },
+      "reverseSample": {
+        "entity": "demo-vehicle-03",
+        "distance": 1.4883769599708554,
+        "signedDistance": -1.4883769599708554,
+        "wheelAngleDelta": -3.815300087473851,
+        "radius": 0.39010744262486696,
+        "from": [
+          19.4,
+          -4.2
+        ],
+        "to": [
+          19.4,
+          -5.688376959970856
+        ]
+      }
+    },
+    "truck": {
+      "entity": "demo-vehicle-04",
+      "wheels": 6,
+      "motion": true,
+      "reverse": true,
+      "motionSample": {
+        "entity": "demo-vehicle-04",
+        "distance": 4.708336640070377,
+        "signedDistance": -4.708336640070377,
+        "wheelAngleDelta": -9.975288801364565,
+        "radius": 0.47200003266334534,
+        "from": [
+          27.4,
+          -4.2
+        ],
+        "to": [
+          27.4,
+          -8.908336640070377
+        ]
+      },
+      "reverseSample": {
+        "entity": "demo-vehicle-04",
+        "distance": 4.708336640070377,
+        "signedDistance": -4.708336640070377,
+        "wheelAngleDelta": -9.975288801364565,
+        "radius": 0.47200003266334534,
+        "from": [
+          27.4,
+          -4.2
+        ],
+        "to": [
+          27.4,
+          -8.908336640070377
+        ]
+      }
+    }
+  },
+  "stopped": true,
+  "errors": [],
+  "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+}

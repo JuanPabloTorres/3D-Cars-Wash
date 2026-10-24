@@ -1,0 +1,368 @@
+{
+  "stats": {
+    "total": 31,
+    "expected": 28,
+    "unexpected": 3,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": false
+  },
+  "tests": [
+    {
+      "title": "Los cuatro objetos del mostrador abren funciones reales sin perder selección",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 68978,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Área útil, cuatro opciones, transición breve y solo última selección",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 26304,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Servicios, validación, volver, confirmación, recuperación y cancelación aceptada",
+      "outcome": "unexpected",
+      "results": [
+        {
+          "duration": 97136,
+          "errors": [
+            {
+              "message": "Test timeout of 90000ms exceeded."
+            },
+            {
+              "message": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n  - waiting for getByRole('navigation', { name: 'Visitar un área' }).getByRole('button', { name: 'Mi orden' })\n    - locator resolved to <button>…</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n\n\n"
+            }
+          ],
+          "status": "timedOut"
+        }
+      ]
+    },
+    {
+      "title": "Fallo de red conserva borrador y no crea éxito",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 51448,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Cancelación rechazada por proveedor tras comenzar atención",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 31342,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "El local contiene datos útiles en bahías, cola y espera",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 28332,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Dos contextos: comando DEMO del servidor llega a ambos visitantes y reconecta",
+      "outcome": "unexpected",
+      "results": [
+        {
+          "duration": 95181,
+          "errors": [
+            {
+              "message": "Test timeout of 90000ms exceeded."
+            }
+          ],
+          "status": "timedOut"
+        }
+      ]
+    },
+    {
+      "title": "Móvil: navegación, servicios y formulario visibles sin tapar el rostro",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 22951,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Movimiento reducido, foco y fallo GLB sin carga eterna",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 39637,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "API DEMO valida importes, idempotencia y aislamiento entre sesiones",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 325,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Cotización vencida se renueva y no confirma datos caducados",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 22457,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Ruedas observables: cuatro conjuntos giran con el desplazamiento y paran",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 24177,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Ambientes conservados: seis climas legibles con errores de página ausentes",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 30145,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Tarifas por categoría sin precio inventado y borrador conservado",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 21092,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Preguntas autorizadas, horario desconocido y consulta nunca enviada sin backend",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 21307,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "El catálogo público no sustituye la cookie de la sesión privada",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 162,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Lounge de referencia: vacío honesto, tarjetas iguales y vistas internas con datos configurados",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 11530,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Preparar desde el lounge recupera el borrador sin crear una orden",
+      "outcome": "unexpected",
+      "results": [
+        {
+          "duration": 27825,
+          "errors": [
+            {
+              "message": "Error: expect(locator).toHaveValue(expected) failed\n\nLocator: getByLabel('Color', { exact: true })\nExpected: \"Azul\"\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toHaveValue\" getByLabel('Color', { exact: true }) with timeout 15000ms\n  - waiting for getByLabel('Color', { exact: true })\n\n\n  70 |  await page.getByRole('dialog',{name:'Tu espera'}).getByRole('button',{name:'Preparar mi orden',exact:true}).click()\n  71 |  await expect(page.getByRole('dialog',{name:'Ana · Recepción'})).toBeVisible()\n> 72 |  await expect(page.getByRole('combobox',{name:'Color',exact:true})).toHaveValue('Azul')\n     |                                                      ^\n  73 |  expect((await(await page.request.get('/api/demo/session')).json()).order).toBeNull()\n  74 |  expect(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('febles.demo.draft.v1')!).services)).toEqual(['exterior'])\n  75 |  await expect(page.getByRole('dialog')).toHaveCount(1)\n    at C:\\Projects\\Repos\\3D-Cars-Wash\\tests\\e2e\\lounge.spec.ts:72:54"
+            }
+          ],
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "Orden de la sesión: llegada pendiente, atención real, lista y último estado al reconectar",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 43519,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Lounge móvil: hoja de 58%, contenido legible y vehículo ajeno nunca seleccionado",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 26386,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Piloto: cuatro objetos completos y utilizables a 1855×848",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 17455,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Piloto: cuatro objetos completos y utilizables a 1440×900",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 7915,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Piloto: cuatro objetos completos y utilizables a 650×900",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 7912,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Piloto: cuatro objetos completos y utilizables a 390×844",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 7850,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Piloto: Tab, Enter y Escape conservan foco y selección entre objetos y diálogo",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 8919,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Operación vacía, cuenta de sesión, logout real y permisos administrativos",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 7118,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Administración publica contenido y precios; cotización obsoleta se rechaza sin alterar precio aceptado",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 10556,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Cliente y administrador comparten llegada, fila, bahía, tarea, entrega e historial",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 116263,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Solicitud de contacto confirmada llega a administración; sin permiso no se recibe",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 14538,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Móvil: recepción, cuatro objetos accesibles, navegación, cuenta y administración",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 13933,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "Ana saluda, señala los displays reales y vuelve a escucha natural",
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 22783,
+          "errors": [],
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "size": [
+    2.7339999675750732,
+    3.306999921798706,
+    7.389999866485596
+  ],
+  "nodes": [
+    {
+      "name": "Scene",
+      "type": "Group"
+    },
+    {
+      "name": "Body",
+      "type": "Group"
+    },
+    {
+      "name": "Air_vent_surround",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_3",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_4",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_5",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_6",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_7",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_8",
+      "type": "Mesh"
+    },
+    {
+      "name": "Air_vent_surround_9",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelFrontL",
+      "type": "Group"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread003",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread003_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread003_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelFrontR",
+      "type": "Group"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearL",
+      "type": "Group"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread012",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread012_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread012_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearL2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearR",
+      "type": "Group"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread006",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread006_1",
+      "type": "Mesh"
+    },
+    {
+      "name": "Circumferential_truck_tire_tread006_2",
+      "type": "Mesh"
+    },
+    {
+      "name": "WheelRearR2",
+      "type": "Mesh"
+    }
+  ]
+}

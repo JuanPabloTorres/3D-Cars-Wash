@@ -1,0 +1,6 @@
+00:01.531  blend            | Read blend: "C:\Projects\Assets\Febles-G1-20261023\snow\Snow\snow_v4.2.blend"
+PORTABLE_EYE_REGIONS {'WebPBR-snow.eyes_white': 896, 'WebPBR-snow.eyes_pupil': 128, 'WebPBR-snow.eyes_iris': 192}
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:38:20)
+scripts disabled for "C:\Projects\Assets\Febles-G1-20261023\snow\Snow\snow_v4.2.blend", skipping 'cloudrig.py'
+
+Blender quit

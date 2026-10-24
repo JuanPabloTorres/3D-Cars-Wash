@@ -1,0 +1,34 @@
+{
+  "provider": "NWS",
+  "periods": 156,
+  "sample": {
+    "number": 1,
+    "name": "",
+    "startTime": "2026-10-23T07:00:00-04:00",
+    "endTime": "2026-10-23T08:00:00-04:00",
+    "isDaytime": true,
+    "temperature": 82,
+    "temperatureUnit": "F",
+    "temperatureTrend": null,
+    "probabilityOfPrecipitation": {
+      "unitCode": "wmoUnit:percent",
+      "value": 0
+    },
+    "dewpoint": {
+      "unitCode": "wmoUnit:degC",
+      "value": 25
+    },
+    "relativeHumidity": {
+      "unitCode": "wmoUnit:percent",
+      "value": 85
+    },
+    "windSpeed": "8 mph",
+    "windDirection": "SE",
+    "icon": "https://api.weather.gov/icons/land/day/skc?size=small",
+    "shortForecast": "Sunny",
+    "detailedForecast": ""
+  },
+  "ok": true,
+  "checkedAt": "2026-10-23T11:38:54.6424780Z",
+  "purpose": "Public San Juan coverage probe, not visitor location"
+}

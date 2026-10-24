@@ -1,0 +1,12 @@
+{
+  testedChange: 'Match lounge walkable width to physical deck (-9.5 edge) and adjoining sidewalk',
+  failures: [],
+  route: [
+    [ -8.65, 10 ],
+    [ -10.58, 6.9 ],
+    [ -10.58, 7.6 ],
+    [ -11.5, 8.7 ],
+    [ -13.6, 9.5 ]
+  ]
+}
+8:34:06 PM [vite] (client) [optimizer] scanning dependencies...

@@ -1,0 +1,135 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "samples": 240,
+  "meanFPS": 87.54331570308224,
+  "frameMsP50": 7.5,
+  "frameMsP95": 48.100000001490116,
+  "frameMsP99": 53.30000000074506,
+  "drawCalls": 399,
+  "triangles": 467480,
+  "geometries": 254,
+  "textures": 80,
+  "gpuMemoryBytes": null,
+  "network": [
+    {
+      "name": "/assets/index-Dxq4lW65.js",
+      "bytes": 407791,
+      "durationMs": 41.899999998509884
+    },
+    {
+      "name": "/assets/index-CTwoar2M.css",
+      "bytes": 3358,
+      "durationMs": 6.5
+    },
+    {
+      "name": "/assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2",
+      "bytes": 37232,
+      "durationMs": 2
+    },
+    {
+      "name": "/textures/daylight.hdr",
+      "bytes": 1199778,
+      "durationMs": 83.10000000149012
+    },
+    {
+      "name": "/textures/concrete-color.jpg",
+      "bytes": 119106,
+      "durationMs": 21
+    },
+    {
+      "name": "/textures/concrete-normal.jpg",
+      "bytes": 111206,
+      "durationMs": 21.899999998509884
+    },
+    {
+      "name": "/textures/concrete-roughness.jpg",
+      "bytes": 182242,
+      "durationMs": 21.600000001490116
+    },
+    {
+      "name": "/textures/wood-color.jpg",
+      "bytes": 609825,
+      "durationMs": 42.099999997764826
+    },
+    {
+      "name": "/textures/wood-normal.jpg",
+      "bytes": 652741,
+      "durationMs": 24.200000002980232
+    },
+    {
+      "name": "/textures/wood-roughness.jpg",
+      "bytes": 300057,
+      "durationMs": 22.600000001490116
+    },
+    {
+      "name": "/models/plant.glb",
+      "bytes": 3000,
+      "durationMs": 3.600000001490116
+    },
+    {
+      "name": "/models/hose.glb",
+      "bytes": 2583448,
+      "durationMs": 50.69999999925494
+    },
+    {
+      "name": "/models/cart.glb",
+      "bytes": 3171756,
+      "durationMs": 303.30000000074506
+    },
+    {
+      "name": "/models/palm.glb",
+      "bytes": 16952,
+      "durationMs": 31.600000001490116
+    },
+    {
+      "name": "/models/shrub.glb",
+      "bytes": 8216,
+      "durationMs": 10.399999998509884
+    },
+    {
+      "name": "/models/vehicle.glb",
+      "bytes": 5020188,
+      "durationMs": 55
+    },
+    {
+      "name": "/models/receptionist.glb",
+      "bytes": 5072340,
+      "durationMs": 69.20000000298023
+    },
+    {
+      "name": "/models/worker.glb",
+      "bytes": 3727944,
+      "durationMs": 63.30000000074506
+    }
+  ],
+  "animations": {
+    "receptionist": {
+      "clips": [
+        "Idle",
+        "Greet",
+        "Talk",
+        "Service"
+      ],
+      "active": "Idle",
+      "time": 29.121200000003142
+    },
+    "worker": {
+      "clips": [
+        "Idle",
+        "Greet",
+        "Talk",
+        "Service"
+      ],
+      "active": "Idle",
+      "time": 27.396000000003873
+    }
+  },
+  "vehicleCount": 1,
+  "contextLost": false
+}

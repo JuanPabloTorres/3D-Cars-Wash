@@ -1,0 +1,32 @@
+{
+  actualBrowser: true,
+  observedAt: '2026-10-23T15:33:14.490Z',
+  hardware: 'ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)',
+  viewport: { width: 1440, height: 900 },
+  scenario: 'quiet',
+  loadedMs: 8268,
+  samples: 180,
+  meanFPS: 39.75440611330498,
+  frameMsP95: 26.599999994039536,
+  drawCalls: 1139,
+  triangles: 4238242,
+  textures: 129,
+  gpuMemoryBytes: null,
+  errors: []
+}
+{
+  actualBrowser: true,
+  observedAt: '2026-10-23T15:33:27.947Z',
+  hardware: 'ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)',
+  viewport: { width: 1440, height: 900 },
+  scenario: 'busy',
+  loadedMs: 3076,
+  samples: 180,
+  meanFPS: 27.17350281547071,
+  frameMsP95: 41.20000000298023,
+  drawCalls: 1708,
+  triangles: 6120992,
+  textures: 295,
+  gpuMemoryBytes: null,
+  errors: []
+}

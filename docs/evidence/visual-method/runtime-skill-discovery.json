@@ -1,0 +1,22 @@
+{
+  "method": "skills/list",
+  "observedAt": "2026-10-23T18:13:28.726Z",
+  "found": [
+    {
+      "name": "carwash-visual-production",
+      "path": "C:\\Projects\\Repos\\3D-Cars-Wash\\.agents\\skills\\carwash-visual-production\\SKILL.md",
+      "enabled": true,
+      "interface": {
+        "displayName": "CarWash - Produccion visual 3D",
+        "shortDescription": "Composicion, Blender y validacion del mundo CarWash",
+        "iconSmall": null,
+        "iconLarge": null,
+        "iconSmallUrl": null,
+        "iconLargeUrl": null,
+        "brandColor": null,
+        "defaultPrompt": "Usa $carwash-visual-production para mejorar una toma de CarWash 3D conservando sus flujos y verificando capturas reales."
+      }
+    }
+  ],
+  "matched": 1
+}

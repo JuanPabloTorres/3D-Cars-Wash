@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Febles · Comparación del piloto</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111d24;color:#edf2ee;font:16px/1.55 system-ui,sans-serif}main{max-width:1920px;margin:auto;padding:28px}h1{font-size:clamp(26px,4vw,44px);line-height:1.1;margin:0 0 16px}h2{margin-top:40px}p{max-width:1000px;color:#c2cfce}a{color:#f7c46c;text-underline-offset:3px}nav{display:flex;gap:22px;margin:24px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}figure{margin:0;background:#1a2d38;border:1px solid #42545f;border-radius:10px;overflow:hidden}figure>a{display:block;background:#0c1419}img{display:block;width:100%;height:auto}figcaption{padding:16px;font-size:14px}strong{display:block;color:#fff;margin-bottom:6px}small{color:#b3c0c6}.note{padding:18px;border-left:3px solid #ebad55;background:#1a2d38;max-width:none}footer{margin:40px 0;font-size:14px}@media(max-width:900px){.grid{grid-template-columns:1fr}main{padding:18px}}
+</style>
+<style>nav{flex-wrap:wrap}</style>
+<main>
+<h1>Entrada y recepción · zona piloto</h1>
+<p>Referencia, estado anterior y versión final a <b>1855 × 848 px</b>. Las imágenes de ejecución proceden de un navegador real, con operación vacía y luz soleada simulada. Abre cada imagen para verla a su resolución original.</p>
+<nav aria-label="Vistas de comparación"><a href="#entrance">Entrada</a><a href="#reception">Recepción</a><a href="#mobile">Móvil</a><a href="REPORT.md">Informe y pruebas</a><a href="after/capture.json">Identidad de la captura final</a></nav>
+<p class="note">La diferencia total incluye trabajo coordinado de tres chats. Este piloto aporta los cuatro objetos del mostrador, sus controles, el contrato de apoyo vegetal y la actualización de skills/perfiles. Fondo, plantas, mobiliario y cámara fueron integrados con sus responsables. La aceptación artística sigue pendiente.</p>
+<section id="entrance" aria-labelledby="entrance-title">
+<h2 id="entrance-title">Entrada</h2>
+<div class="grid">
+<figure><a href="references/entrance.png"><img src="references/entrance.png" alt="Concepto de entrada proporcionado: lounge izquierdo, recepción central, bahías y jardín derecho"></a><figcaption><strong>Referencia proporcionada</strong>Imagen conceptual, no ejecución. Fondo urbano y vegetación densa.</figcaption></figure>
+<figure><a href="before/1855-entrance.png"><img src="before/1855-entrance.png" alt="Entrada del navegador antes del piloto"></a><figcaption><strong>Antes</strong>Bundle index-BPiWgbIX.js. Operación vacía; no se añadieron vehículos para imitar el concepto.</figcaption></figure>
+<figure><a href="after/1855-entrance.png"><img src="after/1855-entrance.png" alt="Entrada integrada después del piloto"></a><figcaption><strong>Después</strong>Zonas de tierra y plantaciones integradas. Bundle y hashes en after/capture.json.</figcaption></figure>
+</div>
+<p><b>Diferencias pendientes:</b> el fondo montañoso no equivale al concepto urbano. La forma y densidad de las copas también difieren. Las bahías reflejan la operación vacía, y la marca procede de la configuración del negocio.</p>
+</section>
+<section id="reception" aria-labelledby="reception-title">
+<h2 id="reception-title">Recepción</h2>
+<div class="grid">
+<figure><a href="references/reception.png"><img src="references/reception.png" alt="Concepto de recepción proporcionado con catálogo, reloj, folleto y tableta"></a><figcaption><strong>Referencia proporcionada</strong>Cuatro objetos reconocibles; rostro, mano y centro del mostrador libres.</figcaption></figure>
+<figure><a href="before/1855-reception.png"><img src="before/1855-reception.png" alt="Recepción anterior con cinco displays grandes delante del mostrador"></a><figcaption><strong>Antes</strong>Cinco displays HTML. El reloj y la tarjeta central compiten con el torso de Ana.</figcaption></figure>
+<figure><a href="after/1855-reception.png"><img src="after/1855-reception.png" alt="Recepción final con cuatro objetos físicos y espacio central despejado"></a><figcaption><strong>Después</strong>Catálogo, reloj, folleto del local y tableta. Preparar orden continúa en el diálogo.</figcaption></figure>
+</div>
+<p><b>Diferencias pendientes:</b> la escala de Ana, el acabado del mobiliario y la identidad de pared no son una réplica fotográfica del concepto. El gesto exacto de saludo y las nubes pueden variar entre capturas. Las imágenes de recepción se toman en reposo; no acreditan por sí solas naturalidad de movimiento.</p>
+<p><a href="after/1855-counter.png">Controles del mostrador, escritorio</a> · <a href="after/390-counter.png">Controles del mostrador, 390 × 844</a> · <a href="after/650-counter.png">Controles a 650 px</a></p>
+</section>
+<section id="mobile" aria-labelledby="mobile-title">
+<h2 id="mobile-title">Mostrador a 390 × 844 y 650 × 900 px</h2>
+<p>La cámara ocupa el mismo destino. La versión integrada amplía el FOV móvil de 61° a 98° para mantener los cuatro objetos físicos dentro del encuadre. La baseline móvil cargó index-tzJPLZKH.js; no es el mismo bundle que la baseline de escritorio.</p>
+<div class="grid">
+<figure><a href="before/390-counter.png"><img src="before/390-counter.png" alt="Mostrador anterior a 390 por 844 píxeles"></a><figcaption><strong>Antes · 390 × 844</strong>Cinco displays y encuadre anterior.</figcaption></figure>
+<figure><a href="after/390-counter.png"><img src="after/390-counter.png" alt="Mostrador final a 390 por 844 píxeles"></a><figcaption><strong>Después · 390 × 844</strong>Cuatro controles con sus objetos; medidas y estado en capture.json.</figcaption></figure>
+<figure><a href="after/390-reception.png"><img src="after/390-reception.png" alt="Panel de recepción final en móvil"></a><figcaption><strong>Recepción · 390 × 844</strong>Panel contextual abierto sobre la misma escena.</figcaption></figure>
+<figure><a href="before/650-counter.png"><img src="before/650-counter.png" alt="Mostrador anterior a 650 por 900 píxeles"></a><figcaption><strong>Antes · 650 × 900</strong>Baseline conservada sin retocar.</figcaption></figure>
+<figure><a href="after/650-counter.png"><img src="after/650-counter.png" alt="Mostrador final a 650 por 900 píxeles"></a><figcaption><strong>Después · 650 × 900</strong>El cambio de encuadre debe valorarse junto al tamaño táctil.</figcaption></figure>
+<figure><a href="after/capture.json"><figcaption><strong>Registro reproducible</strong>Cámaras, resoluciones, estado operativo, errores, videos y hashes del build y los modelos.</figcaption></a></figure>
+</div>
+</section>
+<footer><p>Fechas expresadas en America/La_Paz. Los fallos del primer intento, sus trazas y el ajuste de precisión del arnés están conservados en el informe. Un build correcto y las pruebas funcionales no conceden aprobación artística.</p></footer>
+</main>
+</html>

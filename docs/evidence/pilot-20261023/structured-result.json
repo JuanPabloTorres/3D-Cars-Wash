@@ -1,0 +1,24 @@
+{
+  "verdict": "partial",
+  "summary": "Piloto técnico de entrada y recepción integrado y verificado sobre el build identificado; aceptación artística y reconciliación literal del skill ausente pendientes.",
+  "changes": [
+    "Cuatro objetos físicos del mostrador conectados a las funciones existentes, con controles accesibles y conservación del borrador.",
+    "Apoyo vegetal y límite de navegación integrados con los propietarios de paisaje; trabajo de los otros chats preservado.",
+    "Ana señala sólo el catálogo y explica vehículo, revisión e información mediante Talk seguido de Idle.",
+    "Mapa de propietarios, perfiles y referencias del skill existente actualizados sin crear otra arquitectura.",
+    "Comparación visual y reporte con fallos anteriores, concurrencia y revisión comprobada: docs/evidence/pilot-20261023/comparison.html y REPORT.md."
+  ],
+  "checks": [
+    {"label": "Build congelado correcto y 59 pruebas unitarias aprobadas; logs del integrador inspeccionados", "status": "passed"},
+    {"label": "Attempt-4: 11 recorridos E2E aprobados, exit 0; HTTP y hashes iguales antes y después", "status": "passed"},
+    {"label": "16 PNG y 4 videos en cuatro resoluciones; cero errores; 43 hashes estables y operación anónima vacía", "status": "passed"},
+    {"label": "28 enlaces locales y dimensiones de PNG verificados; cuatro videos presentes", "status": "passed"},
+    {"label": "Suite completa de 31 casos sobre la última UX", "status": "not_run"}
+  ],
+  "pending": [
+    "Aprobación artística: proporciones de Ana y props, densidad y materiales vegetales, sombras y fondo difieren de las referencias.",
+    "service-world-3d no fue localizado; no se afirma haber cargado ni reconciliado literalmente su contenido.",
+    "La evidencia acredita el build congelado FXtXVk5r; los incrementos posteriores de otros chats requieren nueva validación.",
+    "La posibilidad de animaciones de trabajadores con datos obsoletos fue detectada por lectura, no reproducida ni reparada en este piloto."
+  ]
+}
