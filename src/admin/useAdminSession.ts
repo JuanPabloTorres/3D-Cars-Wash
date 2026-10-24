@@ -5,7 +5,7 @@ import type { PricingConfiguration } from '../domain/businessContent';
 /** Owns UI transport and the unsaved configuration draft. Authorization and
  * business transitions are checked by demoApi, never by this hook. A polling
  * response updates live data but cannot overwrite an operator's unsaved edit. */
-export function useAdminSession() {
+export function useAdminSession(employee=false) {
     const [data, setData] = useState<AdminSnapshot | null>(null), [config, setConfig] = useState<PricingConfiguration | null>(null);
     const [authorized, setAuthorized] = useState(false), [busy, setBusy] = useState(false), [error, setError] = useState(''), [notice, setNotice] = useState(''), [connected, setConnected] = useState(false);
     const mounted = useRef(true), inFlight = useRef(false), requestRevision = useRef(0);
@@ -22,7 +22,7 @@ export function useAdminSession() {
         }).status === 403)
             setAuthorized(false);
     } };
-    useEffect(() => { mounted.current = true; void useCommerce.getState().refresh().then(async () => { const session = await demoRequest('session'); if (mounted.current && session.role === 'admin')
+    useEffect(() => { mounted.current = true; void useCommerce.getState().refresh().then(async () => { const session = await demoRequest('session'); if (mounted.current && (session.role === 'admin'||employee&&session.role==='employee'))
         setAuthorized(true); }).catch(() => { if (mounted.current)
         setError('No se pudo iniciar la sesión local.'); }); return () => { mounted.current = false; }; }, []);
     useEffect(() => { if (!authorized)
@@ -51,7 +51,7 @@ export function useAdminSession() {
             setBusy(false);
         }
     }
-    async function login(key: string) {
+    async function login(username: string,password:string) {
         if (inFlight.current)
             return false;
         inFlight.current = true;
@@ -59,7 +59,7 @@ export function useAdminSession() {
         setError('');
         try {
             await useCommerce.getState().refresh();
-            await demoRequest('admin/login', { key });
+            await demoRequest('admin/login', { username,password,portal:employee?'employee':'admin' });
             setAuthorized(true);
             await refresh();
             return true;

@@ -15,7 +15,7 @@ interface AppState {
   sceneFailed:boolean
   navRevision:number;activeView:Destination;viewIntent:ViewIntent;localOpen:boolean;localOverview:boolean;orderExpanded:boolean;sync:'connecting'|'connected'|'stale'
   dialogue:boolean; menu:boolean; help:boolean; accountOpen:boolean; flowOpen:boolean; error:string|null; announcement:string
-  informationTopic:'hours'|'overview'
+  informationTopic:'hours'|'overview'|'offers'
   world:WorldViewModel; paused:boolean
   weather:WeatherState; weatherEffects:boolean
   weatherCoordinates:Coordinates|null

@@ -1,0 +1,14 @@
+.git
+node_modules
+dist
+dist-server
+.cache
+.env*
+server/data
+**/*.jwt-key
+server/.local-admin-token
+server/local-business-config.json*
+docs/evidence
+test-results
+playwright-report
+*.tsbuildinfo

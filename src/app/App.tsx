@@ -9,6 +9,7 @@ import { VehicleInspectionExperience } from '../world/interactions/VehicleInspec
 import {WeatherDataController}from '../environment/WeatherDataController'
 import { appConfig } from '../config/appConfig'
 import {useBusiness} from './business'
+import {ServiceCompletionNotice} from '../ui/ServiceCompletionNotice'
 declare global { interface Window { __FEBLES__: {snapshot:()=>unknown} } }
 export function App(){
   const business=useBusiness()
@@ -26,6 +27,6 @@ export function App(){
     return()=>{disposed=true;events?.close();unsubscribe();demo.dispose();clearInterval(timer);document.removeEventListener('visibilitychange',refresh)}
   },[])
   useEffect(()=>{if(ready&&source)source.start()},[ready,source])
-  return <main className="world" data-ready={ready} aria-label={`${business.name}: visita tridimensional`}><WeatherDataController/><WorldScene/><VehicleInspectionExperience/>{!ready&&!sceneFailed&&<div className="loading-overlay"><div className="loading" role="status"><b>{business.name}</b><span>Preparando tu visita…</span></div></div>}<WorldHUD source={source}/></main>
+  return <main className="world" data-ready={ready} aria-label={`${business.name}: visita tridimensional`}><WeatherDataController/><WorldScene/><VehicleInspectionExperience/>{!ready&&!sceneFailed&&<div className="loading-overlay"><div className="loading" role="status"><b>{business.name}</b><span>Preparando tu visita…</span></div></div>}<WorldHUD source={source}/><ServiceCompletionNotice/></main>
 }
 

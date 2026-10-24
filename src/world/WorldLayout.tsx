@@ -23,6 +23,9 @@ export function WorldLayout(){
   <PavementMarkings mat={mat}/>
   <ReceptionPrefab mat={mat}/><Landscape mat={mat}/>
   <StaffPrefab role="receptionist" position={[-6,.2,2.18]}/>
+  {/* One continuous work-light approximation for the row: area lights affect
+      every PBR shader, even when their individual bay is outside the camera. */}
+  <rectAreaLight position={[19.4,3.28,-4]} rotation-x={-Math.PI/2} width={36.7} height={.35} color="#fff0d5" intensity={1.3}/>
   {BAY_IDS.map(id=>{
    const [x,z]=bayCenter(id),bay=bays.find(b=>b.bayId===id)!,v=vehicles.find(v=>v.worldEntityId===bay.vehicleId)
    return <group key={id}>

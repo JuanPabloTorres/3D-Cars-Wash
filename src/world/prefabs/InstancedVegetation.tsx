@@ -7,11 +7,31 @@ import type { PlantPlacement } from '../siteLandscape'
 type Props = {
   url: string; placements: PlantPlacement[]; height: number
   canopy?: boolean; foliageTint?: string; castShadow?: boolean
+  finish?: 'landscape'
+}
+
+// Original baked leaf albedos → warmer olive albedos calibrated against the
+// approved background-box photographs. These are surface colors, not the
+// already-lit photograph pixels. Preserve each texture's veins and mottling.
+const landscapeLeafPalette: Record<string, readonly [string, string]> = {
+  'leaf-depth': ['#263f20', '#34421d'],
+  'leaf-medium': ['#466326', '#606825'],
+  'leaf-sunlit': ['#718d35', '#909833'],
+  'leaf-new-growth': ['#99af4b', '#b0b550'],
+}
+
+function matchLandscapeLeafColor(material: MeshStandardMaterial) {
+  const palette = landscapeLeafPalette[material.name]
+  if (!palette) return
+  const from = new Color(palette[0]), to = new Color(palette[1])
+  // Ratios are computed in linear light. Apply only to owned material clones;
+  // the shared GLB maps, trunks and the preserved full scene stay untouched.
+  material.color.multiply(new Color().setRGB(to.r / from.r, to.g / from.g, to.b / from.b))
 }
 
 /** Shared GLB geometry and textures remain immutable. Only owned material clones
  * receive foliage finishing; one draw per source mesh, not per planted instance. */
-export function InstancedAsset({ url, placements, height, canopy = false, foliageTint, castShadow = false }: Props) {
+export function InstancedAsset({ url, placements, height, canopy = false, foliageTint, castShadow = false, finish: profile }: Props) {
   const { scene } = useGLTF(url)
   const parts = useMemo(() => {
     const frame = vegetationFrame(scene, height)
@@ -19,7 +39,7 @@ export function InstancedAsset({ url, placements, height, canopy = false, foliag
     const finish = (source: Material) => {
       const material = source.clone()
       if (material instanceof MeshStandardMaterial) {
-        const foliage = material.alphaTest > 0
+        const foliage = material.alphaTest > 0 || /foliage|leaf/i.test(material.name)
         material.metalness = 0
         material.envMapIntensity = foliage ? .35 : .6
         if (foliage) {
@@ -27,12 +47,25 @@ export function InstancedAsset({ url, placements, height, canopy = false, foliag
           material.alphaToCoverage = true
           material.transparent = false
           material.depthWrite = true
-          material.roughness = Math.max(.88, material.roughness)
+          material.roughness = Math.max(profile === 'landscape' ? .74 : .88, material.roughness)
           material.normalScale.multiplyScalar(.5)
           if (foliageTint) material.color.multiply(new Color(foliageTint))
           // Small distant leaves lose alpha coverage in filtered mip levels.
           // MSAA coverage keeps their edges soft while preserving visible canopy.
           if (canopy) material.alphaTest = Math.min(material.alphaTest, .2)
+        }
+        if (profile === 'landscape') {
+          material.roughness = Math.max(foliage ? .74 : .92, material.roughness)
+          material.envMapIntensity = .4
+          if (!foliage) material.normalScale.multiplyScalar(.65)
+          // Subtle leaf fill, shared by foreground and background specimens.
+          // Preserve scanned color/alpha variations instead of painting the crown.
+          if (foliage) {
+            matchLandscapeLeafColor(material)
+            material.emissive.set('#536b35')
+            material.emissiveIntensity = .025
+            material.emissiveMap = material.map
+          }
         }
       }
       return material
@@ -44,7 +77,7 @@ export function InstancedAsset({ url, placements, height, canopy = false, foliag
         matrix: frame.matrix.clone().multiply(object.matrixWorld) })
     })
     return result
-  }, [scene, height, canopy, foliageTint])
+  }, [scene, height, canopy, foliageTint, profile])
   useEffect(() => () => parts.forEach(part => {
     const materials = Array.isArray(part.material) ? part.material : [part.material]
     materials.forEach(material => material.dispose())

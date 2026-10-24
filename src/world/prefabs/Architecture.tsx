@@ -21,7 +21,7 @@ function useMapSet(prefix:string,repeat:number){
 export function usePalette(){
   const concrete=useMapSet('concrete',.45),road=useMapSet('concrete',.8),walk=useMapSet('concrete',.65),wood=useMapSet('wood',.7),deck=useMapSet('wood',.75)
   const materials=useMemo(()=>{const palette={
-    ground:new MeshStandardMaterial({map:road[0],normalMap:road[1],normalScale:new Vector2(.28,.28),color:'#555d61',roughness:.97}),
+    ground:new MeshStandardMaterial({map:road[0],normalMap:road[1],normalScale:new Vector2(.48,.48),color:'#43494e',roughness:.9}),
     wood:new MeshStandardMaterial({map:wood[0],normalMap:wood[1],normalScale:new Vector2(.22,.22),roughnessMap:wood[2],color:'#d0b595',roughness:.78}),
     deck:new MeshStandardMaterial({map:deck[0],normalMap:deck[1],normalScale:new Vector2(.28,.28),roughnessMap:deck[2],color:'#bfa17e',roughness:.86}),
     counterBacking:new MeshStandardMaterial({color:'#80634d',roughness:.96}),
@@ -53,12 +53,18 @@ export function usePalette(){
       asphaltWorld=instanceMatrix*asphaltWorld;
       #endif
       asphaltPosition=(modelMatrix*asphaltWorld).xz;`)
-    shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 asphaltPosition;').replace('#include <map_fragment>',`#ifdef USE_MAP
+    shader.fragmentShader=shader.fragmentShader.replace('#include <common>',`#include <common>
+      varying vec2 asphaltPosition;
+      float asphaltHash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+      float asphaltNoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+        return mix(mix(asphaltHash(i),asphaltHash(i+vec2(1.,0.)),f.x),mix(asphaltHash(i+vec2(0.,1.)),asphaltHash(i+vec2(1.,1.)),f.x),f.y);}
+      `).replace('#include <map_fragment>',`#ifdef USE_MAP
       diffuseColor *= mix(vec4(.72,.72,.72,1.), texture2D(map, vMapUv), .24);
       #endif`).replace('#include <color_fragment>',`#include <color_fragment>
       float grain=fract(sin(dot(floor(asphaltPosition*140.),vec2(12.9898,78.233)))*43758.5453);
-      diffuseColor.rgb*=mix(.91,1.055,grain);`)
-  };palette.ground.customProgramCacheKey=()=> 'fine-matte-asphalt-v2';return palette},[concrete,road,walk,wood,deck])
+      float aggregate=asphaltNoise(asphaltPosition*3.7)*.65+asphaltNoise(asphaltPosition*.43)*.35;
+      diffuseColor.rgb*=mix(.72,1.16,aggregate)*mix(.88,1.09,grain);`)
+  };palette.ground.customProgramCacheKey=()=> 'fine-matte-asphalt-v3';return palette},[concrete,road,walk,wood,deck])
   useEffect(()=>()=>Object.values(materials).forEach(m=>m.dispose()),[materials])
   useFrame((_,dt)=>{const wet=useApp.getState().weather.kind==='rain';materials.bayFloor.roughness+=((wet?.3:.8)-materials.bayFloor.roughness)*(1-Math.exp(-Math.min(dt,.05)))})
   return materials
@@ -83,6 +89,32 @@ export function Wayfinding({at,destination,label,mat}:{at:V3;destination:Destina
 export function ReceptionPrefab({mat}:{mat:Palette}){
   const mobile=useThree(s=>s.size.width<=700)
   const business=useBusiness()
+  // The shared wood atlas contains horizontal board seams. Sample one board
+  // locally, then rotate its grain along the vertical slats, leaving other areas intact.
+  const counterFinish=useMemo(()=>{
+    const createFinish=(vertical:boolean)=>{
+      const finish=mat.wood.clone()
+      for(const key of ['map','normalMap','roughnessMap'] as const){
+        const source=mat.wood[key]
+        if(!source)continue
+        const texture=source.clone()
+        texture.repeat.set(vertical?.5:.22,vertical?.5:.06)
+        texture.rotation=vertical?Math.PI/2:0
+        texture.offset.set(.02,vertical?.08:.03)
+        finish[key]=texture
+      }
+      finish.normalScale.set(.08,.08)
+      finish.roughness=.72
+      finish.color.set('#dec5a6')
+      return finish
+    }
+    return {top:createFinish(false),slats:createFinish(true)}
+  },[mat.wood])
+  useEffect(()=>()=>{
+    for(const finish of Object.values(counterFinish)){
+      finish.map?.dispose();finish.normalMap?.dispose();finish.roughnessMap?.dispose();finish.dispose()
+    }
+  },[counterFinish])
   return <group position-z={3.2}>
     <Block at={[-6,.1,-2.2]} size={[6.9,.2,6.1]} mat={mat.pavement}/>
     <Block at={[-6,1.5,-4.8]} size={[6.9,3,.2]} mat={mat.graphite} occluder/>
@@ -93,15 +125,15 @@ export function ReceptionPrefab({mat}:{mat:Palette}){
     <Block at={[-6,3.17,.98]} size={[7.5,.38,.18]} mat={mat.graphite}/>
     <Block at={[-6,2.94,.99]} size={[7.25,.035,.08]} mat={mat.light}/>
     <Lettering at={[-6,3.17,1.09]} size={.24}>RECEPCIÓN</Lettering>
-    <Lettering at={[mobile?-6:-7.25,2.5,-4.67]} size={mobile?.26:.25} maxWidth={mobile?5.1:2.6}>{business.name.toUpperCase()}</Lettering>
-    <Lettering at={[mobile?-6:-7.25,mobile?2.34:2.08,-4.67]} size={.12} color="#ed7979">CAR WASH</Lettering>
+    <Lettering at={[mobile?-6:-7,2.5,-4.67]} size={mobile?.34:.32} maxWidth={mobile?5.1:3.9}>{business.name.toUpperCase()}</Lettering>
+    <Lettering at={[mobile?-6:-7,2.19,-4.67]} size={.14} color="#ed7979">CAR WASH</Lettering>
     <Block at={[-6,.62,.3]} size={[4.3,1.04,.7]} mat={mat.graphite} radius={.12} occluder/>
-    <Block at={[-6,1.16,.35]} size={[4.5,.12,.92]} mat={mat.wood} radius={.055} occluder/>
+    <Block at={[-6,1.16,.35]} size={[4.5,.12,.92]} mat={counterFinish.top} radius={.055} occluder/>
     <Block at={[-6,.62,.665]} size={[4.12,.98,.035]} mat={mat.counterBacking}/>
-    {Array.from({length:41},(_,i)=><Block key={i} at={[-8+i*.1,.62,.69]} size={[.075,.98,.022]} mat={mat.wood}/>)}
+    {Array.from({length:41},(_,i)=><Block key={i} at={[-8+i*.1,.62,.69]} size={[.075,.98,.022]} mat={counterFinish.slats}/>)}
     <Block at={[-6,.16,.73]} size={[4.2,.035,.055]} mat={mat.light}/>
-    <Lettering at={[-6,.94,.715]} size={.095} maxWidth={1.9}>{business.name.toUpperCase()}</Lettering>
-    <Lettering at={[-6,.83,.715]} size={.055} color="#f2c4a2">CAR WASH</Lettering>
+    <Lettering at={[-6,.75,.72]} size={.18} maxWidth={2.9}>{business.name.toUpperCase()}</Lettering>
+    <Lettering at={[-6,.55,.72]} size={.085} color="#f2c4a2">CAR WASH</Lettering>
     {[-7.5,-4.5].map(x=><group key={x}><Block at={[x,2.78,-.5]} size={[.035,.7,.035]} mat={mat.graphite}/><mesh position={[x,2.4,-.5]} castShadow><cylinderGeometry args={[.18,.3,.18,16]}/><meshStandardMaterial color="#27292b" roughness={.6}/></mesh><Block at={[x,2.29,-.5]} size={[.19,.035,.19]} mat={mat.light}/></group>)}
     <Model id="pottedPlant" height={1.05} position={[-9.03,.2,.05]}/>
     <Model id="pottedPlant" height={1.05} position={[-2.97,.2,.05]}/>

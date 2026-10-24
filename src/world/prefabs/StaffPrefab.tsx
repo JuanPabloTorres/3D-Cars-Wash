@@ -7,7 +7,7 @@ import { useModel } from './Model'
 import { useApp } from '../../app/store'
 import { diagnostics } from '../diagnostics'
 import {useCommerce} from '../../app/commerceStore'
-export function StaffPrefab({role,position,rotation=0,staffId=role,serviceActive=false,activity}:{role:'receptionist'|'worker';position:[number,number,number];rotation?:number;staffId?:string;serviceActive?:boolean;activity?:string}){
+export function StaffPrefab({role,position,rotation=0,staffId=role,serviceActive=false,activity,greetWhileWelcome=false}:{role:'receptionist'|'worker';position:[number,number,number];rotation?:number;staffId?:string;serviceActive?:boolean;activity?:string;greetWhileWelcome?:boolean}){
   const {model,animations}=useModel(role,role==='receptionist'?1.72:1.78)
   const group=useRef<Group>(null)
   const {actions,mixer,names}=useAnimations(animations,group)
@@ -18,19 +18,20 @@ export function StaffPrefab({role,position,rotation=0,staffId=role,serviceActive
   useEffect(()=>{setExplained(false);setPointed(false)},[step])
   useEffect(()=>{const finished=(event:{action:{getClip:()=>{name:string}}})=>{const name=event.action.getClip().name;if(name==='Greet')setGreeted(true);if(name==='Talk')setExplained(true);if(name.startsWith('Point'))setPointed(true)};mixer.addEventListener('finished',finished);return()=>mixer.removeEventListener('finished',finished)},[mixer])
   const workClip=activity==='interior'?'ServiceInterior':activity==='lights'?'ServiceLights':activity==='inspection'?'ServiceInspect':'Service'
-  // Use one complete greeting clip, then settle into a calm listening pose. The old
-  // Talk loop repeated a hand-only gesture and read as a mechanical wave.
+  // Reception can repeat the greeting while welcome is open. Other scenes keep
+  // their single greeting; choosing a service immediately switches to attention.
   const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches
   const presenting=nearby&&talking&&['services','vehicle','review','information'].includes(step)
   // Only the catalogue has a corresponding pointing clip. The former order
   // terminal was retired; forms/information use a brief explanation, then rest.
   const pointingAtCatalogue=presenting&&step==='services'&&!pointed
-  const clip=role==='worker'?(serviceActive?workClip:'Idle'):reduced?'Idle':nearby&&!greeted?'Greet':pointingAtCatalogue?'PointServices':presenting&&!explained?'Talk':'Idle'
+  const welcoming=greetWhileWelcome&&role==='receptionist'&&nearby&&talking&&step==='welcome'&&!reduced
+  const clip=role==='worker'?(serviceActive?workClip:'Idle'):reduced?'Idle':welcoming||(!greetWhileWelcome&&nearby&&!greeted)?'Greet':pointingAtCatalogue?'PointServices':presenting&&!explained?'Talk':'Idle'
   useEffect(()=>{if(!nearby)setGreeted(false)},[nearby])
   useEffect(()=>{
-    controller.play(clip)
+    controller.play(clip,welcoming)
     diagnostics.animations[staffId]={clips:names,active:clip,time:0}
-  },[clip,controller,names,staffId])
+  },[clip,controller,names,staffId,welcoming])
   useEffect(()=>()=>{controller.dispose();delete diagnostics.animations[staffId]},[controller,staffId])
   useEffect(()=>{controller.pause(role==='worker'&&paused)},[paused,controller,role])
   useFrame((_,dt)=>{

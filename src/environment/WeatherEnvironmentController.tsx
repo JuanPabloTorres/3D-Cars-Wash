@@ -36,7 +36,7 @@ export function WeatherEnvironmentController(){
   diagnostics.weather={kind,source:useApp.getState().weather.source,exposure:gl.toneMappingExposure}
  })
  return <><Environment files="/textures/daylight.hdr"/>
-  <primitive object={sky} scale={450}/>
+  <primitive object={sky} scale={450} renderOrder={-3}/>
   <hemisphereLight ref={hemi} args={['#d9eaff',preset.ground,.7]}/>
   <directionalLight ref={key} position={[-22,30,18]} color="#fff0d4" intensity={2.6} castShadow shadow-mapSize={[1024,1024]} shadow-camera-left={-22} shadow-camera-right={43} shadow-camera-top={22} shadow-camera-bottom={-22} shadow-camera-near={1} shadow-camera-far={100} shadow-normalBias={.035} shadow-bias={-.00015}/>
   <pointLight position={[-6,2.5,-.8]} color="#ffd39b" intensity={kind==='night'?35:kind==='sunset'?12:2} distance={12} decay={2}/>

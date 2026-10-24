@@ -1,0 +1,15 @@
+services:
+  carwash:
+    build: .
+    ports:
+      - "127.0.0.1:4173:4173"
+    volumes:
+      - carwash-data:/data
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+volumes:
+  carwash-data:

@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-server/
 test-results/
 playwright-report/
 .env
@@ -11,6 +12,8 @@ playwright-report/
 server/.local-admin-token
 server/local-business-config.json
 server/local-business-config.json.tmp
+server/data/
+*.jwt-key
 
 # Local caches and raw browser evidence may contain session credentials.
 __pycache__/

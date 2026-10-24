@@ -25,7 +25,7 @@ function PropLabel({ children, at, size = .043, color = '#172b35' }: { children:
 function CounterClock() {
     return <>
         <PropBox at={[0, .025, 0]} size={[.29, .05, .18]} color="#343c40"/>
-        <mesh position={[0, .265, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow><cylinderGeometry args={[.225, .225, .065, 48]}/><meshStandardMaterial color="#4b4d49" roughness={.55}/></mesh>
+        <mesh position={[0, .265, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow><cylinderGeometry args={[.225, .225, .065, 48]}/><meshStandardMaterial color="#876443" roughness={.68}/></mesh>
         <mesh position={[0, .265, .035]}><circleGeometry args={[.202, 48]}/><meshStandardMaterial color="#f1e9d5" roughness={.86}/></mesh>
         {Array.from({ length: 12 }, (_, i) => {
             const angle = i * Math.PI / 6;
@@ -68,11 +68,11 @@ function QuestionTablet() {
         <PropBox at={[0, .02, 0]} size={[.37, .04, .24]} color="#343c40"/>
         <PropBox at={[0, .115, -.035]} size={[.07, .2, .06]} color="#343c40" rotation={[-.2, 0, 0]}/>
         <group position={[0, .265, .01]} rotation={[-.16, 0, 0]}>
-            <PropBox at={[0, 0, 0]} size={[.46, .33, .035]} color="#24343c"/>
-            <PropBox at={[0, 0, .021]} size={[.418, .286, .009]} color="#e8eddf"/>
-            <PropBox at={[-.025, .045, .028]} size={[.19, .07, .008]} color="#49695f"/>
-            <PropBox at={[-.085, .008, .028]} size={[.025, .045, .008]} color="#49695f" rotation={[0, 0, -.5]}/>
-            <PropLabel at={[0, -.085, .03]} size={.037}>PREGUNTAS</PropLabel>
+            <PropBox at={[0, 0, 0]} size={[.36, .43, .025]} color="#24343c"/>
+            <PropBox at={[0, 0, .021]} size={[.322, .392, .009]} color="#142c37"/>
+            <PropBox at={[-.025, .045, .028]} size={[.19, .07, .008]} color="#c9d8da"/>
+            <PropBox at={[-.085, .008, .028]} size={[.025, .045, .008]} color="#c9d8da" rotation={[0, 0, -.5]}/>
+            <PropLabel at={[0, -.115, .03]} size={.037} color="#e8eddf">PREGUNTAS</PropLabel>
         </group>
     </>;
 }

@@ -14,6 +14,12 @@ export function WorldPanel({title,subtitle,children,onClose,compact=false,onTogg
  // Steps share a mounted panel. Focus and reading position must follow the step,
  // while ordinary data refreshes leave the user's reading position untouched.
  useLayoutEffect(()=>{const panel=ref.current;panel?.querySelector<HTMLElement>('.panel-heading h2')?.focus({preventScroll:true});panel?.querySelector('.panel-content')?.scrollTo({top:0,left:0,behavior:'instant'})},[contextKey])
+ // Animate the existing content node, so step changes never remount forms or lose drafts.
+ useLayoutEffect(()=>{
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return
+  const animation=ref.current?.querySelector('.panel-content')?.animate([{opacity:0,translate:'0 10px'},{opacity:1,translate:'0 0'}],{duration:240,easing:'cubic-bezier(.2,.7,.2,1)'})
+  return()=>animation?.cancel()
+ },[contextKey])
  useEffect(()=>{
   const viewport=window.visualViewport;if(!viewport)return
   const update=()=>{ref.current?.style.setProperty('--usable-height',`${viewport.height}px`);ref.current?.style.setProperty('--keyboard-inset',`${Math.max(0,window.innerHeight-viewport.height-viewport.offsetTop)}px`)}

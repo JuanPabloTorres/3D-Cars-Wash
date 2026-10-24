@@ -2,7 +2,7 @@
  * Canopies may overhang; planted bases must remain inside the soil inset. */
 export const plantingBeds = {
   // Leave room for the truck's rear swing as it turns out of the queue.
-  forecourt: { x: -2.3, z: 10.5, width: 1.8, depth: 6.4, height: .3 },
+  forecourt: { x: -1.6, z: 13, width: 1.8, depth: 6.4, height: .3 },
   entranceWest: { x: -11.4, z: 13.5, width: 1.8, depth: 5.2, height: .3 },
   loungeRear: { x: -13.85, z: 3.25, width: 6.1, depth: 1.4, height: .4 },
   loungeWest: { x: -18.4, z: 7.5, width: 2.6, depth: 8.4, height: .4 },
@@ -76,15 +76,22 @@ function drift(zone: PlantingZone, kind: PlantKind, centres: [number, number][],
   }))
 }
 
+const forecourt = plantingBeds.forecourt
 export const landscapePlants: Plant[] = [
-  ...drift('forecourt', 'shrub', [[-2.3, 9.4], [-2.3, 11.6]], 3, [.3, .4], .94),
+  ...drift('forecourt', 'shrub', [[forecourt.x, forecourt.z-1.1], [forecourt.x, forecourt.z+1.1]], 3, [.3, .4], .94),
   ...drift('entranceWest', 'shrub', [[-11.4, 12.5], [-11.4, 14.4]], 3, [.3, .38], .91),
-  ...drift('forecourt', 'calathea', [[-2.3, 8.3], [-2.3, 10.45], [-2.3, 12.6]], 3, [.21, .34], .94),
-  ...drift('entranceWest', 'calathea', [[-11.4, 11.7], [-11.4, 13.35], [-11.4, 15.15]], 3, [.2, .3], .9),
+  ...drift('forecourt', 'calathea', [[forecourt.x, forecourt.z-2.2], [forecourt.x, forecourt.z-.05], [forecourt.x, forecourt.z+2.1]], 5, [.24, .4], .94),
+  ...drift('entranceWest', 'calathea', [[-11.4, 11.7], [-11.4, 13.35], [-11.4, 15.15]], 5, [.23, .34], .9),
   ...drift('loungeRear', 'shrub', [[-15.8, 3.25], [-14.3, 3.25], [-12.4, 3.25]], 2, [.46, .22]),
-  ...drift('loungeRear', 'calathea', [[-15.4, 3.25], [-13.2, 3.25]], 3, [.3, .15], .8),
+  ...drift('loungeRear', 'calathea', [[-15.4, 3.25], [-13.2, 3.25]], 5, [.3, .15], .8),
   ...drift('loungeWest', 'shrub', [[-18.4, 4.3], [-18.4, 6], [-18.4, 7.8], [-18.4, 10.1]], 2, [.65, .45]),
-  ...drift('loungeWest', 'calathea', [[-17.9, 4.4], [-17.9, 6.2], [-17.9, 8], [-17.9, 10.2]], 3, [.22, .35], .96),
+  ...drift('loungeWest', 'calathea', [[-17.9, 4.4], [-17.9, 6.2], [-17.9, 8], [-17.9, 10.2]], 5, [.22, .35], .96),
+  // Low-cost fern understory closes visible soil gaps without multiplying the
+  // 30k-triangle shrubs or 472k-triangle near trees. Ornamental leaves stay higher.
+  ...drift('forecourt', 'fern', [[forecourt.x, forecourt.z-2.5], [forecourt.x, forecourt.z-.8], [forecourt.x, forecourt.z+.9], [forecourt.x, forecourt.z+2.5]], 3, [.25, .25], .9),
+  ...drift('entranceWest', 'fern', [[-11.4, 11.8], [-11.4, 13.1], [-11.4, 14.5], [-11.4, 15.3]], 3, [.25, .25], .9),
+  ...drift('loungeRear', 'fern', [[-16, 3.25], [-14.6, 3.25], [-13.3, 3.25], [-11.7, 3.25]], 3, [.24, .08], .78),
+  ...drift('loungeWest', 'fern', [[-18.7, 5], [-18.7, 6.9], [-18.7, 8.8], [-18.7, 10.9]], 3, [.35, .3], 1.05),
   ...drift('receptionWest', 'fern', [[-11.6, -3.5]], 3, [.25, .28], .72),
   ...drift('receptionRear', 'fern', [[-6, -7.7]], 3, [.26, .2], .72),
   ...drift('east', 'shrub', [[55.8, -5.5], [55.8, -2.2], [55.8, 1], [55.8, 4.7]], 3, [.55, .55]),

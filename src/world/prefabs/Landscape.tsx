@@ -5,7 +5,9 @@ import { InstancedAsset } from './InstancedVegetation'
 import { Block, type usePalette } from './Architecture'
 import { landscapePlants, plantingBeds, plantingSurfaces, plantPlacement, vegetationModels, nearTreeModel, type PlantingZone } from '../siteLandscape'
 
-const shrubs = landscapePlants.filter(p => p.kind === 'shrub').map(plantPlacement)
+const nearZones = new Set<PlantingZone>(['forecourt', 'entranceWest', 'loungeRear', 'loungeWest'])
+const shrubs = landscapePlants.filter(p => p.kind === 'shrub' && !nearZones.has(p.zone)).map(plantPlacement)
+const nearShrubs = landscapePlants.filter(p => p.kind === 'shrub' && nearZones.has(p.zone)).map(plantPlacement)
 const nearTrees = landscapePlants.filter(p => p.kind === 'oak' && p.zone !== 'rear').map(plantPlacement)
 const distantTrees = landscapePlants.filter(p => p.kind === 'oak' && p.zone === 'rear').map(plantPlacement)
 const ornaments = landscapePlants.filter(p => p.kind === 'calathea').map(plantPlacement)
@@ -37,6 +39,7 @@ export function Landscape({ mat }: { mat: ReturnType<typeof usePalette> }) {
     <InstancedAsset url={`/models/${nearTreeModel.id}.glb`} placements={nearTrees} height={nearTreeModel.height} canopy castShadow />
     <InstancedAsset url={`/models/${vegetationModels.oak.id}.glb`} placements={distantTrees} height={vegetationModels.oak.height} canopy castShadow />
     <InstancedAsset url={`/models/${vegetationModels.shrub.id}.glb`} placements={shrubs} height={vegetationModels.shrub.height} castShadow />
+    <InstancedAsset url={`/models/${vegetationModels.shrub.id}.glb`} placements={nearShrubs} height={vegetationModels.shrub.height} foliageTint="#a9bd97" castShadow />
     <InstancedAsset url={`/models/${vegetationModels.calathea.id}.glb`} placements={ornaments} height={vegetationModels.calathea.height} castShadow />
     <InstancedAsset url={`/models/${vegetationModels.fern.id}.glb`} placements={ferns} height={vegetationModels.fern.height} castShadow />
   </group>

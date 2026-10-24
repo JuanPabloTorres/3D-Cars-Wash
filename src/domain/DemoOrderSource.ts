@@ -17,10 +17,10 @@ export function quoteDemoServices(ids:string[],type:VehicleType='car',config:Pri
  const services=catalogue.filter(s=>ids.includes(s.id)).map(s=>{
   const cents=config.prices[type]?.[s.id]
   if(typeof cents!=='number'||!Number.isSafeInteger(cents)||cents<0)throw new Error('Requiere cotización: no hay una tarifa configurada para estos servicios y este tipo de vehículo.')
-  return {...s,cents}
+  return {...s,cents,durationMinutes:config.durations?.[type]?.[s.id]??null}
  })
- const subtotal=services.reduce((sum,s)=>sum+s.cents,0),discount=services.length===3?Math.min(subtotal,config.allServicesDiscountCents):0,tax=Math.round((subtotal-discount)*config.taxBasisPoints/10000)
- return {services,subtotal,discount,tax,total:subtotal-discount+tax,pricingVersion:config.version,taxBasisPoints:config.taxBasisPoints}
+ const subtotal=services.reduce((sum,s)=>sum+s.cents,0),discount=['exterior','interior','lights'].every(id=>ids.includes(id))?Math.min(subtotal,config.allServicesDiscountCents):0,tax=Math.round((subtotal-discount)*config.taxBasisPoints/10000)
+ return {services,estimatedMinutes:services.every(s=>s.durationMinutes!==null)?services.reduce((sum,s)=>sum+s.durationMinutes!,0):null,subtotal,discount,tax,total:subtotal-discount+tax,pricingVersion:config.version,taxBasisPoints:config.taxBasisPoints}
 }
 export function ownDemoOrder(world:WorldViewModel){
  const vehicle=world.vehicles.find(v=>v.worldEntityId===demoOrder.worldEntityId&&v.visibility==='own')

@@ -1,0 +1,123 @@
+{
+  "siteId": "77e7ad7d-ca28-4bab-a15b-92913897f8ad",
+  "project": {
+    "title": "CarWash Studio — Spatial Web App",
+    "slug": "carwash-studio-spatial-web-app",
+    "hidden": false,
+    "collectionIds": [
+      "b40c02a6-2405-4ce2-9bf6-2147b9fa29a9"
+    ],
+    "description": "A service website you navigate as a place. CarWash Studio explores an alternative to conventional business websites: reception becomes the service catalog, the lounge becomes the waiting and order-status view, and the wash bays make service progress visible. The 3D environment is a navigation layer for real business workflows, with a persistent bottom navigation and conventional forms where they are useful.\n\nCustomers can register, sign in, choose a vehicle category, review configured prices and estimated times, prepare an order, and follow their vehicle. Employees confirm arrival, assign a bay, update service stages and confirm handover. Administrators manage staff, services, category-based prices and durations, and offers through a separate dashboard.\n\nA Node.js backend and SQLite database own the business state. JWT sessions use HttpOnly cookies, while server-side role checks separate customer, employee and administrator access. The scene reflects server-confirmed operation updates rather than inventing progress from animation.\n\nThe initial local MVP was checked with 90 unit/integration tests and four browser workflows covering registration, login/logout, responsive navigation, catalog publication, staff operations, private notifications and persistence across a server restart. Screenshots show the running application and isolated demonstration data.\n\nThis is a portfolio demonstration, not a public production service. Docker packaging is prepared but its runtime has not been validated. Ana's future AI integration, external messaging and real payments are not connected. The spatial approach aims to make a service easier to understand and explore; improved conversion or usability compared with conventional websites has not yet been established by a user study.",
+    "details": [
+      {
+        "label": "Project type",
+        "text": "Spatial Web App · Service commerce simulator"
+      },
+      {
+        "label": "Version",
+        "text": "v0.1.0 · Local MVP"
+      },
+      {
+        "label": "Roles",
+        "text": "Customer · Employee · Administrator"
+      },
+      {
+        "label": "Technology",
+        "text": "React · TypeScript · Three.js · Node.js · SQLite · JWT"
+      },
+      {
+        "label": "Validation",
+        "text": "90 automated unit/integration tests · 4 browser workflows"
+      },
+      {
+        "label": "Source code",
+        "link": {
+          "text": "View initial release",
+          "url": "https://github.com/JuanPabloTorres/3D-Cars-Wash/tree/v0.1.0",
+          "target": "_blank"
+        }
+      }
+    ],
+    "coverImage": {
+      "imageInfo": {
+        "id": "9f13e8_fadefceaa66047f8a780eee6982aaa12~mv2.png",
+        "width": 1440,
+        "height": 900,
+        "altText": "CarWash Studio entrance with reception, wash bays and customer navigation"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "seoData": {
+      "tags": [
+        {
+          "type": "title",
+          "children": "CarWash Studio — Spatial Web App | JP Tech Studio"
+        },
+        {
+          "type": "meta",
+          "props": {
+            "name": "description",
+            "content": "Explore CarWash Studio: a 3D service web app with customer journeys, staff dashboards, Node.js, SQLite and JWT. Initial local MVP with real screenshots."
+          }
+        }
+      ],
+      "settings": {
+        "keywords": [
+          {
+            "term": "spatial web app",
+            "isMain": true
+          },
+          {
+            "term": "3D service experience"
+          },
+          {
+            "term": "CarWash Studio"
+          },
+          {
+            "term": "Node.js SQLite"
+          }
+        ]
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "name": "entrance",
+      "mediaId": "9f13e8_fadefceaa66047f8a780eee6982aaa12~mv2.png",
+      "url": "https://static.wixstatic.com/media/9f13e8_fadefceaa66047f8a780eee6982aaa12~mv2.png"
+    },
+    {
+      "name": "reception",
+      "mediaId": "9f13e8_0f413834083f4297a9097804f97a8a8b~mv2.png",
+      "url": "https://static.wixstatic.com/media/9f13e8_0f413834083f4297a9097804f97a8a8b~mv2.png"
+    },
+    {
+      "name": "services",
+      "mediaId": "9f13e8_e32e76f43603440e84641719545fb428~mv2.png",
+      "url": "https://static.wixstatic.com/media/9f13e8_e32e76f43603440e84641719545fb428~mv2.png"
+    },
+    {
+      "name": "lounge",
+      "mediaId": "9f13e8_c6e67bf83f004b17947acd32e83a3f99~mv2.png",
+      "url": "https://static.wixstatic.com/media/9f13e8_c6e67bf83f004b17947acd32e83a3f99~mv2.png"
+    },
+    {
+      "name": "login",
+      "mediaId": "9f13e8_4206de7510db4c9ab8cc0fc427199cf1~mv2.png",
+      "url": "https://static.wixstatic.com/media/9f13e8_4206de7510db4c9ab8cc0fc427199cf1~mv2.png"
+    },
+    {
+      "name": "administration",
+      "mediaId": "9f13e8_9dbc5f4219234bc6b8b4b7cca174c19d~mv2.png",
+      "url": "https://static.wixstatic.com/media/9f13e8_9dbc5f4219234bc6b8b4b7cca174c19d~mv2.png"
+    },
+    {
+      "name": "employee",
+      "mediaId": "9f13e8_d74c367670f34c6194d8bb636889366c~mv2.png",
+      "url": "https://static.wixstatic.com/media/9f13e8_d74c367670f34c6194d8bb636889366c~mv2.png"
+    }
+  ]
+}

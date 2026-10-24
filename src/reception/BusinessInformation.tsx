@@ -1,7 +1,7 @@
 import {useRef,useState} from 'react'
 import {Clock,MessageCircle,Info} from 'lucide-react'
 import {answerBusinessQuestion,type QuestionTopic} from '../domain/businessContent'
-import {useBusiness,useServices} from '../app/business'
+import {useBusiness,useServices,useActiveOffers} from '../app/business'
 import {demoRequest} from '../app/commerceStore'
 import {validateRegistration} from '../domain/commerce'
 export function BusinessInformation({hoursFirst=false,showHeading=true}:{hoursFirst?:boolean;showHeading?:boolean}){
@@ -19,7 +19,12 @@ export function BusinessQuestions(){
   {answer&&!answer.known&&(business.contact?<a href={business.contact.href}>Contactar al establecimiento: {business.contact.label}</a>:<p className="inline-note">Consulta al personal al visitar el establecimiento.</p>)}
  </>
 }
+/** Published, unexpired offers only; the display never manufactures discounts. */
+export function BusinessOffers(){
+ const offers=useActiveOffers()
+ return <section aria-label="Ofertas del establecimiento">{offers.length?offers.map(o=><article key={o.id}><h3>{o.title}</h3><p>{o.description}</p></article>):<p className="muted">No hay ofertas vigentes configuradas por el establecimiento.</p>}</section>
+}
 export function LoungeContent(){
- const business=useBusiness(),services=useServices()
- return <div className="lounge-content"><details><summary>Servicios y cuidados del vehículo</summary>{services.filter(s=>s.available!==false).map(s=><article key={s.id}><h3>{s.label}</h3><p>{s.description}</p><p><b>Incluye:</b> {s.includes}</p><p>{s.care}</p><small>{s.conditions}</small></article>)}</details><details><summary>Ofertas vigentes</summary>{business.offers.filter(o=>Date.parse(o.expiresAt)>Date.now()).map(o=><article key={o.id}><h3>{o.title}</h3><p>{o.description}</p></article>)}{!business.offers.some(o=>Date.parse(o.expiresAt)>Date.now())&&<p className="muted">No hay ofertas vigentes configuradas por el establecimiento.</p>}</details><details><summary>Información de {business.name}</summary><BusinessInformation/></details></div>
+ const business=useBusiness(),services=useServices(),offers=useActiveOffers()
+ return <div className="lounge-content"><details><summary>Servicios y cuidados del vehículo</summary>{services.filter(s=>s.available!==false).map(s=><article key={s.id}><h3>{s.label}</h3><p>{s.description}</p><p><b>Incluye:</b> {s.includes}</p><p>{s.care}</p><small>{s.conditions}</small></article>)}</details><details><summary>Ofertas vigentes</summary>{offers.map(o=><article key={o.id}><h3>{o.title}</h3><p>{o.description}</p></article>)}{!offers.length&&<p className="muted">No hay ofertas vigentes configuradas por el establecimiento.</p>}</details><details><summary>Información de {business.name}</summary><BusinessInformation/></details></div>
 }

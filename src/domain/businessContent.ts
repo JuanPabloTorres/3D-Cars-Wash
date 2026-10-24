@@ -5,7 +5,7 @@ export interface BusinessContent {
  offers:{id:string;title:string;description:string;expiresAt:string}[];process:string;conditions:string;updatedAt:string;
  contactRequestsAvailable:boolean
 }
-export interface PricingConfiguration {version:string;currency:string;taxBasisPoints:number;allServicesDiscountCents:number;prices:Record<VehicleType,Record<string,number|null>>;services?:ServiceContent[];business?:BusinessContent}
+export interface PricingConfiguration {version:string;currency:string;taxBasisPoints:number;allServicesDiscountCents:number;prices:Record<VehicleType,Record<string,number|null>>;durations?:Record<VehicleType,Record<string,number|null>>;services?:ServiceContent[];business?:BusinessContent}
 /** Only established project content. Empty fields are deliberate, never guessed. */
 export const businessContent:BusinessContent={
  name:'CarWash Studio',hours:null,contact:null,

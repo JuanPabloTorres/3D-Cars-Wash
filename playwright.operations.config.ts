@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test'
+export default defineConfig({testDir:'tests/e2e',testMatch:'operations-*.spec.ts',outputDir:'docs/evidence/phase04/test-results',workers:1,fullyParallel:false,timeout:300000,expect:{timeout:15000},reporter:[['list']],use:{actionTimeout:15000,navigationTimeout:30000,baseURL:'http://127.0.0.1:4174',channel:'msedge',headless:true,trace:'off',video:'off',screenshot:'only-on-failure',viewport:{width:1440,height:900}}})

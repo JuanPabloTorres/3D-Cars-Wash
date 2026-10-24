@@ -4,7 +4,6 @@ import {useApp} from '../../app/store'
 import { MeshStandardMaterial, Vector2 } from 'three'
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js'
 import { Block, Lettering, type usePalette } from './Architecture'
-import { Model } from './Model'
 import { createBlockGeometry } from './surfaceGeometry'
 
 type V3 = [number, number, number]
@@ -117,14 +116,8 @@ export function FinishedWashBay({ mat, bayId = '01', availability = 'free' }: {
     <Block at={[3.4, 3.05, .6]} size={[7.9, .24, .19]} mat={finish.steel}/>
     <Lettering at={[3.4, 3.47, .72]} size={.4}>{bayId}</Lettering>
     <Lettering at={[3.4, 3.05, .72]} size={.115}>{status}</Lettering>
-    <rectAreaLight position={[3.4, 3.28, -4]} rotation={[-Math.PI / 2, 0, 0]} width={4.7} height={.35} color="#fff0d5" intensity={1.3}/>
 
     {[.55, 6.25].map(x => <Block key={x} at={[x, .007, -4]} size={[.075, .004, 7.5]} mat={mat.yellow} radius={0}/>)}
-    {/* The original professional hose now has a wall-mounted bracket, not a floating reel. */}
-    <Block at={[6.45, 1.18, -9.045]} size={[.5, .7, .09]} mat={finish.steel}/>
-    <Block at={[6.45, .74, -8.87]} size={[.5, .08, .44]} mat={finish.steel}/>
-    <Model id="hose" height={1.05} position={[6.45, .78, -8.7]} rotation={-Math.PI / 2}/>
-    <Model id="cart" height={.9} position={[.7, .005, -7.3]} rotation={Math.PI / 2}/>
     {[.15, 6.65].map(x => <group key={x}>
       <Block at={[x, .025, .45]} size={[.25, .04, .25]} mat={finish.steel}/>
       <Block at={[x, .5, .45]} size={[.12, 1, .12]} mat={mat.yellow}/>

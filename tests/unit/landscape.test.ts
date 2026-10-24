@@ -17,7 +17,8 @@ describe('shared soil and vegetation contract', () => {
   })
 
   it('rejects road, footpath, deck and curb positions even when assigned a bed', () => {
-    for (const [x, z] of [[3.4, 12], [-8.85, 10], [-13, 8], [17, -11], [-1.35, 10.5]]) {
+    const bed=plantingBeds.forecourt
+    for (const [x, z] of [[3.4, 12], [-8.85, 10], [-13, 8], [17, -11], [bed.x+bed.width/2-.05, bed.z]]) {
       expect(() => plantPlacement({ zone: 'forecourt', kind: 'shrub', x, z, yaw: 0, scale: 1 })).toThrow('outside soil')
     }
   })

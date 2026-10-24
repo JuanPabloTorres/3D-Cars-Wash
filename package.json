@@ -8,12 +8,15 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "build:server": "vite build --config vite.server.config.ts",
+    "start": "node dist-server/start.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",
     "@react-three/drei": "10.7.9",
     "@react-three/fiber": "9.8.2",
+    "jose": "6.2.13",
     "lucide-react": "^0.468.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
