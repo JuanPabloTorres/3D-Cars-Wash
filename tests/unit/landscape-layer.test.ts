@@ -3,18 +3,30 @@ import { getBounds, NodeIO } from '@gltf-transform/core'
 import { ALL_EXTENSIONS } from '@gltf-transform/extensions'
 import { Box3, Matrix4, Vector3 } from 'three'
 import sharp from 'sharp'
-import { accents, groundCover, landscapeAssets, landscapeBeds, landscapeLights, landscapePoles, palms, shrubs, trees } from '../../src/world/layers/landscapePlan'
+import {
+  accents,
+  groundCover,
+  landscapeAssets,
+  landscapeBeds,
+  landscapeLights,
+  landscapePoles,
+  palms,
+  shrubs,
+  trees,
+} from '../../src/world/layers/landscapePlan'
 
 const io = new NodeIO().registerExtensions(ALL_EXTENSIONS)
 const sets = { tree: trees, palm: palms, shrub: shrubs, accent: accents, fern: groundCover }
 
 describe('new botanical assets in layer 02', () => {
   it('anchors all lights inside retained beds, with inward pole heads and clear tree trunks', () => {
-    const anchors = [...landscapeLights, ...landscapePoles.map(pole => pole.position)]
+    const anchors = [...landscapeLights, ...landscapePoles.map((pole) => pole.position)]
     for (const [x, y, z] of anchors) {
-      const bed = landscapeBeds.find(([, b]) => Math.abs(x - b.x) + .24 < b.width / 2 && Math.abs(z - b.z) + .24 < b.depth / 2)?.[1]
+      const bed = landscapeBeds.find(
+        ([, b]) => Math.abs(x - b.x) + 0.24 < b.width / 2 && Math.abs(z - b.z) + 0.24 < b.depth / 2,
+      )?.[1]
       expect(bed, `light base supported by soil at ${x},${z}`).toBeDefined()
-      expect(y).toBeCloseTo(bed!.height - .045)
+      expect(y).toBeCloseTo(bed!.height - 0.045)
       expect(trees.every(([tx, , tz]) => Math.hypot(x - tx, z - tz) > 1)).toBe(true)
     }
     for (const pole of landscapePoles) {
@@ -40,11 +52,11 @@ describe('new botanical assets in layer 02', () => {
         expect(texture).not.toBeNull()
         if (!mat.getName().startsWith('leaf-')) continue
         const stats = await sharp(texture.getImage()!).stats()
-        const [r, g, b] = stats.channels.map(c => c.mean)
+        const [r, g, b] = stats.channels.map((c) => c.mean)
         expect(g, `${asset.url}/${mat.getName()} green survives export`).toBeGreaterThan(r * 1.12)
         expect(g).toBeGreaterThan(b * 1.3)
         expect(g).toBeGreaterThan(35)
-        expect(mat.getRoughnessFactor()).toBeGreaterThan(.65)
+        expect(mat.getRoughnessFactor()).toBeGreaterThan(0.65)
       }
     }
   })
@@ -64,18 +76,25 @@ describe('new botanical assets in layer 02', () => {
           }
         }
       }
-      const base = vertices.filter(v => (v.y - bounds.min[1]) * normalScale <= .025)
+      const base = vertices.filter((v) => (v.y - bounds.min[1]) * normalScale <= 0.025)
       const root = new Box3().setFromPoints(base).getCenter(new Vector3())
       root.y = bounds.min[1]
-      const checked = (kind === 'tree' || kind === 'palm' ? base : vertices).map(v => v.clone().sub(root).multiplyScalar(normalScale))
+      const checked = (kind === 'tree' || kind === 'palm' ? base : vertices).map((v) =>
+        v.clone().sub(root).multiplyScalar(normalScale),
+      )
       for (const [x, y, z, yaw, scale] of sets[kind as keyof typeof sets]) {
-        const bed = landscapeBeds.find(([, b]) => Math.abs(x-b.x) < b.width/2 && Math.abs(z-b.z) < b.depth/2)?.[1]
+        const bed = landscapeBeds.find(
+          ([, b]) => Math.abs(x - b.x) < b.width / 2 && Math.abs(z - b.z) < b.depth / 2,
+        )?.[1]
         expect(bed, `${kind} rooted in a retained bed`).toBeDefined()
-        expect(y).toBeCloseTo(bed!.height - .045)
-        const outside = checked.find(v => {
-          const px = x + (v.x*Math.cos(yaw)+v.z*Math.sin(yaw))*scale
-          const pz = z + (-v.x*Math.sin(yaw)+v.z*Math.cos(yaw))*scale
-          return Math.abs(px-bed!.x) > bed!.width/2-.14 || Math.abs(pz-bed!.z) > bed!.depth/2-.14
+        expect(y).toBeCloseTo(bed!.height - 0.045)
+        const outside = checked.find((v) => {
+          const px = x + (v.x * Math.cos(yaw) + v.z * Math.sin(yaw)) * scale
+          const pz = z + (-v.x * Math.sin(yaw) + v.z * Math.cos(yaw)) * scale
+          return (
+            Math.abs(px - bed!.x) > bed!.width / 2 - 0.14 ||
+            Math.abs(pz - bed!.z) > bed!.depth / 2 - 0.14
+          )
         })
         expect(outside, `${kind} foliage stays inside soil at ${x},${z}`).toBeUndefined()
       }

@@ -8,8 +8,9 @@ import { nearTreeModel, vegetationModels } from '../../src/world/siteLandscape'
 
 describe('natural vegetation contracts', () => {
   it('centres the actual root instead of an asymmetric crown and retains ground contact', () => {
-    const root = new Group(), material = new MeshBasicMaterial()
-    const trunk = new Mesh(new BoxGeometry(.2, 2, .2), material)
+    const root = new Group(),
+      material = new MeshBasicMaterial()
+    const trunk = new Mesh(new BoxGeometry(0.2, 2, 0.2), material)
     trunk.position.y = 1
     const crown = new Mesh(new BoxGeometry(2, 2, 2), material)
     crown.position.set(4, 4, 0)
@@ -28,7 +29,10 @@ describe('natural vegetation contracts', () => {
 
   it('ships photographed bark/leaves and nontrivial alpha masks for every active cutout plant', async () => {
     const io = new NodeIO().registerExtensions(ALL_EXTENSIONS)
-    const activeModels = new Set([...Object.values(vegetationModels).map(model => model.id), nearTreeModel.id])
+    const activeModels = new Set([
+      ...Object.values(vegetationModels).map((model) => model.id),
+      nearTreeModel.id,
+    ])
     for (const id of activeModels) {
       const document = await io.read(`public/models/${id}.glb`)
       for (const material of document.getRoot().listMaterials()) {
@@ -38,8 +42,8 @@ describe('natural vegetation contracts', () => {
         const image = material.getBaseColorTexture()!.getImage()!
         expect((await sharp(image).metadata()).hasAlpha, `${id} leaf mask`).toBe(true)
         const alpha = await sharp(image).extractChannel(3).raw().toBuffer()
-        expect(alpha.some(value => value < 80)).toBe(true)
-        expect(alpha.some(value => value > 200)).toBe(true)
+        expect(alpha.some((value) => value < 80)).toBe(true)
+        expect(alpha.some((value) => value > 200)).toBe(true)
       }
     }
   })

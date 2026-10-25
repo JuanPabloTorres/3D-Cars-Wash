@@ -1,0 +1,33 @@
+// Historical commercial suites target a manually managed sandbox; never use a live customer session.
+import { projectPath } from './paths.ts'
+import { defineConfig } from '@playwright/test'
+
+export default defineConfig({
+  testDir: projectPath('tests/e2e'),
+  fullyParallel: false,
+  workers: 1,
+  timeout: 90000,
+  expect: { timeout: 15000 },
+  reporter: [['list'], ['html', { open: 'never' }]],
+  use: {
+    baseURL: 'http://127.0.0.1:4173',
+    channel: 'msedge',
+    headless: true,
+    trace: 'retain-on-failure',
+    video: 'on',
+    screenshot: 'only-on-failure',
+    viewport: { width: 1440, height: 900 },
+  },
+  projects: [
+    {
+      name: 'commercial',
+      testMatch: [
+        'commercial.spec.ts',
+        'sow.spec.ts',
+        'lounge.spec.ts',
+        'diagnostico.spec.ts',
+        'reception-layer.spec.ts',
+      ],
+    },
+  ],
+})

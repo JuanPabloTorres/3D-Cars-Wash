@@ -1,53 +1,67 @@
-import { describe, it, expect } from 'vitest';
-import { DemoOperationSource } from '../../src/domain/DemoOperationSource';
-import { validateConfiguration } from '../../server/configuration';
-import configuration from '../../server/business-config.json';
-import { businessContent } from '../../src/domain/businessContent';
-import { demoCatalog } from '../../src/reception/catalog';
-import { quoteDemoServices } from '../../src/domain/DemoOrderSource';
+import { describe, it, expect } from 'vitest'
+import { DemoOperationSource } from '../../src/domain/DemoOperationSource'
+import { validateConfiguration } from '../../server/configuration'
+import configuration from '../../server/business-config.json'
+import { businessContent } from '../../src/domain/businessContent'
+import { demoCatalog } from '../../src/reception/catalog'
+import { quoteDemoServices } from '../../src/domain/DemoOrderSource'
 describe('operation authority and shared configuration', () => {
-    it('starts empty, keeps category identity, rejects queue/bay conflicts and never auto-completes work', () => {
-        const source = new DemoOperationSource('operation');
-        source.initialize();
-        expect(source.snapshot().vehicles).toEqual([]);
-        for (let i = 0; i < 3; i++)
-            source.addOrder(`order-${i}`, ['exterior'], '#aaa', i === 0 ? 'truck' : 'suv');
-        expect(() => source.addOrder('overflow', ['exterior'], '#aaa', 'car')).toThrow('fila está completa');
-        expect(() => source.assignOrder('order-1', '01')).toThrow('primer vehículo');
-        source.assignOrder('order-0', '01');
-        expect(() => source.assignOrder('order-1', '01')).toThrow();
-        source.tick(300);
-        let vehicle = source.snapshot().vehicles.find(v => v.worldEntityId === 'order-0')!;
-        expect(vehicle.type).toBe('truck');
-        expect(vehicle.stage).toBe('washing');
-        source.tick(1000);
-        expect(source.snapshot().vehicles.find(v => v.worldEntityId === 'order-0')!.stage).toBe('washing');
-        expect(() => source.setBayAvailability('01', false)).toThrow('ocupada');
-        source.advanceVehicle('order-0');
-        source.advanceVehicle('order-0');
-        expect(source.snapshot().vehicles.find(v => v.worldEntityId === 'order-0')!.stage).toBe('ready');
-        expect(source.snapshot().vehicles.find(v => v.worldEntityId === 'order-0')!.assignedWorkerId).toBeNull();
-        expect(() => source.releaseVehicle('order-0')).toThrow('carril está ocupado');
-        source.tick(300);
-        source.releaseVehicle('order-0');
-        source.tick(300);
-        expect(source.snapshot().vehicles.find(v => v.worldEntityId === 'order-0')!.stage).toBe('handover');
-        source.releaseVehicle('order-0', true);
-        source.tick(300);
-        expect(source.snapshot().vehicles.some(v => v.worldEntityId === 'order-0')).toBe(false);
-        source.dispose();
-    });
-    it('rejects unsafe URLs and invalid prices, preserves null tariffs and unavailable services', () => {
-        const input = { ...structuredClone(configuration), business: structuredClone(businessContent), services: structuredClone(demoCatalog) };
-        const valid = validateConfiguration(input);
-        expect(valid.prices.suv.exterior).toBeNull();
-        expect(() => quoteDemoServices(['exterior'], 'suv', valid)).toThrow('Requiere cotización');
-        valid.services![0].available = false;
-        expect(() => quoteDemoServices(['exterior'], 'car', valid)).toThrow('no está disponible');
-        input.business.contact = { label: 'Unsafe', href: 'javascript:alert(1)' };
-        expect(() => validateConfiguration(input)).toThrow('https');
-        input.business.contact = null;
-        input.prices.car.exterior = -1;
-        expect(() => validateConfiguration(input)).toThrow('centavos');
-    });
-});
+  it('starts empty, keeps category identity, rejects queue/bay conflicts and never auto-completes work', () => {
+    const source = new DemoOperationSource('operation')
+    source.initialize()
+    expect(source.snapshot().vehicles).toEqual([])
+    for (let i = 0; i < 3; i++)
+      source.addOrder(`order-${i}`, ['exterior'], '#aaa', i === 0 ? 'truck' : 'suv')
+    expect(() => source.addOrder('overflow', ['exterior'], '#aaa', 'car')).toThrow(
+      'fila está completa',
+    )
+    expect(() => source.assignOrder('order-1', '01')).toThrow('primer vehículo')
+    source.assignOrder('order-0', '01')
+    expect(() => source.assignOrder('order-1', '01')).toThrow()
+    source.tick(300)
+    let vehicle = source.snapshot().vehicles.find((v) => v.worldEntityId === 'order-0')!
+    expect(vehicle.type).toBe('truck')
+    expect(vehicle.stage).toBe('washing')
+    source.tick(1000)
+    expect(source.snapshot().vehicles.find((v) => v.worldEntityId === 'order-0')!.stage).toBe(
+      'washing',
+    )
+    expect(() => source.setBayAvailability('01', false)).toThrow('ocupada')
+    source.advanceVehicle('order-0')
+    source.advanceVehicle('order-0')
+    expect(source.snapshot().vehicles.find((v) => v.worldEntityId === 'order-0')!.stage).toBe(
+      'ready',
+    )
+    expect(
+      source.snapshot().vehicles.find((v) => v.worldEntityId === 'order-0')!.assignedWorkerId,
+    ).toBeNull()
+    expect(() => source.releaseVehicle('order-0')).toThrow('carril está ocupado')
+    source.tick(300)
+    source.releaseVehicle('order-0')
+    source.tick(300)
+    expect(source.snapshot().vehicles.find((v) => v.worldEntityId === 'order-0')!.stage).toBe(
+      'handover',
+    )
+    source.releaseVehicle('order-0', true)
+    source.tick(300)
+    expect(source.snapshot().vehicles.some((v) => v.worldEntityId === 'order-0')).toBe(false)
+    source.dispose()
+  })
+  it('rejects unsafe URLs and invalid prices, preserves null tariffs and unavailable services', () => {
+    const input = {
+      ...structuredClone(configuration),
+      business: structuredClone(businessContent),
+      services: structuredClone(demoCatalog),
+    }
+    const valid = validateConfiguration(input)
+    expect(valid.prices.suv.exterior).toBeNull()
+    expect(() => quoteDemoServices(['exterior'], 'suv', valid)).toThrow('Requiere cotización')
+    valid.services![0].available = false
+    expect(() => quoteDemoServices(['exterior'], 'car', valid)).toThrow('no está disponible')
+    input.business.contact = { label: 'Unsafe', href: 'javascript:alert(1)' }
+    expect(() => validateConfiguration(input)).toThrow('https')
+    input.business.contact = null
+    input.prices.car.exterior = -1
+    expect(() => validateConfiguration(input)).toThrow('centavos')
+  })
+})

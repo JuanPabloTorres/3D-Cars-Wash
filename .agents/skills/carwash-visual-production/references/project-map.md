@@ -1,5 +1,7 @@
 # Propietarios observados · 23-10-2026
 
+Actualización de mantenimiento (24-10-2026): consultar el [mapa vigente](../../spatial-web-production/references/carwash-map.md) para cuenta, sesión compartida, materiales y pruebas aisladas. Las observaciones siguientes conservan su contexto histórico; no ejecutar los runners antiguos sobre una sesión activa.
+
 Confirmar símbolos y consumidores en cada tarea; este mapa no es un contrato inmutable.
 
 | Capacidad | Dueño actual | Límite |

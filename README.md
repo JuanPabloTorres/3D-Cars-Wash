@@ -6,7 +6,7 @@
 
 Explora los servicios, prepara una orden y sigue su atención desde un entorno 3D conectado con el equipo del negocio.
 
-**Spatial Web App · React + Three.js · Node.js + SQLite · MVP local v0.1.0**
+**Spatial Web App · React + Three.js · Node.js + SQLite · MVP local v0.1.1**
 
 [Ver caso de estudio](https://estjuanpablotorres.wixsite.com/tech-portfolio-hub/portfolio-collections/my-portfolio/carwash-studio-spatial-web-app) · [Recorrido completo en 19 pasos](docs/evidence/release-v0.1.0/journey/README.md) · [Versión inicial](https://github.com/JuanPabloTorres/3D-Cars-Wash/tree/v0.1.0)
 
@@ -112,6 +112,8 @@ Los vehículos de la capa operativa se representan mediante **medallones e indic
 
 ### Mapa del código
 
+Consulta la [estructura y reglas de mantenimiento](docs/PROJECT_STRUCTURE.md) y la habilidad versionada [spatial-web-production](.agents/skills/spatial-web-production/SKILL.md) para trabajar con componentes, materiales y referencias visuales sin duplicar lógica.
+
 | Ubicación | Responsabilidad |
 | --- | --- |
 | [src/world](src/world) | Escena, capas, cámaras y prefabs |
@@ -170,12 +172,13 @@ Consultar [instalación, roles, sesiones y respaldo](docs/LOCAL_STAFF_SQLITE.md)
 npm test
 npm run build
 npm run build:server
-npx playwright test --config playwright.staff.config.ts
+npm run test:e2e
 ```
 
 La suite staff usa el puerto 4175 y SQLite temporal. Comprueba registro/login/logout, permisos negativos, tarifas por categoría, ofertas, atención, entrega, revocación y persistencia tras reinicio. Las pruebas históricas con comandos antiguos no deben confundirse con esta suite vigente.
 
 - [Informe de validación y fallos conservados](docs/MVP_VALIDATION.md)
+- [Notas de v0.1.1](docs/RELEASE_v0.1.1.md)
 - [Notas de v0.1.0](docs/RELEASE_v0.1.0.md)
 - [Secuencia reproducible de capturas](docs/evidence/release-v0.1.0/journey/README.md)
 

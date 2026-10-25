@@ -5,6 +5,8 @@ description: Analiza y mejora composición, recursos Blender, cámaras e interac
 
 # Producción visual de CarWash 3D
 
+Para mantenimiento y reconstrucción visual reutilizable, consultar [spatial-web-production](../spatial-web-production/SKILL.md). Su [mapa actualizado](../spatial-web-production/references/carwash-map.md) prevalece sobre rutas históricas de esta habilidad; comprobar el código actual. La suite de aceptación vigente es `npm run test:e2e`, con SQLite temporal en 4175.
+
 Trabajar sobre el establecimiento existente. Esta habilidad conserva conocimiento específico de `3D-Cars-Wash`; no impone su arquitectura a otros proyectos. Localizar la raíz antes de utilizar rutas relativas. Instalación habitual: `C:/Projects/Repos/3D-Cars-Wash`.
 
 ## Alcance y arranque eficiente
@@ -47,7 +49,7 @@ Asignar objetivo, modo, toma, archivos, contrato, salida y evidencia. Un escrito
 ## Invariantes
 
 - Una escena continua, navegación breve por áreas, sin exigir caminar o jugar.
-- Cuatro destinos: Recepción, Mi orden, Mi vehículo, El local; conservar borrador/orden al navegar.
+- Conservar los destinos funcionales y accesos configurados actualmente; no reducirlos a la navegación de una referencia antigua. Mantener borrador/orden al navegar.
 - Operación vacía por defecto sin clientes. Vehículos proceden de entidades; fixtures explícitos y rotulados DEMO, nunca rellenar bahías para imitar imágenes.
 - Proveedor/dominio existentes gobiernan cotización, confirmación, llegada, tareas, pago y entrega. Cámara, clips y partículas solo representan estado.
 - Exploración pública muestra ocupación sin datos privados de otros clientes.

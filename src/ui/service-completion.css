@@ -1,3 +1,52 @@
-.private-completion-notice{position:fixed!important;z-index:85!important;left:20px!important;bottom:108px!important;right:auto!important;max-width:330px!important;display:flex;gap:12px;padding:16px!important;background:#10342ff7;border:1px solid #67c7a0;border-radius:16px;color:#eef9f4;box-shadow:0 8px 30px #001e2355;pointer-events:auto;font:13px 'Manrope Variable',sans-serif}
-.private-completion-notice>svg{flex-shrink:0;color:#74e3af}.private-completion-notice p{font-size:12px;line-height:1.55;margin:8px 0}.private-completion-notice small{font-size:10px;color:#acd6c8}.private-completion-notice button{min-width:44px;min-height:44px;align-self:start;border:1px solid #8ac0af55;border-radius:10px;background:#24463f;color:inherit;cursor:pointer}
-@media(max-width:600px){.private-completion-notice{left:12px!important;right:12px!important;max-width:none!important;bottom:90px!important}}
+/* Private completion notice styling; the notice itself does not authorize handover or payment. */
+.private-completion-notice {
+  position: fixed !important;
+  z-index: 85 !important;
+  left: 20px !important;
+  bottom: 108px !important;
+  right: auto !important;
+  max-width: 330px !important;
+  display: flex;
+  gap: 12px;
+  padding: 16px !important;
+  background: #10342ff7;
+  border: 1px solid #67c7a0;
+  border-radius: 16px;
+  color: #eef9f4;
+  box-shadow: 0 8px 30px #001e2355;
+  pointer-events: auto;
+  font:
+    13px 'Manrope Variable',
+    sans-serif;
+}
+.private-completion-notice > svg {
+  flex-shrink: 0;
+  color: #74e3af;
+}
+.private-completion-notice p {
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 8px 0;
+}
+.private-completion-notice small {
+  font-size: 10px;
+  color: #acd6c8;
+}
+.private-completion-notice button {
+  min-width: 44px;
+  min-height: 44px;
+  align-self: start;
+  border: 1px solid #8ac0af55;
+  border-radius: 10px;
+  background: #24463f;
+  color: inherit;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .private-completion-notice {
+    left: 12px !important;
+    right: 12px !important;
+    max-width: none !important;
+    bottom: 90px !important;
+  }
+}

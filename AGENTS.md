@@ -1,5 +1,13 @@
 # Febles — alcance activo
 
+## Mantenimiento vigente — 24-10-2026
+
+- Usar `.agents/skills/spatial-web-production/SKILL.md` para reconstrucción visual y mantenimiento reutilizable. El mapa específico y las restricciones del proyecto permanecen en sus referencias y en este archivo.
+- Formato: `npm run format` y `npm run format:check`; comprobación de tipos y código local sin uso: `npm run typecheck`. Comentar responsabilidad, contratos y decisiones; separar bloques relacionados sin insertar líneas vacías entre cada propiedad.
+- La estructura actual está en `docs/PROJECT_STRUCTURE.md`. Cuenta está en `src/ui/account/`; componentes administrativos en `src/admin/components/` y hooks en `src/admin/hooks/`.
+- La suite E2E por defecto ahora es la de staff aislada en 4175, mediante `config/testing/playwright.staff.config.ts`. Las referencias históricas de este documento a suites activas en 4173 quedan sustituidas por esta regla. `config/testing/playwright.legacy.config.ts` conserva el runner antiguo; no ejecutarlo sobre la sesión viva del usuario.
+- Suelo, recepción y lounge comparten `src/world/materials/textureMaps.ts` para clonar y configurar mapas; cada consumidor conserva sus UV, color y disposal. La conexión comercial compartida pertenece a `src/app/useCommercialSession.ts`.
+
 - Fase 05: `WaitingLoungeLayer` es aditiva sobre el deck reservado; acceso en Área de espera y `?layer=lounge`. La consulta sólo lee la sesión privada y la misma proyección operativa de bahías. No confundir servicio finalizado con llegada física a entrega, ni emitir comprobantes inexistentes.
 - Componentes visuales reutilizables: `src/world/prefabs/Planter.tsx` es el único dueño del diseño de maceta, tierra y anclaje vegetal de recepción y lounge. Usar `PottedPlant` con posición, dimensiones y especie configurables en futuras áreas; no copiar geometría/materiales por ubicación. Reutilizar también los acabados y difusores existentes. Ver `docs/visual/waiting-lounge-layer.md`.
 

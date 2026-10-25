@@ -1,13 +1,87 @@
-.bay-operation-panel .panel-content{padding-top:12px}
-.bay-state{display:flex;align-items:center;gap:14px;padding:17px;background:#243843;border:1px solid #57707a;border-radius:14px}
-.bay-state.is-working{background:#204d43;border-color:#438d74}
-.bay-state small{display:block;font-size:10px;letter-spacing:.08em;color:#c3d7d5;margin-bottom:5px}
-.bay-state strong{display:block;font-size:17px;line-height:1.35}
-.bay-task-list{list-style:none;padding:0;margin:14px 0 20px}
-.bay-task-list li{display:flex;align-items:center;gap:12px;min-height:49px;border-bottom:1px solid #ffffff18;font-size:14px}
-.bay-task-list li b{margin-left:auto;font-size:12px;color:#b7c7cf}
-.bay-task-list li[data-state=active] b,.bay-task-list li[data-state=done] svg{color:#8be0b7}
-.bay-empty-note{font-size:14px;line-height:1.65;margin:20px 0;color:#d1dcdf}
-.bay-authority-note{font-size:11px;color:#b5c6cf;margin:12px 0 4px}
-@media(min-width:701px){.world-panel.bay-operation-panel{width:min(390px,30vw);top:100px;bottom:auto;max-height:calc(100dvh - 124px)}}
-@media(max-width:700px){.world-panel.bay-operation-panel.compact{max-height:43dvh}.bay-state{padding:12px}.bay-state strong{font-size:15px}.bay-task-list li{min-height:42px}.bay-empty-note{margin:12px 0}}
+/* DOM summaries for bay occupancy and service stages; world indicator positioning stays in scene components. */
+.bay-operation-panel .panel-content {
+  padding-top: 12px;
+}
+.bay-state {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px;
+  background: #243843;
+  border: 1px solid #57707a;
+  border-radius: 14px;
+}
+.bay-state.is-working {
+  background: #204d43;
+  border-color: #438d74;
+}
+.bay-state small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #c3d7d5;
+  margin-bottom: 5px;
+}
+.bay-state strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.bay-task-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 20px;
+}
+.bay-task-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 49px;
+  border-bottom: 1px solid #ffffff18;
+  font-size: 14px;
+}
+.bay-task-list li b {
+  margin-left: auto;
+  font-size: 12px;
+  color: #b7c7cf;
+}
+.bay-task-list li[data-state='active'] b,
+.bay-task-list li[data-state='done'] svg {
+  color: #8be0b7;
+}
+.bay-empty-note {
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 20px 0;
+  color: #d1dcdf;
+}
+.bay-authority-note {
+  font-size: 11px;
+  color: #b5c6cf;
+  margin: 12px 0 4px;
+}
+@media (min-width: 701px) {
+  .world-panel.bay-operation-panel {
+    width: min(390px, 30vw);
+    top: 100px;
+    bottom: auto;
+    max-height: calc(100dvh - 124px);
+  }
+}
+@media (max-width: 700px) {
+  .world-panel.bay-operation-panel.compact {
+    max-height: 43dvh;
+  }
+  .bay-state {
+    padding: 12px;
+  }
+  .bay-state strong {
+    font-size: 15px;
+  }
+  .bay-task-list li {
+    min-height: 42px;
+  }
+  .bay-empty-note {
+    margin: 12px 0;
+  }
+}

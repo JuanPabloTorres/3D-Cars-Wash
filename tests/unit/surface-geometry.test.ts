@@ -5,42 +5,45 @@ import { batchArchitecture } from '../../src/world/prefabs/StaticArchitectureBat
 
 describe('architectural surface geometry', () => {
   it('rounds corners inside the original navigation envelope and keeps paint flat', () => {
-    const geometry = createBlockGeometry([4.5, .12, .92], .055)
+    const geometry = createBlockGeometry([4.5, 0.12, 0.92], 0.055)
     geometry.computeBoundingBox()
     const size = geometry.boundingBox!.getSize(new Vector3())
     expect(size.x).toBeCloseTo(4.5, 5)
-    expect(size.y).toBeCloseTo(.12, 5)
-    expect(size.z).toBeCloseTo(.92, 5)
+    expect(size.y).toBeCloseTo(0.12, 5)
+    expect(size.z).toBeCloseTo(0.92, 5)
     const normals = geometry.getAttribute('normal')
-    expect(Array.from(normals.array).some(n => Math.abs(n) > .1 && Math.abs(n) < .9)).toBe(true)
-    const paint = createBlockGeometry([6, .02, .08])
+    expect(Array.from(normals.array).some((n) => Math.abs(n) > 0.1 && Math.abs(n) < 0.9)).toBe(true)
+    const paint = createBlockGeometry([6, 0.02, 0.08])
     expect(paint.type).toBe('BoxGeometry')
     geometry.dispose()
     paint.dispose()
   })
 
   it('keeps the texture density per metre when a slab is lengthened', () => {
-    const small = createBlockGeometry([2, .2, 1])
-    const large = createBlockGeometry([8, .2, 1])
-    const maxU = (geometry: typeof small) => Math.max(...Array.from(geometry.getAttribute('uv').array).filter((_, i) => i % 2 === 0))
+    const small = createBlockGeometry([2, 0.2, 1])
+    const large = createBlockGeometry([8, 0.2, 1])
+    const maxU = (geometry: typeof small) =>
+      Math.max(...Array.from(geometry.getAttribute('uv').array).filter((_, i) => i % 2 === 0))
     expect(maxU(large) / maxU(small)).toBeCloseTo(4)
     small.dispose()
     large.dispose()
   })
 
   it('batches real bevels and UVs through nested transforms and restores anchors on cleanup', () => {
-    const owner = new Group(), nested = new Group(), material = new MeshStandardMaterial()
+    const owner = new Group(),
+      nested = new Group(),
+      material = new MeshStandardMaterial()
     owner.position.set(4, 2, -3)
-    owner.rotation.y = .3
+    owner.rotation.y = 0.3
     nested.position.set(2, 0, -1)
-    nested.rotation.y = -.5
+    nested.rotation.y = -0.5
     owner.add(nested)
-    const rounded = new Mesh(createBlockGeometry([3, .2, .9]), material)
-    const paint = new Mesh(createBlockGeometry([1, .02, .1]), material)
+    const rounded = new Mesh(createBlockGeometry([3, 0.2, 0.9]), material)
+    const paint = new Mesh(createBlockGeometry([1, 0.02, 0.1]), material)
     rounded.userData.staticArchitecture = paint.userData.staticArchitecture = true
-    paint.position.set(-2, .5, 0)
+    paint.position.set(-2, 0.5, 0)
     nested.add(rounded, paint)
-    const prop = new Mesh(createBlockGeometry([.2, .3, .1]), material)
+    const prop = new Mesh(createBlockGeometry([0.2, 0.3, 0.1]), material)
     owner.add(prop)
     const expectedBounds = new Box3().setFromObject(nested, true)
     const roundedUV = Array.from(rounded.geometry.getAttribute('uv').array)
@@ -50,10 +53,12 @@ describe('architectural surface geometry', () => {
     expect(batch.children).toHaveLength(1)
     const merged = batch.children[0] as Mesh
     expect(merged.geometry.getAttribute('position').count).toBe(count)
-    expect(Array.from(merged.geometry.getAttribute('uv').array).slice(0, roundedUV.length)).toEqual(roundedUV)
+    expect(Array.from(merged.geometry.getAttribute('uv').array).slice(0, roundedUV.length)).toEqual(
+      roundedUV,
+    )
     const actualBounds = new Box3().setFromObject(merged, true)
-    expect(actualBounds.min.distanceTo(expectedBounds.min)).toBeLessThan(.00001)
-    expect(actualBounds.max.distanceTo(expectedBounds.max)).toBeLessThan(.00001)
+    expect(actualBounds.min.distanceTo(expectedBounds.min)).toBeLessThan(0.00001)
+    expect(actualBounds.max.distanceTo(expectedBounds.max)).toBeLessThan(0.00001)
     expect(rounded.visible).toBe(false)
     expect(prop.visible).toBe(true)
     const disposed = vi.fn()
@@ -69,10 +74,14 @@ describe('architectural surface geometry', () => {
   })
 
   it('leaves authored meshes visible if a material group cannot merge', () => {
-    const owner = new Group(), material = new MeshStandardMaterial()
+    const owner = new Group(),
+      material = new MeshStandardMaterial()
     const a = new Mesh(createBlockGeometry([1, 1, 1]), material)
     const b = new Mesh(createBlockGeometry([1, 1, 1]), material)
-    b.geometry.setAttribute('color', new BufferAttribute(new Float32Array(b.geometry.getAttribute('position').count * 3), 3))
+    b.geometry.setAttribute(
+      'color',
+      new BufferAttribute(new Float32Array(b.geometry.getAttribute('position').count * 3), 3),
+    )
     a.userData.staticArchitecture = b.userData.staticArchitecture = true
     owner.add(a, b)
     const warning = vi.spyOn(console, 'error').mockImplementation(() => {})

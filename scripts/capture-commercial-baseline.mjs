@@ -1,2 +1,37 @@
-import {chromium} from '@playwright/test';import fs from 'node:fs/promises';
-const dir='docs/evidence/commercial-polish/before';await fs.mkdir(dir,{recursive:true});const b=await chromium.launch({channel:'msedge',headless:true});const p=await b.newPage({viewport:{width:1440,height:900}});const errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto('http://127.0.0.1:4173/');await p.locator('[data-ready=true]').waitFor({timeout:60000});await p.screenshot({path:dir+'/entry.png',animations:'disabled'});for(const name of ['Recepción','Ver bahía 01']){await p.getByRole('button',{name:'Destinos',exact:true}).click();await p.getByRole('button',{name,exact:true}).click();await p.waitForFunction(()=>!window.__FEBLES__.snapshot().destination,{},{timeout:40000});await p.screenshot({path:dir+'/'+(name==='Recepción'?'reception':'bay')+'.png',animations:'disabled'});}await fs.writeFile(dir+'/baseline.json',JSON.stringify({observedAt:new Date().toISOString(),errors,snapshot:await p.evaluate(()=>window.__FEBLES__.snapshot())},null,2));await b.close();
+import { chromium } from '@playwright/test'
+import fs from 'node:fs/promises'
+
+const dir = 'docs/evidence/commercial-polish/before'
+
+await fs.mkdir(dir, { recursive: true })
+
+const b = await chromium.launch({ channel: 'msedge', headless: true })
+const p = await b.newPage({ viewport: { width: 1440, height: 900 } })
+const errors = []
+
+p.on('pageerror', (e) => errors.push(e.message))
+await p.goto('http://127.0.0.1:4173/')
+await p.locator('[data-ready=true]').waitFor({ timeout: 60000 })
+await p.screenshot({ path: dir + '/entry.png', animations: 'disabled' })
+for (const name of ['Recepción', 'Ver bahía 01']) {
+  await p.getByRole('button', { name: 'Destinos', exact: true }).click()
+  await p.getByRole('button', { name, exact: true }).click()
+  await p.waitForFunction(() => !window.__FEBLES__.snapshot().destination, {}, { timeout: 40000 })
+  await p.screenshot({
+    path: dir + '/' + (name === 'Recepción' ? 'reception' : 'bay') + '.png',
+    animations: 'disabled',
+  })
+}
+await fs.writeFile(
+  dir + '/baseline.json',
+  JSON.stringify(
+    {
+      observedAt: new Date().toISOString(),
+      errors,
+      snapshot: await p.evaluate(() => window.__FEBLES__.snapshot()),
+    },
+    null,
+    2,
+  ),
+)
+await b.close()

@@ -1,123 +1,185 @@
-import {test,expect,type Page} from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
 
-async function load(page:Page){
- await page.goto('/')
- await page.locator('[data-ready=true]').waitFor({timeout:60000})
+async function load(page: Page) {
+  await page.goto('/')
+  await page.locator('[data-ready=true]').waitFor({ timeout: 60000 })
 }
-async function visit(page:Page,label:string){
- await page.getByRole('button',{name:'Visitar',exact:true}).click()
- await page.getByRole('navigation',{name:'Visitar un área'}).getByRole('button',{name:label}).click()
- await page.waitForFunction(()=>!(window.__FEBLES__.snapshot() as any).destination)
+async function visit(page: Page, label: string) {
+  await page.getByRole('button', { name: 'Visitar', exact: true }).click()
+  await page
+    .getByRole('navigation', { name: 'Visitar un área' })
+    .getByRole('button', { name: label })
+    .click()
+  await page.waitForFunction(() => !(window.__FEBLES__.snapshot() as any).destination)
 }
-async function stepAtStart(page:Page,title:string){
- const panel=page.getByRole('dialog',{name:title,exact:true})
- await expect(panel.getByRole('heading',{name:title,exact:true})).toBeFocused()
- await expect.poll(()=>panel.locator('.panel-content').evaluate(el=>el.scrollTop)).toBe(0)
- await expect(panel.locator('[aria-current=step]')).toHaveCount(1)
- return panel
+async function stepAtStart(page: Page, title: string) {
+  const panel = page.getByRole('dialog', { name: title, exact: true })
+  await expect(panel.getByRole('heading', { name: title, exact: true })).toBeFocused()
+  await expect.poll(() => panel.locator('.panel-content').evaluate((el) => el.scrollTop)).toBe(0)
+  await expect(panel.locator('[aria-current=step]')).toHaveCount(1)
+  return panel
 }
 
-test('UX01/02/11/15: el recorrido móvil reinicia lectura y conserva selección con teclado',async({page})=>{
- await page.setViewportSize({width:390,height:844})
- await load(page);await visit(page,'Recepción')
- await page.getByRole('button',{name:/Conocer servicios/}).click()
- await stepAtStart(page,'Servicios')
- await expect(page.getByText('0 servicios seleccionados',{exact:true})).toBeVisible()
- await page.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click()
- await expect(page.getByText('1 servicio seleccionado',{exact:true})).toBeVisible()
- await page.getByRole('button',{name:'Añadir Cuidado interior',exact:true}).click()
- await expect(page.getByText('2 servicios seleccionados',{exact:true})).toBeVisible()
- await page.getByRole('button',{name:'Continuar',exact:true}).focus()
- await page.keyboard.press('Enter')
- await stepAtStart(page,'Tu vehículo')
- await page.getByRole('combobox',{name:'Color',exact:true}).selectOption('Azul')
- await page.getByRole('button',{name:'Revisar cotización',exact:true}).focus()
- await page.keyboard.press('Enter')
- const review=await stepAtStart(page,'Revisar cotización')
- await expect(review).toContainText('Carro · Azul')
- await expect(review.locator('.quote-services')).toContainText('Lavado exterior')
- await expect(review.locator('.quote-services')).toContainText('Cuidado interior')
- await page.keyboard.press('Tab')
- expect(await review.evaluate(el=>el.contains(document.activeElement))).toBe(true)
- await review.getByRole('button',{name:'Volver',exact:true}).click()
- await stepAtStart(page,'Tu vehículo')
- await page.getByRole('button',{name:'Volver',exact:true}).click()
- await stepAtStart(page,'Servicios')
- await expect(page.getByRole('button',{name:'Quitar Lavado exterior',exact:true})).toBeVisible()
- expect((await(await page.request.get('/api/demo/session')).json()).order).toBeNull()
+test('UX01/02/11/15: el recorrido móvil reinicia lectura y conserva selección con teclado', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await load(page)
+  await visit(page, 'Recepción')
+  await page.getByRole('button', { name: /Conocer servicios/ }).click()
+  await stepAtStart(page, 'Servicios')
+  await expect(page.getByText('0 servicios seleccionados', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Añadir Lavado exterior', exact: true }).click()
+  await expect(page.getByText('1 servicio seleccionado', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Añadir Cuidado interior', exact: true }).click()
+  await expect(page.getByText('2 servicios seleccionados', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Continuar', exact: true }).focus()
+  await page.keyboard.press('Enter')
+  await stepAtStart(page, 'Tu vehículo')
+  await page.getByRole('combobox', { name: 'Color', exact: true }).selectOption('Azul')
+  await page.getByRole('button', { name: 'Revisar cotización', exact: true }).focus()
+  await page.keyboard.press('Enter')
+  const review = await stepAtStart(page, 'Revisar cotización')
+  await expect(review).toContainText('Carro · Azul')
+  await expect(review.locator('.quote-services')).toContainText('Lavado exterior')
+  await expect(review.locator('.quote-services')).toContainText('Cuidado interior')
+  await page.keyboard.press('Tab')
+  expect(await review.evaluate((el) => el.contains(document.activeElement))).toBe(true)
+  await review.getByRole('button', { name: 'Volver', exact: true }).click()
+  await stepAtStart(page, 'Tu vehículo')
+  await page.getByRole('button', { name: 'Volver', exact: true }).click()
+  await stepAtStart(page, 'Servicios')
+  await expect(
+    page.getByRole('button', { name: 'Quitar Lavado exterior', exact: true }),
+  ).toBeVisible()
+  expect((await (await page.request.get('/api/demo/session')).json()).order).toBeNull()
 })
 
-for(const width of [320,390,650,768])test(`UX03/09/18/19: cabecera y paneles sin solapes a ${width}px`,async({page})=>{
- await page.setViewportSize({width,height:844})
- await load(page);await visit(page,'Recepción')
- await page.getByRole('button',{name:'Abrir cuenta de Visitante',exact:true}).click()
- await expect(page.getByRole('dialog',{name:'Cuenta',exact:true})).toBeVisible()
- await expect(page.locator('.back-to-entry')).toHaveCount(0)
- const boxes=await page.locator('.utility-controls button').evaluateAll(nodes=>nodes.map(el=>{
-  const box=el.getBoundingClientRect()
-  return {x:box.x,y:box.y,width:box.width,height:box.height,hit:el.contains(document.elementFromPoint(box.x+box.width/2,box.y+box.height/2))}
- }))
- for(const box of boxes){expect(box.width).toBeGreaterThanOrEqual(44);expect(box.height).toBeGreaterThanOrEqual(44);expect(box.hit).toBe(true);expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(width)}
- const brand=await page.locator('.demo-mark').boundingBox(),controls=await page.locator('.utility-controls').boundingBox()
- expect(brand!.x+brand!.width).toBeLessThanOrEqual(controls!.x)
- await page.keyboard.press('Escape')
- await expect(page.getByRole('button',{name:'Abrir cuenta de Visitante',exact:true})).toBeFocused()
- await page.getByRole('button',{name:'Ayuda de la visita',exact:true}).click()
- await expect(page.getByRole('button',{name:'Cómo funciona',exact:true})).toHaveCount(0)
- await expect(page.getByRole('heading',{name:'Moverme por el local',exact:true})).toBeVisible()
- await page.getByText('Completar el servicio',{exact:true}).click()
- await expect(page.getByRole('heading',{name:'Elige servicios',exact:true})).toBeVisible()
- await page.keyboard.press('Escape')
- await expect(page.getByRole('button',{name:'Ayuda de la visita',exact:true})).toBeFocused()
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+for (const width of [320, 390, 650, 768])
+  test(`UX03/09/18/19: cabecera y paneles sin solapes a ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 })
+    await load(page)
+    await visit(page, 'Recepción')
+    await page.getByRole('button', { name: 'Abrir cuenta de Visitante', exact: true }).click()
+    await expect(page.getByRole('dialog', { name: 'Cuenta', exact: true })).toBeVisible()
+    await expect(page.locator('.back-to-entry')).toHaveCount(0)
+    const boxes = await page.locator('.utility-controls button').evaluateAll((nodes) =>
+      nodes.map((el) => {
+        const box = el.getBoundingClientRect()
+        return {
+          x: box.x,
+          y: box.y,
+          width: box.width,
+          height: box.height,
+          hit: el.contains(
+            document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2),
+          ),
+        }
+      }),
+    )
+    for (const box of boxes) {
+      expect(box.width).toBeGreaterThanOrEqual(44)
+      expect(box.height).toBeGreaterThanOrEqual(44)
+      expect(box.hit).toBe(true)
+      expect(box.x).toBeGreaterThanOrEqual(0)
+      expect(box.x + box.width).toBeLessThanOrEqual(width)
+    }
+    const brand = await page.locator('.demo-mark').boundingBox(),
+      controls = await page.locator('.utility-controls').boundingBox()
+    expect(brand!.x + brand!.width).toBeLessThanOrEqual(controls!.x)
+    await page.keyboard.press('Escape')
+    await expect(
+      page.getByRole('button', { name: 'Abrir cuenta de Visitante', exact: true }),
+    ).toBeFocused()
+    await page.getByRole('button', { name: 'Ayuda de la visita', exact: true }).click()
+    await expect(page.getByRole('button', { name: 'Cómo funciona', exact: true })).toHaveCount(0)
+    await expect(
+      page.getByRole('heading', { name: 'Moverme por el local', exact: true }),
+    ).toBeVisible()
+    await page.getByText('Completar el servicio', { exact: true }).click()
+    await expect(page.getByRole('heading', { name: 'Elige servicios', exact: true })).toBeVisible()
+    await page.keyboard.press('Escape')
+    await expect(
+      page.getByRole('button', { name: 'Ayuda de la visita', exact: true }),
+    ).toBeFocused()
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  })
+
+test('UX04/05/07/08: consulta sin canal es honesta y lounge se descubre directamente', async ({
+  page,
+}) => {
+  await load(page)
+  await visit(page, 'Recepción')
+  await page.getByRole('button', { name: /Preguntar a Ana/ }).click()
+  await page.getByRole('button', { name: 'Tengo otra pregunta', exact: true }).click()
+  await expect(
+    page.getByText('Las consultas escritas no están habilitadas.', { exact: false }),
+  ).toBeVisible()
+  await expect(page.getByLabel('Tu pregunta', { exact: true })).toHaveCount(0)
+  await expect(page.getByText(/No tengo información autorizada/)).toHaveCount(0)
+  const before = await page.evaluate(() => (window.__FEBLES__.snapshot() as any).activeView)
+  await visit(page, 'El local')
+  await expect(page.getByRole('dialog', { name: 'El local', exact: true })).toBeVisible()
+  expect(await page.evaluate(() => (window.__FEBLES__.snapshot() as any).activeView)).toBe(before)
+  await page.getByRole('button', { name: 'Lounge · Sala de espera', exact: true }).click()
+  const lounge = page.getByRole('dialog', { name: 'Lounge · Sala de espera', exact: true })
+  await expect(lounge).toBeVisible()
+  await expect(
+    lounge.getByRole('button', { name: 'Servicios y cuidados', exact: true }),
+  ).toBeVisible()
+  const card = await lounge
+    .getByRole('button', { name: 'Servicios y cuidados', exact: true })
+    .boundingBox()
+  expect(card!.y + card!.height).toBeLessThanOrEqual(900)
+  await page.keyboard.press('Escape')
+  const reopen = page.getByRole('button', { name: 'Explorar lounge', exact: true })
+  await expect(reopen).toBeFocused()
+  await page.keyboard.press('Enter')
+  await expect(
+    page.getByRole('heading', { name: 'Lounge · Sala de espera', exact: true }),
+  ).toBeFocused()
 })
 
-test('UX04/05/07/08: consulta sin canal es honesta y lounge se descubre directamente',async({page})=>{
- await load(page);await visit(page,'Recepción')
- await page.getByRole('button',{name:/Preguntar a Ana/}).click()
- await page.getByRole('button',{name:'Tengo otra pregunta',exact:true}).click()
- await expect(page.getByText('Las consultas escritas no están habilitadas.',{exact:false})).toBeVisible()
- await expect(page.getByLabel('Tu pregunta',{exact:true})).toHaveCount(0)
- await expect(page.getByText(/No tengo información autorizada/)).toHaveCount(0)
- const before=await page.evaluate(()=>(window.__FEBLES__.snapshot() as any).activeView)
- await visit(page,'El local')
- await expect(page.getByRole('dialog',{name:'El local',exact:true})).toBeVisible()
- expect(await page.evaluate(()=>(window.__FEBLES__.snapshot() as any).activeView)).toBe(before)
- await page.getByRole('button',{name:'Lounge · Sala de espera',exact:true}).click()
- const lounge=page.getByRole('dialog',{name:'Lounge · Sala de espera',exact:true})
- await expect(lounge).toBeVisible()
- await expect(lounge.getByRole('button',{name:'Servicios y cuidados',exact:true})).toBeVisible()
- const card=await lounge.getByRole('button',{name:'Servicios y cuidados',exact:true}).boundingBox()
- expect(card!.y+card!.height).toBeLessThanOrEqual(900)
- await page.keyboard.press('Escape')
- const reopen=page.getByRole('button',{name:'Explorar lounge',exact:true})
- await expect(reopen).toBeFocused()
- await page.keyboard.press('Enter')
- await expect(page.getByRole('heading',{name:'Lounge · Sala de espera',exact:true})).toBeFocused()
-})
-
-test('UX06/14/21: llegada pendiente no busca un auto; nueva solicitud respeta orden activa',async({page})=>{
- await load(page)
- const session=await(await page.request.get('/api/demo/session')).json()
- const command=async(path:string,data:unknown)=>{
-  const response=await page.request.post(`/api/demo/${path}`,{headers:{Origin:'http://127.0.0.1:4173','X-Demo-Nonce':session.nonce},data})
-  expect(response.ok()).toBe(true);return response.json()
- }
- const quote=await command('quote',{services:['exterior'],vehicle:{type:'car',color:'Azul',contact:''}})
- const confirmed=await command('confirm',{quoteId:quote.id,key:quote.id})
- await page.reload();await page.locator('[data-ready=true]').waitFor({timeout:60000})
- const before=await page.evaluate(()=>(window.__FEBLES__.snapshot() as any).activeView)
- await visit(page,'Mi vehículo')
- await expect(page.getByRole('dialog',{name:'Mi vehículo',exact:true})).toContainText('Tu vehículo aparecerá cuando el personal confirme la llegada.')
- expect(await page.evaluate(()=>(window.__FEBLES__.snapshot() as any).activeView)).toBe(before)
- await expect(page.getByText('Buscando tu vehículo…',{exact:true})).toHaveCount(0)
- await visit(page,'Recepción')
- await expect(page.getByText('Tu solicitud está confirmada. Falta confirmar tu llegada.',{exact:true})).toBeVisible()
- await page.getByRole('button',{name:/Conocer servicios/}).click()
- await page.getByRole('button',{name:'Añadir Lavado exterior',exact:true}).click()
- await page.getByRole('button',{name:'Continuar',exact:true}).click()
- await page.getByRole('button',{name:'Revisar cotización',exact:true}).click()
- await expect(page.getByText(/Este borrador no la modifica/)).toBeVisible()
- await expect(page.getByRole('button',{name:'Confirmar orden DEMO',exact:true})).toBeDisabled()
- expect((await(await page.request.get('/api/demo/session')).json()).order.id).toBe(confirmed.order.id)
+test('UX06/14/21: llegada pendiente no busca un auto; nueva solicitud respeta orden activa', async ({
+  page,
+}) => {
+  await load(page)
+  const session = await (await page.request.get('/api/demo/session')).json()
+  const command = async (path: string, data: unknown) => {
+    const response = await page.request.post(`/api/demo/${path}`, {
+      headers: { Origin: 'http://127.0.0.1:4173', 'X-Demo-Nonce': session.nonce },
+      data,
+    })
+    expect(response.ok()).toBe(true)
+    return response.json()
+  }
+  const quote = await command('quote', {
+    services: ['exterior'],
+    vehicle: { type: 'car', color: 'Azul', contact: '' },
+  })
+  const confirmed = await command('confirm', { quoteId: quote.id, key: quote.id })
+  await page.reload()
+  await page.locator('[data-ready=true]').waitFor({ timeout: 60000 })
+  const before = await page.evaluate(() => (window.__FEBLES__.snapshot() as any).activeView)
+  await visit(page, 'Mi vehículo')
+  await expect(page.getByRole('dialog', { name: 'Mi vehículo', exact: true })).toContainText(
+    'Tu vehículo aparecerá cuando el personal confirme la llegada.',
+  )
+  expect(await page.evaluate(() => (window.__FEBLES__.snapshot() as any).activeView)).toBe(before)
+  await expect(page.getByText('Buscando tu vehículo…', { exact: true })).toHaveCount(0)
+  await visit(page, 'Recepción')
+  await expect(
+    page.getByText('Tu solicitud está confirmada. Falta confirmar tu llegada.', { exact: true }),
+  ).toBeVisible()
+  await page.getByRole('button', { name: /Conocer servicios/ }).click()
+  await page.getByRole('button', { name: 'Añadir Lavado exterior', exact: true }).click()
+  await page.getByRole('button', { name: 'Continuar', exact: true }).click()
+  await page.getByRole('button', { name: 'Revisar cotización', exact: true }).click()
+  await expect(page.getByText(/Este borrador no la modifica/)).toBeVisible()
+  await expect(
+    page.getByRole('button', { name: 'Confirmar orden DEMO', exact: true }),
+  ).toBeDisabled()
+  expect((await (await page.request.get('/api/demo/session')).json()).order.id).toBe(
+    confirmed.order.id,
+  )
 })

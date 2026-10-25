@@ -1,6 +1,23 @@
 import { describe, expect, it } from 'vitest'
-import { BAY_IDS, bayEntryRoute, bayExitRoute, queueCenter, routeLength, sampleRoute } from '../../src/domain/sitePlan'
-import { landscapePlants, plantingBeds, plantingSurfaces, plantPlacement, soilHeight, isOnSoil, vegetationModels, nearTreeModel, vegetationModel } from '../../src/world/siteLandscape'
+import {
+  BAY_IDS,
+  bayEntryRoute,
+  bayExitRoute,
+  queueCenter,
+  routeLength,
+  sampleRoute,
+} from '../../src/domain/sitePlan'
+import {
+  landscapePlants,
+  plantingBeds,
+  plantingSurfaces,
+  plantPlacement,
+  soilHeight,
+  isOnSoil,
+  vegetationModels,
+  nearTreeModel,
+  vegetationModel,
+} from '../../src/world/siteLandscape'
 import { destinations, segmentClear } from '../../src/world/navigation/layout'
 import { WaypointPathPlanner } from '../../src/world/navigation/WaypointPathPlanner'
 import { getBounds, NodeIO } from '@gltf-transform/core'
@@ -11,27 +28,37 @@ describe('shared soil and vegetation contract', () => {
   it('supports every planted base inside the visible soil at exactly its height', () => {
     for (const plant of landscapePlants) {
       const [x, y, z] = plantPlacement(plant)
-      expect(isOnSoil(plant.zone, x, z, plant.kind === 'oak' ? .28 : .12)).toBe(true)
+      expect(isOnSoil(plant.zone, x, z, plant.kind === 'oak' ? 0.28 : 0.12)).toBe(true)
       expect(y).toBe(soilHeight(plant.zone))
     }
   })
 
   it('rejects road, footpath, deck and curb positions even when assigned a bed', () => {
-    const bed=plantingBeds.forecourt
-    for (const [x, z] of [[3.4, 12], [-8.85, 10], [-13, 8], [17, -11], [bed.x+bed.width/2-.05, bed.z]]) {
-      expect(() => plantPlacement({ zone: 'forecourt', kind: 'shrub', x, z, yaw: 0, scale: 1 })).toThrow('outside soil')
+    const bed = plantingBeds.forecourt
+    for (const [x, z] of [
+      [3.4, 12],
+      [-8.85, 10],
+      [-13, 8],
+      [17, -11],
+      [bed.x + bed.width / 2 - 0.05, bed.z],
+    ]) {
+      expect(() =>
+        plantPlacement({ zone: 'forecourt', kind: 'shrub', x, z, yaw: 0, scale: 1 }),
+      ).toThrow('outside soil')
     }
   })
 
   it('exposes soil as the first rendered surface below every planted base', () => {
     const material = new MeshBasicMaterial()
-    const meshes = Object.keys(plantingBeds).flatMap(zone => plantingSurfaces(zone as keyof typeof plantingBeds).map(surface => {
-      const mesh = new Mesh(new BoxGeometry(...surface.size), material)
-      mesh.position.set(...surface.at)
-      mesh.name = surface.material
-      mesh.updateMatrixWorld(true)
-      return mesh
-    }))
+    const meshes = Object.keys(plantingBeds).flatMap((zone) =>
+      plantingSurfaces(zone as keyof typeof plantingBeds).map((surface) => {
+        const mesh = new Mesh(new BoxGeometry(...surface.size), material)
+        mesh.position.set(...surface.at)
+        mesh.name = surface.material
+        mesh.updateMatrixWorld(true)
+        return mesh
+      }),
+    )
     try {
       const ray = new Raycaster(new Vector3(), new Vector3(0, -1, 0))
       for (const plant of landscapePlants) {
@@ -41,7 +68,7 @@ describe('shared soil and vegetation contract', () => {
         expect(hit.point.y).toBeCloseTo(soilHeight(plant.zone), 6)
       }
     } finally {
-      meshes.forEach(mesh => mesh.geometry.dispose())
+      meshes.forEach((mesh) => mesh.geometry.dispose())
       material.dispose()
     }
   })
@@ -60,7 +87,7 @@ describe('shared soil and vegetation contract', () => {
           const positions = primitive.getAttribute('POSITION')!
           for (let i = 0; i < positions.getCount(); i++) {
             const vertex = new Vector3().fromArray(positions.getElement(i, [])).applyMatrix4(matrix)
-            if ((vertex.y - bounds.min[1]) * normalScale > .025) continue
+            if ((vertex.y - bounds.min[1]) * normalScale > 0.025) continue
             base.push(vertex)
           }
         }
@@ -68,42 +95,67 @@ describe('shared soil and vegetation contract', () => {
       expect(base.length, `${id} has measured base vertices`).toBeGreaterThan(0)
       const root = new Box3().setFromPoints(base).getCenter(new Vector3())
       root.y = bounds.min[1]
-      base.forEach(vertex => vertex.sub(root).multiplyScalar(normalScale))
-      for (const plant of landscapePlants.filter(p => p.kind === kind && vegetationModel(p).id === id)) for (const vertex of base) {
-        const x = plant.x + (vertex.x * Math.cos(plant.yaw) + vertex.z * Math.sin(plant.yaw)) * plant.scale
-        const z = plant.z + (-vertex.x * Math.sin(plant.yaw) + vertex.z * Math.cos(plant.yaw)) * plant.scale
-        expect(isOnSoil(plant.zone, x, z), `${id} base outside ${plant.zone}`).toBe(true)
-      }
+      base.forEach((vertex) => vertex.sub(root).multiplyScalar(normalScale))
+      for (const plant of landscapePlants.filter(
+        (p) => p.kind === kind && vegetationModel(p).id === id,
+      ))
+        for (const vertex of base) {
+          const x =
+            plant.x +
+            (vertex.x * Math.cos(plant.yaw) + vertex.z * Math.sin(plant.yaw)) * plant.scale
+          const z =
+            plant.z +
+            (-vertex.x * Math.sin(plant.yaw) + vertex.z * Math.cos(plant.yaw)) * plant.scale
+          expect(isOnSoil(plant.zone, x, z), `${id} base outside ${plant.zone}`).toBe(true)
+        }
     }
   })
 
   it('keeps soil and planter walls out of the swept truck body on every bay/queue route', () => {
     // Largest admitted body: 2.95m wide, 8.4m long. Include a 10cm margin.
-    const halfWidth = 2.95 / 2 + .1, halfLength = 8.4 / 2 + .1
-    const paths = BAY_IDS.flatMap(id => [bayExitRoute(id), ...[0, 1, 2].map(slot => bayEntryRoute(slot, id))])
-    const samples = paths.flatMap(path => {
+    const halfWidth = 2.95 / 2 + 0.1,
+      halfLength = 8.4 / 2 + 0.1
+    const paths = BAY_IDS.flatMap((id) => [
+      bayExitRoute(id),
+      ...[0, 1, 2].map((slot) => bayEntryRoute(slot, id)),
+    ])
+    const samples = paths.flatMap((path) => {
       const length = routeLength(path)
-      return Array.from({ length: Math.ceil(length / .2) + 1 }, (_, i) => sampleRoute(path, Math.min(length, i * .2)))
+      return Array.from({ length: Math.ceil(length / 0.2) + 1 }, (_, i) =>
+        sampleRoute(path, Math.min(length, i * 0.2)),
+      )
     })
-    samples.push(...[0, 1, 2].map(slot => ({ position: queueCenter(slot), yaw: 0 })))
-    for (const { position: [x, z], yaw } of samples) for (const [id, bed] of Object.entries(plantingBeds)) {
-      // Separating axes for the oriented vehicle rectangle and axis-aligned bed.
-      const right = [Math.cos(yaw), -Math.sin(yaw)], forward = [Math.sin(yaw), Math.cos(yaw)]
-      const dx = bed.x - x, dz = bed.z - z
-      const overlap = [[1, 0], [0, 1], right, forward].every(([ax, az]) => {
-        const gap = Math.abs(dx * ax + dz * az)
-        const vehicle = halfWidth * Math.abs(right[0] * ax + right[1] * az) + halfLength * Math.abs(forward[0] * ax + forward[1] * az)
-        const planter = bed.width / 2 * Math.abs(ax) + bed.depth / 2 * Math.abs(az)
-        return gap < vehicle + planter
-      })
-      expect(overlap, `${id} overlaps truck near ${x.toFixed(2)},${z.toFixed(2)}`).toBe(false)
-    }
+    samples.push(...[0, 1, 2].map((slot) => ({ position: queueCenter(slot), yaw: 0 })))
+    for (const {
+      position: [x, z],
+      yaw,
+    } of samples)
+      for (const [id, bed] of Object.entries(plantingBeds)) {
+        // Separating axes for the oriented vehicle rectangle and axis-aligned bed.
+        const right = [Math.cos(yaw), -Math.sin(yaw)],
+          forward = [Math.sin(yaw), Math.cos(yaw)]
+        const dx = bed.x - x,
+          dz = bed.z - z
+        const overlap = [[1, 0], [0, 1], right, forward].every(([ax, az]) => {
+          const gap = Math.abs(dx * ax + dz * az)
+          const vehicle =
+            halfWidth * Math.abs(right[0] * ax + right[1] * az) +
+            halfLength * Math.abs(forward[0] * ax + forward[1] * az)
+          const planter = (bed.width / 2) * Math.abs(ax) + (bed.depth / 2) * Math.abs(az)
+          return gap < vehicle + planter
+        })
+        expect(overlap, `${id} overlaps truck near ${x.toFixed(2)},${z.toFixed(2)}`).toBe(false)
+      }
   })
 
   it('preserves the pedestrian approach and camera paths between reception and lounge', () => {
     expect(segmentClear([-8.65, 13.8], [-8.65, 6.2])).toBe(true)
     const planner = new WaypointPathPlanner()
-    for (const [from, to] of [['reception', 'lounge'], ['viewing', 'lounge'], ['lounge', 'reception']] as const) {
+    for (const [from, to] of [
+      ['reception', 'lounge'],
+      ['viewing', 'lounge'],
+      ['lounge', 'reception'],
+    ] as const) {
       const path = planner.findPath(destinations[from].point, destinations[to].point)
       expect(path).not.toBeNull()
       for (let i = 1; i < path!.length; i++) expect(segmentClear(path![i - 1], path![i])).toBe(true)

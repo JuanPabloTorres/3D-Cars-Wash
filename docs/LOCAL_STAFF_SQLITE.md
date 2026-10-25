@@ -50,7 +50,7 @@ Cada orden genera su propia lista de tareas con los servicios contratados y la i
 
 - `npm test`: contratos, repositorios, credenciales, último administrador, reapertura SQLite y tareas dinámicas.
 - `npm run build`: TypeScript y producción.
-- `npx playwright test --config playwright.staff.config.ts`: servidor aislado en 4175, base temporal, primer acceso, creación de empleado/servicio/oferta, orden del cliente, atención por empleado, reinicio y recuperación, aviso privado, entrega, revocación y permisos negativos.
+- `npm run test:e2e`: servidor aislado en 4175, base temporal, primer acceso, creación de empleado/servicio/oferta, orden del cliente, atención por empleado, reinicio y recuperación, aviso privado, entrega, revocación y permisos negativos.
 - Suites visuales existentes en `playwright.operations.config.ts`, sobre un servidor de prueba aislado en 4174.
 
 Para iniciar ese servidor visual en PowerShell, usar una ruta de prueba explícita antes de ejecutar Vite:

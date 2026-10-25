@@ -1,0 +1,4 @@
+interface:
+  display_name: "Producción web espacial 3D"
+  short_description: "Escenas, materiales e interacción web reutilizables"
+  default_prompt: "Usa $spatial-web-production para analizar la referencia y mejorar la escena preservando los flujos y componentes compartidos."

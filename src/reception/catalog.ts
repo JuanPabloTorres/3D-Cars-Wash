@@ -1,5 +1,27 @@
-export const demoCatalog=[
-  {id:'exterior',label:'Lavado exterior',description:'Cuidado de la carrocería, rines y cristales.',includes:'Lavado exterior y revisión visual de superficies.',conditions:'El personal revisa el alcance y la condición del vehículo.',care:'Evita productos abrasivos sobre la pintura y consulta al personal sobre el cuidado de su acabado.'},
-  {id:'interior',label:'Cuidado interior',description:'Aspirado y limpieza de superficies interiores.',includes:'Evaluación del habitáculo y limpieza interior acordada.',conditions:'Retira objetos personales y confirma el alcance antes de la atención.',care:'Retira residuos con regularidad y utiliza productos compatibles con los materiales del habitáculo.'},
-  {id:'lights',label:'Cuidado de focos',description:'Evaluación y tratamiento de las ópticas.',includes:'Inspección del estado de los focos y evaluación del tratamiento.',conditions:'La inspección determina si corresponde restauración; no garantiza reparación.',care:'Consulta manchas, opacidad o pérdida de iluminación con el personal antes de solicitar un tratamiento.'},
+/** Seed service descriptions used when no persisted business catalog exists; these entries do not supply prices. */
+export const demoCatalog = [
+  {
+    id: 'exterior',
+    label: 'Lavado exterior',
+    description: 'Cuidado de la carrocería, rines y cristales.',
+    includes: 'Lavado exterior y revisión visual de superficies.',
+    conditions: 'El personal revisa el alcance y la condición del vehículo.',
+    care: 'Evita productos abrasivos sobre la pintura y consulta al personal sobre el cuidado de su acabado.',
+  },
+  {
+    id: 'interior',
+    label: 'Cuidado interior',
+    description: 'Aspirado y limpieza de superficies interiores.',
+    includes: 'Evaluación del habitáculo y limpieza interior acordada.',
+    conditions: 'Retira objetos personales y confirma el alcance antes de la atención.',
+    care: 'Retira residuos con regularidad y utiliza productos compatibles con los materiales del habitáculo.',
+  },
+  {
+    id: 'lights',
+    label: 'Cuidado de focos',
+    description: 'Evaluación y tratamiento de las ópticas.',
+    includes: 'Inspección del estado de los focos y evaluación del tratamiento.',
+    conditions: 'La inspección determina si corresponde restauración; no garantiza reparación.',
+    care: 'Consulta manchas, opacidad o pérdida de iluminación con el personal antes de solicitar un tratamiento.',
+  },
 ]

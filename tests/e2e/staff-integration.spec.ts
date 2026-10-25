@@ -1,286 +1,586 @@
-import {test,expect,type BrowserContext,type Page} from '@playwright/test'
-import {preview,type PreviewServer} from 'vite'
-import {mkdtemp,mkdir} from 'node:fs/promises'
-import {tmpdir} from 'node:os'
-import {resolve,join} from 'node:path'
-import {randomBytes} from 'node:crypto'
+import { test, expect, type BrowserContext, type Page } from '@playwright/test'
+import { preview, type PreviewServer } from 'vite'
+import { mkdtemp, mkdir } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
+import { resolve, join } from 'node:path'
+import { randomBytes } from 'node:crypto'
 
-const base='http://127.0.0.1:4175',out='docs/evidence/sqlite-integration'
-const password='Only-for-e2e-'+randomBytes(12).toString('hex'),key=randomBytes(24).toString('hex')
-let server:PreviewServer
-const journey='docs/evidence/release-v0.1.0/journey'
+const base = 'http://127.0.0.1:4175',
+  out = 'docs/evidence/sqlite-integration'
+const password = 'Only-for-e2e-' + randomBytes(12).toString('hex'),
+  key = randomBytes(24).toString('hex')
+let server: PreviewServer
+const journey = 'docs/evidence/release-v0.1.0/journey'
 /** Only isolated fixture data is captured; no installation keys or passwords enter portfolio images. */
-async function captureStep(page:Page,name:string){
- if(process.env.CARWASH_CAPTURE_JOURNEY!=='1')return
- await mkdir(journey,{recursive:true})
- // Allow short panel transitions to settle after the asserted business state.
- await page.waitForTimeout(600)
- await page.screenshot({path:journey+'/'+name+'.png',fullPage:true,animations:'disabled',mask:[page.locator('input[type=password]')],maskColor:'#102936'})
+async function captureStep(page: Page, name: string) {
+  if (process.env.CARWASH_CAPTURE_JOURNEY !== '1') return
+  await mkdir(journey, { recursive: true })
+  // Allow short panel transitions to settle after the asserted business state.
+  await page.waitForTimeout(600)
+  await page.screenshot({
+    path: journey + '/' + name + '.png',
+    fullPage: true,
+    animations: 'disabled',
+    mask: [page.locator('input[type=password]')],
+    maskColor: '#102936',
+  })
 }
-async function start(){server=await preview({configFile:resolve('vite.config.ts'),preview:{host:'127.0.0.1',port:4175,strictPort:true}})}
-async function stop(){if(!server)return;await new Promise<void>((done,reject)=>{server.httpServer.close(error=>error?reject(error):done());server.httpServer.closeAllConnections()})}
-async function post(context:BrowserContext,path:string,data:unknown){const session=await(await context.request.get(base+'/api/demo/session')).json();return context.request.post(base+'/api/demo/'+path,{headers:{Origin:base,'X-Demo-Nonce':session.nonce},data})}
-test.beforeAll(async()=>{await mkdir(out,{recursive:true});process.env.CARWASH_DB_PATH=join(await mkdtemp(join(tmpdir(),'carwash-e2e-')),'store.sqlite');process.env.CARWASH_ADMIN_TOKEN=key;await start()})
+async function start() {
+  server = await preview({
+    configFile: resolve('vite.config.ts'),
+    preview: { host: '127.0.0.1', port: 4175, strictPort: true },
+  })
+}
+async function stop() {
+  if (!server) return
+  await new Promise<void>((done, reject) => {
+    server.httpServer.close((error) => (error ? reject(error) : done()))
+    server.httpServer.closeAllConnections()
+  })
+}
+async function post(context: BrowserContext, path: string, data: unknown) {
+  const session = await (await context.request.get(base + '/api/demo/session')).json()
+  return context.request.post(base + '/api/demo/' + path, {
+    headers: { Origin: base, 'X-Demo-Nonce': session.nonce },
+    data,
+  })
+}
+test.beforeAll(async () => {
+  await mkdir(out, { recursive: true })
+  process.env.CARWASH_DB_PATH = join(await mkdtemp(join(tmpdir(), 'carwash-e2e-')), 'store.sqlite')
+  process.env.CARWASH_ADMIN_TOKEN = key
+  await start()
+})
 test.afterAll(stop)
 
-test('Customer logout opens login; registration and login restore the right account',async({page})=>{
- await page.goto(base+'/?layer=reception');await page.locator('[data-ground-ready=true]').waitFor({timeout:120000})
- await page.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await page.getByRole('button',{name:'Registrarme como cliente'}).click()
- await page.getByLabel('Nombre completo').fill('Cliente logout');await page.getByLabel('Usuario',{exact:true}).fill('logout.customer');await page.getByLabel('Contraseña',{exact:true}).fill(password)
- await page.getByRole('button',{name:'Crear cuenta de cliente'}).click()
- await expect(page.getByText('Cliente · cuenta privada')).toBeVisible()
- // A failed server logout must not pretend the account was closed.
- await page.route('**/api/demo/logout',route=>route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'Cierre temporalmente no disponible.'})}))
- await page.getByRole('button',{name:'Cerrar sesión DEMO',exact:true}).click()
- await expect(page.getByRole('alert')).toContainText('Cierre temporalmente no disponible.')
- await expect(page).toHaveURL(base+'/?layer=reception')
- await page.unroute('**/api/demo/logout')
- await page.getByRole('button',{name:'Cerrar sesión DEMO',exact:true}).click()
- await expect(page).toHaveURL(base+'/login')
- await expect(page.getByRole('heading',{name:'Accede a tu cuenta'})).toBeVisible()
- await expect(page.locator('canvas')).toHaveCount(0)
- expect((await(await page.request.get(base+'/api/demo/session')).json()).profile.account).toBeUndefined()
- await page.screenshot({path:out+'/customer-login-desktop.png'})
- await page.reload();await expect(page.getByRole('button',{name:'Iniciar sesión de cliente'})).toBeEnabled()
- await page.getByLabel('Usuario',{exact:true}).fill('logout.customer');await page.getByLabel('Contraseña',{exact:true}).fill('incorrect-password')
- await page.getByRole('button',{name:'Iniciar sesión de cliente'}).click()
- await expect(page.getByRole('alert')).toContainText('Usuario o contraseña incorrectos')
- await page.getByLabel('Contraseña',{exact:true}).fill(password);await page.getByRole('button',{name:'Iniciar sesión de cliente'}).click()
- await expect(page).toHaveURL(base+'/world3d')
- await page.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await expect(page.getByText('Cliente logout',{exact:true})).toBeVisible()
+test('Shared commercial session works in both full-world and reception entry points', async ({
+  browser,
+}) => {
+  const context = await browser.newContext()
+  const registration = await post(context, 'auth/register', {
+    username: 'shared.customer',
+    name: 'Cliente compartido',
+    password,
+  })
+  expect(registration.status()).toBe(200)
+  const page = await context.newPage()
+
+  // Both shells must recover the same private identity using the common hook.
+  for (const route of ['/', '/world3d']) {
+    await page.goto(base + route)
+    const account = page.getByRole('button', {
+      name: route === '/' ? 'Abrir cuenta de Cliente compartido' : 'Mi cuenta',
+      exact: true,
+    })
+    await expect(account).toBeVisible({
+      timeout: 120000,
+    })
+    await account.click()
+    await expect(page.getByText('Cliente compartido', { exact: true })).toBeVisible()
+    await expect(
+      page.getByRole('button', { name: 'Cerrar sesión DEMO', exact: true }),
+    ).toBeVisible()
+  }
+  await context.close()
 })
 
-test('Mobile access retries connection, validates registration and rejects duplicate users',async({page,browser})=>{
- const existing=await browser.newContext()
- expect((await post(existing,'auth/register',{username:'duplicate.mobile',name:'Existing account',password})).status()).toBe(200)
- await existing.close()
- await page.setViewportSize({width:390,height:844})
- await page.route('**/api/demo/**',route=>route.abort())
- await page.goto(base+'/login')
- await expect(page.getByRole('alert')).toContainText('No se pudo conectar')
- await expect(page.getByRole('button',{name:'Iniciar sesión de cliente'})).toBeDisabled()
- await page.unroute('**/api/demo/**');await page.getByRole('button',{name:'Reintentar conexión'}).click()
- await expect(page.getByRole('button',{name:'Iniciar sesión de cliente'})).toBeEnabled()
- await page.getByRole('button',{name:'Registrarme como cliente'}).click()
- await page.getByLabel('Nombre completo').fill('Cliente móvil')
- await page.getByLabel('Usuario',{exact:true}).fill('duplicate.mobile')
- await page.getByLabel('Contraseña',{exact:true}).fill(password)
- await page.getByRole('button',{name:'Crear cuenta de cliente'}).click()
- await expect(page.getByRole('alert')).toContainText('Ese usuario ya existe')
- await page.getByLabel('Usuario',{exact:true}).fill('mobile.customer')
- await page.getByLabel('Contraseña',{exact:true}).fill('short')
- await page.getByRole('button',{name:'Crear cuenta de cliente'}).click()
- expect(await page.getByLabel('Contraseña',{exact:true}).evaluate((input:HTMLInputElement)=>input.validity.tooShort)).toBe(true)
- await page.getByLabel('Contraseña',{exact:true}).fill(password)
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
- await page.mouse.move(200,700);await page.mouse.wheel(0,1000)
- await expect(page.getByRole('link',{name:'Explorar como visitante'})).toBeInViewport()
- await page.getByLabel('Nombre completo').scrollIntoViewIfNeeded()
- await page.screenshot({path:out+'/customer-registration-mobile.png'})
- await page.getByRole('button',{name:'Crear cuenta de cliente'}).click()
- await expect(page).toHaveURL(base+'/world3d')
- await page.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await expect(page.getByText('Cliente móvil',{exact:true})).toBeVisible()
+test('Customer logout opens login; registration and login restore the right account', async ({
+  page,
+}) => {
+  await page.goto(base + '/?layer=reception')
+  await page.locator('[data-ground-ready=true]').waitFor({ timeout: 120000 })
+  await page.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await page.getByRole('button', { name: 'Registrarme como cliente' }).click()
+  await page.getByLabel('Nombre completo').fill('Cliente logout')
+  await page.getByLabel('Usuario', { exact: true }).fill('logout.customer')
+  await page.getByLabel('Contraseña', { exact: true }).fill(password)
+  await page.getByRole('button', { name: 'Crear cuenta de cliente' }).click()
+  await expect(page.getByText('Cliente · cuenta privada')).toBeVisible()
+  // A failed server logout must not pretend the account was closed.
+  await page.route('**/api/demo/logout', (route) =>
+    route.fulfill({
+      status: 503,
+      contentType: 'application/json',
+      body: JSON.stringify({ error: 'Cierre temporalmente no disponible.' }),
+    }),
+  )
+  await page.getByRole('button', { name: 'Cerrar sesión DEMO', exact: true }).click()
+  await expect(page.getByRole('alert')).toContainText('Cierre temporalmente no disponible.')
+  await expect(page).toHaveURL(base + '/?layer=reception')
+  await page.unroute('**/api/demo/logout')
+  await page.getByRole('button', { name: 'Cerrar sesión DEMO', exact: true }).click()
+  await expect(page).toHaveURL(base + '/login')
+  await expect(page.getByRole('heading', { name: 'Accede a tu cuenta' })).toBeVisible()
+  await expect(page.locator('canvas')).toHaveCount(0)
+  expect(
+    (await (await page.request.get(base + '/api/demo/session')).json()).profile.account,
+  ).toBeUndefined()
+  await page.screenshot({ path: out + '/customer-login-desktop.png' })
+  await page.reload()
+  await expect(page.getByRole('button', { name: 'Iniciar sesión de cliente' })).toBeEnabled()
+  await page.getByLabel('Usuario', { exact: true }).fill('logout.customer')
+  await page.getByLabel('Contraseña', { exact: true }).fill('incorrect-password')
+  await page.getByRole('button', { name: 'Iniciar sesión de cliente' }).click()
+  await expect(page.getByRole('alert')).toContainText('Usuario o contraseña incorrectos')
+  await page.getByLabel('Contraseña', { exact: true }).fill(password)
+  await page.getByRole('button', { name: 'Iniciar sesión de cliente' }).click()
+  await expect(page).toHaveURL(base + '/world3d')
+  await page.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await expect(page.getByText('Cliente logout', { exact: true })).toBeVisible()
 })
 
-test('Continuous navigation, interrupted destination and reduced motion on desktop and mobile',async({browser})=>{
- const context=await browser.newContext(),page=await context.newPage()
- await page.goto(base+'/?layer=reception');await page.locator('[data-ground-ready=true]').waitFor({timeout:120000})
- await page.getByRole('button',{name:'Ir a recepción',exact:true}).click()
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- await page.getByRole('button',{name:'Área de espera',exact:true}).click()
- const samples=await page.evaluate(async()=>{
-  const values:{moving:boolean;position:number[];opacity:string}[]=[]
-  for(let i=0;i<45;i++){const d=(window as any).__RECEPTION__;values.push({moving:d.transition,position:[...d.camera],opacity:document.querySelector('canvas')?.parentElement?.style.opacity||'1'});await new Promise(r=>setTimeout(r,20))}
-  return values
- })
- expect(samples.some(s=>s.moving)).toBe(true);expect(samples.every(s=>s.opacity==='1')).toBe(true)
- expect(new Set(samples.map(s=>s.position.join(','))).size).toBeGreaterThan(5)
- await page.getByRole('button',{name:'Bahías',exact:true}).click()
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.view)).toBe('service')
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- await page.screenshot({path:out+'/mvp-bays.png'})
- await page.getByRole('button',{name:'Área de espera',exact:true}).click()
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.view)).toBe('waiting')
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- await page.screenshot({path:out+'/mvp-lounge.png'})
- await expect(page.getByRole('button',{name:'Consultar mi espera',exact:true})).toBeVisible()
- await page.setViewportSize({width:737,height:427})
- await page.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await expect(page.getByRole('dialog')).toBeVisible()
- await expect(page.getByRole('button',{name:'Consultar mi espera',exact:true})).toHaveCount(0)
- await page.screenshot({path:out+'/account-without-lounge-overlap.png'})
- await page.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await expect(page.getByRole('button',{name:'Consultar mi espera',exact:true})).toBeVisible()
- await page.setViewportSize({width:732,height:822})
- for(const button of await page.locator('.reception-navigation button').all())await expect(button).toBeInViewport()
- await page.getByRole('button',{name:'Entrada',exact:true}).click()
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- expect(await page.evaluate(()=>(window as any).__RECEPTION__.camera[2])).toBeLessThanOrEqual(20)
- expect(await page.locator('.reception-invitation p').evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14)
- await expect(page.locator('.reception-invitation')).toHaveCSS('opacity','1')
- await page.screenshot({path:out+'/entrance-portrait.png'})
- await page.emulateMedia({reducedMotion:'reduce'});await page.setViewportSize({width:390,height:844})
- await page.getByRole('button',{name:'Recepción',exact:true}).click()
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.view)).toBe('reception')
- await expect.poll(()=>page.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- await page.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await expect(page.getByRole('button',{name:'Iniciar sesión de cliente'})).toBeVisible()
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
- await page.screenshot({path:out+'/mvp-mobile-account.png'})
- await context.close()
+test('Mobile access retries connection, validates registration and rejects duplicate users', async ({
+  page,
+  browser,
+}) => {
+  const existing = await browser.newContext()
+  expect(
+    (
+      await post(existing, 'auth/register', {
+        username: 'duplicate.mobile',
+        name: 'Existing account',
+        password,
+      })
+    ).status(),
+  ).toBe(200)
+  await existing.close()
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.route('**/api/demo/**', (route) => route.abort())
+  await page.goto(base + '/login')
+  await expect(page.getByRole('alert')).toContainText('No se pudo conectar')
+  await expect(page.getByRole('button', { name: 'Iniciar sesión de cliente' })).toBeDisabled()
+  await page.unroute('**/api/demo/**')
+  await page.getByRole('button', { name: 'Reintentar conexión' }).click()
+  await expect(page.getByRole('button', { name: 'Iniciar sesión de cliente' })).toBeEnabled()
+  await page.getByRole('button', { name: 'Registrarme como cliente' }).click()
+  await page.getByLabel('Nombre completo').fill('Cliente móvil')
+  await page.getByLabel('Usuario', { exact: true }).fill('duplicate.mobile')
+  await page.getByLabel('Contraseña', { exact: true }).fill(password)
+  await page.getByRole('button', { name: 'Crear cuenta de cliente' }).click()
+  await expect(page.getByRole('alert')).toContainText('Ese usuario ya existe')
+  await page.getByLabel('Usuario', { exact: true }).fill('mobile.customer')
+  await page.getByLabel('Contraseña', { exact: true }).fill('short')
+  await page.getByRole('button', { name: 'Crear cuenta de cliente' }).click()
+  expect(
+    await page
+      .getByLabel('Contraseña', { exact: true })
+      .evaluate((input: HTMLInputElement) => input.validity.tooShort),
+  ).toBe(true)
+  await page.getByLabel('Contraseña', { exact: true }).fill(password)
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  await page.mouse.move(200, 700)
+  await page.mouse.wheel(0, 1000)
+  await expect(page.getByRole('link', { name: 'Explorar como visitante' })).toBeInViewport()
+  await page.getByLabel('Nombre completo').scrollIntoViewIfNeeded()
+  await page.screenshot({ path: out + '/customer-registration-mobile.png' })
+  await page.getByRole('button', { name: 'Crear cuenta de cliente' }).click()
+  await expect(page).toHaveURL(base + '/world3d')
+  await page.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await expect(page.getByText('Cliente móvil', { exact: true })).toBeVisible()
 })
 
-test('Admin creates catalog and staff; client orders; employee completes; SQLite survives restart',async({browser})=>{
- const admin=await browser.newContext(),employee=await browser.newContext(),customer=await browser.newContext(),stranger=await browser.newContext()
- const a=await admin.newPage(),e=await employee.newPage(),c=await customer.newPage()
- const errors:string[]=[];for(const page of [a,e,c])page.on('pageerror',error=>errors.push(error.message))
- await a.goto(base+'/admin')
- await expect(a.getByRole('heading',{name:'Configura tu administrador'})).toBeVisible()
- await a.getByLabel('Clave de instalación').fill(key);await a.getByLabel('Nombre completo').fill('Responsable de prueba')
- await a.getByLabel('Usuario',{exact:true}).fill('owner');await a.getByLabel('Contraseña',{exact:true}).fill(password)
- await a.getByRole('button',{name:'Crear cuenta y entrar'}).click()
- await expect(a.getByRole('navigation',{name:'Áreas administrativas'})).toBeVisible()
- // Prove normal login rather than relying only on setup's automatic session.
- await a.getByRole('button',{name:'Salir',exact:true}).click()
- await expect(a.getByRole('heading',{name:'Bienvenido de nuevo'})).toBeVisible()
- await expect(a.getByRole('navigation',{name:'Áreas administrativas'})).toHaveCount(0)
- await a.reload();await expect(a.getByRole('heading',{name:'Bienvenido de nuevo'})).toBeVisible();await captureStep(a,'a01-admin-login');await a.getByLabel('Usuario',{exact:true}).fill('owner');await a.getByLabel('Contraseña',{exact:true}).fill(password)
- await a.getByRole('button',{name:'Iniciar sesión',exact:true}).click()
- await expect(a.getByRole('navigation',{name:'Áreas administrativas'})).toBeVisible()
- await a.getByRole('button',{name:'Usuarios del equipo',exact:true}).click()
- await a.getByLabel('Nombre completo').fill('Operador de prueba');await a.getByLabel('Usuario',{exact:true}).fill('operator');await a.getByLabel('Contraseña inicial').fill(password)
- await a.getByRole('button',{name:'Crear usuario',exact:true}).click();await expect(a.locator('.admin-user-row').filter({hasText:'Operador de prueba'})).toBeVisible()
- await captureStep(a,'a02-employee-created')
- await a.getByRole('button',{name:'Servicios y precios'}).click();await a.getByRole('button',{name:'Crear servicio'}).click()
- const newService=a.locator('.admin-service-grid .admin-card').last()
- await newService.getByLabel('Nombre del servicio').fill('Protección cerámica')
- await newService.getByLabel('Disponible para nuevas órdenes').check()
- await newService.getByLabel('Descripción',{exact:true}).fill('Protección del acabado exterior.')
- await newService.getByLabel('Carro · USD',{exact:true}).fill('42')
- for(const [category,price,minutes] of [['Carro','42','25'],['Pickup','52','35'],['Truck','62','45'],['SUV','48','30']]){
-  await newService.getByLabel(category+' · USD',{exact:true}).fill(price)
-  await newService.getByLabel(category+' · minutos estimados',{exact:true}).fill(minutes)
- }
- await a.getByRole('button',{name:'Guardar catálogo y tarifas'}).click();await expect(a.getByText('Configuración guardada y publicada.')).toBeVisible()
- await newService.getByLabel('Carro · USD',{exact:true}).fill('44')
- await newService.getByLabel('Carro · minutos estimados',{exact:true}).fill('27')
- const tariffSaved=a.waitForResponse(response=>response.url().endsWith('/api/demo/admin/configuration')&&response.request().method()==='POST')
- await a.getByRole('button',{name:'Guardar catálogo y tarifas'}).click();expect((await tariffSaved).status()).toBe(200)
- if(process.env.CARWASH_CAPTURE_JOURNEY==='1'){
-  // A taller browser viewport exposes both tariff and duration controls in the actual dashboard.
-  await a.setViewportSize({width:1440,height:1600})
-  await newService.scrollIntoViewIfNeeded();await captureStep(a,'a03-service-prices-duration')
-  await a.setViewportSize({width:1440,height:900})
- }
- await a.getByRole('button',{name:'Contenido y atención'}).click();await a.getByRole('button',{name:'Añadir oferta'}).click()
- await a.getByLabel('Título de oferta').last().fill('Cuidado de temporada');await a.getByLabel('Descripción de oferta').last().fill('Consulta el alcance con recepción.')
- await a.getByRole('button',{name:'Guardar contenido'}).click();await expect(a.getByText('Configuración guardada y publicada.')).toBeVisible()
- await a.getByLabel('Descripción de oferta').last().fill('Cuidado exterior de temporada. Consulta condiciones con recepción.')
- await a.getByRole('button',{name:'Añadir oferta'}).click()
- await a.getByLabel('Título de oferta').last().fill('Oferta temporal de prueba');await a.getByLabel('Descripción de oferta').last().fill('Se retirará tras comprobar su publicación.')
- const offersSaved=a.waitForResponse(response=>response.url().endsWith('/api/demo/admin/configuration')&&response.request().method()==='POST')
- await a.getByRole('button',{name:'Guardar contenido'}).click();expect((await offersSaved).status()).toBe(200)
- await a.getByRole('button',{name:'Quitar oferta'}).last().click()
- const offerRemoved=a.waitForResponse(response=>response.url().endsWith('/api/demo/admin/configuration')&&response.request().method()==='POST')
- await a.getByRole('button',{name:'Guardar contenido'}).click();expect((await offerRemoved).status()).toBe(200)
- await a.getByLabel('Título de oferta').last().scrollIntoViewIfNeeded();await captureStep(a,'a04-published-offer')
- await c.goto(base+'/?layer=reception');await c.locator('[data-ground-ready=true]').waitFor({timeout:120000})
- await c.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await c.getByRole('button',{name:'Registrarme como cliente'}).click()
- await c.locator('.customer-access').evaluate(element=>element.scrollIntoView({block:'start'}))
- await expect(c.getByLabel('Nombre completo')).toBeInViewport()
- await captureStep(c,'c01-customer-registration')
- await c.getByLabel('Nombre completo').fill('Cliente de prueba');await c.getByLabel('Usuario',{exact:true}).fill('customer');await c.getByLabel('Contraseña',{exact:true}).fill(password)
- await c.getByRole('button',{name:'Crear cuenta de cliente'}).click()
- await expect(c.getByText('Cliente · cuenta privada')).toBeVisible()
- await captureStep(c,'c02-customer-account')
- await c.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await c.getByRole('button',{name:'Ir a recepción',exact:true}).click();await c.getByRole('button',{name:'Ver servicios',exact:true}).click()
- for(const [category,price] of [['Carro','44.00'],['Pickup','52.00'],['Truck','62.00'],['SUV','48.00']]){
-  await c.getByRole('button',{name:category,exact:true}).click()
-  await expect(c.locator('.service-option').filter({hasText:'Protección cerámica'}).locator('.service-price')).toContainText(price)
- }
- await c.getByRole('button',{name:'Carro',exact:true}).click()
- await c.getByRole('button',{name:'Añadir Protección cerámica'}).click()
- await c.locator('.service-option').filter({hasText:'Protección cerámica'}).scrollIntoViewIfNeeded();await captureStep(c,'c03-service-selected')
- await c.getByRole('button',{name:'Continuar',exact:true}).click();await captureStep(c,'c04-vehicle-details')
- await c.getByRole('button',{name:'Revisar cotización',exact:true}).click();await expect(c.getByRole('button',{name:'Confirmar orden DEMO',exact:true})).toBeEnabled();await captureStep(c,'c05-quote-review')
- await c.getByRole('button',{name:'Confirmar orden DEMO',exact:true}).click()
- await expect.poll(async()=> (await(await customer.request.get(base+'/api/demo/session')).json()).order?.status).toBe('confirmed')
- await captureStep(c,'c06-order-confirmed')
- const before=await(await customer.request.get(base+'/api/demo/session')).json(),orderId=before.order.id
- expect(before.profile.account.role).toBe('customer');expect(before.order.quote.estimatedMinutes).toBe(27);expect(before.order.quote.subtotal).toBe(4400)
- expect((await customer.request.get(base+'/api/demo/admin/snapshot')).status()).toBe(403)
- expect((await post(customer,'admin/users',{username:'elevated',name:'Invalid',password,role:'admin'})).status()).toBe(403)
- expect((await stranger.request.get(base+'/api/demo/session')).status()).toBe(200)
- expect((await stranger.request.get(base+'/api/demo/admin/snapshot')).status()).toBe(403)
- expect((await post(stranger,'cancel',{orderId})).status()).toBe(404)
- await e.goto(base+'/employee');await e.getByLabel('Usuario',{exact:true}).fill('operator');await e.getByLabel('Contraseña',{exact:true}).fill(password)
- await e.getByRole('button',{name:'Iniciar sesión'}).click();await expect(e.getByRole('navigation',{name:'Áreas administrativas'})).toBeVisible()
- await expect(e.locator('canvas')).toHaveCount(0);await expect(e.getByRole('button',{name:'Usuarios del equipo'})).toHaveCount(0)
- expect((await post(employee,'admin/users',{username:'attack',name:'Invalid',password,role:'admin'})).status()).toBe(403)
- expect((await post(employee,'admin/configuration',{})).status()).toBe(403)
- await e.locator('.admin-order-row').filter({hasText:orderId}).click();await e.getByRole('button',{name:'Confirmar llegada',exact:true}).click()
- await captureStep(e,'e01-arrival-confirmed')
- await c.getByRole('button',{name:'Área de espera',exact:true}).click()
- await expect.poll(()=>c.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- await c.locator('.lounge-terminal').click();await expect(c.locator('.lounge-state')).toBeVisible();await captureStep(c,'c07-waiting-status')
- await e.getByRole('button',{name:'Asignar atención',exact:true}).click()
- await expect(e.getByRole('button',{name:'Completar tarea activa'})).toBeVisible({timeout:90000})
- await expect(e.locator('.activity-list')).toContainText('Protección cerámica');await expect(e.locator('.activity-list')).toContainText('En proceso')
- await captureStep(e,'e02-service-active')
- await c.getByRole('button',{name:'Ver mi auto',exact:true}).click();await expect(c.locator('.site-vehicle-state')).toContainText('Protección cerámica')
- await expect.poll(()=>c.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- await captureStep(c,'c08-track-vehicle')
- await stop();await start()
- const recovered=await(await customer.request.get(base+'/api/demo/session')).json()
- expect(recovered.order.id).toBe(orderId);expect(recovered.nonce).toBe(before.nonce)
- const snapshot=await(await admin.request.get(base+'/api/demo/admin/snapshot')).json()
- expect(snapshot.configuration.services.some((s:any)=>s.label==='Protección cerámica')).toBe(true)
- expect(snapshot.configuration.business.offers.some((o:any)=>o.title==='Cuidado de temporada')).toBe(true)
- expect(snapshot.configuration.business.offers.some((o:any)=>o.title==='Oferta temporal de prueba')).toBe(false)
- expect(snapshot.configuration.business.offers.find((o:any)=>o.title==='Cuidado de temporada').description).toContain('Cuidado exterior de temporada')
- expect(snapshot.users.some((u:any)=>u.username==='operator')).toBe(true)
- expect(snapshot.operation.frame.vehicles[0].tasks.find((t:any)=>t.label==='Protección cerámica').status).toBe('active')
- await e.reload();await e.locator('.admin-order-row').filter({hasText:orderId}).click()
- await e.getByRole('button',{name:'Simular finalización del servicio'}).click()
- await expect.poll(async()=> (await(await customer.request.get(base+'/api/demo/session')).json()).order?.completionNotice?.channel).toBe('in-app-mock')
- expect((await(await stranger.request.get(base+'/api/demo/session')).json()).order).toBeNull()
- await expect(e.getByRole('button',{name:'Confirmar entrega',exact:true})).toBeVisible({timeout:90000})
- await expect(c.getByText('¡Tus servicios han terminado!',{exact:true})).toBeVisible();await captureStep(c,'c09-private-completion-notice')
- await captureStep(e,'e03-ready-for-handover')
- await e.getByRole('button',{name:'Confirmar entrega',exact:true}).click()
- await expect.poll(async()=> (await(await customer.request.get(base+'/api/demo/session')).json()).order?.status).toBe('completed')
- expect((await(await customer.request.get(base+'/api/demo/session')).json()).order.payment).toBe('pending')
- // Account reauthentication restores the same private order after logout.
- await c.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await c.getByRole('button',{name:'Cerrar sesión DEMO',exact:true}).click();await expect(c).toHaveURL(base+'/login')
- await c.getByLabel('Usuario',{exact:true}).fill('customer');await c.getByLabel('Contraseña',{exact:true}).fill(password)
- await c.getByRole('button',{name:'Iniciar sesión de cliente',exact:true}).click();await expect(c).toHaveURL(base+'/world3d')
- await c.getByRole('button',{name:'Mi cuenta',exact:true}).click();await expect(c.locator('.account-panel')).toContainText(orderId)
- await captureStep(c,'c10-order-history')
- expect((await(await customer.request.get(base+'/api/demo/session')).json()).order.id).toBe(orderId)
- await c.getByRole('button',{name:'Mi cuenta',exact:true}).click()
- await c.getByRole('button',{name:'Área de espera',exact:true}).click()
- await expect.poll(()=>c.evaluate(()=>(window as any).__RECEPTION__?.view)).toBe('waiting')
- await expect.poll(()=>c.evaluate(()=>(window as any).__RECEPTION__?.transition)).toBe(false)
- await c.locator('.lounge-terminal').click();await c.getByRole('button',{name:'Servicios y local',exact:true}).click()
- await c.getByText('Ofertas vigentes',{exact:true}).click()
- await expect(c.locator('.lounge-content')).toContainText('Cuidado de temporada')
- await expect(c.locator('.lounge-content')).toContainText('Cuidado exterior de temporada')
- await expect(c.locator('.lounge-content')).not.toContainText('Oferta temporal de prueba')
- await c.screenshot({path:out+'/customer-published-offers.png'})
- await captureStep(c,'c11-offer-visible-to-customer')
- await a.getByRole('button',{name:'Órdenes',exact:true}).click();await a.locator('.admin-order-row').filter({hasText:orderId}).click();await captureStep(a,'a05-orders-dashboard')
- expect((await post(stranger,'admin/login',{username:'customer',password,portal:'employee'})).status()).toBe(403)
- await e.screenshot({path:out+'/employee-completion.png'});await a.screenshot({path:out+'/admin-content.png'})
- await e.getByRole('button',{name:'Salir',exact:true}).click();await e.getByLabel('Usuario',{exact:true}).fill('operator');await e.getByLabel('Contraseña',{exact:true}).fill(password);await e.getByRole('button',{name:'Iniciar sesión'}).click();await expect(e.getByRole('navigation',{name:'Áreas administrativas'})).toBeVisible()
- await a.getByRole('button',{name:'Usuarios del equipo',exact:true}).click();await a.locator('.admin-user-row').filter({hasText:'Operador de prueba'}).getByRole('button',{name:'Desactivar'}).click()
- await expect.poll(async()=> (await employee.request.get(base+'/api/demo/admin/snapshot')).status()).toBe(403)
- await e.reload();await expect(e.getByRole('heading',{name:'Bienvenido de nuevo'})).toBeVisible();await e.screenshot({path:out+'/login-desktop.png'})
- expect(errors).toEqual([])
- await Promise.all([admin.close(),employee.close(),customer.close(),stranger.close()])
+test('Continuous navigation, interrupted destination and reduced motion on desktop and mobile', async ({
+  browser,
+}) => {
+  const context = await browser.newContext(),
+    page = await context.newPage()
+  await page.goto(base + '/?layer=reception')
+  await page.locator('[data-ground-ready=true]').waitFor({ timeout: 120000 })
+  await page.getByRole('button', { name: 'Ir a recepción', exact: true }).click()
+  await expect
+    .poll(() => page.evaluate(() => (window as any).__RECEPTION__?.transition))
+    .toBe(false)
+  await page.getByRole('button', { name: 'Área de espera', exact: true }).click()
+  const samples = await page.evaluate(async () => {
+    const values: { moving: boolean; position: number[]; opacity: string }[] = []
+    for (let i = 0; i < 45; i++) {
+      const d = (window as any).__RECEPTION__
+      values.push({
+        moving: d.transition,
+        position: [...d.camera],
+        opacity: document.querySelector('canvas')?.parentElement?.style.opacity || '1',
+      })
+      await new Promise((r) => setTimeout(r, 20))
+    }
+    return values
+  })
+  expect(samples.some((s) => s.moving)).toBe(true)
+  expect(samples.every((s) => s.opacity === '1')).toBe(true)
+  expect(new Set(samples.map((s) => s.position.join(','))).size).toBeGreaterThan(5)
+  await page.getByRole('button', { name: 'Bahías', exact: true }).click()
+  await expect.poll(() => page.evaluate(() => (window as any).__RECEPTION__?.view)).toBe('service')
+  await expect
+    .poll(() => page.evaluate(() => (window as any).__RECEPTION__?.transition))
+    .toBe(false)
+  await page.screenshot({ path: out + '/mvp-bays.png' })
+  await page.getByRole('button', { name: 'Área de espera', exact: true }).click()
+  await expect.poll(() => page.evaluate(() => (window as any).__RECEPTION__?.view)).toBe('waiting')
+  await expect
+    .poll(() => page.evaluate(() => (window as any).__RECEPTION__?.transition))
+    .toBe(false)
+  await page.screenshot({ path: out + '/mvp-lounge.png' })
+  await expect(page.getByRole('button', { name: 'Consultar mi espera', exact: true })).toBeVisible()
+  await page.setViewportSize({ width: 737, height: 427 })
+  await page.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await expect(page.getByRole('dialog')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Consultar mi espera', exact: true })).toHaveCount(
+    0,
+  )
+  await page.screenshot({ path: out + '/account-without-lounge-overlap.png' })
+  await page.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await expect(page.getByRole('button', { name: 'Consultar mi espera', exact: true })).toBeVisible()
+  await page.setViewportSize({ width: 732, height: 822 })
+  for (const button of await page.locator('.reception-navigation button').all())
+    await expect(button).toBeInViewport()
+  await page.getByRole('button', { name: 'Entrada', exact: true }).click()
+  await expect
+    .poll(() => page.evaluate(() => (window as any).__RECEPTION__?.transition))
+    .toBe(false)
+  expect(await page.evaluate(() => (window as any).__RECEPTION__.camera[2])).toBeLessThanOrEqual(20)
+  expect(
+    await page
+      .locator('.reception-invitation p')
+      .evaluate((el) => parseFloat(getComputedStyle(el).fontSize)),
+  ).toBeGreaterThanOrEqual(14)
+  await expect(page.locator('.reception-invitation')).toHaveCSS('opacity', '1')
+  await page.screenshot({ path: out + '/entrance-portrait.png' })
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.getByRole('button', { name: 'Recepción', exact: true }).click()
+  await expect
+    .poll(() => page.evaluate(() => (window as any).__RECEPTION__?.view))
+    .toBe('reception')
+  await expect
+    .poll(() => page.evaluate(() => (window as any).__RECEPTION__?.transition))
+    .toBe(false)
+  await page.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await expect(page.getByRole('button', { name: 'Iniciar sesión de cliente' })).toBeVisible()
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  await page.screenshot({ path: out + '/mvp-mobile-account.png' })
+  await context.close()
+})
+
+test('Admin creates catalog and staff; client orders; employee completes; SQLite survives restart', async ({
+  browser,
+}) => {
+  const admin = await browser.newContext(),
+    employee = await browser.newContext(),
+    customer = await browser.newContext(),
+    stranger = await browser.newContext()
+  const a = await admin.newPage(),
+    e = await employee.newPage(),
+    c = await customer.newPage()
+  const errors: string[] = []
+  for (const page of [a, e, c]) page.on('pageerror', (error) => errors.push(error.message))
+  await a.goto(base + '/admin')
+  await expect(a.getByRole('heading', { name: 'Configura tu administrador' })).toBeVisible()
+  await a.getByLabel('Clave de instalación').fill(key)
+  await a.getByLabel('Nombre completo').fill('Responsable de prueba')
+  await a.getByLabel('Usuario', { exact: true }).fill('owner')
+  await a.getByLabel('Contraseña', { exact: true }).fill(password)
+  await a.getByRole('button', { name: 'Crear cuenta y entrar' }).click()
+  await expect(a.getByRole('navigation', { name: 'Áreas administrativas' })).toBeVisible()
+  // Prove normal login rather than relying only on setup's automatic session.
+  await a.getByRole('button', { name: 'Salir', exact: true }).click()
+  await expect(a.getByRole('heading', { name: 'Bienvenido de nuevo' })).toBeVisible()
+  await expect(a.getByRole('navigation', { name: 'Áreas administrativas' })).toHaveCount(0)
+  await a.reload()
+  await expect(a.getByRole('heading', { name: 'Bienvenido de nuevo' })).toBeVisible()
+  await captureStep(a, 'a01-admin-login')
+  await a.getByLabel('Usuario', { exact: true }).fill('owner')
+  await a.getByLabel('Contraseña', { exact: true }).fill(password)
+  await a.getByRole('button', { name: 'Iniciar sesión', exact: true }).click()
+  await expect(a.getByRole('navigation', { name: 'Áreas administrativas' })).toBeVisible()
+  await a.getByRole('button', { name: 'Usuarios del equipo', exact: true }).click()
+  await a.getByLabel('Nombre completo').fill('Operador de prueba')
+  await a.getByLabel('Usuario', { exact: true }).fill('operator')
+  await a.getByLabel('Contraseña inicial').fill(password)
+  await a.getByRole('button', { name: 'Crear usuario', exact: true }).click()
+  await expect(a.locator('.admin-user-row').filter({ hasText: 'Operador de prueba' })).toBeVisible()
+  await captureStep(a, 'a02-employee-created')
+  await a.getByRole('button', { name: 'Servicios y precios' }).click()
+  await a.getByRole('button', { name: 'Crear servicio' }).click()
+  const newService = a.locator('.admin-service-grid .admin-card').last()
+  await newService.getByLabel('Nombre del servicio').fill('Protección cerámica')
+  await newService.getByLabel('Disponible para nuevas órdenes').check()
+  await newService
+    .getByLabel('Descripción', { exact: true })
+    .fill('Protección del acabado exterior.')
+  await newService.getByLabel('Carro · USD', { exact: true }).fill('42')
+  for (const [category, price, minutes] of [
+    ['Carro', '42', '25'],
+    ['Pickup', '52', '35'],
+    ['Truck', '62', '45'],
+    ['SUV', '48', '30'],
+  ]) {
+    await newService.getByLabel(category + ' · USD', { exact: true }).fill(price)
+    await newService.getByLabel(category + ' · minutos estimados', { exact: true }).fill(minutes)
+  }
+  await a.getByRole('button', { name: 'Guardar catálogo y tarifas' }).click()
+  await expect(a.getByText('Configuración guardada y publicada.')).toBeVisible()
+  await newService.getByLabel('Carro · USD', { exact: true }).fill('44')
+  await newService.getByLabel('Carro · minutos estimados', { exact: true }).fill('27')
+  const tariffSaved = a.waitForResponse(
+    (response) =>
+      response.url().endsWith('/api/demo/admin/configuration') &&
+      response.request().method() === 'POST',
+  )
+  await a.getByRole('button', { name: 'Guardar catálogo y tarifas' }).click()
+  expect((await tariffSaved).status()).toBe(200)
+  if (process.env.CARWASH_CAPTURE_JOURNEY === '1') {
+    // A taller browser viewport exposes both tariff and duration controls in the actual dashboard.
+    await a.setViewportSize({ width: 1440, height: 1600 })
+    await newService.scrollIntoViewIfNeeded()
+    await captureStep(a, 'a03-service-prices-duration')
+    await a.setViewportSize({ width: 1440, height: 900 })
+  }
+  await a.getByRole('button', { name: 'Contenido y atención' }).click()
+  await a.getByRole('button', { name: 'Añadir oferta' }).click()
+  await a.getByLabel('Título de oferta').last().fill('Cuidado de temporada')
+  await a.getByLabel('Descripción de oferta').last().fill('Consulta el alcance con recepción.')
+  await a.getByRole('button', { name: 'Guardar contenido' }).click()
+  await expect(a.getByText('Configuración guardada y publicada.')).toBeVisible()
+  await a
+    .getByLabel('Descripción de oferta')
+    .last()
+    .fill('Cuidado exterior de temporada. Consulta condiciones con recepción.')
+  await a.getByRole('button', { name: 'Añadir oferta' }).click()
+  await a.getByLabel('Título de oferta').last().fill('Oferta temporal de prueba')
+  await a
+    .getByLabel('Descripción de oferta')
+    .last()
+    .fill('Se retirará tras comprobar su publicación.')
+  const offersSaved = a.waitForResponse(
+    (response) =>
+      response.url().endsWith('/api/demo/admin/configuration') &&
+      response.request().method() === 'POST',
+  )
+  await a.getByRole('button', { name: 'Guardar contenido' }).click()
+  expect((await offersSaved).status()).toBe(200)
+  await a.getByRole('button', { name: 'Quitar oferta' }).last().click()
+  const offerRemoved = a.waitForResponse(
+    (response) =>
+      response.url().endsWith('/api/demo/admin/configuration') &&
+      response.request().method() === 'POST',
+  )
+  await a.getByRole('button', { name: 'Guardar contenido' }).click()
+  expect((await offerRemoved).status()).toBe(200)
+  await a.getByLabel('Título de oferta').last().scrollIntoViewIfNeeded()
+  await captureStep(a, 'a04-published-offer')
+  await c.goto(base + '/?layer=reception')
+  await c.locator('[data-ground-ready=true]').waitFor({ timeout: 120000 })
+  await c.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await c.getByRole('button', { name: 'Registrarme como cliente' }).click()
+  await c
+    .locator('.customer-access')
+    .evaluate((element) => element.scrollIntoView({ block: 'start' }))
+  await expect(c.getByLabel('Nombre completo')).toBeInViewport()
+  await captureStep(c, 'c01-customer-registration')
+  await c.getByLabel('Nombre completo').fill('Cliente de prueba')
+  await c.getByLabel('Usuario', { exact: true }).fill('customer')
+  await c.getByLabel('Contraseña', { exact: true }).fill(password)
+  await c.getByRole('button', { name: 'Crear cuenta de cliente' }).click()
+  await expect(c.getByText('Cliente · cuenta privada')).toBeVisible()
+  await captureStep(c, 'c02-customer-account')
+  await c.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await c.getByRole('button', { name: 'Ir a recepción', exact: true }).click()
+  await c.getByRole('button', { name: 'Ver servicios', exact: true }).click()
+  for (const [category, price] of [
+    ['Carro', '44.00'],
+    ['Pickup', '52.00'],
+    ['Truck', '62.00'],
+    ['SUV', '48.00'],
+  ]) {
+    await c.getByRole('button', { name: category, exact: true }).click()
+    await expect(
+      c
+        .locator('.service-option')
+        .filter({ hasText: 'Protección cerámica' })
+        .locator('.service-price'),
+    ).toContainText(price)
+  }
+  await c.getByRole('button', { name: 'Carro', exact: true }).click()
+  await c.getByRole('button', { name: 'Añadir Protección cerámica' }).click()
+  await c
+    .locator('.service-option')
+    .filter({ hasText: 'Protección cerámica' })
+    .scrollIntoViewIfNeeded()
+  await captureStep(c, 'c03-service-selected')
+  await c.getByRole('button', { name: 'Continuar', exact: true }).click()
+  await captureStep(c, 'c04-vehicle-details')
+  await c.getByRole('button', { name: 'Revisar cotización', exact: true }).click()
+  await expect(c.getByRole('button', { name: 'Confirmar orden DEMO', exact: true })).toBeEnabled()
+  await captureStep(c, 'c05-quote-review')
+  await c.getByRole('button', { name: 'Confirmar orden DEMO', exact: true }).click()
+  await expect
+    .poll(
+      async () =>
+        (await (await customer.request.get(base + '/api/demo/session')).json()).order?.status,
+    )
+    .toBe('confirmed')
+  await captureStep(c, 'c06-order-confirmed')
+  const before = await (await customer.request.get(base + '/api/demo/session')).json(),
+    orderId = before.order.id
+  expect(before.profile.account.role).toBe('customer')
+  expect(before.order.quote.estimatedMinutes).toBe(27)
+  expect(before.order.quote.subtotal).toBe(4400)
+  expect((await customer.request.get(base + '/api/demo/admin/snapshot')).status()).toBe(403)
+  expect(
+    (
+      await post(customer, 'admin/users', {
+        username: 'elevated',
+        name: 'Invalid',
+        password,
+        role: 'admin',
+      })
+    ).status(),
+  ).toBe(403)
+  expect((await stranger.request.get(base + '/api/demo/session')).status()).toBe(200)
+  expect((await stranger.request.get(base + '/api/demo/admin/snapshot')).status()).toBe(403)
+  expect((await post(stranger, 'cancel', { orderId })).status()).toBe(404)
+  await e.goto(base + '/employee')
+  await e.getByLabel('Usuario', { exact: true }).fill('operator')
+  await e.getByLabel('Contraseña', { exact: true }).fill(password)
+  await e.getByRole('button', { name: 'Iniciar sesión' }).click()
+  await expect(e.getByRole('navigation', { name: 'Áreas administrativas' })).toBeVisible()
+  await expect(e.locator('canvas')).toHaveCount(0)
+  await expect(e.getByRole('button', { name: 'Usuarios del equipo' })).toHaveCount(0)
+  expect(
+    (
+      await post(employee, 'admin/users', {
+        username: 'attack',
+        name: 'Invalid',
+        password,
+        role: 'admin',
+      })
+    ).status(),
+  ).toBe(403)
+  expect((await post(employee, 'admin/configuration', {})).status()).toBe(403)
+  await e.locator('.admin-order-row').filter({ hasText: orderId }).click()
+  await e.getByRole('button', { name: 'Confirmar llegada', exact: true }).click()
+  await captureStep(e, 'e01-arrival-confirmed')
+  await c.getByRole('button', { name: 'Área de espera', exact: true }).click()
+  await expect.poll(() => c.evaluate(() => (window as any).__RECEPTION__?.transition)).toBe(false)
+  await c.locator('.lounge-terminal').click()
+  await expect(c.locator('.lounge-state')).toBeVisible()
+  await captureStep(c, 'c07-waiting-status')
+  await e.getByRole('button', { name: 'Asignar atención', exact: true }).click()
+  await expect(e.getByRole('button', { name: 'Completar tarea activa' })).toBeVisible({
+    timeout: 90000,
+  })
+  await expect(e.locator('.activity-list')).toContainText('Protección cerámica')
+  await expect(e.locator('.activity-list')).toContainText('En proceso')
+  await captureStep(e, 'e02-service-active')
+  await c.getByRole('button', { name: 'Ver mi auto', exact: true }).click()
+  await expect(c.locator('.site-vehicle-state')).toContainText('Protección cerámica')
+  await expect.poll(() => c.evaluate(() => (window as any).__RECEPTION__?.transition)).toBe(false)
+  await captureStep(c, 'c08-track-vehicle')
+  await stop()
+  await start()
+  const recovered = await (await customer.request.get(base + '/api/demo/session')).json()
+  expect(recovered.order.id).toBe(orderId)
+  expect(recovered.nonce).toBe(before.nonce)
+  const snapshot = await (await admin.request.get(base + '/api/demo/admin/snapshot')).json()
+  expect(snapshot.configuration.services.some((s: any) => s.label === 'Protección cerámica')).toBe(
+    true,
+  )
+  expect(
+    snapshot.configuration.business.offers.some((o: any) => o.title === 'Cuidado de temporada'),
+  ).toBe(true)
+  expect(
+    snapshot.configuration.business.offers.some(
+      (o: any) => o.title === 'Oferta temporal de prueba',
+    ),
+  ).toBe(false)
+  expect(
+    snapshot.configuration.business.offers.find((o: any) => o.title === 'Cuidado de temporada')
+      .description,
+  ).toContain('Cuidado exterior de temporada')
+  expect(snapshot.users.some((u: any) => u.username === 'operator')).toBe(true)
+  expect(
+    snapshot.operation.frame.vehicles[0].tasks.find((t: any) => t.label === 'Protección cerámica')
+      .status,
+  ).toBe('active')
+  await e.reload()
+  await e.locator('.admin-order-row').filter({ hasText: orderId }).click()
+  await e.getByRole('button', { name: 'Simular finalización del servicio' }).click()
+  await expect
+    .poll(
+      async () =>
+        (await (await customer.request.get(base + '/api/demo/session')).json()).order
+          ?.completionNotice?.channel,
+    )
+    .toBe('in-app-mock')
+  expect((await (await stranger.request.get(base + '/api/demo/session')).json()).order).toBeNull()
+  await expect(e.getByRole('button', { name: 'Confirmar entrega', exact: true })).toBeVisible({
+    timeout: 90000,
+  })
+  await expect(c.getByText('¡Tus servicios han terminado!', { exact: true })).toBeVisible()
+  await captureStep(c, 'c09-private-completion-notice')
+  await captureStep(e, 'e03-ready-for-handover')
+  await e.getByRole('button', { name: 'Confirmar entrega', exact: true }).click()
+  await expect
+    .poll(
+      async () =>
+        (await (await customer.request.get(base + '/api/demo/session')).json()).order?.status,
+    )
+    .toBe('completed')
+  expect(
+    (await (await customer.request.get(base + '/api/demo/session')).json()).order.payment,
+  ).toBe('pending')
+  // Account reauthentication restores the same private order after logout.
+  await c.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await c.getByRole('button', { name: 'Cerrar sesión DEMO', exact: true }).click()
+  await expect(c).toHaveURL(base + '/login')
+  await c.getByLabel('Usuario', { exact: true }).fill('customer')
+  await c.getByLabel('Contraseña', { exact: true }).fill(password)
+  await c.getByRole('button', { name: 'Iniciar sesión de cliente', exact: true }).click()
+  await expect(c).toHaveURL(base + '/world3d')
+  await c.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await expect(c.locator('.account-panel')).toContainText(orderId)
+  await captureStep(c, 'c10-order-history')
+  expect((await (await customer.request.get(base + '/api/demo/session')).json()).order.id).toBe(
+    orderId,
+  )
+  await c.getByRole('button', { name: 'Mi cuenta', exact: true }).click()
+  await c.getByRole('button', { name: 'Área de espera', exact: true }).click()
+  await expect.poll(() => c.evaluate(() => (window as any).__RECEPTION__?.view)).toBe('waiting')
+  await expect.poll(() => c.evaluate(() => (window as any).__RECEPTION__?.transition)).toBe(false)
+  await c.locator('.lounge-terminal').click()
+  await c.getByRole('button', { name: 'Servicios y local', exact: true }).click()
+  await c.getByText('Ofertas vigentes', { exact: true }).click()
+  await expect(c.locator('.lounge-content')).toContainText('Cuidado de temporada')
+  await expect(c.locator('.lounge-content')).toContainText('Cuidado exterior de temporada')
+  await expect(c.locator('.lounge-content')).not.toContainText('Oferta temporal de prueba')
+  await c.screenshot({ path: out + '/customer-published-offers.png' })
+  await captureStep(c, 'c11-offer-visible-to-customer')
+  await a.getByRole('button', { name: 'Órdenes', exact: true }).click()
+  await a.locator('.admin-order-row').filter({ hasText: orderId }).click()
+  await captureStep(a, 'a05-orders-dashboard')
+  expect(
+    (
+      await post(stranger, 'admin/login', { username: 'customer', password, portal: 'employee' })
+    ).status(),
+  ).toBe(403)
+  await e.screenshot({ path: out + '/employee-completion.png' })
+  await a.screenshot({ path: out + '/admin-content.png' })
+  await e.getByRole('button', { name: 'Salir', exact: true }).click()
+  await e.getByLabel('Usuario', { exact: true }).fill('operator')
+  await e.getByLabel('Contraseña', { exact: true }).fill(password)
+  await e.getByRole('button', { name: 'Iniciar sesión' }).click()
+  await expect(e.getByRole('navigation', { name: 'Áreas administrativas' })).toBeVisible()
+  await a.getByRole('button', { name: 'Usuarios del equipo', exact: true }).click()
+  await a
+    .locator('.admin-user-row')
+    .filter({ hasText: 'Operador de prueba' })
+    .getByRole('button', { name: 'Desactivar' })
+    .click()
+  await expect
+    .poll(async () => (await employee.request.get(base + '/api/demo/admin/snapshot')).status())
+    .toBe(403)
+  await e.reload()
+  await expect(e.getByRole('heading', { name: 'Bienvenido de nuevo' })).toBeVisible()
+  await e.screenshot({ path: out + '/login-desktop.png' })
+  expect(errors).toEqual([])
+  await Promise.all([admin.close(), employee.close(), customer.close(), stranger.close()])
 })

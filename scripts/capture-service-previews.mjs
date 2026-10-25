@@ -1,13 +1,48 @@
-import {chromium} from '@playwright/test';import fs from 'node:fs/promises';import path from 'node:path';import sharp from 'sharp';
-const browser=await chromium.launch({channel:'msedge',headless:true}),page=await browser.newPage({viewport:{width:640,height:300},deviceScaleFactor:1});
-await page.route('**/__capture/**',async route=>{const u=new URL(route.request().url());let target;if(u.pathname==='/__capture/car.glb')target='C:/Projects/Assets/Febles-G1-20261023/car-concept.glb';else{target=path.resolve('node_modules/three',u.pathname.slice('/__capture/'.length));if(!target.startsWith(path.resolve('node_modules/three')+path.sep))throw Error('Path rejected')}await route.fulfill({body:await fs.readFile(target),contentType:target.endsWith('.js')?'text/javascript':'model/gltf-binary'})});
-await page.route('**/__thumbnail',r=>r.fulfill({contentType:'text/html',body:`<html><style>body{margin:0;background:#173044}</style><script type="importmap">{"imports":{"three":"/__capture/build/three.module.js","three/addons/":"/__capture/examples/jsm/"}}</script><script type="module">
+import { chromium } from '@playwright/test'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import sharp from 'sharp'
+
+const browser = await chromium.launch({ channel: 'msedge', headless: true }),
+  page = await browser.newPage({ viewport: { width: 640, height: 300 }, deviceScaleFactor: 1 })
+
+await page.route('**/__capture/**', async (route) => {
+  const u = new URL(route.request().url())
+  let target
+
+  if (u.pathname === '/__capture/car.glb')
+    target = 'C:/Projects/Assets/Febles-G1-20261023/car-concept.glb'
+  else {
+    target = path.resolve('node_modules/three', u.pathname.slice('/__capture/'.length))
+    if (!target.startsWith(path.resolve('node_modules/three') + path.sep))
+      throw Error('Path rejected')
+  }
+  await route.fulfill({
+    body: await fs.readFile(target),
+    contentType: target.endsWith('.js') ? 'text/javascript' : 'model/gltf-binary',
+  })
+})
+await page.route('**/__thumbnail', (r) =>
+  r.fulfill({
+    contentType: 'text/html',
+    body: `<html><style>body{margin:0;background:#173044}</style><script type="importmap">{"imports":{"three":"/__capture/build/three.module.js","three/addons/":"/__capture/examples/jsm/"}}</script><script type="module">
 import * as THREE from 'three';import{GLTFLoader}from 'three/addons/loaders/GLTFLoader.js';import{HDRLoader}from 'three/addons/loaders/HDRLoader.js';
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setSize(640,300);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;document.body.appendChild(renderer.domElement);const scene=new THREE.Scene();scene.background=new THREE.Color('#203b4e');const env=await new HDRLoader().loadAsync('/textures/daylight.hdr');env.mapping=THREE.EquirectangularReflectionMapping;scene.environment=env;scene.add(new THREE.HemisphereLight('#e3f4ff','#886645',2.5));const light=new THREE.DirectionalLight('#fff3df',4);light.position.set(-4,6,7);scene.add(light);const fill=new THREE.DirectionalLight('#96cfff',2);fill.position.set(4,3,-4);scene.add(fill);const car=(await new GLTFLoader().loadAsync('/__capture/car.glb')).scene;
 const bounds=new THREE.Box3().setFromObject(car,true),center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3());car.position.sub(center);const group=new THREE.Group();group.add(car);group.scale.setScalar(1.3/size.y);scene.add(group);const camera=new THREE.PerspectiveCamera(38,640/300,.01,100);
 window.meshes=[];car.traverse(o=>{if(o.isMesh)window.meshes.push({name:o.name,parent:o.parent?.name})});window.draw=(kind)=>{car.traverse(o=>{if(o.isMesh){let interior=false;for(let p=o;p&&p!==car;p=p.parent)if(p.name.startsWith('Interior'))interior=true;o.visible=true;o.layers.set((kind==='interior'?interior:!o.name.includes('License'))?0:1);if(o.material?.name?.includes('Paint'))o.material.color.set('#74a8bc')}});camera.fov=kind==='lights'?26:38;camera.updateProjectionMatrix();if(kind==='interior'){camera.position.set(1.8,1.5,2);camera.lookAt(0,.15,0)}else if(kind==='lights'){camera.position.set(1.6,.6,3.3);camera.lookAt(.7,.02,1.9)}else{camera.position.set(3.3,1.7,4.3);camera.lookAt(0,0,0)}renderer.render(scene,camera);return true};window.loaded=true;
-</script></html>`}));
-await page.goto('http://127.0.0.1:4173/__thumbnail');await page.waitForFunction(()=>window.loaded,{},{timeout:60000});await fs.mkdir('docs/evidence/commercial-polish/asset-previews',{recursive:true});for(const kind of ['exterior','interior','lights']){await page.evaluate(k=>window.draw(k),kind);const png=await page.screenshot({path:`docs/evidence/commercial-polish/asset-previews/${kind}.png`});await sharp(png).webp({quality:90}).toFile(`public/textures/services/${kind}.webp`)}await browser.close();
+</script></html>`,
+  }),
+)
+await page.goto('http://127.0.0.1:4173/__thumbnail')
+await page.waitForFunction(() => window.loaded, {}, { timeout: 60000 })
+await fs.mkdir('docs/evidence/commercial-polish/asset-previews', { recursive: true })
+for (const kind of ['exterior', 'interior', 'lights']) {
+  await page.evaluate((k) => window.draw(k), kind)
 
+  const png = await page.screenshot({
+    path: `docs/evidence/commercial-polish/asset-previews/${kind}.png`,
+  })
 
-
+  await sharp(png).webp({ quality: 90 }).toFile(`public/textures/services/${kind}.webp`)
+}
+await browser.close()

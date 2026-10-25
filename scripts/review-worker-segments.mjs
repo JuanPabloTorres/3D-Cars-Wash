@@ -1,8 +1,39 @@
-import{chromium}from'@playwright/test';import fs from'node:fs/promises';import path from'node:path';
-const out='docs/evidence/visual-revision/asset-review';await fs.mkdir(out,{recursive:true});const browser=await chromium.launch({channel:'msedge',headless:true}),page=await browser.newPage({viewport:{width:1000,height:650}});
-await page.route('**/__review/**',async r=>{const name=new URL(r.request().url()).pathname.slice('/__review/'.length),p=name==='pickup.glb'?'C:/Projects/Assets/Febles-Visual-Revision-20261023/innerscene/pickup.glb':path.resolve('node_modules/three',name);await r.fulfill({body:await fs.readFile(p),contentType:p.endsWith('.js')?'text/javascript':'model/gltf-binary'})});
-await page.route('**/__asset-review',r=>r.fulfill({contentType:'text/html',body:`<style>body{margin:0}</style><script type="importmap">{"imports":{"three":"/__review/build/three.module.js","three/addons/":"/__review/examples/jsm/"}}</script><script type="module">
-import * as T from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';const r=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(1000,650);r.toneMapping=T.ACESFilmicToneMapping;document.body.appendChild(r.domElement);const s=new T.Scene();s.background=new T.Color('#9ecbdb');s.add(new T.HemisphereLight('#dceeff','#534a38',2));const l=new T.DirectionalLight('#fff1d9',4);l.position.set(3,6,8);s.add(l);const c=new T.PerspectiveCamera(37,1000/650,.01,100);c.position.set(7,4,8);c.lookAt(0,.8,0);let object;window.draw=async url=>{if(object)s.remove(object);const gltf=await new GLTFLoader().loadAsync(url);object=gltf.scene;const mixer=new T.AnimationMixer(object);mixer.clipAction(gltf.animations.find(a=>a.name==='ServiceLights')).play();mixer.update(.8);c.position.set(2,1.1,2);c.lookAt(0,1,0);const b=new T.Box3().setFromObject(object,true),z=b.getSize(new T.Vector3()),center=b.getCenter(new T.Vector3());object.position.set(-center.x,-b.min.y,-center.z);s.add(object);r.render(s,c);return {size:z.toArray(),nodes:(()=>{const a=[];object.traverse(o=>a.push({name:o.name,type:o.type}));return a})()}};window.ready=true;</script>`}));await page.goto('http://127.0.0.1:4173/__asset-review');await page.waitForFunction(()=>window.ready);for(const id of ['worker-segments']){const report=await page.evaluate(id=>window.draw('/models/worker.glb'),id);await fs.writeFile(out+'/'+id+'.json',JSON.stringify(report,null,2));await page.screenshot({path:out+'/'+id+'.png'});}await browser.close();
+import { chromium } from '@playwright/test'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 
+const out = 'docs/evidence/visual-revision/asset-review'
 
+await fs.mkdir(out, { recursive: true })
 
+const browser = await chromium.launch({ channel: 'msedge', headless: true }),
+  page = await browser.newPage({ viewport: { width: 1000, height: 650 } })
+
+await page.route('**/__review/**', async (r) => {
+  const name = new URL(r.request().url()).pathname.slice('/__review/'.length),
+    p =
+      name === 'pickup.glb'
+        ? 'C:/Projects/Assets/Febles-Visual-Revision-20261023/innerscene/pickup.glb'
+        : path.resolve('node_modules/three', name)
+
+  await r.fulfill({
+    body: await fs.readFile(p),
+    contentType: p.endsWith('.js') ? 'text/javascript' : 'model/gltf-binary',
+  })
+})
+await page.route('**/__asset-review', (r) =>
+  r.fulfill({
+    contentType: 'text/html',
+    body: `<style>body{margin:0}</style><script type="importmap">{"imports":{"three":"/__review/build/three.module.js","three/addons/":"/__review/examples/jsm/"}}</script><script type="module">
+import * as T from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';const r=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setSize(1000,650);r.toneMapping=T.ACESFilmicToneMapping;document.body.appendChild(r.domElement);const s=new T.Scene();s.background=new T.Color('#9ecbdb');s.add(new T.HemisphereLight('#dceeff','#534a38',2));const l=new T.DirectionalLight('#fff1d9',4);l.position.set(3,6,8);s.add(l);const c=new T.PerspectiveCamera(37,1000/650,.01,100);c.position.set(7,4,8);c.lookAt(0,.8,0);let object;window.draw=async url=>{if(object)s.remove(object);const gltf=await new GLTFLoader().loadAsync(url);object=gltf.scene;const mixer=new T.AnimationMixer(object);mixer.clipAction(gltf.animations.find(a=>a.name==='ServiceLights')).play();mixer.update(.8);c.position.set(2,1.1,2);c.lookAt(0,1,0);const b=new T.Box3().setFromObject(object,true),z=b.getSize(new T.Vector3()),center=b.getCenter(new T.Vector3());object.position.set(-center.x,-b.min.y,-center.z);s.add(object);r.render(s,c);return {size:z.toArray(),nodes:(()=>{const a=[];object.traverse(o=>a.push({name:o.name,type:o.type}));return a})()}};window.ready=true;</script>`,
+  }),
+)
+await page.goto('http://127.0.0.1:4173/__asset-review')
+await page.waitForFunction(() => window.ready)
+for (const id of ['worker-segments']) {
+  const report = await page.evaluate((id) => window.draw('/models/worker.glb'), id)
+
+  await fs.writeFile(out + '/' + id + '.json', JSON.stringify(report, null, 2))
+  await page.screenshot({ path: out + '/' + id + '.png' })
+}
+await browser.close()

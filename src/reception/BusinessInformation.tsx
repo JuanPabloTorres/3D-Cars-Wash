@@ -1,30 +1,275 @@
-import {useRef,useState} from 'react'
-import {Clock,MessageCircle,Info} from 'lucide-react'
-import {answerBusinessQuestion,type QuestionTopic} from '../domain/businessContent'
-import {useBusiness,useServices,useActiveOffers} from '../app/business'
-import {demoRequest} from '../app/commerceStore'
-import {validateRegistration} from '../domain/commerce'
-export function BusinessInformation({hoursFirst=false,showHeading=true}:{hoursFirst?:boolean;showHeading?:boolean}){
- const business=useBusiness()
- return <>{showHeading&&<h3>{hoursFirst?'Horarios':'Información del establecimiento'}</h3>}<p className="inline-note"><Clock size={18}/>{business.hours||'Horario pendiente de configuración. Consulta al personal antes de planificar tu visita.'}</p><p className="muted">{business.process}</p><p className="muted">{business.conditions}</p><h3>Contacto y redes</h3>{business.contact?<a href={business.contact.href}>{business.contact.label}</a>:<p className="muted">El negocio todavía no ha configurado un medio de contacto o redes oficiales.</p>}{business.social.map(s=><a className="business-social" key={s.href} href={s.href} target="_blank" rel="noreferrer">{s.label}</a>)}<small className="muted">Contenido administrativo revisado el {business.updatedAt} · DEMO.</small></>
+import { useRef, useState } from 'react'
+import { Clock, MessageCircle, Info } from 'lucide-react'
+import { answerBusinessQuestion, type QuestionTopic } from '../domain/businessContent'
+import { useBusiness, useServices, useActiveOffers } from '../app/business'
+import { demoRequest } from '../app/commerceStore'
+import { validateRegistration } from '../domain/commerce'
+
+export function BusinessInformation({
+  hoursFirst = false,
+  showHeading = true,
+}: {
+  hoursFirst?: boolean
+  showHeading?: boolean
+}) {
+  const business = useBusiness()
+
+  return (
+    <>
+      {showHeading && <h3>{hoursFirst ? 'Horarios' : 'Información del establecimiento'}</h3>}
+      <p className="inline-note">
+        <Clock size={18} />
+        {business.hours ||
+          'Horario pendiente de configuración. Consulta al personal antes de planificar tu visita.'}
+      </p>
+      <p className="muted">{business.process}</p>
+      <p className="muted">{business.conditions}</p>
+      <h3>Contacto y redes</h3>
+      {business.contact ? (
+        <a href={business.contact.href}>{business.contact.label}</a>
+      ) : (
+        <p className="muted">
+          El negocio todavía no ha configurado un medio de contacto o redes oficiales.
+        </p>
+      )}
+      {business.social.map((s) => (
+        <a className="business-social" key={s.href} href={s.href} target="_blank" rel="noreferrer">
+          {s.label}
+        </a>
+      ))}
+      <small className="muted">
+        Contenido administrativo revisado el {business.updatedAt} · DEMO.
+      </small>
+    </>
+  )
 }
-export function BusinessQuestions(){
- const business=useBusiness(),services=useServices(),[topic,setTopic]=useState<QuestionTopic|null>(null),[question,setQuestion]=useState(''),[review,setReview]=useState(false),[contact,setContact]=useState(''),[sending,setSending]=useState(false),[receipt,setReceipt]=useState(''),[error,setError]=useState(''),key=useRef(crypto.randomUUID())
- // Free text is a staff request, not an automatic answer or an AI chat.
- const answer=topic&&topic!=='other'&&answerBusinessQuestion(topic,business,services)
- const send=async()=>{if(sending)return;setSending(true);setError('');try{const result=await demoRequest('contact',{question:question.trim(),contact,confirmed:true,key:key.current});setReceipt(result.request.id)}catch(e){setError((e as Error).message)}finally{setSending(false)}}
- return <><p className="speech">¿En qué puedo orientarte?</p><div className="question-topics">{([['services','Servicios disponibles'],['hours','Horarios'],['process','Cómo funciona la visita'],['conditions','Alcance y condiciones'],['other','Tengo otra pregunta']] as const).map(([id,label])=><button key={id} aria-pressed={topic===id} onClick={()=>{setTopic(id);setReview(false)}}><MessageCircle size={16}/>{label}</button>)}</div>
-  {topic==='other'&&<section aria-label="Consulta al personal"><p className="inline-note">{business.contactRequestsAvailable?'Puedes registrar una consulta para el personal del local. Revisa el texto y confirma antes de enviarlo; Ana no genera respuestas automáticas.':'Las consultas escritas no están habilitadas. Consulta al personal al visitar el establecimiento.'}</p>{business.contact&&<a href={business.contact.href}>Contactar al establecimiento: {business.contact.label}</a>}{!business.contact&&!business.contactRequestsAvailable&&<p className="muted">Contacto oficial pendiente de configuración.</p>}{business.contactRequestsAvailable&&<><label className="field">Tu pregunta<textarea maxLength={500} rows={3} value={question} onChange={e=>{setQuestion(e.target.value);setReview(false);setReceipt('');setError('')}} placeholder="Escribe tu consulta, sin datos personales"/></label><button className="text-button" disabled={question.trim().length<5||sending} onClick={()=>{setReview(!review);setReceipt('');setError('');key.current=crypto.randomUUID()}}>{review?'Ocultar':'Revisar'} mi consulta</button>{review&&<><blockquote>{question}<small>Resumen · pendiente de tu confirmación</small></blockquote>{!receipt&&<><label className="field">Contacto para responder<input value={contact} maxLength={100} placeholder="Correo o teléfono" onChange={e=>setContact(e.target.value)}/></label><button className="primary wide" disabled={sending||question.trim().length<5||!contact.trim()||!!validateRegistration({type:'car',color:'Plata',contact})} onClick={send}>{sending?'Registrando…':'Confirmar y enviar solicitud'}</button></>}</>}{receipt&&<p role="status" className="inline-note">Solicitud recibida por recepción local · {receipt}. El personal debe revisarla.</p>}{error&&<p className="form-error" role="alert">{error}</p>}</>}</section>}
-  {answer&&<div className="answer" role="status"><Info size={17}/><p>{answer.text}</p></div>}
-  {answer&&!answer.known&&(business.contact?<a href={business.contact.href}>Contactar al establecimiento: {business.contact.label}</a>:<p className="inline-note">Consulta al personal al visitar el establecimiento.</p>)}
- </>
+
+export function BusinessQuestions() {
+  const business = useBusiness(),
+    services = useServices(),
+    [topic, setTopic] = useState<QuestionTopic | null>(null),
+    [question, setQuestion] = useState(''),
+    [review, setReview] = useState(false),
+    [contact, setContact] = useState(''),
+    [sending, setSending] = useState(false),
+    [receipt, setReceipt] = useState(''),
+    [error, setError] = useState(''),
+    key = useRef(crypto.randomUUID())
+  // Free text is a staff request, not an automatic answer or an AI chat.
+  const answer = topic && topic !== 'other' && answerBusinessQuestion(topic, business, services)
+  const send = async () => {
+    if (sending) return
+    setSending(true)
+    setError('')
+    try {
+      const result = await demoRequest('contact', {
+        question: question.trim(),
+        contact,
+        confirmed: true,
+        key: key.current,
+      })
+
+      setReceipt(result.request.id)
+    } catch (e) {
+      setError((e as Error).message)
+    } finally {
+      setSending(false)
+    }
+  }
+
+  return (
+    <>
+      <p className="speech">¿En qué puedo orientarte?</p>
+      <div className="question-topics">
+        {(
+          [
+            ['services', 'Servicios disponibles'],
+            ['hours', 'Horarios'],
+            ['process', 'Cómo funciona la visita'],
+            ['conditions', 'Alcance y condiciones'],
+            ['other', 'Tengo otra pregunta'],
+          ] as const
+        ).map(([id, label]) => (
+          <button
+            key={id}
+            aria-pressed={topic === id}
+            onClick={() => {
+              setTopic(id)
+              setReview(false)
+            }}
+          >
+            <MessageCircle size={16} />
+            {label}
+          </button>
+        ))}
+      </div>
+      {topic === 'other' && (
+        <section aria-label="Consulta al personal">
+          <p className="inline-note">
+            {business.contactRequestsAvailable
+              ? 'Puedes registrar una consulta para el personal del local. Revisa el texto y confirma antes de enviarlo; Ana no genera respuestas automáticas.'
+              : 'Las consultas escritas no están habilitadas. Consulta al personal al visitar el establecimiento.'}
+          </p>
+          {business.contact && (
+            <a href={business.contact.href}>
+              Contactar al establecimiento: {business.contact.label}
+            </a>
+          )}
+          {!business.contact && !business.contactRequestsAvailable && (
+            <p className="muted">Contacto oficial pendiente de configuración.</p>
+          )}
+          {business.contactRequestsAvailable && (
+            <>
+              <label className="field">
+                Tu pregunta
+                <textarea
+                  maxLength={500}
+                  rows={3}
+                  value={question}
+                  onChange={(e) => {
+                    setQuestion(e.target.value)
+                    setReview(false)
+                    setReceipt('')
+                    setError('')
+                  }}
+                  placeholder="Escribe tu consulta, sin datos personales"
+                />
+              </label>
+              <button
+                className="text-button"
+                disabled={question.trim().length < 5 || sending}
+                onClick={() => {
+                  setReview(!review)
+                  setReceipt('')
+                  setError('')
+                  key.current = crypto.randomUUID()
+                }}
+              >
+                {review ? 'Ocultar' : 'Revisar'} mi consulta
+              </button>
+              {review && (
+                <>
+                  <blockquote>
+                    {question}
+                    <small>Resumen · pendiente de tu confirmación</small>
+                  </blockquote>
+                  {!receipt && (
+                    <>
+                      <label className="field">
+                        Contacto para responder
+                        <input
+                          value={contact}
+                          maxLength={100}
+                          placeholder="Correo o teléfono"
+                          onChange={(e) => setContact(e.target.value)}
+                        />
+                      </label>
+                      <button
+                        className="primary wide"
+                        disabled={
+                          sending ||
+                          question.trim().length < 5 ||
+                          !contact.trim() ||
+                          !!validateRegistration({ type: 'car', color: 'Plata', contact })
+                        }
+                        onClick={send}
+                      >
+                        {sending ? 'Registrando…' : 'Confirmar y enviar solicitud'}
+                      </button>
+                    </>
+                  )}
+                </>
+              )}
+              {receipt && (
+                <p role="status" className="inline-note">
+                  Solicitud recibida por recepción local · {receipt}. El personal debe revisarla.
+                </p>
+              )}
+              {error && (
+                <p className="form-error" role="alert">
+                  {error}
+                </p>
+              )}
+            </>
+          )}
+        </section>
+      )}
+      {answer && (
+        <div className="answer" role="status">
+          <Info size={17} />
+          <p>{answer.text}</p>
+        </div>
+      )}
+      {answer &&
+        !answer.known &&
+        (business.contact ? (
+          <a href={business.contact.href}>Contactar al establecimiento: {business.contact.label}</a>
+        ) : (
+          <p className="inline-note">Consulta al personal al visitar el establecimiento.</p>
+        ))}
+    </>
+  )
 }
+
 /** Published, unexpired offers only; the display never manufactures discounts. */
-export function BusinessOffers(){
- const offers=useActiveOffers()
- return <section aria-label="Ofertas del establecimiento">{offers.length?offers.map(o=><article key={o.id}><h3>{o.title}</h3><p>{o.description}</p></article>):<p className="muted">No hay ofertas vigentes configuradas por el establecimiento.</p>}</section>
+export function BusinessOffers() {
+  const offers = useActiveOffers()
+
+  return (
+    <section aria-label="Ofertas del establecimiento">
+      {offers.length ? (
+        offers.map((o) => (
+          <article key={o.id}>
+            <h3>{o.title}</h3>
+            <p>{o.description}</p>
+          </article>
+        ))
+      ) : (
+        <p className="muted">No hay ofertas vigentes configuradas por el establecimiento.</p>
+      )}
+    </section>
+  )
 }
-export function LoungeContent(){
- const business=useBusiness(),services=useServices(),offers=useActiveOffers()
- return <div className="lounge-content"><details><summary>Servicios y cuidados del vehículo</summary>{services.filter(s=>s.available!==false).map(s=><article key={s.id}><h3>{s.label}</h3><p>{s.description}</p><p><b>Incluye:</b> {s.includes}</p><p>{s.care}</p><small>{s.conditions}</small></article>)}</details><details><summary>Ofertas vigentes</summary>{offers.map(o=><article key={o.id}><h3>{o.title}</h3><p>{o.description}</p></article>)}{!offers.length&&<p className="muted">No hay ofertas vigentes configuradas por el establecimiento.</p>}</details><details><summary>Información de {business.name}</summary><BusinessInformation/></details></div>
+
+export function LoungeContent() {
+  const business = useBusiness(),
+    services = useServices(),
+    offers = useActiveOffers()
+
+  return (
+    <div className="lounge-content">
+      <details>
+        <summary>Servicios y cuidados del vehículo</summary>
+        {services
+          .filter((s) => s.available !== false)
+          .map((s) => (
+            <article key={s.id}>
+              <h3>{s.label}</h3>
+              <p>{s.description}</p>
+              <p>
+                <b>Incluye:</b> {s.includes}
+              </p>
+              <p>{s.care}</p>
+              <small>{s.conditions}</small>
+            </article>
+          ))}
+      </details>
+      <details>
+        <summary>Ofertas vigentes</summary>
+        {offers.map((o) => (
+          <article key={o.id}>
+            <h3>{o.title}</h3>
+            <p>{o.description}</p>
+          </article>
+        ))}
+        {!offers.length && (
+          <p className="muted">No hay ofertas vigentes configuradas por el establecimiento.</p>
+        )}
+      </details>
+      <details>
+        <summary>Información de {business.name}</summary>
+        <BusinessInformation />
+      </details>
+    </div>
+  )
 }

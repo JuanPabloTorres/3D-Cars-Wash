@@ -39,37 +39,68 @@ const haloFragment = `
  * halo. Depth testing keeps the halo behind scene occluders. Nearby illumination
  * remains a real point light owned by LightingLandscapeLayer. */
 export function WarmDiffuser() {
-  return <group position-y={1.09}>
-    <mesh>
-      <cylinderGeometry args={[.128, .128, .34, 48]} />
-      <shaderMaterial uniforms={lensUniforms} vertexShader={vertexShader} fragmentShader={lensFragment} toneMapped={false} />
-    </mesh>
-    <Billboard>
-      <mesh position-z={.15}>
-        <planeGeometry args={[.64, .8]} />
-        <shaderMaterial uniforms={haloUniforms} vertexShader={vertexShader} fragmentShader={haloFragment}
-          transparent blending={AdditiveBlending} depthTest depthWrite={false} toneMapped={false} />
+  return (
+    <group position-y={1.09}>
+      <mesh>
+        <cylinderGeometry args={[0.128, 0.128, 0.34, 48]} />
+        <shaderMaterial
+          uniforms={lensUniforms}
+          vertexShader={vertexShader}
+          fragmentShader={lensFragment}
+          toneMapped={false}
+        />
       </mesh>
-    </Billboard>
-  </group>
+      <Billboard>
+        <mesh position-z={0.15}>
+          <planeGeometry args={[0.64, 0.8]} />
+          <shaderMaterial
+            uniforms={haloUniforms}
+            vertexShader={vertexShader}
+            fragmentShader={haloFragment}
+            transparent
+            blending={AdditiveBlending}
+            depthTest
+            depthWrite={false}
+            toneMapped={false}
+          />
+        </mesh>
+      </Billboard>
+    </group>
+  )
 }
 
 /** Pendant lens uses the same warm palette and bounded halo as garden lights. */
 export function WarmPendantLens() {
-  return <group>
-    <mesh rotation-x={Math.PI / 2}>
-      <circleGeometry args={[.245,48]} />
-      <shaderMaterial uniforms={lensUniforms} vertexShader={vertexShader} toneMapped={false}
-        fragmentShader={`uniform vec3 core; uniform vec3 edge; varying vec2 lensUv;
+  return (
+    <group>
+      <mesh rotation-x={Math.PI / 2}>
+        <circleGeometry args={[0.245, 48]} />
+        <shaderMaterial
+          uniforms={lensUniforms}
+          vertexShader={vertexShader}
+          toneMapped={false}
+          fragmentShader={`uniform vec3 core; uniform vec3 edge; varying vec2 lensUv;
           void main() { float r = length((lensUv-.5)*2.);
           gl_FragColor=vec4(mix(core,edge,smoothstep(.45,1.,r)),1.);
           #include <colorspace_fragment>
-          }`} />
-    </mesh>
-    <Billboard><mesh position-y={-.025}>
-      <planeGeometry args={[.72,.22]} />
-      <shaderMaterial uniforms={haloUniforms} vertexShader={vertexShader} fragmentShader={haloFragment}
-        transparent blending={AdditiveBlending} depthTest depthWrite={false} toneMapped={false} />
-    </mesh></Billboard>
-  </group>
+          }`}
+        />
+      </mesh>
+      <Billboard>
+        <mesh position-y={-0.025}>
+          <planeGeometry args={[0.72, 0.22]} />
+          <shaderMaterial
+            uniforms={haloUniforms}
+            vertexShader={vertexShader}
+            fragmentShader={haloFragment}
+            transparent
+            blending={AdditiveBlending}
+            depthTest
+            depthWrite={false}
+            toneMapped={false}
+          />
+        </mesh>
+      </Billboard>
+    </group>
+  )
 }

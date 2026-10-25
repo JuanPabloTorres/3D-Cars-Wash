@@ -1,12 +1,140 @@
-import{chromium}from'@playwright/test';import fs from'node:fs/promises';import assert from'node:assert/strict';
-const directory=process.argv[2]||'docs/evidence/visual-revision/final',browser=await chromium.launch({channel:'msedge',headless:true}),context=await browser.newContext({viewport:{width:1440,height:900}}),p=await context.newPage();const errors=[];p.on('pageerror',e=>errors.push(e.message));
-await p.goto('http://127.0.0.1:4173/?tools=demo&scenario=busy&demoSpeed=8');await p.locator('[data-ready=true]').waitFor({timeout:60000});const boot=await(await p.request.get('http://127.0.0.1:4173/api/demo/session')).json();const control=async(action,extra={})=>{const r=await p.request.post('http://127.0.0.1:4173/api/demo/tools?scenario=busy&speed=8',{headers:{Origin:'http://127.0.0.1:4173','X-Demo-Nonce':boot.nonce},data:{sandbox:true,action,...extra}});assert.ok(r.ok())};await control('pause',{paused:true});await control('reset');
-const snapshot=()=>p.evaluate(()=>window.__FEBLES__.snapshot());await p.getByRole('button',{name:'Visitar',exact:true}).click();await p.getByRole('navigation').getByRole('button',{name:/El local/}).click();await p.waitForFunction(()=>!window.__FEBLES__.snapshot().destination);const start=await snapshot();const categories={};for(const v of start.world.vehicles){const pose=start.vehicles[v.worldEntityId];if(pose){assert.equal(pose.wheels.count,v.type==='truck'?6:4);categories[v.type]={entity:v.worldEntityId,wheels:pose.wheels.count,motion:false,reverse:false}}}
-await control('pause',{paused:false});let previous=start,observations=0;const began=Date.now();
-while(Date.now()-began<100000&&!Object.values(categories).every(v=>v.motion&&v.reverse)){
- await p.waitForTimeout(300);const current=await snapshot();observations++;
- for(const v of current.world.vehicles){const a=previous.vehicles[v.worldEntityId],b=current.vehicles[v.worldEntityId];if(!a||!b)continue;const dx=b.position[0]-a.position[0],dz=b.position[1]-a.position[1],angle=b.wheels.wheelAngle-a.wheels.wheelAngle,distance=Math.hypot(dx,dz);if(distance>.05&&Math.abs(angle)>.05){const record=categories[v.type],signed=dx*Math.sin(b.yaw)+dz*Math.cos(b.yaw),sample={entity:v.worldEntityId,distance,signedDistance:signed,wheelAngleDelta:angle,radius:b.wheels.radius,from:a.position,to:b.position};if(!record.motionSample)record.motionSample=sample;record.motion=true;if(signed<-.03&&angle<-.03){record.reverse=true;if(!record.reverseSample)record.reverseSample=sample}}}
- previous=current;
-}
-await control('pause',{paused:true});await p.waitForTimeout(200);const frozen=await snapshot();await p.waitForTimeout(700);const after=await snapshot();const stopped=Object.entries(frozen.vehicles).every(([id,v])=>after.vehicles[id]?.wheels.wheelAngle===v.wheels.wheelAngle);const result={actualBrowser:true,scenario:'busy',speed:8,elapsedMs:Date.now()-began,observations,categories,stopped,errors,renderer:after.renderer};await fs.writeFile(directory+'/category-wheel-motion.json',JSON.stringify(result,null,2));await p.screenshot({path:directory+'/four-category-operation.png'});await context.close();await browser.close();assert.equal(Object.keys(categories).length,4);assert.ok(Object.values(categories).every(v=>v.motion),'Every category must actually move');assert.ok(Object.values(categories).every(v=>v.reverse),'Every category must reverse with matching wheel sign');assert.ok(stopped);assert.deepEqual(errors,[]);console.log(result);
+import { chromium } from '@playwright/test'
+import fs from 'node:fs/promises'
+import assert from 'node:assert/strict'
 
+const directory = process.argv[2] || 'docs/evidence/visual-revision/final',
+  browser = await chromium.launch({ channel: 'msedge', headless: true }),
+  context = await browser.newContext({ viewport: { width: 1440, height: 900 } }),
+  p = await context.newPage()
+const errors = []
+
+p.on('pageerror', (e) => errors.push(e.message))
+await p.goto('http://127.0.0.1:4173/?tools=demo&scenario=busy&demoSpeed=8')
+await p.locator('[data-ready=true]').waitFor({ timeout: 60000 })
+
+const boot = await (await p.request.get('http://127.0.0.1:4173/api/demo/session')).json()
+const control = async (action, extra = {}) => {
+  const r = await p.request.post('http://127.0.0.1:4173/api/demo/tools?scenario=busy&speed=8', {
+    headers: { Origin: 'http://127.0.0.1:4173', 'X-Demo-Nonce': boot.nonce },
+    data: { sandbox: true, action, ...extra },
+  })
+
+  assert.ok(r.ok())
+}
+
+await control('pause', { paused: true })
+await control('reset')
+
+const snapshot = () => p.evaluate(() => window.__FEBLES__.snapshot())
+
+await p.getByRole('button', { name: 'Visitar', exact: true }).click()
+await p
+  .getByRole('navigation')
+  .getByRole('button', { name: /El local/ })
+  .click()
+await p.waitForFunction(() => !window.__FEBLES__.snapshot().destination)
+
+const start = await snapshot()
+const categories = {}
+
+for (const v of start.world.vehicles) {
+  const pose = start.vehicles[v.worldEntityId]
+
+  if (pose) {
+    assert.equal(pose.wheels.count, v.type === 'truck' ? 6 : 4)
+    categories[v.type] = {
+      entity: v.worldEntityId,
+      wheels: pose.wheels.count,
+      motion: false,
+      reverse: false,
+    }
+  }
+}
+await control('pause', { paused: false })
+
+let previous = start,
+  observations = 0
+const began = Date.now()
+
+while (
+  Date.now() - began < 100000 &&
+  !Object.values(categories).every((v) => v.motion && v.reverse)
+) {
+  await p.waitForTimeout(300)
+
+  const current = await snapshot()
+
+  observations++
+  for (const v of current.world.vehicles) {
+    const a = previous.vehicles[v.worldEntityId],
+      b = current.vehicles[v.worldEntityId]
+
+    if (!a || !b) continue
+
+    const dx = b.position[0] - a.position[0],
+      dz = b.position[1] - a.position[1],
+      angle = b.wheels.wheelAngle - a.wheels.wheelAngle,
+      distance = Math.hypot(dx, dz)
+
+    if (distance > 0.05 && Math.abs(angle) > 0.05) {
+      const record = categories[v.type],
+        signed = dx * Math.sin(b.yaw) + dz * Math.cos(b.yaw),
+        sample = {
+          entity: v.worldEntityId,
+          distance,
+          signedDistance: signed,
+          wheelAngleDelta: angle,
+          radius: b.wheels.radius,
+          from: a.position,
+          to: b.position,
+        }
+
+      if (!record.motionSample) record.motionSample = sample
+      record.motion = true
+      if (signed < -0.03 && angle < -0.03) {
+        record.reverse = true
+        if (!record.reverseSample) record.reverseSample = sample
+      }
+    }
+  }
+  previous = current
+}
+await control('pause', { paused: true })
+await p.waitForTimeout(200)
+
+const frozen = await snapshot()
+
+await p.waitForTimeout(700)
+
+const after = await snapshot()
+const stopped = Object.entries(frozen.vehicles).every(
+  ([id, v]) => after.vehicles[id]?.wheels.wheelAngle === v.wheels.wheelAngle,
+)
+const result = {
+  actualBrowser: true,
+  scenario: 'busy',
+  speed: 8,
+  elapsedMs: Date.now() - began,
+  observations,
+  categories,
+  stopped,
+  errors,
+  renderer: after.renderer,
+}
+
+await fs.writeFile(directory + '/category-wheel-motion.json', JSON.stringify(result, null, 2))
+await p.screenshot({ path: directory + '/four-category-operation.png' })
+await context.close()
+await browser.close()
+assert.equal(Object.keys(categories).length, 4)
+assert.ok(
+  Object.values(categories).every((v) => v.motion),
+  'Every category must actually move',
+)
+assert.ok(
+  Object.values(categories).every((v) => v.reverse),
+  'Every category must reverse with matching wheel sign',
+)
+assert.ok(stopped)
+assert.deepEqual(errors, [])
+console.log(result)

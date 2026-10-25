@@ -1,2 +1,32 @@
-import fs from'node:fs/promises';import{chromium}from'@playwright/test';
-const browser=await chromium.launch({channel:'msedge',headless:true});for(const mobile of[false,true]){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:mobile?{width:390,height:844}:{width:1440,height:900},isMobile:mobile,hasTouch:mobile}),page=await context.newPage();await page.goto('/?tools=demo&scenario=busy');await page.locator('[data-ready=true]').waitFor({timeout:60000});await page.getByRole('button',{name:'Visitar',exact:true}).click();await page.getByRole('navigation').getByRole('button',{name:/El local/}).click();await page.getByRole('dialog',{name:'Bahía 01'}).waitFor();await page.getByText('Consultar otra zona del local',{exact:true}).click();await page.getByRole('button',{name:'Espera y mi orden'}).click();await page.getByRole('dialog',{name:'Tu espera'}).waitFor();await page.screenshot({path:`docs/evidence/commercial-polish/final/${mobile?'mobile':'desktop'}-lounge.png`,animations:'disabled'});await context.close()}await browser.close();
+import fs from 'node:fs/promises'
+import { chromium } from '@playwright/test'
+
+const browser = await chromium.launch({ channel: 'msedge', headless: true })
+
+for (const mobile of [false, true]) {
+  const context = await browser.newContext({
+      baseURL: 'http://127.0.0.1:4173',
+      viewport: mobile ? { width: 390, height: 844 } : { width: 1440, height: 900 },
+      isMobile: mobile,
+      hasTouch: mobile,
+    }),
+    page = await context.newPage()
+
+  await page.goto('/?tools=demo&scenario=busy')
+  await page.locator('[data-ready=true]').waitFor({ timeout: 60000 })
+  await page.getByRole('button', { name: 'Visitar', exact: true }).click()
+  await page
+    .getByRole('navigation')
+    .getByRole('button', { name: /El local/ })
+    .click()
+  await page.getByRole('dialog', { name: 'Bahía 01' }).waitFor()
+  await page.getByText('Consultar otra zona del local', { exact: true }).click()
+  await page.getByRole('button', { name: 'Espera y mi orden' }).click()
+  await page.getByRole('dialog', { name: 'Tu espera' }).waitFor()
+  await page.screenshot({
+    path: `docs/evidence/commercial-polish/final/${mobile ? 'mobile' : 'desktop'}-lounge.png`,
+    animations: 'disabled',
+  })
+  await context.close()
+}
+await browser.close()

@@ -20,6 +20,9 @@ REFERENCES = (
 )
 OWNERS = (
     "AGENTS.md", "package.json", "package-lock.json", "playwright.config.ts",
+    "config/testing/playwright.staff.config.ts", "config/testing/paths.ts",
+    "src/app/useCommercialSession.ts", "src/world/materials/textureMaps.ts",
+    "src/ui/account/AccountModal.tsx", "src/admin/hooks/useAdminSession.ts",
     "src/app/App.tsx", "src/app/store.ts", "src/app/commerceStore.ts",
     "src/world/WorldScene.tsx", "src/world/WorldLayout.tsx",
     "src/world/siteLandscape.ts", "src/world/prefabs/Landscape.tsx",
